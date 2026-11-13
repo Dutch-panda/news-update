@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-13 14:52</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="ai_agents">🤖 AI Agents &amp; Agentic Workflows</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk" target="_blank" rel="noopener">Global Microsoft Outage</a><div class="item-meta">Hacker News · ▲ 116 pts · 💬 60 · <a href="https://news.ycombinator.com/item?id=50479098" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Tech company ‘seeing positive results’ with efforts and says no indication problem was caused by cyber-attack Microsoft outage hits UK hospitals, GPs, schools…</p></div><div class="item"><a class="item-title" href="https://twitter.com/MSFT365Status/status/2121079061774491735" target="_blank" rel="noopener">Microsoft Outlook/365 still down after 12 hours</a><div class="item-meta">Hacker News · ▲ 316 pts · 💬 223 · <a href="https://news.ycombinator.com/item?id=50478609" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Since just before 1PM ET on Thursday, reports have come in from around the world that people can&#x27;t access their Outlook email, either through the web or apps…</p></div><div class="item"><a class="item-title" href="https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/" target="_blank" rel="noopener">Nvidia employees petition to bring back Jensen Huang</a><div class="item-meta">Hacker News · ▲ 611 pts · 💬 452 · <a href="https://news.ycombinator.com/item?id=50477231" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">An internal post urging the board to consider employee sentiment about Nvidia’s former CEO has drawn more than 1,600 comments, the majority in full support of…</p></div><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/videos/cwm2591k27e2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Watch: How Microsoft services went down around the world</a><div class="item-meta">BBC World</div><p class="item-summary">Microsoft is struggling to fix a global outage, with services including Teams, Outlook and AI software Copilot affected by &quot;connectivity problems&quot;.</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why?traffic_source=rss" target="_blank" rel="noopener">Microsoft hit by global outages: What happened and why?</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Outlook, Teams and Copilot remain disrupted in 74 countries as Microsoft reports ‘marginal success’ in fixing outage.</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/articles/cm3egjgvp794o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Neither war nor peace in Tigray - is Ethiopia&#x27;s latest conflict really over?</a><div class="item-meta">BBC World</div><p class="item-summary">The army has taken control of most of Tigray&#x27;s main towns - it is unclear if the TPLF is capable of fighting back.</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html" target="_blank" rel="noopener">Indonesia’s Vice President, Gibran, Resigns</a><div class="item-meta">NYT World</div><p class="item-summary">Gibran Rakabuming Raka, who is stepping down amid a scandal over his academic credentials, was a symbol of the partnership that elevated President Prabowo…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/world/europe/army-britain-arrest-spy-russia.html" target="_blank" rel="noopener">Army Officer Accused of Trying to Spy for Russia Is Afghan War Veteran</a><div class="item-meta">NYT World</div><p class="item-summary">The officer, who served at a NATO base in Britain, is expected to be charged in the coming days, two officials said.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/" target="_blank" rel="noopener">Jensen Huang agrees to testify before Congress</a><div class="item-meta">TechCrunch</div><p class="item-summary">Huang, who was ousted as CEO following reports of an alleged affair with a woman suspected of spying for China, agreed to testify Wednesday after several…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/world/asia/yamamoto-pearl-harbor-plane-bougainville-tourism.html" target="_blank" rel="noopener">Tourists Brave a Muddy Jungle Trek to See a Famed World War II Wreck</a><div class="item-meta">NYT World</div><p class="item-summary">Seven Chinese tourists, a dozen villagers and a couple of journalists forded streams and bushwhacked to the downed plane of Isoroku Yamamoto, the Japanese…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/openai/codex-security" target="_blank" rel="noopener">openai/codex-security</a><div class="item-meta">GitHub Trending · ⭐ 12,774 (+754 today)</div><p class="item-summary">[TypeScript] OpenAI&#x27;s Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm…</p></div><div class="item"><a class="item-title" href="https://github.com/simpsoka/zigzag" target="_blank" rel="noopener">Show HN: My $300 embroidery machine needed a subscription, so I built my own app</a><div class="item-meta">Hacker News · ▲ 539 pts · 💬 184 · <a href="https://news.ycombinator.com/item?id=50470488" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Free, open-source embroidery software for Mac and Windows. Turn SVG artwork into machine embroidery, edit stitches visually, and create designs with AI agents…</p></div><div class="item"><a class="item-title" href="https://github.com/louislam/uptime-kuma" target="_blank" rel="noopener">louislam/uptime-kuma</a><div class="item-meta">GitHub Trending · ⭐ 93,604 (+61 today)</div><p class="item-summary">[JavaScript] A fancy self-hosted monitoring tool</p></div><div class="item"><a class="item-title" href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" rel="noopener">ZhuLinsen/daily_stock_analysis</a><div class="item-meta">GitHub Trending · ⭐ 71,192 (+272 today)</div><p class="item-summary">[Python] LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 AI Agents &amp; Agentic Workflows</h2><div class="item"><a class="item-title" href="https://github.com/findavoulot1973/Blender-AI-MCP-Suite" target="_blank" rel="noopener">findavoulot1973/Blender-AI-MCP-Suite</a><div class="item-meta">GitHub Search · ⭐ 93</div><p class="item-summary">Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…</p></div><div class="item"><a class="item-title" href="https://status.claude.com/incidents/nn11wk485zfn" target="_blank" rel="noopener">Elevated errors on claude.ai, Claude Code, and platform.claude.com</a><div class="item-meta">Hacker News · ▲ 116 pts · 💬 72 · <a href="https://news.ycombinator.com/item?id=50481187" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Claude&#x27;s Status Page - Elevated errors on claude.ai, Claude Code, and platform.claude.com.</p></div><div class="item"><a class="item-title" href="https://github.com/credoksopho1984/blender-ai-copilot-studio" target="_blank" rel="noopener">credoksopho1984/blender-ai-copilot-studio</a><div class="item-meta">GitHub Search · ⭐ 92</div><p class="item-summary">An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your…</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50480909" target="_blank" rel="noopener">Tell HN: Claude Code Is Down</a><div class="item-meta">Hacker News · ▲ 34 pts · 💬 21</div></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://github.com/tradermonty/claude-trading-skills" target="_blank" rel="noopener">tradermonty/claude-trading-skills</a><div class="item-meta">GitHub Trending · ⭐ 3,839 (+60 today)</div><p class="item-summary">[Python] Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy…</p></div><div class="item"><a class="item-title" href="https://ipo.anthropic.com/us/" target="_blank" rel="noopener">Anthropic IPO</a><div class="item-meta">Hacker News · ▲ 940 pts · 💬 869 · <a href="https://news.ycombinator.com/item?id=50465829" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Anthropic has filed to become a public company. Read the Founders’ letter and other relevant information.</p></div><div class="item"><a class="item-title" href="https://github.com/anthropics/claude-code/issues/109446" target="_blank" rel="noopener">Anthropic carelessly killed a Claude Code feature users built on, no warning</a><div class="item-meta">Hacker News · ▲ 25 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50477704" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Regression: 2.1.323 silently removed subagentStatusLine, with no reason, no replacement and no migration path What happened The 2.1.323 changelog says…</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50480936" target="_blank" rel="noopener">Claude OAuth Failures</a><div class="item-meta">Hacker News · ▲ 24 pts · 💬 22</div><p class="item-summary">Claude has started having serious OAuth errors and hangs, but nothing appears on the Claude Status site yet[0]. It&#x27;s been several minutes now, not sure if its…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
