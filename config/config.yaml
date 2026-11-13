@@ -1,0 +1,232 @@
+timezone_offset_hours: 4
+
+schedule_slots:
+  morning: "Morning Update (08:00)"
+  afternoon: "Afternoon Update (15:00)"
+  night: "Night Update (23:00)"
+
+digest:
+  items_per_category: 4
+  max_total_items: 22
+  max_per_source_in_category: 3
+  dedup_retention_days: 14
+  description_max_chars: 160
+
+categories:
+  - key: trending_tech
+    title: "💻 Trending Tech News"
+    max_items: 5
+    keywords:
+      - apple
+      - google
+      - microsoft
+      - meta
+      - nvidia
+      - amd
+      - tsmc
+      - intel
+      - startup
+      - acquisition
+      - funding
+      - cybersecurity
+      - vulnerability
+      - breach
+      - linux
+      - cloud
+      - aws
+      - browser
+      - chip
+      - semiconductor
+      - hardware
+      - robotics
+
+  - key: trending_politics
+    title: "🌍 Trending Politics & World Affairs"
+    max_items: 5
+    keywords:
+      - election
+      - parliament
+      - senate
+      - congress
+      - president
+      - prime minister
+      - ministry
+      - sanctions
+      - tariff
+      - treaty
+      - ceasefire
+      - nato
+      - united nations
+      - eu
+      - european union
+      - supreme court
+      - legislation
+      - regulation
+      - antitrust
+      - geopolitics
+      - diplomacy
+      - war
+      - conflict
+      - policy
+      - central bank
+      - inflation
+
+  - key: new_tools
+    title: "🛠️ New Tools & Open Source"
+    max_items: 4
+    keywords:
+      - show hn
+      - open-source
+      - open source
+      - cli
+      - sdk
+      - framework
+      - library
+      - self-hosted
+      - terminal
+      - developer tool
+      - devtool
+      - vscode
+      - neovim
+      - docker
+      - kubernetes
+      - sqlite
+      - postgres
+      - rust
+      - golang
+      - typescript
+      - python
+      - wasm
+      - benchmark
+      - api
+
+  - key: ai_agents
+    title: "🤖 AI Agents & Agentic Workflows"
+    max_items: 4
+    keywords:
+      - ai agent
+      - ai agents
+      - agentic
+      - multi-agent
+      - autonomous agent
+      - mcp
+      - model context protocol
+      - tool calling
+      - function calling
+      - langgraph
+      - crewai
+      - autogen
+      - claude code
+      - codex
+      - cursor
+      - windsurf
+      - devin
+      - openhands
+      - browser-use
+      - computer use
+      - agent workflow
+      - agent framework
+      - subagent
+      - orchestrator
+
+  - key: llm_models
+    title: "🧠 LLM Models & AI Research"
+    max_items: 4
+    keywords:
+      - llm
+      - large language model
+      - gpt-
+      - claude
+      - gemini
+      - llama
+      - deepseek
+      - qwen
+      - mistral
+      - gemma
+      - fine-tuning
+      - finetuning
+      - rlhf
+      - grpo
+      - lora
+      - quantization
+      - gguf
+      - vllm
+      - ollama
+      - llama.cpp
+      - inference
+      - reasoning model
+      - multimodal
+      - diffusion
+      - transformer
+      - context window
+      - open weights
+      - huggingface
+      - openai
+      - anthropic
+
+sources:
+  rss_lookback_hours: 24
+
+  hackernews:
+    enabled: true
+    min_points: 25
+    targeted_min_points: 10
+    lookback_hours: 24
+    targeted_queries:
+      - "ai agent"
+      - "agentic"
+      - "mcp"
+      - "Show HN"
+      - "llm"
+      - "claude"
+      - "gemini"
+      - "openai"
+      - "deepseek"
+      - "qwen"
+
+  github:
+    enabled: true
+    trending_since: "daily"
+    search_lookback_days: 1
+    search_min_stars: 15
+    search_queries:
+      - "topic:ai-agents"
+      - "topic:agentic-ai"
+      - "topic:mcp"
+      - "llm agent"
+      - "ai cli tool"
+
+  rss_feeds:
+    - name: "BBC World"
+      url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+      default_category: "trending_politics"
+    - name: "The Guardian World"
+      url: "https://www.theguardian.com/world/rss"
+      default_category: "trending_politics"
+    - name: "Al Jazeera"
+      url: "https://www.aljazeera.com/xml/rss/all.xml"
+      default_category: "trending_politics"
+    - name: "NYT World"
+      url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+      default_category: "trending_politics"
+    - name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
+      default_category: "trending_tech"
+    - name: "Ars Technica"
+      url: "https://feeds.arstechnica.com/arstechnica/index"
+      default_category: "trending_tech"
+    - name: "The Verge"
+      url: "https://www.theverge.com/rss/index.xml"
+      default_category: "trending_tech"
+    - name: "Hugging Face Blog"
+      url: "https://huggingface.co/blog/feed.xml"
+      default_category: "llm_models"
+    - name: "Simon Willison"
+      url: "https://simonwillison.net/atom/everything/"
+      default_category: "llm_models"
+    - name: "OpenAI News"
+      url: "https://openai.com/news/rss.xml"
+      default_category: "llm_models"
+    - name: "TechCrunch AI"
+      url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+      default_category: "llm_models"

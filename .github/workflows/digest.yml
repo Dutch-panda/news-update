@@ -1,0 +1,59 @@
+name: Scheduled News & Trends Digest
+
+on:
+  schedule:
+    # 08:00, 15:00, and 23:00 in UTC+04:00
+    - cron: "0 4 * * *"
+    - cron: "0 11 * * *"
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: "Optional edition override (morning, afternoon, night)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  run-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run digest pipeline
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIGEST_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          EDITION_ARG=""
+          if [ -n "${{ github.event.inputs.edition }}" ]; then
+            EDITION_ARG="--edition ${{ github.event.inputs.edition }}"
+          fi
+          python -m src.cli run $EDITION_ARG
+
+      - name: Commit and push updated archive and site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digests/ docs/ data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update news digest ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git pull --rebase
+          git push

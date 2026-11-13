@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-13 14:25</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="ai_agents">🤖 AI Agents &amp; Agentic Workflows</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk" target="_blank" rel="noopener">Global Microsoft Outage</a><div class="item-meta">Hacker News · ▲ 98 pts · 💬 33 · <a href="https://news.ycombinator.com/item?id=50479098" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Tech company ‘seeing positive results’ with efforts and says no indication problem was caused by cyber-attack Microsoft outage hits UK hospitals, GPs, schools…</p></div><div class="item"><a class="item-title" href="https://twitter.com/MSFT365Status/status/2121079061774491735" target="_blank" rel="noopener">Microsoft Outlook/365 still down after 12 hours</a><div class="item-meta">Hacker News · ▲ 291 pts · 💬 189 · <a href="https://news.ycombinator.com/item?id=50478609" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Since just before 1PM ET on Thursday, reports have come in from around the world that people can&#x27;t access their Outlook email, either through the web or apps…</p></div><div class="item"><a class="item-title" href="https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/" target="_blank" rel="noopener">Nvidia employees petition to bring back Jensen Huang</a><div class="item-meta">Hacker News · ▲ 595 pts · 💬 432 · <a href="https://news.ycombinator.com/item?id=50477231" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">An internal post urging the board to consider employee sentiment about Nvidia’s former CEO has drawn more than 1,600 comments, the majority in full support of…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html" target="_blank" rel="noopener">Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew</a><div class="item-meta">NYT World</div><p class="item-summary">Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/" target="_blank" rel="noopener">Jensen Huang’s exit puts Nvidia’s support for open source in question</a><div class="item-meta">TechCrunch</div><p class="item-summary">Jensen Huang’s resignation raises questions about Nvidia’s commitment to open source AI, including its Hugging Face acquisition, open-weight models, and…</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates" target="_blank" rel="noopener">Leaders meet in Dublin amid search for lead EU negotiator for peace talks with Russia - Europe live</a><div class="item-meta">The Guardian World</div><p class="item-summary">Ukraine and Russia have agreed to expand next round of negotiations to include European countries EU foreign policy chief Kaja Kallas has warned against the…</p></div><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/articles/cm3egjgvp794o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Neither war nor peace in Tigray - is Ethiopia&#x27;s latest conflict really over?</a><div class="item-meta">BBC World</div><p class="item-summary">The army has taken control of most of Tigray&#x27;s main towns - it is unclear if the TPLF is capable of fighting back.</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html" target="_blank" rel="noopener">In French Election, Centrists Eye a Judo Star and a Central Banker</a><div class="item-meta">NYT World</div><p class="item-summary">Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says" target="_blank" rel="noopener">‘Win-win’ deal with EU could be done, Andy Burnham says</a><div class="item-meta">The Guardian World</div><p class="item-summary">Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html" target="_blank" rel="noopener">Indonesia’s Vice President, Gibran, Resigns</a><div class="item-meta">NYT World</div><p class="item-summary">Gibran Rakabuming Raka, who is stepping down amid a scandal over his academic credentials, was a symbol of the partnership that elevated President Prabowo…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">Alishahryar1/free-claude-code</a><div class="item-meta">GitHub Trending · ⭐ 69,670 (+415 today)</div><p class="item-summary">[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…</p></div><div class="item"><a class="item-title" href="https://github.com/QwenLM/qwen-code" target="_blank" rel="noopener">QwenLM/qwen-code</a><div class="item-meta">GitHub Trending · ⭐ 30,069 (+151 today)</div><p class="item-summary">[TypeScript] An open-source AI coding agent that lives in your terminal.</p></div><div class="item"><a class="item-title" href="https://github.com/openai/codex-security" target="_blank" rel="noopener">openai/codex-security</a><div class="item-meta">GitHub Trending · ⭐ 12,766 (+754 today)</div><p class="item-summary">[TypeScript] OpenAI&#x27;s Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm…</p></div><div class="item"><a class="item-title" href="https://github.com/simpsoka/zigzag" target="_blank" rel="noopener">Show HN: My $300 embroidery machine needed a subscription, so I built my own app</a><div class="item-meta">Hacker News · ▲ 529 pts · 💬 183 · <a href="https://news.ycombinator.com/item?id=50470488" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Free, open-source embroidery software for Mac and Windows. Turn SVG artwork into machine embroidery, edit stitches visually, and create designs with AI agents…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 AI Agents &amp; Agentic Workflows</h2><div class="item"><a class="item-title" href="https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio" target="_blank" rel="noopener">racdeufindurch198812/Blender-AI-MCP-Studio</a><div class="item-meta">GitHub Search · ⭐ 94</div><p class="item-summary">Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…</p></div><div class="item"><a class="item-title" href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" target="_blank" rel="noopener">Gemini 4 Hydrogen and Orchestrator</a><div class="item-meta">Hacker News · ▲ 419 pts · 💬 115 · <a href="https://news.ycombinator.com/item?id=50472260" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Today, we&#x27;re rolling out Gemini 4 Hydrogen inside Google Antigravity alongside a new model dropdown option called Orchestrator, which pairs Hydrogen with…</p></div><div class="item"><a class="item-title" href="https://github.com/hitkeeen/blender-ai-mcp-addon" target="_blank" rel="noopener">hitkeeen/blender-ai-mcp-addon</a><div class="item-meta">GitHub Search · ⭐ 96</div><p class="item-summary">AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI…</p></div><div class="item"><a class="item-title" href="https://brave.com/blog/search-api-agentic-payments/" target="_blank" rel="noopener">Brave Search API now accepts agentic payments via the x402 protocol</a><div class="item-meta">Hacker News · ▲ 106 pts · 💬 69 · <a href="https://news.ycombinator.com/item?id=50477649" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Developers and AI agents can now pay for the Brave Search API on demand with USDC via the open x402 protocol, settling each query in real time without an…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">ggml-org/llama.cpp</a><div class="item-meta">GitHub Trending · ⭐ 134,801 (+176 today)</div><p class="item-summary">[C++] LLM inference in C/C++</p></div><div class="item"><a class="item-title" href="https://github.com/baiblinocun1986/blender-ai-copilot-hub" target="_blank" rel="noopener">baiblinocun1986/blender-ai-copilot-hub</a><div class="item-meta">GitHub Search · ⭐ 95</div><p class="item-summary">A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…</p></div><div class="item"><a class="item-title" href="https://ipo.anthropic.com/us/" target="_blank" rel="noopener">Anthropic IPO</a><div class="item-meta">Hacker News · ▲ 936 pts · 💬 867 · <a href="https://news.ycombinator.com/item?id=50465829" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Anthropic has filed to become a public company. Read the Founders’ letter and other relevant information.</p></div><div class="item"><a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener">Gemini 4 Hydrogen</a><div class="item-meta">Hacker News · ▲ 531 pts · 💬 333 · <a href="https://news.ycombinator.com/item?id=50471431" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Today, we’re introducing Gemini 4 Hydrogen, our daily driver for agentic workflows</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>

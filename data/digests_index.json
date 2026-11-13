@@ -1,0 +1,2512 @@
+{
+  "digests": [
+    {
+      "edition_id": "2026-11-13-1425",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-13T14:25:50.212347+04:00",
+      "markdown_path": "digests/2026/11/2026-11-13-1425.md",
+      "html_path": "digests/2026/11/2026-11-13-1425.html",
+      "total_fetched": 266,
+      "total_after_dedup": 232,
+      "total_selected": 22,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50479098",
+              "title": "Global Microsoft Outage",
+              "url": "https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Tech company ‘seeing positive results’ with efforts and says no indication problem was caused by cyber-attack Microsoft outage hits UK hospitals, GPs, schools…",
+              "published_at": "2026-11-13T06:18:23+00:00",
+              "raw_score": 98,
+              "secondary_metric": 33,
+              "comments_url": "https://news.ycombinator.com/item?id=50479098",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 8.465,
+              "final_score": 15.665,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50478609",
+              "title": "Microsoft Outlook/365 still down after 12 hours",
+              "url": "https://twitter.com/MSFT365Status/status/2121079061774491735",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Since just before 1PM ET on Thursday, reports have come in from around the world that people can't access their Outlook email, either through the web or apps…",
+              "published_at": "2026-11-13T05:08:23+00:00",
+              "raw_score": 291,
+              "secondary_metric": 189,
+              "comments_url": "https://news.ycombinator.com/item?id=50478609",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 14.5,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50477231",
+              "title": "Nvidia employees petition to bring back Jensen Huang",
+              "url": "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "An internal post urging the board to consider employee sentiment about Nvidia’s former CEO has drawn more than 1,600 comments, the majority in full support of…",
+              "published_at": "2026-11-13T02:16:24+00:00",
+              "raw_score": 595,
+              "secondary_metric": 432,
+              "comments_url": "https://news.ycombinator.com/item?id=50477231",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 13.0,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
+              "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
+              "published_at": "2026-11-13T01:28:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch:https://techcrunch.com/?p=3188037",
+              "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+              "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+              "source_name": "TechCrunch",
+              "source_type": "rss",
+              "summary": "Jensen Huang’s resignation raises questions about Nvidia’s commitment to open source AI, including its Hugging Face acquisition, open-weight models, and…",
+              "published_at": "2026-11-12T18:39:23+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "acquisition"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_politics",
+          "title": "🌍 Trending Politics & World Affairs",
+          "items": [
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "title": "Leaders meet in Dublin amid search for lead EU negotiator for peace talks with Russia - Europe live",
+              "url": "https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Ukraine and Russia have agreed to expand next round of negotiations to include European countries EU foreign policy chief Kaja Kallas has warned against the…",
+              "published_at": "2026-11-13T10:07:18+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 5.4,
+              "popularity_score": 6.0,
+              "final_score": 11.4,
+              "matched_keywords": [
+                "eu",
+                "policy"
+              ]
+            },
+            {
+              "id": "rss:BBC World:https://www.bbc.co.uk/news/articles/cm3egjgvp794o#3",
+              "title": "Neither war nor peace in Tigray - is Ethiopia's latest conflict really over?",
+              "url": "https://www.bbc.co.uk/news/articles/cm3egjgvp794o?at_medium=RSS&at_campaign=rss",
+              "source_name": "BBC World",
+              "source_type": "rss",
+              "summary": "The army has taken control of most of Tigray's main towns - it is unclear if the TPLF is capable of fighting back.",
+              "published_at": "2026-11-13T00:20:24+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 6.0,
+              "popularity_score": 5.2,
+              "final_score": 11.2,
+              "matched_keywords": [
+                "war",
+                "conflict"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "title": "In French Election, Centrists Eye a Judo Star and a Central Banker",
+              "url": "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…",
+              "published_at": "2026-11-13T09:22:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "election"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "title": "‘Win-win’ deal with EU could be done, Andy Burnham says",
+              "url": "https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…",
+              "published_at": "2026-11-12T22:01:39+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html",
+              "title": "Indonesia’s Vice President, Gibran, Resigns",
+              "url": "https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Gibran Rakabuming Raka, who is stepping down amid a scandal over his academic credentials, was a symbol of the partnership that elevated President Prabowo…",
+              "published_at": "2026-11-12T23:40:14+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "president"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ New Tools & Open Source",
+          "items": [
+            {
+              "id": "gh:Alishahryar1/free-claude-code",
+              "title": "Alishahryar1/free-claude-code",
+              "url": "https://github.com/Alishahryar1/free-claude-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…",
+              "published_at": "2026-11-13T10:25:50.212347+00:00",
+              "raw_score": 69670,
+              "secondary_metric": 415,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "terminal",
+                "vscode",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:QwenLM/qwen-code",
+              "title": "QwenLM/qwen-code",
+              "url": "https://github.com/QwenLM/qwen-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An open-source AI coding agent that lives in your terminal.",
+              "published_at": "2026-11-13T10:25:50.212347+00:00",
+              "raw_score": 30069,
+              "secondary_metric": 151,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "terminal",
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:openai/codex-security",
+              "title": "openai/codex-security",
+              "url": "https://github.com/openai/codex-security",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm…",
+              "published_at": "2026-11-13T10:25:50.212347+00:00",
+              "raw_score": 12766,
+              "secondary_metric": 754,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "cli",
+                "sdk",
+                "typescript"
+              ]
+            },
+            {
+              "id": "hn:50470488",
+              "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+              "url": "https://github.com/simpsoka/zigzag",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Free, open-source embroidery software for Mac and Windows. Turn SVG artwork into machine embroidery, edit stitches visually, and create designs with AI agents…",
+              "published_at": "2026-11-12T17:02:42+00:00",
+              "raw_score": 529,
+              "secondary_metric": 183,
+              "comments_url": "https://news.ycombinator.com/item?id=50470488",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 9.5,
+              "final_score": 14.5,
+              "matched_keywords": [
+                "show hn"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 AI Agents & Agentic Workflows",
+          "items": [
+            {
+              "id": "gh:racdeufindurch198812/Blender-AI-MCP-Studio",
+              "title": "racdeufindurch198812/Blender-AI-MCP-Studio",
+              "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:28:20+00:00",
+              "raw_score": 94,
+              "secondary_metric": 94,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.803,
+              "final_score": 13.203,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "hn:50472260",
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Today, we're rolling out Gemini 4 Hydrogen inside Google Antigravity alongside a new model dropdown option called Orchestrator, which pairs Hydrogen with…",
+              "published_at": "2026-11-12T18:52:01+00:00",
+              "raw_score": 419,
+              "secondary_metric": 115,
+              "comments_url": "https://news.ycombinator.com/item?id=50472260",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 9.746,
+              "final_score": 12.746,
+              "matched_keywords": [
+                "orchestrator"
+              ]
+            },
+            {
+              "id": "gh:hitkeeen/blender-ai-mcp-addon",
+              "title": "hitkeeen/blender-ai-mcp-addon",
+              "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI…",
+              "published_at": "2026-11-12T14:32:15+00:00",
+              "raw_score": 96,
+              "secondary_metric": 96,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.233,
+              "final_score": 12.633,
+              "matched_keywords": [
+                "multi-agent",
+                "mcp"
+              ]
+            },
+            {
+              "id": "hn:50477649",
+              "title": "Brave Search API now accepts agentic payments via the x402 protocol",
+              "url": "https://brave.com/blog/search-api-agentic-payments/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Developers and AI agents can now pay for the Brave Search API on demand with USDC via the open x402 protocol, settling each query in real time without an…",
+              "published_at": "2026-11-13T03:08:08+00:00",
+              "raw_score": 106,
+              "secondary_metric": 69,
+              "comments_url": "https://news.ycombinator.com/item?id=50477649",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 8.04,
+              "final_score": 11.04,
+              "matched_keywords": [
+                "agentic"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & AI Research",
+          "items": [
+            {
+              "id": "gh:ggml-org/llama.cpp",
+              "title": "ggml-org/llama.cpp",
+              "url": "https://github.com/ggml-org/llama.cpp",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[C++] LLM inference in C/C++",
+              "published_at": "2026-11-13T10:25:50.212347+00:00",
+              "raw_score": 134801,
+              "secondary_metric": 176,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 10.0,
+              "final_score": 16.0,
+              "matched_keywords": [
+                "llm",
+                "llama",
+                "llama.cpp",
+                "inference"
+              ]
+            },
+            {
+              "id": "gh:baiblinocun1986/blender-ai-copilot-hub",
+              "title": "baiblinocun1986/blender-ai-copilot-hub",
+              "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…",
+              "published_at": "2026-11-12T19:32:22+00:00",
+              "raw_score": 95,
+              "secondary_metric": 95,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 7.818,
+              "final_score": 13.818,
+              "matched_keywords": [
+                "claude",
+                "gemini",
+                "ollama",
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "hn:50465829",
+              "title": "Anthropic IPO",
+              "url": "https://ipo.anthropic.com/us/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Anthropic has filed to become a public company. Read the Founders’ letter and other relevant information.",
+              "published_at": "2026-11-12T11:46:41+00:00",
+              "raw_score": 936,
+              "secondary_metric": 867,
+              "comments_url": "https://news.ycombinator.com/item?id=50465829",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 9.6,
+              "final_score": 12.6,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "hn:50471431",
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Today, we’re introducing Gemini 4 Hydrogen, our daily driver for agentic workflows",
+              "published_at": "2026-11-12T18:01:48+00:00",
+              "raw_score": 531,
+              "secondary_metric": 333,
+              "comments_url": "https://news.ycombinator.com/item?id=50471431",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 9.504,
+              "final_score": 12.504,
+              "matched_keywords": [
+                "gemini"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "edition_id": "2026-11-13-1415",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-13T14:15:21.606376+04:00",
+      "markdown_path": "digests/2026/11/2026-11-13-1415.md",
+      "html_path": "digests/2026/11/2026-11-13-1415.html",
+      "total_fetched": 264,
+      "total_after_dedup": 232,
+      "total_selected": 22,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50479098",
+              "title": "Global Microsoft Outage",
+              "url": "https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Tech company ‘seeing positive results’ with efforts and says no indication problem was caused by cyber-attack Microsoft outage – live updates Tell us: have…",
+              "published_at": "2026-11-13T06:18:23+00:00",
+              "raw_score": 91,
+              "secondary_metric": 28,
+              "comments_url": "https://news.ycombinator.com/item?id=50479098",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 8.321,
+              "final_score": 15.521,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50478609",
+              "title": "Microsoft Outlook/365 still down after 12 hours",
+              "url": "https://twitter.com/MSFT365Status/status/2121079061774491735",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Since just before 1PM ET on Thursday, reports have come in from around the world that people can't access their Outlook email, either through the web or apps…",
+              "published_at": "2026-11-13T05:08:23+00:00",
+              "raw_score": 271,
+              "secondary_metric": 172,
+              "comments_url": "https://news.ycombinator.com/item?id=50478609",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 14.5,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50471668",
+              "title": "Ask HN: Microsoft/Azure Outage?",
+              "url": "https://news.ycombinator.com/item?id=50471668",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "For the past 5 minutes all of our Microsoft Cloud connections are down. Anyone else? The Status page won't even load.",
+              "published_at": "2026-11-12T18:17:13+00:00",
+              "raw_score": 402,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50471668",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 8.076,
+              "final_score": 13.476,
+              "matched_keywords": [
+                "microsoft",
+                "cloud"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
+              "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
+              "published_at": "2026-11-13T01:28:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch:https://techcrunch.com/?p=3188037",
+              "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+              "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+              "source_name": "TechCrunch",
+              "source_type": "rss",
+              "summary": "Jensen Huang’s resignation raises questions about Nvidia’s commitment to open source AI, including its Hugging Face acquisition, open-weight models, and…",
+              "published_at": "2026-11-12T18:39:23+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "acquisition"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_politics",
+          "title": "🌍 Trending Politics & World Affairs",
+          "items": [
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "title": "Leaders meet in Dublin amid search for lead EU negotiator for peace talks with Russia - Europe live",
+              "url": "https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Ukraine and Russia have agreed to expand next round of negotiations to include European countries EU foreign policy chief Kaja Kallas has warned against the…",
+              "published_at": "2026-11-13T10:04:04+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 5.4,
+              "popularity_score": 6.0,
+              "final_score": 11.4,
+              "matched_keywords": [
+                "eu",
+                "policy"
+              ]
+            },
+            {
+              "id": "rss:BBC World:https://www.bbc.co.uk/news/articles/cm3egjgvp794o#3",
+              "title": "Neither war nor peace in Tigray - is Ethiopia's latest conflict really over?",
+              "url": "https://www.bbc.co.uk/news/articles/cm3egjgvp794o?at_medium=RSS&at_campaign=rss",
+              "source_name": "BBC World",
+              "source_type": "rss",
+              "summary": "The army has taken control of most of Tigray's main towns - it is unclear if the TPLF is capable of fighting back.",
+              "published_at": "2026-11-13T00:20:24+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 6.0,
+              "popularity_score": 5.2,
+              "final_score": 11.2,
+              "matched_keywords": [
+                "war",
+                "conflict"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "title": "In French Election, Centrists Eye a Judo Star and a Central Banker",
+              "url": "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…",
+              "published_at": "2026-11-13T09:22:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "election"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "title": "‘Win-win’ deal with EU could be done, Andy Burnham says",
+              "url": "https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…",
+              "published_at": "2026-11-12T22:01:39+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html",
+              "title": "Indonesia’s Vice President, Gibran, Resigns",
+              "url": "https://www.nytimes.com/2026/11/12/world/asia/indonesia-gibran-vice-president-resign.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Gibran Rakabuming Raka, who is stepping down amid a scandal over his academic credentials, was a symbol of the partnership that elevated President Prabowo…",
+              "published_at": "2026-11-12T23:40:14+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "president"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ New Tools & Open Source",
+          "items": [
+            {
+              "id": "gh:Alishahryar1/free-claude-code",
+              "title": "Alishahryar1/free-claude-code",
+              "url": "https://github.com/Alishahryar1/free-claude-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…",
+              "published_at": "2026-11-13T10:15:21.606376+00:00",
+              "raw_score": 69663,
+              "secondary_metric": 415,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "terminal",
+                "vscode",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:QwenLM/qwen-code",
+              "title": "QwenLM/qwen-code",
+              "url": "https://github.com/QwenLM/qwen-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An open-source AI coding agent that lives in your terminal.",
+              "published_at": "2026-11-13T10:15:21.606376+00:00",
+              "raw_score": 30066,
+              "secondary_metric": 151,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "terminal",
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:openai/codex-security",
+              "title": "openai/codex-security",
+              "url": "https://github.com/openai/codex-security",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm…",
+              "published_at": "2026-11-13T10:15:21.606376+00:00",
+              "raw_score": 12761,
+              "secondary_metric": 754,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "cli",
+                "sdk",
+                "typescript"
+              ]
+            },
+            {
+              "id": "hn:50470488",
+              "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+              "url": "https://github.com/simpsoka/zigzag",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Free, open-source embroidery software for Mac and Windows. Turn SVG artwork into machine embroidery, edit stitches visually, and create designs with AI agents…",
+              "published_at": "2026-11-12T17:02:42+00:00",
+              "raw_score": 526,
+              "secondary_metric": 182,
+              "comments_url": "https://news.ycombinator.com/item?id=50470488",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 9.494,
+              "final_score": 14.494,
+              "matched_keywords": [
+                "show hn"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 AI Agents & Agentic Workflows",
+          "items": [
+            {
+              "id": "gh:racdeufindurch198812/Blender-AI-MCP-Studio",
+              "title": "racdeufindurch198812/Blender-AI-MCP-Studio",
+              "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:28:20+00:00",
+              "raw_score": 93,
+              "secondary_metric": 93,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.788,
+              "final_score": 13.188,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "gh:findavoulot1973/Blender-AI-MCP-Suite",
+              "title": "findavoulot1973/Blender-AI-MCP-Suite",
+              "url": "https://github.com/findavoulot1973/Blender-AI-MCP-Suite",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:26:22+00:00",
+              "raw_score": 91,
+              "secondary_metric": 91,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.757,
+              "final_score": 13.157,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "hn:50472260",
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Today, we're rolling out Gemini 4 Hydrogen inside Google Antigravity alongside a new model dropdown option called Orchestrator, which pairs Hydrogen withâ¦",
+              "published_at": "2026-11-12T18:52:01+00:00",
+              "raw_score": 418,
+              "secondary_metric": 115,
+              "comments_url": "https://news.ycombinator.com/item?id=50472260",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 9.743,
+              "final_score": 12.743,
+              "matched_keywords": [
+                "orchestrator"
+              ]
+            },
+            {
+              "id": "gh:hitkeeen/blender-ai-mcp-addon",
+              "title": "hitkeeen/blender-ai-mcp-addon",
+              "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI…",
+              "published_at": "2026-11-12T14:32:15+00:00",
+              "raw_score": 95,
+              "secondary_metric": 95,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.218,
+              "final_score": 12.618,
+              "matched_keywords": [
+                "multi-agent",
+                "mcp"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & AI Research",
+          "items": [
+            {
+              "id": "gh:ggml-org/llama.cpp",
+              "title": "ggml-org/llama.cpp",
+              "url": "https://github.com/ggml-org/llama.cpp",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[C++] LLM inference in C/C++",
+              "published_at": "2026-11-13T10:15:21.606376+00:00",
+              "raw_score": 134799,
+              "secondary_metric": 176,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 10.0,
+              "final_score": 16.0,
+              "matched_keywords": [
+                "llm",
+                "llama",
+                "llama.cpp",
+                "inference"
+              ]
+            },
+            {
+              "id": "gh:baiblinocun1986/blender-ai-copilot-hub",
+              "title": "baiblinocun1986/blender-ai-copilot-hub",
+              "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…",
+              "published_at": "2026-11-12T19:32:22+00:00",
+              "raw_score": 95,
+              "secondary_metric": 95,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 7.818,
+              "final_score": 13.818,
+              "matched_keywords": [
+                "claude",
+                "gemini",
+                "ollama",
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "hn:50465829",
+              "title": "Anthropic IPO",
+              "url": "https://ipo.anthropic.com/us/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Anthropic has filed to become a public company. Read the Foundersâ letter and other relevant information.",
+              "published_at": "2026-11-12T11:46:41+00:00",
+              "raw_score": 932,
+              "secondary_metric": 867,
+              "comments_url": "https://news.ycombinator.com/item?id=50465829",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 9.6,
+              "final_score": 12.6,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "hn:50471431",
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Today, we’re introducing Gemini 4 Hydrogen, our daily driver for agentic workflows",
+              "published_at": "2026-11-12T18:01:48+00:00",
+              "raw_score": 530,
+              "secondary_metric": 333,
+              "comments_url": "https://news.ycombinator.com/item?id=50471431",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 9.502,
+              "final_score": 12.502,
+              "matched_keywords": [
+                "gemini"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "edition_id": "2026-11-13-1356",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-13T13:56:57.571243+04:00",
+      "markdown_path": "digests/2026/11/2026-11-13-1356.md",
+      "html_path": "digests/2026/11/2026-11-13-1356.html",
+      "total_fetched": 269,
+      "total_after_dedup": 250,
+      "total_selected": 20,
+      "categories": [
+        {
+          "key": "ai_agents",
+          "title": "🤖 AI Agents & Agentic Workflows",
+          "items": [
+            {
+              "id": "gh:racdeufindurch198812/Blender-AI-MCP-Studio",
+              "title": "racdeufindurch198812/Blender-AI-MCP-Studio",
+              "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:28:20+00:00",
+              "raw_score": 92,
+              "secondary_metric": 92,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.772,
+              "final_score": 13.172,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "hn:50472260",
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:52:01+00:00",
+              "raw_score": 416,
+              "secondary_metric": 114,
+              "comments_url": "https://news.ycombinator.com/item?id=50472260",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 9.734,
+              "final_score": 12.734,
+              "matched_keywords": [
+                "orchestrator"
+              ]
+            },
+            {
+              "id": "gh:hitkeeen/blender-ai-mcp-addon",
+              "title": "hitkeeen/blender-ai-mcp-addon",
+              "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI…",
+              "published_at": "2026-11-12T14:32:15+00:00",
+              "raw_score": 94,
+              "secondary_metric": 94,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.203,
+              "final_score": 12.603,
+              "matched_keywords": [
+                "multi-agent",
+                "mcp"
+              ]
+            },
+            {
+              "id": "hn:50477649",
+              "title": "Brave Search API now accepts agentic payments via the x402 protocol",
+              "url": "https://brave.com/blog/search-api-agentic-payments/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-13T03:08:08+00:00",
+              "raw_score": 99,
+              "secondary_metric": 64,
+              "comments_url": "https://news.ycombinator.com/item?id=50477649",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 7.935,
+              "final_score": 10.935,
+              "matched_keywords": [
+                "agentic"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & AI Research",
+          "items": [
+            {
+              "id": "gh:ggml-org/llama.cpp",
+              "title": "ggml-org/llama.cpp",
+              "url": "https://github.com/ggml-org/llama.cpp",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[C++] LLM inference in C/C++",
+              "published_at": "2026-11-13T09:56:57.571243+00:00",
+              "raw_score": 134788,
+              "secondary_metric": 176,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 10.0,
+              "final_score": 18.4,
+              "matched_keywords": [
+                "llm",
+                "llama",
+                "llama.cpp",
+                "inference"
+              ]
+            },
+            {
+              "id": "gh:baiblinocun1986/blender-ai-copilot-hub",
+              "title": "baiblinocun1986/blender-ai-copilot-hub",
+              "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…",
+              "published_at": "2026-11-12T19:32:22+00:00",
+              "raw_score": 93,
+              "secondary_metric": 93,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 7.788,
+              "final_score": 13.788,
+              "matched_keywords": [
+                "claude",
+                "gemini",
+                "ollama",
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "title": "llm-gemini 0.37",
+              "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of…",
+              "published_at": "2026-11-12T22:55:19+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 5.2,
+              "final_score": 13.6,
+              "matched_keywords": [
+                "llm",
+                "gemini"
+              ]
+            },
+            {
+              "id": "hn:50471431",
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:01:48+00:00",
+              "raw_score": 528,
+              "secondary_metric": 333,
+              "comments_url": "https://news.ycombinator.com/item?id=50471431",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 13.0,
+              "matched_keywords": [
+                "gemini"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ New Tools & Open Source",
+          "items": [
+            {
+              "id": "hn:50471650",
+              "title": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+              "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "We (GREP.AI, YC F26) are open-sourcing AgentRun and turning it into a full managed agents platform. Read more about it in this post…",
+              "published_at": "2026-11-12T18:15:48+00:00",
+              "raw_score": 104,
+              "secondary_metric": 28,
+              "comments_url": "https://news.ycombinator.com/item?id=50471650",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 8.0,
+              "popularity_score": 7.666,
+              "final_score": 15.666,
+              "matched_keywords": [
+                "show hn",
+                "open-source"
+              ]
+            },
+            {
+              "id": "gh:Alishahryar1/free-claude-code",
+              "title": "Alishahryar1/free-claude-code",
+              "url": "https://github.com/Alishahryar1/free-claude-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…",
+              "published_at": "2026-11-13T09:56:57.571243+00:00",
+              "raw_score": 69655,
+              "secondary_metric": 415,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "terminal",
+                "vscode",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:QwenLM/qwen-code",
+              "title": "QwenLM/qwen-code",
+              "url": "https://github.com/QwenLM/qwen-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An open-source AI coding agent that lives in your terminal.",
+              "published_at": "2026-11-13T09:56:57.571243+00:00",
+              "raw_score": 30057,
+              "secondary_metric": 151,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "terminal",
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:agentes-chat/agentes-chat",
+              "title": "agentes-chat/agentes-chat",
+              "url": "https://github.com/agentes-chat/agentes-chat",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[TypeScript] Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex…",
+              "published_at": "2026-11-09T00:50:28+00:00",
+              "raw_score": 1255,
+              "secondary_metric": 1255,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 9.211,
+              "final_score": 14.811,
+              "matched_keywords": [
+                "open-source",
+                "self-hosted",
+                "typescript"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50471731",
+              "title": "Service degradation on Microsoft 365",
+              "url": "https://status.cloud.microsoft/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affe... https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft…",
+              "published_at": "2026-11-12T18:20:48+00:00",
+              "raw_score": 882,
+              "secondary_metric": 775,
+              "comments_url": "https://news.ycombinator.com/item?id=50471731",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 10.0,
+              "final_score": 14.2,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50471668",
+              "title": "Ask HN: Microsoft/Azure Outage?",
+              "url": "https://news.ycombinator.com/item?id=50471668",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "For the past 5 minutes all of our Microsoft Cloud connections are down. Anyone else? The Status page won't even load.",
+              "published_at": "2026-11-12T18:17:13+00:00",
+              "raw_score": 402,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50471668",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 8.076,
+              "final_score": 13.476,
+              "matched_keywords": [
+                "microsoft",
+                "cloud"
+              ]
+            },
+            {
+              "id": "gh:21stware/bowel",
+              "title": "21stware/bowel",
+              "url": "https://github.com/21stware/bowel",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Go] Bowel is a mihomo client for macOS, Windows, Linux and Android. (android, clash, clash-meta)",
+              "published_at": "2026-11-07T17:45:52+00:00",
+              "raw_score": 472,
+              "secondary_metric": 472,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Go",
+              "assigned_category": "trending_tech",
+              "relevance_score": 2.4,
+              "popularity_score": 8.772,
+              "final_score": 11.172,
+              "matched_keywords": [
+                "meta",
+                "linux"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
+              "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
+              "published_at": "2026-11-13T01:28:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_politics",
+          "title": "🌍 Trending Politics & World Affairs",
+          "items": [
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "title": "In French Election, Centrists Eye a Judo Star and a Central Banker",
+              "url": "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…",
+              "published_at": "2026-11-13T09:22:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "election"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "title": "Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy",
+              "url": "https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to…",
+              "published_at": "2026-11-12T03:22:36+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 6.0,
+              "popularity_score": 4.0,
+              "final_score": 10.0,
+              "matched_keywords": [
+                "diplomacy",
+                "war"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "title": "‘Win-win’ deal with EU could be done, Andy Burnham says",
+              "url": "https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…",
+              "published_at": "2026-11-12T22:01:39+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats",
+              "title": "Victoria election 2026: Labor and Greens trade accusations of ‘dodgy deals’ as preference fight puts key seats at risk",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Greens say they will not direct preferences to Labor in 15 seats after party’s ‘unforgivable’ decision earlier in week Get our daily political email , free…",
+              "published_at": "2026-11-13T06:16:06+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 3.0,
+              "popularity_score": 6.0,
+              "final_score": 9.0,
+              "matched_keywords": [
+                "election"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "edition_id": "2026-11-13-1352",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-13T13:52:27.135262+04:00",
+      "markdown_path": "digests/2026/11/2026-11-13-1352.md",
+      "html_path": "digests/2026/11/2026-11-13-1352.html",
+      "total_fetched": 284,
+      "total_after_dedup": 265,
+      "total_selected": 20,
+      "categories": [
+        {
+          "key": "ai_agents",
+          "title": "🤖 AI Agents & Agentic Workflows",
+          "items": [
+            {
+              "id": "gh:racdeufindurch198812/Blender-AI-MCP-Studio",
+              "title": "racdeufindurch198812/Blender-AI-MCP-Studio",
+              "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:28:20+00:00",
+              "raw_score": 92,
+              "secondary_metric": 92,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.772,
+              "final_score": 13.172,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "gh:findavoulot1973/Blender-AI-MCP-Suite",
+              "title": "findavoulot1973/Blender-AI-MCP-Suite",
+              "url": "https://github.com/findavoulot1973/Blender-AI-MCP-Suite",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:26:22+00:00",
+              "raw_score": 90,
+              "secondary_metric": 90,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.741,
+              "final_score": 13.141,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "hn:50472260",
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:52:01+00:00",
+              "raw_score": 414,
+              "secondary_metric": 113,
+              "comments_url": "https://news.ycombinator.com/item?id=50472260",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 9.726,
+              "final_score": 12.726,
+              "matched_keywords": [
+                "orchestrator"
+              ]
+            },
+            {
+              "id": "hn:50477649",
+              "title": "Brave Search API now accepts agentic payments via the x402 protocol",
+              "url": "https://brave.com/blog/search-api-agentic-payments/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-13T03:08:08+00:00",
+              "raw_score": 98,
+              "secondary_metric": 64,
+              "comments_url": "https://news.ycombinator.com/item?id=50477649",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 7.924,
+              "final_score": 10.924,
+              "matched_keywords": [
+                "agentic"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & AI Research",
+          "items": [
+            {
+              "id": "gh:ggml-org/llama.cpp",
+              "title": "ggml-org/llama.cpp",
+              "url": "https://github.com/ggml-org/llama.cpp",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[C++] LLM inference in C/C++",
+              "published_at": "2026-11-13T09:52:27.135262+00:00",
+              "raw_score": 134787,
+              "secondary_metric": 176,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 10.0,
+              "final_score": 18.4,
+              "matched_keywords": [
+                "llm",
+                "llama",
+                "llama.cpp",
+                "inference"
+              ]
+            },
+            {
+              "id": "gh:baiblinocun1986/blender-ai-copilot-hub",
+              "title": "baiblinocun1986/blender-ai-copilot-hub",
+              "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…",
+              "published_at": "2026-11-12T19:32:22+00:00",
+              "raw_score": 93,
+              "secondary_metric": 93,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 7.788,
+              "final_score": 13.788,
+              "matched_keywords": [
+                "claude",
+                "gemini",
+                "ollama",
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "title": "llm-gemini 0.37",
+              "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of…",
+              "published_at": "2026-11-12T22:55:19+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 5.2,
+              "final_score": 13.6,
+              "matched_keywords": [
+                "llm",
+                "gemini"
+              ]
+            },
+            {
+              "id": "hn:50471431",
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:01:48+00:00",
+              "raw_score": 528,
+              "secondary_metric": 333,
+              "comments_url": "https://news.ycombinator.com/item?id=50471431",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 13.0,
+              "matched_keywords": [
+                "gemini"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ New Tools & Open Source",
+          "items": [
+            {
+              "id": "hn:50471650",
+              "title": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+              "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "We (GREP.AI, YC F26) are open-sourcing AgentRun and turning it into a full managed agents platform. Read more about it in this post…",
+              "published_at": "2026-11-12T18:15:48+00:00",
+              "raw_score": 103,
+              "secondary_metric": 28,
+              "comments_url": "https://news.ycombinator.com/item?id=50471650",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 8.0,
+              "popularity_score": 7.656,
+              "final_score": 15.656,
+              "matched_keywords": [
+                "show hn",
+                "open-source"
+              ]
+            },
+            {
+              "id": "gh:Alishahryar1/free-claude-code",
+              "title": "Alishahryar1/free-claude-code",
+              "url": "https://github.com/Alishahryar1/free-claude-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…",
+              "published_at": "2026-11-13T09:52:27.135262+00:00",
+              "raw_score": 69653,
+              "secondary_metric": 415,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "terminal",
+                "vscode",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:QwenLM/qwen-code",
+              "title": "QwenLM/qwen-code",
+              "url": "https://github.com/QwenLM/qwen-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An open-source AI coding agent that lives in your terminal.",
+              "published_at": "2026-11-13T09:52:27.135262+00:00",
+              "raw_score": 30055,
+              "secondary_metric": 151,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "terminal",
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:agentes-chat/agentes-chat",
+              "title": "agentes-chat/agentes-chat",
+              "url": "https://github.com/agentes-chat/agentes-chat",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[TypeScript] Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex…",
+              "published_at": "2026-11-09T00:50:28+00:00",
+              "raw_score": 1254,
+              "secondary_metric": 1254,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 9.211,
+              "final_score": 14.811,
+              "matched_keywords": [
+                "open-source",
+                "self-hosted",
+                "typescript"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50471731",
+              "title": "Service degradation on Microsoft 365",
+              "url": "https://status.cloud.microsoft/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affe... https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft…",
+              "published_at": "2026-11-12T18:20:48+00:00",
+              "raw_score": 877,
+              "secondary_metric": 773,
+              "comments_url": "https://news.ycombinator.com/item?id=50471731",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 10.0,
+              "final_score": 14.2,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50471668",
+              "title": "Ask HN: Microsoft/Azure Outage?",
+              "url": "https://news.ycombinator.com/item?id=50471668",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "For the past 5 minutes all of our Microsoft Cloud connections are down. Anyone else? The Status page won't even load.",
+              "published_at": "2026-11-12T18:17:13+00:00",
+              "raw_score": 402,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50471668",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 8.076,
+              "final_score": 13.476,
+              "matched_keywords": [
+                "microsoft",
+                "cloud"
+              ]
+            },
+            {
+              "id": "gh:21stware/bowel",
+              "title": "21stware/bowel",
+              "url": "https://github.com/21stware/bowel",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Go] Bowel is a mihomo client for macOS, Windows, Linux and Android. (android, clash, clash-meta)",
+              "published_at": "2026-11-07T17:45:52+00:00",
+              "raw_score": 472,
+              "secondary_metric": 472,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Go",
+              "assigned_category": "trending_tech",
+              "relevance_score": 2.4,
+              "popularity_score": 8.772,
+              "final_score": 11.172,
+              "matched_keywords": [
+                "meta",
+                "linux"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
+              "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
+              "published_at": "2026-11-13T01:28:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_politics",
+          "title": "🌍 Trending Politics & World Affairs",
+          "items": [
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "title": "In French Election, Centrists Eye a Judo Star and a Central Banker",
+              "url": "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…",
+              "published_at": "2026-11-13T09:22:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "election"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "title": "Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy",
+              "url": "https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to…",
+              "published_at": "2026-11-12T03:22:36+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 6.0,
+              "popularity_score": 4.0,
+              "final_score": 10.0,
+              "matched_keywords": [
+                "diplomacy",
+                "war"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "title": "‘Win-win’ deal with EU could be done, Andy Burnham says",
+              "url": "https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…",
+              "published_at": "2026-11-12T22:01:39+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats",
+              "title": "Victoria election 2026: Labor and Greens trade accusations of ‘dodgy deals’ as preference fight puts key seats at risk",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Greens say they will not direct preferences to Labor in 15 seats after party’s ‘unforgivable’ decision earlier in week Get our daily political email , free…",
+              "published_at": "2026-11-13T06:16:06+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 3.0,
+              "popularity_score": 6.0,
+              "final_score": 9.0,
+              "matched_keywords": [
+                "election"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "edition_id": "2026-11-13-1339",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-13T13:39:46.131709+04:00",
+      "markdown_path": "digests/2026/11/2026-11-13-1339.md",
+      "html_path": "digests/2026/11/2026-11-13-1339.html",
+      "total_fetched": 284,
+      "total_after_dedup": 265,
+      "total_selected": 20,
+      "categories": [
+        {
+          "key": "ai_agents",
+          "title": "🤖 AI Agents & Agentic Workflows",
+          "items": [
+            {
+              "id": "gh:racdeufindurch198812/Blender-AI-MCP-Studio",
+              "title": "racdeufindurch198812/Blender-AI-MCP-Studio",
+              "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:28:20+00:00",
+              "raw_score": 90,
+              "secondary_metric": 90,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.741,
+              "final_score": 13.141,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "gh:findavoulot1973/Blender-AI-MCP-Suite",
+              "title": "findavoulot1973/Blender-AI-MCP-Suite",
+              "url": "https://github.com/findavoulot1973/Blender-AI-MCP-Suite",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…",
+              "published_at": "2026-11-12T19:26:22+00:00",
+              "raw_score": 88,
+              "secondary_metric": 88,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 5.4,
+              "popularity_score": 7.709,
+              "final_score": 13.109,
+              "matched_keywords": [
+                "mcp",
+                "model context protocol"
+              ]
+            },
+            {
+              "id": "hn:50472260",
+              "title": "Gemini 4 Hydrogen and Orchestrator",
+              "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:52:01+00:00",
+              "raw_score": 413,
+              "secondary_metric": 111,
+              "comments_url": "https://news.ycombinator.com/item?id=50472260",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 9.716,
+              "final_score": 12.716,
+              "matched_keywords": [
+                "orchestrator"
+              ]
+            },
+            {
+              "id": "hn:50477649",
+              "title": "Brave Search API now accepts agentic payments via the x402 protocol",
+              "url": "https://brave.com/blog/search-api-agentic-payments/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-13T03:08:08+00:00",
+              "raw_score": 94,
+              "secondary_metric": 61,
+              "comments_url": "https://news.ycombinator.com/item?id=50477649",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 7.86,
+              "final_score": 10.86,
+              "matched_keywords": [
+                "agentic"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & AI Research",
+          "items": [
+            {
+              "id": "gh:ggml-org/llama.cpp",
+              "title": "ggml-org/llama.cpp",
+              "url": "https://github.com/ggml-org/llama.cpp",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[C++] LLM inference in C/C++",
+              "published_at": "2026-11-13T09:39:46.131709+00:00",
+              "raw_score": 134783,
+              "secondary_metric": 176,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 10.0,
+              "final_score": 18.4,
+              "matched_keywords": [
+                "llm",
+                "llama",
+                "llama.cpp",
+                "inference"
+              ]
+            },
+            {
+              "id": "gh:baiblinocun1986/blender-ai-copilot-hub",
+              "title": "baiblinocun1986/blender-ai-copilot-hub",
+              "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…",
+              "published_at": "2026-11-12T19:32:22+00:00",
+              "raw_score": 93,
+              "secondary_metric": 93,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 7.788,
+              "final_score": 13.788,
+              "matched_keywords": [
+                "claude",
+                "gemini",
+                "ollama",
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "title": "llm-gemini 0.37",
+              "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of…",
+              "published_at": "2026-11-12T22:55:19+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 8.4,
+              "popularity_score": 5.2,
+              "final_score": 13.6,
+              "matched_keywords": [
+                "llm",
+                "gemini"
+              ]
+            },
+            {
+              "id": "hn:50471431",
+              "title": "Gemini 4 Hydrogen",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-12T18:01:48+00:00",
+              "raw_score": 528,
+              "secondary_metric": 330,
+              "comments_url": "https://news.ycombinator.com/item?id=50471431",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 10.0,
+              "final_score": 13.0,
+              "matched_keywords": [
+                "gemini"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ New Tools & Open Source",
+          "items": [
+            {
+              "id": "hn:50471650",
+              "title": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+              "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "We (GREP.AI, YC F26) are open-sourcing AgentRun and turning it into a full managed agents platform. Read more about it in this post…",
+              "published_at": "2026-11-12T18:15:48+00:00",
+              "raw_score": 102,
+              "secondary_metric": 28,
+              "comments_url": "https://news.ycombinator.com/item?id=50471650",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 8.0,
+              "popularity_score": 7.645,
+              "final_score": 15.645,
+              "matched_keywords": [
+                "show hn",
+                "open-source"
+              ]
+            },
+            {
+              "id": "gh:Alishahryar1/free-claude-code",
+              "title": "Alishahryar1/free-claude-code",
+              "url": "https://github.com/Alishahryar1/free-claude-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…",
+              "published_at": "2026-11-13T09:39:46.131709+00:00",
+              "raw_score": 69647,
+              "secondary_metric": 415,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "terminal",
+                "vscode",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:QwenLM/qwen-code",
+              "title": "QwenLM/qwen-code",
+              "url": "https://github.com/QwenLM/qwen-code",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An open-source AI coding agent that lives in your terminal.",
+              "published_at": "2026-11-13T09:39:46.131709+00:00",
+              "raw_score": 30053,
+              "secondary_metric": 151,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "terminal",
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:agentes-chat/agentes-chat",
+              "title": "agentes-chat/agentes-chat",
+              "url": "https://github.com/agentes-chat/agentes-chat",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[TypeScript] Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex…",
+              "published_at": "2026-11-09T00:50:28+00:00",
+              "raw_score": 1253,
+              "secondary_metric": 1253,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 9.21,
+              "final_score": 14.81,
+              "matched_keywords": [
+                "open-source",
+                "self-hosted",
+                "typescript"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50471731",
+              "title": "Service degradation on Microsoft 365",
+              "url": "https://status.cloud.microsoft/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affe... https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft…",
+              "published_at": "2026-11-12T18:20:48+00:00",
+              "raw_score": 870,
+              "secondary_metric": 767,
+              "comments_url": "https://news.ycombinator.com/item?id=50471731",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 10.0,
+              "final_score": 14.2,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "hn:50471668",
+              "title": "Ask HN: Microsoft/Azure Outage?",
+              "url": "https://news.ycombinator.com/item?id=50471668",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "For the past 5 minutes all of our Microsoft Cloud connections are down. Anyone else? The Status page won't even load.",
+              "published_at": "2026-11-12T18:17:13+00:00",
+              "raw_score": 402,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50471668",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 8.076,
+              "final_score": 13.476,
+              "matched_keywords": [
+                "microsoft",
+                "cloud"
+              ]
+            },
+            {
+              "id": "gh:21stware/bowel",
+              "title": "21stware/bowel",
+              "url": "https://github.com/21stware/bowel",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Go] Bowel is a mihomo client for macOS, Windows, Linux and Android. (android, clash, clash-meta)",
+              "published_at": "2026-11-07T17:45:52+00:00",
+              "raw_score": 472,
+              "secondary_metric": 472,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Go",
+              "assigned_category": "trending_tech",
+              "relevance_score": 2.4,
+              "popularity_score": 8.772,
+              "final_score": 11.172,
+              "matched_keywords": [
+                "meta",
+                "linux"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
+              "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
+              "published_at": "2026-11-13T01:28:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 5.4,
+              "popularity_score": 5.2,
+              "final_score": 10.6,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "trending_politics",
+          "title": "🌍 Trending Politics & World Affairs",
+          "items": [
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "title": "Leaders meet in Dublin amid search for lead EU negotiator for peace talks with Russia - Europe live",
+              "url": "https://www.theguardian.com/world/live/2026/nov/13/eu-leaders-negotiations-ukraine-russia-dublin-ai-summit-kushner-witkoff-latest-news-updates",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Ukraine and Russia have agreed to expand next round of negotiations to include European countries Estonian prime minister Kristen Michal has warned that…",
+              "published_at": "2026-11-13T09:30:13+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "title": "In French Election, Centrists Eye a Judo Star and a Central Banker",
+              "url": "https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…",
+              "published_at": "2026-11-13T09:22:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "election"
+              ]
+            },
+            {
+              "id": "rss:NYT World:https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "title": "Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy",
+              "url": "https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
+              "source_name": "NYT World",
+              "source_type": "rss",
+              "summary": "That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to…",
+              "published_at": "2026-11-12T03:22:36+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 6.0,
+              "popularity_score": 4.0,
+              "final_score": 10.0,
+              "matched_keywords": [
+                "diplomacy",
+                "war"
+              ]
+            },
+            {
+              "id": "rss:The Guardian World:https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "title": "‘Win-win’ deal with EU could be done, Andy Burnham says",
+              "url": "https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says",
+              "source_name": "The Guardian World",
+              "source_type": "rss",
+              "summary": "Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…",
+              "published_at": "2026-11-12T22:01:39+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_politics",
+              "language": "",
+              "assigned_category": "trending_politics",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "prime minister",
+                "eu"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-13 13:52</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="ai_agents">🤖 AI Agents &amp; Agentic Workflows</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button></div>
+        <section class="category-card" data-cat="ai_agents"><h2>🤖 AI Agents &amp; Agentic Workflows</h2><div class="item"><a class="item-title" href="https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio" target="_blank" rel="noopener">racdeufindurch198812/Blender-AI-MCP-Studio</a><div class="item-meta">GitHub Search · ⭐ 92</div><p class="item-summary">Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…</p></div><div class="item"><a class="item-title" href="https://github.com/findavoulot1973/Blender-AI-MCP-Suite" target="_blank" rel="noopener">findavoulot1973/Blender-AI-MCP-Suite</a><div class="item-meta">GitHub Search · ⭐ 90</div><p class="item-summary">Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved…</p></div><div class="item"><a class="item-title" href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" target="_blank" rel="noopener">Gemini 4 Hydrogen and Orchestrator</a><div class="item-meta">Hacker News · ▲ 414 pts · 💬 113 · <a href="https://news.ycombinator.com/item?id=50472260" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://brave.com/blog/search-api-agentic-payments/" target="_blank" rel="noopener">Brave Search API now accepts agentic payments via the x402 protocol</a><div class="item-meta">Hacker News · ▲ 98 pts · 💬 64 · <a href="https://news.ycombinator.com/item?id=50477649" target="_blank" rel="noopener">HN Discussion</a></div></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">ggml-org/llama.cpp</a><div class="item-meta">GitHub Trending · ⭐ 134,787 (+176 today)</div><p class="item-summary">[C++] LLM inference in C/C++</p></div><div class="item"><a class="item-title" href="https://github.com/baiblinocun1986/blender-ai-copilot-hub" target="_blank" rel="noopener">baiblinocun1986/blender-ai-copilot-hub</a><div class="item-meta">GitHub Search · ⭐ 93</div><p class="item-summary">A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub…</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/12/llm-gemini/" target="_blank" rel="noopener">llm-gemini 0.37</a><div class="item-meta">Simon Willison</div><p class="item-summary">Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It&#x27;s actually not too far off the price of…</p></div><div class="item"><a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener">Gemini 4 Hydrogen</a><div class="item-meta">Hacker News · ▲ 528 pts · 💬 333 · <a href="https://news.ycombinator.com/item?id=50471431" target="_blank" rel="noopener">HN Discussion</a></div></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/Parcha-ai/agentrun/blob/main/README.md" target="_blank" rel="noopener">Show HN: AgentRun – open-source, Self-improving Managed Agents</a><div class="item-meta">Hacker News · ▲ 103 pts · 💬 28 · <a href="https://news.ycombinator.com/item?id=50471650" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We (GREP.AI, YC F26) are open-sourcing AgentRun and turning it into a full managed agents platform. Read more about it in this post…</p></div><div class="item"><a class="item-title" href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">Alishahryar1/free-claude-code</a><div class="item-meta">GitHub Trending · ⭐ 69,653 (+415 today)</div><p class="item-summary">[Python] Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or…</p></div><div class="item"><a class="item-title" href="https://github.com/QwenLM/qwen-code" target="_blank" rel="noopener">QwenLM/qwen-code</a><div class="item-meta">GitHub Trending · ⭐ 30,055 (+151 today)</div><p class="item-summary">[TypeScript] An open-source AI coding agent that lives in your terminal.</p></div><div class="item"><a class="item-title" href="https://github.com/agentes-chat/agentes-chat" target="_blank" rel="noopener">agentes-chat/agentes-chat</a><div class="item-meta">GitHub Search · ⭐ 1,254</div><p class="item-summary">[TypeScript] Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex…</p></div></section><section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://status.cloud.microsoft/" target="_blank" rel="noopener">Service degradation on Microsoft 365</a><div class="item-meta">Hacker News · ▲ 877 pts · 💬 773 · <a href="https://news.ycombinator.com/item?id=50471731" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">https://www.abc.net.au/news/2026-11-13/microsoft-outage-affe... https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft…</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50471668" target="_blank" rel="noopener">Ask HN: Microsoft/Azure Outage?</a><div class="item-meta">Hacker News · ▲ 402 pts · 💬 1</div><p class="item-summary">For the past 5 minutes all of our Microsoft Cloud connections are down. Anyone else? The Status page won&#x27;t even load.</p></div><div class="item"><a class="item-title" href="https://github.com/21stware/bowel" target="_blank" rel="noopener">21stware/bowel</a><div class="item-meta">GitHub Search · ⭐ 472</div><p class="item-summary">[Go] Bowel is a mihomo client for macOS, Windows, Linux and Android. (android, clash, clash-meta)</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html" target="_blank" rel="noopener">Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew</a><div class="item-meta">NYT World</div><p class="item-summary">Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/13/world/europe/france-riner-judo-lagarde-election.html" target="_blank" rel="noopener">In French Election, Centrists Eye a Judo Star and a Central Banker</a><div class="item-meta">NYT World</div><p class="item-summary">Some voters want alternatives to a matchup between the far right and far left in the 2027 presidential election. Teddy Riner, the judo champion, is in, while…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html" target="_blank" rel="noopener">Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy</a><div class="item-meta">NYT World</div><p class="item-summary">That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says" target="_blank" rel="noopener">‘Win-win’ deal with EU could be done, Andy Burnham says</a><div class="item-meta">The Guardian World</div><p class="item-summary">Prime minister says reset could be a deal ‘like the Brexit people thought they were voting for in 2016’ Andy Burnham has said he believes a “win-win” deal…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/australia-news/2026/nov/13/victoria-state-election-2026-labor-greens-preference-deals-seats" target="_blank" rel="noopener">Victoria election 2026: Labor and Greens trade accusations of ‘dodgy deals’ as preference fight puts key seats at risk</a><div class="item-meta">The Guardian World</div><p class="item-summary">Greens say they will not direct preferences to Labor in 15 seats after party’s ‘unforgivable’ decision earlier in week Get our daily political email , free…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a class="current" href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
