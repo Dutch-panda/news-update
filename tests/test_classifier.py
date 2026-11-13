@@ -18,12 +18,7 @@ def test_category_display_order_and_limits() -> None:
         "ai_agents",
         "llm_models",
     ]
-    assert config.categories[0].max_items == 5
-    assert config.categories[1].max_items == 5
-    assert config.categories[2].max_items == 4
-    assert config.categories[3].max_items == 4
-    assert config.categories[4].max_items == 4
-    assert config.categories[5].max_items == 4
+    assert [cat.max_items for cat in config.categories] == [10, 10, 10, 10, 10, 10]
 
 
 def test_economics_classification_and_topic_aliases() -> None:
@@ -131,8 +126,8 @@ def test_trending_counts_reach_ten_and_enforce_diversity() -> None:
     now = datetime.now(timezone.utc)
 
     items: list[NewsItem] = []
-    # 4 from BBC World + 3 from Guardian World -> capped at 3 per source, 5 total in trending_politics
-    for i in range(4):
+    # 7 from BBC World + 6 from Guardian World -> capped at 5 per source, 10 total in trending_politics
+    for i in range(7):
         items.append(
             NewsItem(
                 id=f"rss:bbc:{i}",
@@ -144,7 +139,7 @@ def test_trending_counts_reach_ten_and_enforce_diversity() -> None:
                 default_category="trending_politics",
             )
         )
-    for i in range(3):
+    for i in range(6):
         items.append(
             NewsItem(
                 id=f"rss:guardian:{i}",
@@ -156,8 +151,8 @@ def test_trending_counts_reach_ten_and_enforce_diversity() -> None:
                 default_category="trending_politics",
             )
         )
-    # 4 from Hacker News + 3 from TechCrunch -> capped at 3 per source, 5 total in trending_tech
-    for i in range(4):
+    # 7 from Hacker News + 6 from TechCrunch -> capped at 5 per source, 10 total in trending_tech
+    for i in range(7):
         items.append(
             NewsItem(
                 id=f"hn:tech:{i}",
@@ -170,7 +165,7 @@ def test_trending_counts_reach_ten_and_enforce_diversity() -> None:
                 default_category="trending_tech",
             )
         )
-    for i in range(3):
+    for i in range(6):
         items.append(
             NewsItem(
                 id=f"rss:tc:{i}",
@@ -184,7 +179,7 @@ def test_trending_counts_reach_ten_and_enforce_diversity() -> None:
         )
 
     selected = classifier.classify_and_select(items, config=config, now=now)
-    assert len(selected["trending_tech"]) == 5
-    assert len(selected["trending_politics"]) == 5
+    assert len(selected["trending_tech"]) == 10
+    assert len(selected["trending_politics"]) == 10
     bbc_count = sum(1 for x in selected["trending_politics"] if x.source_name == "BBC World")
     assert bbc_count == config.digest.max_per_source_in_category

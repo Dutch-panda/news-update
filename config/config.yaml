@@ -6,16 +6,16 @@ schedule_slots:
   night: "Night Update (23:00)"
 
 digest:
-  items_per_category: 4
-  max_total_items: 26
-  max_per_source_in_category: 3
+  items_per_category: 10
+  max_total_items: 60
+  max_per_source_in_category: 5
   dedup_retention_days: 14
   description_max_chars: 160
 
 categories:
   - key: trending_tech
     title: "💻 Trending Tech News"
-    max_items: 5
+    max_items: 10
     keywords:
       - apple
       - google
@@ -42,7 +42,7 @@ categories:
 
   - key: trending_politics
     title: "🌍 Trending Politics & World Affairs"
-    max_items: 5
+    max_items: 10
     keywords:
       - election
       - parliament
@@ -70,7 +70,7 @@ categories:
 
   - key: economics
     title: "📈 Economics & Markets"
-    max_items: 4
+    max_items: 10
     keywords:
       - economy
       - economic
@@ -105,7 +105,7 @@ categories:
 
   - key: new_tools
     title: "🛠️ New Tools & Open Source"
-    max_items: 4
+    max_items: 10
     keywords:
       - show hn
       - open-source
@@ -134,7 +134,7 @@ categories:
 
   - key: ai_agents
     title: "🤖 AI Agents & Agentic Workflows"
-    max_items: 4
+    max_items: 10
     keywords:
       - ai agent
       - ai agents
@@ -163,7 +163,7 @@ categories:
 
   - key: llm_models
     title: "🧠 LLM Models & AI Research"
-    max_items: 4
+    max_items: 10
     keywords:
       - llm
       - large language model

@@ -105,13 +105,21 @@ GitHub Actions `schedule` triggers can occasionally experience 5–20 minute que
 
 To request topic-specific briefs on-demand in Telegram (`/economy`, `/politics`, `/brief politics economy`, `/tech`, `/tools`, `/agents`, `/llm`, `/topics`):
 
-1. Create a free [Cloudflare Workers](https://dash.cloudflare.com) Worker and deploy [`cloudflare-worker/worker.js`](cloudflare-worker/worker.js) (either paste it in the Cloudflare Dashboard or run `npx wrangler deploy` from `cloudflare-worker/`).
-2. Add these **Secrets / Variables** in your Worker's **Settings → Variables and Secrets**:
-   - `TELEGRAM_BOT_TOKEN`: Your BotFather token
-   - `TELEGRAM_WEBHOOK_SECRET`: Any random secret string (e.g. `my-secret-token-123`)
-   - `ALLOWED_CHAT_ID`: Your numeric `TELEGRAM_CHAT_ID`
-   - `GITHUB_PAT`: Fine-grained GitHub PAT with **Actions: Read and write** on this repo
-   - `GITHUB_REPO`: `<your-username>/news-update`
+1. **Create the Worker (Account-level, NOT inside a Domain):**
+   - Go to [dash.cloudflare.com](https://dash.cloudflare.com) and stay on your **Account Home** (do **not** click into a domain/website).
+   - In the left sidebar, click **Compute (Workers) → Workers & Pages** (or **Workers & Pages**).
+   - Click **Create** → **Create Worker** (or **Start with Hello World!**), name it `news-update-telegram-bot`, and click **Deploy**.
+   - Click **Edit code**, replace all code in `worker.js` with the contents of [`cloudflare-worker/worker.js`](cloudflare-worker/worker.js), and click **Deploy** (top right).
+   - Copy your free Worker URL (e.g. `https://news-update-telegram-bot.<your-subdomain>.workers.dev`). You do **not** need a custom domain.
+   *(Alternative via CLI from `cloudflare-worker/`: `npx wrangler login && npx wrangler deploy`)*
+2. **Add Secrets / Variables** in your Worker's **Settings → Variables and Secrets → Add**:
+   - `TELEGRAM_BOT_TOKEN` *(Secret)*: Your BotFather token
+   - `TELEGRAM_WEBHOOK_SECRET` *(Secret)*: Any random secret string (e.g. `my-secret-token-123`)
+   - `ALLOWED_CHAT_ID` *(Text)*: Your numeric `TELEGRAM_CHAT_ID`
+   - `GITHUB_PAT` *(Secret)*: Fine-grained GitHub PAT with **Actions: Read and write** on this repo
+   - `GITHUB_REPO` *(Text)*: `<your-username>/news-update`
+   - `GITHUB_WORKFLOW_ID` *(Text)*: `digest.yml`
+   - `GITHUB_REF` *(Text)*: `main`
 3. Register the Telegram webhook (replace `<BOT_TOKEN>`, `<WORKER_URL>`, `<WEBHOOK_SECRET>`):
    ```bash
    curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
