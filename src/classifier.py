@@ -21,6 +21,7 @@ SPECIFICITY_ORDER = (
     "ai_agents",
     "llm_models",
     "new_tools",
+    "economics",
     "trending_politics",
     "trending_tech",
 )

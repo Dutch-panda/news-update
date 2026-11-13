@@ -7,7 +7,7 @@ schedule_slots:
 
 digest:
   items_per_category: 4
-  max_total_items: 22
+  max_total_items: 26
   max_per_source_in_category: 3
   dedup_retention_days: 14
   description_max_chars: 160
@@ -52,7 +52,6 @@ categories:
       - prime minister
       - ministry
       - sanctions
-      - tariff
       - treaty
       - ceasefire
       - nato
@@ -68,8 +67,41 @@ categories:
       - war
       - conflict
       - policy
-      - central bank
+
+  - key: economics
+    title: "📈 Economics & Markets"
+    max_items: 4
+    keywords:
+      - economy
+      - economic
       - inflation
+      - gdp
+      - central bank
+      - federal reserve
+      - fed
+      - interest rate
+      - rate cut
+      - rate hike
+      - recession
+      - stock market
+      - s&p 500
+      - nasdaq
+      - bond
+      - treasury
+      - yield
+      - oil price
+      - opec
+      - imf
+      - world bank
+      - currency
+      - trade deficit
+      - tariff
+      - unemployment
+      - cpi
+      - jobs report
+      - earnings
+      - fiscal
+      - monetary policy
 
   - key: new_tools
     title: "🛠️ New Tools & Open Source"
@@ -209,6 +241,18 @@ sources:
     - name: "NYT World"
       url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
       default_category: "trending_politics"
+    - name: "BBC Business"
+      url: "https://feeds.bbci.co.uk/news/business/rss.xml"
+      default_category: "economics"
+    - name: "The Guardian Business"
+      url: "https://www.theguardian.com/uk/business/rss"
+      default_category: "economics"
+    - name: "CNBC Economy"
+      url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"
+      default_category: "economics"
+    - name: "NYT Economy"
+      url: "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"
+      default_category: "economics"
     - name: "TechCrunch"
       url: "https://techcrunch.com/feed/"
       default_category: "trending_tech"

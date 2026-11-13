@@ -1,0 +1,7 @@
+name = "news-update-telegram-bot"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+GITHUB_WORKFLOW_ID = "digest.yml"
+GITHUB_REF = "main"

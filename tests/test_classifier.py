@@ -3,6 +3,7 @@
 from datetime import datetime, timedelta, timezone
 
 from src.classifier import NewsClassifier
+from src.cli import resolve_topic_keys
 from src.config_loader import load_config
 from src.models import NewsItem
 
@@ -12,6 +13,7 @@ def test_category_display_order_and_limits() -> None:
     assert [c.key for c in config.categories] == [
         "trending_tech",
         "trending_politics",
+        "economics",
         "new_tools",
         "ai_agents",
         "llm_models",
@@ -21,6 +23,32 @@ def test_category_display_order_and_limits() -> None:
     assert config.categories[2].max_items == 4
     assert config.categories[3].max_items == 4
     assert config.categories[4].max_items == 4
+    assert config.categories[5].max_items == 4
+
+
+def test_economics_classification_and_topic_aliases() -> None:
+    config = load_config()
+    classifier = NewsClassifier(config.categories)
+
+    econ_item = NewsItem(
+        id="rss:cnbc:1",
+        title="Federal Reserve signals pause on interest rate cuts amid inflation data",
+        url="https://example.com/fed-rates",
+        source_name="CNBC Economy",
+        source_type="rss",
+        default_category="economics",
+    )
+    assert classifier.score_item(econ_item).assigned_category == "economics"
+
+    assert resolve_topic_keys("politics, economy", config) == [
+        "trending_politics",
+        "economics",
+    ]
+    assert resolve_topic_keys("agents llm", config) == [
+        "ai_agents",
+        "llm_models",
+    ]
+    assert resolve_topic_keys("all", config) == [c.key for c in config.categories]
 
 
 def test_word_boundaries_prevent_false_positives() -> None:

@@ -35,6 +35,57 @@ INDEX_PATH = DATA_DIR / "digests_index.json"
 logger = logging.getLogger("news_update")
 
 
+TOPIC_ALIASES: dict[str, str] = {
+    "tech": "trending_tech",
+    "trending_tech": "trending_tech",
+    "politics": "trending_politics",
+    "world": "trending_politics",
+    "trending_politics": "trending_politics",
+    "economy": "economics",
+    "economics": "economics",
+    "markets": "economics",
+    "finance": "economics",
+    "tools": "new_tools",
+    "new_tools": "new_tools",
+    "agents": "ai_agents",
+    "ai_agents": "ai_agents",
+    "agentic": "ai_agents",
+    "llm": "llm_models",
+    "llms": "llm_models",
+    "llm_models": "llm_models",
+    "ai": "llm_models",
+}
+
+
+def resolve_topic_keys(topics_arg: str, config: AppConfig) -> list[str]:
+    """Parse a comma/space-separated topic list into valid ordered category keys."""
+    valid_keys = [cat.key for cat in config.categories]
+    raw = (topics_arg or "").strip()
+    if not raw or raw.lower() == "all":
+        return valid_keys
+
+    requested: set[str] = set()
+    for token in raw.replace(",", " ").split():
+        cleaned = token.strip().lower().lstrip("/")
+        if not cleaned:
+            continue
+        if cleaned == "all":
+            return valid_keys
+        mapped = TOPIC_ALIASES.get(cleaned)
+        if mapped and mapped in valid_keys:
+            requested.add(mapped)
+        elif cleaned in valid_keys:
+            requested.add(cleaned)
+        else:
+            logger.warning("Ignoring unknown topic '%s'", token)
+
+    if not requested:
+        raise ValueError(
+            f"No valid topics matched '{topics_arg}'. Valid keys: {', '.join(valid_keys)}"
+        )
+    return [key for key in valid_keys if key in requested]
+
+
 def resolve_edition_slot(
     local_now: datetime,
     schedule_slots: dict[str, str],
@@ -60,18 +111,28 @@ def run_digest(
     no_telegram: bool = False,
     no_dedup: bool = False,
     edition_override: str = "",
+    topics: str = "",
+    chat_id_override: str = "",
+    on_demand: bool = False,
 ) -> int:
-    """Execute the full fetch -> dedup -> classify -> save -> site -> Telegram pipeline."""
+    """Execute the fetch -> dedup -> classify -> save/site -> Telegram pipeline."""
     config: AppConfig = load_config(config_path)
+    selected_topic_keys = resolve_topic_keys(topics, config) if topics.strip() else []
+    is_on_demand = on_demand or bool(selected_topic_keys)
+
     tz = timezone(timedelta(hours=config.timezone_offset_hours), name=f"UTC+{config.timezone_offset_hours:02d}:00")
     utc_now = datetime.now(timezone.utc)
     local_now = utc_now.astimezone(tz)
 
-    edition_key, edition_label = resolve_edition_slot(
-        local_now=local_now,
-        schedule_slots=config.schedule_slots,
-        override=edition_override,
-    )
+    if is_on_demand:
+        edition_key = "on_demand"
+        edition_label = "On-Demand Topic Brief"
+    else:
+        edition_key, edition_label = resolve_edition_slot(
+            local_now=local_now,
+            schedule_slots=config.schedule_slots,
+            override=edition_override,
+        )
     edition_id = local_now.strftime("%Y-%m-%d-%H%M")
 
     fetched: list[NewsItem] = []
@@ -101,14 +162,20 @@ def run_digest(
     dedup_store = DedupStore(SEEN_PATH)
     dedup_store.prune(config.digest.dedup_retention_days, now=utc_now)
 
-    unseen = dedup_store.filter_unseen(fetched, ignore_history=no_dedup)
+    # On-demand briefs ignore seen_items.json history so they always return the latest 24h stories
+    unseen = dedup_store.filter_unseen(fetched, ignore_history=(no_dedup or is_on_demand))
 
     classifier = NewsClassifier(config.categories)
     items_by_category = classifier.classify_and_select(unseen, config=config, now=utc_now)
 
+    active_categories = config.categories
+    if selected_topic_keys:
+        active_categories = [c for c in config.categories if c.key in selected_topic_keys]
+        items_by_category = {k: items_by_category.get(k, []) for k in selected_topic_keys}
+
     selected_items = [
         item
-        for cat in config.categories
+        for cat in active_categories
         for item in items_by_category.get(cat.key, [])
     ]
     enrich_missing_summaries(selected_items, max_chars=config.digest.description_max_chars)
@@ -118,27 +185,29 @@ def run_digest(
         edition_key=edition_key,
         edition_label=edition_label,
         generated_at=local_now,
-        categories=config.categories,
+        categories=active_categories,
         items_by_category=items_by_category,
         total_fetched=len(fetched),
         total_after_dedup=len(unseen),
     )
 
-    md_path, _, _ = save_markdown_and_index(
-        edition=edition,
-        digests_dir=DIGESTS_DIR,
-        index_path=INDEX_PATH,
-    )
-    index_html = build_site(index_path=INDEX_PATH, docs_dir=DOCS_DIR)
+    if not is_on_demand:
+        md_path, _, _ = save_markdown_and_index(
+            edition=edition,
+            digests_dir=DIGESTS_DIR,
+            index_path=INDEX_PATH,
+        )
+        index_html = build_site(index_path=INDEX_PATH, docs_dir=DOCS_DIR)
+        logger.info("Saved Markdown digest to %s", md_path)
+        logger.info("Rebuilt GitHub Pages site at %s", index_html)
 
     site_url = os.getenv("DIGEST_SITE_URL", "").strip()
     tg_chunks = render_telegram_chunks(edition, site_url=site_url)
 
-    logger.info("Saved Markdown digest to %s", md_path)
-    logger.info("Rebuilt GitHub Pages site at %s", index_html)
     logger.info(
-        "Edition '%s': %d selected items across %d Telegram message(s)",
+        "Edition '%s' (%s): %d selected items across %d Telegram message(s)",
         edition_id,
+        edition_key,
         edition.total_selected,
         len(tg_chunks),
     )
@@ -149,7 +218,7 @@ def run_digest(
             print(chunk)
     else:
         bot_token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-        chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+        chat_id = chat_id_override.strip() or os.getenv("TELEGRAM_CHAT_ID", "").strip()
         if not bot_token or not chat_id:
             logger.error(
                 "TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set to send Telegram messages "
@@ -159,7 +228,7 @@ def run_digest(
         send_telegram_messages(bot_token=bot_token, chat_id=chat_id, messages=tg_chunks)
         logger.info("Sent %d Telegram message(s) successfully.", len(tg_chunks))
 
-    if not dry_run:
+    if not dry_run and not is_on_demand:
         dedup_store.mark_seen(selected_items, now=utc_now)
         dedup_store.save()
 
@@ -198,6 +267,9 @@ def build_parser() -> argparse.ArgumentParser:
     run_p.add_argument("--no-telegram", action="store_true", help="Skip Telegram delivery but update seen_items.json")
     run_p.add_argument("--no-dedup", action="store_true", help="Ignore seen_items.json history for this run")
     run_p.add_argument("--edition", default="", help="Override edition slot (morning, afternoon, night)")
+    run_p.add_argument("--topics", default="", help="Comma-separated topics/aliases (e.g. politics,economy)")
+    run_p.add_argument("--chat-id", default="", help="Override TELEGRAM_CHAT_ID for delivery")
+    run_p.add_argument("--on-demand", action="store_true", help="Ephemeral on-demand brief (skip archive & dedup write)")
 
     sub.add_parser("get-chat-id", help="Discover your Telegram chat ID using TELEGRAM_BOT_TOKEN")
     sub.add_parser("rebuild-site", help="Rebuild docs/ static site from data/digests_index.json")
@@ -217,6 +289,9 @@ def main(argv: list[str] | None = None) -> int:
             no_telegram=args.no_telegram,
             no_dedup=args.no_dedup,
             edition_override=args.edition,
+            topics=args.topics,
+            chat_id_override=args.chat_id,
+            on_demand=args.on_demand,
         )
     if args.command == "get-chat-id":
         return cmd_get_chat_id()

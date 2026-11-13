@@ -8,18 +8,20 @@ It fetches updates three times a day (**08:00, 15:00, and 23:00 UTC+04:00**), fi
 
 ## Covered Subjects & Sources
 
-**Subjects (5 Categories):**
-1. **🤖 AI Agents & Agentic Workflows** (`ai_agents`)
-2. **🧠 LLM Models & AI Research** (`llm_models`)
-3. **🛠️ New Tools & Open Source** (`new_tools`)
-4. **💻 Trending Tech News** (`trending_tech`)
-5. **🌍 Trending Politics & World Affairs** (`trending_politics`)
+**Subjects (6 Categories):**
+1. **💻 Trending Tech News** (`trending_tech`)
+2. **🌍 Trending Politics & World Affairs** (`trending_politics`)
+3. **📈 Economics & Markets** (`economics`)
+4. **🛠️ New Tools & Open Source** (`new_tools`)
+5. **🤖 AI Agents & Agentic Workflows** (`ai_agents`)
+6. **🧠 LLM Models & AI Research** (`llm_models`)
 
 **Sources:**
 - **Hacker News**: Algolia HN API (front page, recent stories, and targeted AI agent / MCP / Show HN queries) with Firebase HN API fallback.
-- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) scraper + GitHub Search API for fast-rising new repositories from the last 7 days.
+- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) scraper + GitHub Search API for fast-rising new repositories from the last 24 hours.
 - **Free RSS / Atom Feeds**:
   - *World & Politics*: BBC World, The Guardian World, Al Jazeera, NYT World
+  - *Economics & Markets*: BBC Business, The Guardian Business, CNBC Economy, NYT Economy
   - *Tech & Startups*: TechCrunch, Ars Technica, The Verge
   - *AI & Engineering*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, TechCrunch AI
 
@@ -99,11 +101,36 @@ GitHub Actions `schedule` triggers can occasionally experience 5–20 minute que
      {"ref": "main"}
      ```
 
+### 6. On-Demand Telegram Bot Commands (Free Cloudflare Worker)
+
+To request topic-specific briefs on-demand in Telegram (`/economy`, `/politics`, `/brief politics economy`, `/tech`, `/tools`, `/agents`, `/llm`, `/topics`):
+
+1. Create a free [Cloudflare Workers](https://dash.cloudflare.com) Worker and deploy [`cloudflare-worker/worker.js`](cloudflare-worker/worker.js) (either paste it in the Cloudflare Dashboard or run `npx wrangler deploy` from `cloudflare-worker/`).
+2. Add these **Secrets / Variables** in your Worker's **Settings → Variables and Secrets**:
+   - `TELEGRAM_BOT_TOKEN`: Your BotFather token
+   - `TELEGRAM_WEBHOOK_SECRET`: Any random secret string (e.g. `my-secret-token-123`)
+   - `ALLOWED_CHAT_ID`: Your numeric `TELEGRAM_CHAT_ID`
+   - `GITHUB_PAT`: Fine-grained GitHub PAT with **Actions: Read and write** on this repo
+   - `GITHUB_REPO`: `<your-username>/news-update`
+3. Register the Telegram webhook (replace `<BOT_TOKEN>`, `<WORKER_URL>`, `<WEBHOOK_SECRET>`):
+   ```bash
+   curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
+     -H "Content-Type: application/json" \
+     -d '{"url":"<WORKER_URL>","secret_token":"<WEBHOOK_SECRET>"}'
+   ```
+4. *(Optional)* Register the `/` command menu with Telegram:
+   ```bash
+   curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setMyCommands" \
+     -H "Content-Type: application/json" \
+     -d '{"commands":[{"command":"brief","description":"Latest brief (or: /brief politics economy)"},{"command":"tech","description":"Trending Tech News"},{"command":"politics","description":"Trending Politics & World Affairs"},{"command":"economy","description":"Economics & Markets"},{"command":"tools","description":"New Tools & Open Source"},{"command":"agents","description":"AI Agents & Agentic Workflows"},{"command":"llm","description":"LLM Models & AI Research"},{"command":"topics","description":"List available commands"}]}'
+   ```
+
 ---
 
 ## Project Structure
 
 - `config/config.yaml`: Categories, keywords, RSS URLs, and selection limits
+- `cloudflare-worker/`: Free 24/7 Telegram webhook bridge to GitHub Actions
 - `src/fetchers/`: Hacker News, GitHub Trending/Search, and RSS feed fetchers
 - `src/classifier.py`: Rule-based keyword matcher and popularity/velocity ranker
 - `src/dedup.py`: URL normalization and title fingerprint deduplication

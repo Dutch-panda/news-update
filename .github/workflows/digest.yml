@@ -12,6 +12,18 @@ on:
         description: "Optional edition override (morning, afternoon, night)"
         required: false
         default: ""
+      topics:
+        description: "Optional comma-separated topics (e.g. politics,economy or all)"
+        required: false
+        default: ""
+      chat_id:
+        description: "Optional Telegram chat ID override"
+        required: false
+        default: ""
+      on_demand:
+        description: "On-demand mode (skips archiving & dedup state write)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -38,14 +50,28 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DIGEST_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          INPUT_EDITION: ${{ github.event.inputs.edition }}
+          INPUT_TOPICS: ${{ github.event.inputs.topics }}
+          INPUT_CHAT_ID: ${{ github.event.inputs.chat_id }}
+          INPUT_ON_DEMAND: ${{ github.event.inputs.on_demand }}
         run: |
-          EDITION_ARG=""
-          if [ -n "${{ github.event.inputs.edition }}" ]; then
-            EDITION_ARG="--edition ${{ github.event.inputs.edition }}"
+          ARGS=""
+          if [ -n "$INPUT_EDITION" ]; then
+            ARGS="$ARGS --edition $INPUT_EDITION"
           fi
-          python -m src.cli run $EDITION_ARG
+          if [ -n "$INPUT_TOPICS" ]; then
+            ARGS="$ARGS --topics $INPUT_TOPICS"
+          fi
+          if [ -n "$INPUT_CHAT_ID" ]; then
+            ARGS="$ARGS --chat-id $INPUT_CHAT_ID"
+          fi
+          if [ "$INPUT_ON_DEMAND" = "true" ]; then
+            ARGS="$ARGS --on-demand"
+          fi
+          python -m src.cli run $ARGS
 
       - name: Commit and push updated archive and site
+        if: ${{ github.event.inputs.on_demand != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
