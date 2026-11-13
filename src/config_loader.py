@@ -64,8 +64,9 @@ def load_config(path: Path | str | None = None) -> AppConfig:
     gh_config = GitHubConfig(
         enabled=bool(gh_raw.get("enabled", True)),
         trending_since=str(gh_raw.get("trending_since", "daily")),
-        search_lookback_days=int(gh_raw.get("search_lookback_days", 7)),
-        search_min_stars=int(gh_raw.get("search_min_stars", 15)),
+        trending_languages=[str(lang) for lang in gh_raw.get("trending_languages", ["", "python", "typescript"])],
+        search_lookback_days=int(gh_raw.get("search_lookback_days", 3)),
+        search_min_stars=int(gh_raw.get("search_min_stars", 50)),
         search_queries=[str(q) for q in gh_raw.get("search_queries", [])],
     )
 

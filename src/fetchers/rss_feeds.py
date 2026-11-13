@@ -71,7 +71,7 @@ def fetch_rss_feeds(
 
         entries = getattr(parsed, "entries", None) or []
         feed_count = 0
-        for entry in entries[:25]:
+        for entry in entries[:50]:
             title = clean_summary(entry.get("title") or "", max_chars=240)
             link = (entry.get("link") or "").strip()
             if not title or not link:

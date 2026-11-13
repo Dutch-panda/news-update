@@ -6,16 +6,16 @@ schedule_slots:
   night: "Night Update (23:00)"
 
 digest:
-  items_per_category: 10
-  max_total_items: 60
-  max_per_source_in_category: 5
+  items_per_category: 15
+  max_total_items: 80
+  max_per_source_in_category: 7
   dedup_retention_days: 14
   description_max_chars: 160
 
 categories:
   - key: trending_tech
     title: "💻 Trending Tech News"
-    max_items: 10
+    max_items: 15
     keywords:
       - apple
       - google
@@ -105,7 +105,7 @@ categories:
 
   - key: new_tools
     title: "🛠️ New Tools & Open Source"
-    max_items: 10
+    max_items: 15
     keywords:
       - show hn
       - open-source
@@ -134,7 +134,7 @@ categories:
 
   - key: ai_agents
     title: "🤖 AI Agents & Agentic Workflows"
-    max_items: 10
+    max_items: 15
     keywords:
       - ai agent
       - ai agents
@@ -163,7 +163,7 @@ categories:
 
   - key: llm_models
     title: "🧠 LLM Models & AI Research"
-    max_items: 10
+    max_items: 15
     keywords:
       - llm
       - large language model
@@ -219,8 +219,12 @@ sources:
   github:
     enabled: true
     trending_since: "daily"
-    search_lookback_days: 1
-    search_min_stars: 15
+    trending_languages:
+      - ""
+      - "python"
+      - "typescript"
+    search_lookback_days: 3
+    search_min_stars: 50
     search_queries:
       - "topic:ai-agents"
       - "topic:agentic-ai"
@@ -253,6 +257,15 @@ sources:
     - name: "NYT Economy"
       url: "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"
       default_category: "economics"
+    - name: "Business Insider"
+      url: "https://feeds.businessinsider.com/custom/all"
+      default_category: "economics"
+    - name: "Markets Insider"
+      url: "https://markets.businessinsider.com/rss/news"
+      default_category: "economics"
+    - name: "MarketWatch"
+      url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+      default_category: "economics"
     - name: "TechCrunch"
       url: "https://techcrunch.com/feed/"
       default_category: "trending_tech"
@@ -273,4 +286,10 @@ sources:
       default_category: "llm_models"
     - name: "TechCrunch AI"
       url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+      default_category: "llm_models"
+    - name: "Reddit r/LocalLLaMA"
+      url: "https://www.reddit.com/r/LocalLLaMA/.rss"
+      default_category: "llm_models"
+    - name: "ArXiv cs.AI"
+      url: "https://rss.arxiv.org/rss/cs.AI"
       default_category: "llm_models"

@@ -44,17 +44,25 @@ def render_telegram_chunks(
     site_url: str = "",
     max_chars: int = TELEGRAM_MAX_CHUNK_CHARS,
 ) -> list[str]:
-    """Render a DigestEdition into one or more Telegram-safe HTML messages."""
-    header = (
-        f"<b>{html.escape(edition.edition_label)}</b>\n"
-        f"<i>{html.escape(edition.generated_at.strftime('%a, %b %d, %Y · %H:%M %Z'))}</i>"
-    )
+    """Render a DigestEdition into a standalone header message plus Telegram-safe HTML chunks."""
+    active_cats = [
+        cat for cat in edition.categories if edition.items_by_category.get(cat.key)
+    ]
+    topic_summary = ", ".join(html.escape(cat.title) for cat in active_cats)
+    header_lines = [
+        "━━━━━━━━━━━━━━━━━━━━",
+        f"📡 <b>{html.escape(edition.edition_label)}</b>",
+        f"🗓 <i>{html.escape(edition.generated_at.strftime('%a, %b %d, %Y · %H:%M %Z'))}</i>",
+        f"📊 <i>{edition.total_selected} updates across {len(active_cats)} topic(s)</i>",
+    ]
+    if topic_summary:
+        header_lines.append(f"🏷 {topic_summary}")
+    header_lines.append("━━━━━━━━━━━━━━━━━━━━")
+    header_msg = "\n".join(header_lines)
 
     section_blocks: list[list[str]] = []
-    for cat in edition.categories:
+    for cat in active_cats:
         items = edition.items_by_category.get(cat.key, [])
-        if not items:
-            continue
         cat_header = f"<b>{html.escape(cat.title)}</b>"
         item_blocks = [_format_item_html(i, item) for i, item in enumerate(items, start=1)]
         section_blocks.append([cat_header, *item_blocks])
@@ -68,28 +76,27 @@ def render_telegram_chunks(
         safe_site = html.escape(cleaned_url, quote=True)
         footer = f'📚 <a href="{safe_site}">Browse Full Archive on GitHub Pages</a>'
 
-    chunks: list[str] = []
-    current = header
+    chunks: list[str] = [header_msg]
+    current = ""
 
     for blocks in section_blocks:
         full_section = "\n".join(blocks)
-        candidate = f"{current}\n\n{full_section}"
+        candidate = f"{current}\n\n{full_section}" if current else full_section
         if len(candidate) <= max_chars:
             current = candidate
             continue
 
-        # Flush current chunk if it already has content beyond just the header
-        if current != header:
+        if current:
             chunks.append(current)
             current = ""
 
         if len(full_section) <= max_chars:
-            current = f"{current}\n\n{full_section}" if current else full_section
+            current = full_section
             continue
 
         # Category exceeds max_chars: split cleanly at item boundaries
         cat_header = blocks[0]
-        part = f"{current}\n\n{cat_header}" if current else cat_header
+        part = cat_header
         for item_block in blocks[1:]:
             if len(f"{part}\n{item_block}") <= max_chars:
                 part = f"{part}\n{item_block}"
@@ -99,10 +106,12 @@ def render_telegram_chunks(
         current = part
 
     if footer:
-        if len(f"{current}\n\n{footer}") <= max_chars:
-            current = f"{current}\n\n{footer}"
+        candidate_footer = f"{current}\n\n{footer}" if current else footer
+        if len(candidate_footer) <= max_chars:
+            current = candidate_footer
         else:
-            chunks.append(current)
+            if current:
+                chunks.append(current)
             current = footer
 
     if current:

@@ -52,11 +52,13 @@ def test_telegram_escaping_and_chunking() -> None:
         site_url="https://user.github.io/news-update/",
         max_chars=1200,
     )
-    assert len(chunks) > 1
-    for chunk in chunks:
+    assert len(chunks) > 2
+    assert "Morning Update (08:00)" in chunks[0]
+    assert "━━━━━━━━━━━━━━━━━━━━" in chunks[0]
+    for chunk in chunks[1:]:
         assert len(chunk) <= 1200
         assert "<script>" not in chunk
-        assert "&lt;script&gt;" in chunk or "Browse Full Archive" in chunk or "Morning Update" in chunk
+        assert "&lt;script&gt;" in chunk or "Browse Full Archive" in chunk
 
     joined = "\n".join(chunks)
     assert "&lt;script&gt; &amp; Test" in joined

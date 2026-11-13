@@ -33,18 +33,20 @@ def _fetch_trending_page(
     since: str,
     max_summary_chars: int,
     now: datetime,
+    language: str = "",
 ) -> list[NewsItem]:
-    """Scrape https://github.com/trending?since=daily for trending repositories."""
+    """Scrape https://github.com/trending (all or language-specific) for trending repositories."""
     items: list[NewsItem] = []
+    url = f"{GITHUB_TRENDING_URL}/{language.strip('/')}" if language else GITHUB_TRENDING_URL
     try:
         resp = session.get(
-            GITHUB_TRENDING_URL,
+            url,
             params={"since": since},
             timeout=REQUEST_TIMEOUT_SEC,
         )
         resp.raise_for_status()
     except Exception as exc:
-        logger.warning("GitHub Trending page fetch failed: %s", exc)
+        logger.warning("GitHub Trending page fetch failed (%s): %s", url, exc)
         return items
 
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -189,8 +191,10 @@ def fetch_github(
 
     by_id: dict[str, NewsItem] = {}
 
-    for item in _fetch_trending_page(session, config.trending_since, max_summary_chars, ref_now):
-        by_id[item.id] = item
+    for lang in config.trending_languages or [""]:
+        for item in _fetch_trending_page(session, config.trending_since, max_summary_chars, ref_now, language=lang):
+            if item.id not in by_id:
+                by_id[item.id] = item
 
     for item in _fetch_search_repos(session, config, max_summary_chars, ref_now):
         if item.id not in by_id:
