@@ -198,7 +198,8 @@ def _format_entry_metrics(item: dict[str, Any]) -> str:
 def _render_digest_page(
     entry: dict[str, Any] | None,
     all_entries: list[dict[str, Any]],
-    root_prefix: str,
+    archive_prefix: str,
+    home_href: str,
     current_id: str,
 ) -> str:
     if entry is None:
@@ -264,7 +265,7 @@ def _render_digest_page(
     for e in all_entries[:40]:
         eid = e.get("edition_id", "")
         rel = e.get("html_path", "")
-        href = f"{root_prefix}{rel}"
+        href = f"{archive_prefix}{rel}"
         label = f"{eid[:10]} · {e.get('edition_label', eid)}"
         cls = ' class="current"' if eid == current_id else ""
         archive_links.append(
@@ -284,7 +285,7 @@ def _render_digest_page(
   <div class="container">
     <header>
       <div>
-        <h1><a href="{html.escape(root_prefix + 'index.html', quote=True)}">📡 News &amp; Trends Digest</a></h1>
+        <h1><a href="{html.escape(home_href, quote=True)}">📡 News &amp; Trends Digest</a></h1>
         <div class="meta">{subtitle}</div>
       </div>
       <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
@@ -309,11 +310,13 @@ def _render_digest_page(
 
 
 def build_site(index_path: Path | str, docs_dir: Path | str) -> Path:
-    """Rebuild the entire static HTML archive in docs/ from data/digests_index.json."""
+    """Rebuild the static HTML archive in docs/ and root index.html from data/digests_index.json."""
     idx_file = Path(index_path)
     docs_root = Path(docs_dir)
+    repo_root = docs_root.parent
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / ".nojekyll").write_text("", encoding="utf-8")
+    (repo_root / ".nojekyll").write_text("", encoding="utf-8")
 
     entries: list[dict[str, Any]] = []
     if idx_file.exists():
@@ -321,14 +324,27 @@ def build_site(index_path: Path | str, docs_dir: Path | str) -> Path:
         entries = list(data.get("digests", []))
 
     latest = entries[0] if entries else None
-    index_html = _render_digest_page(
+    latest_id = latest.get("edition_id", "") if latest else ""
+
+    docs_index_html = _render_digest_page(
         entry=latest,
         all_entries=entries,
-        root_prefix="",
-        current_id=latest.get("edition_id", "") if latest else "",
+        archive_prefix="",
+        home_href="index.html",
+        current_id=latest_id,
     )
     index_out = docs_root / "index.html"
-    index_out.write_text(index_html, encoding="utf-8")
+    index_out.write_text(docs_index_html, encoding="utf-8")
+
+    # Also write index.html at repository root so GitHub Pages works with either / (root) or /docs
+    root_index_html = _render_digest_page(
+        entry=latest,
+        all_entries=entries,
+        archive_prefix=f"{docs_root.name}/",
+        home_href="index.html",
+        current_id=latest_id,
+    )
+    (repo_root / "index.html").write_text(root_index_html, encoding="utf-8")
 
     for entry in entries:
         rel_html = entry.get("html_path", "")
@@ -339,7 +355,8 @@ def build_site(index_path: Path | str, docs_dir: Path | str) -> Path:
         page_html = _render_digest_page(
             entry=entry,
             all_entries=entries,
-            root_prefix=prefix,
+            archive_prefix=prefix,
+            home_href=f"{prefix}index.html",
             current_id=entry.get("edition_id", ""),
         )
         out_path = docs_root / rel_html

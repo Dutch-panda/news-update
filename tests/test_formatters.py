@@ -86,7 +86,12 @@ def test_markdown_and_site_builder(tmp_path: Path) -> None:
     assert site_index.exists()
     assert (docs_dir / ".nojekyll").exists()
     assert (docs_dir / rel_html).exists()
+    assert (tmp_path / "index.html").exists()
+    assert (tmp_path / ".nojekyll").exists()
 
     html_content = site_index.read_text(encoding="utf-8")
     assert "&lt;script&gt; &amp; Test" in html_content
     assert "<script> & Test" not in html_content
+
+    root_html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert f'href="docs/{rel_html}"' in root_html
