@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Morning Update (08:00) · 2026-11-14 04:04</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button><button class="pill" data-cat="economics">📈 Economics &amp; Markets</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="ai_agents">🤖 AI Agents &amp; Agentic Workflows</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas" target="_blank" rel="noopener">$11.4M in Nvidia hardware vanishes during shipment from CA to TX</a><div class="item-meta">Hacker News · ▲ 268 pts · 💬 144 · <a href="https://news.ycombinator.com/item?id=50487864" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Oakland police confirmed a grand theft investigation involving a shipment reportedly worth $11.4 million. The carrier&#x27;s identity and circumstances surrounding…</p></div><div class="item"><a class="item-title" href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank" rel="noopener">FAA issues national ground stop</a><div class="item-meta">Hacker News · ▲ 1,091 pts · 💬 664 · <a href="https://news.ycombinator.com/item?id=50489641" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">US air regulators have issued a nationwide ground stop for departing flights, citing a communications problem.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank" rel="noopener">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a><div class="item-meta">TechCrunch</div><p class="item-summary">Nvidia poured tens of billions into AI startups under Huang. Without him at the helm, founders and VCs are bracing for smaller checks and lower valuations.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/amd-and-other-chip-stocks-slide-as-wall-street-rethinks-the-ai-trade-without-jensen-huang-2fb74547?mod=mw_rss_topstories" target="_blank" rel="noopener">AMD and other chip stocks slide as Wall Street rethinks the AI trade without Jensen Huang</a><div class="item-meta">MarketWatch</div><p class="item-summary">At first, it looked like Nvidia’s pain might be the rest of the chip sector’s gain. But now, investors aren’t so sure.</p></div><div class="item"><a class="item-title" href="https://www.theregister.com/saas/2026/11/13/microsoft-outage-gives-customers-a-crash-course-in-dependence-on-redmond/5309805" target="_blank" rel="noopener">Microsoft outage gives customers a crash course in dependence on Redmond</a><div class="item-meta">Hacker News · ▲ 110 pts · 💬 36 · <a href="https://news.ycombinator.com/item?id=50487688" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Rivals offer sympathy for stranded admins – and a reminder that putting all your eggs in one basket has consequences</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/Teachers/comments/1xuup7a/technology_sucks_it_literally_takes_16_clicks_for/" target="_blank" rel="noopener">It Takes 16 Clicks for a Student to Open a PowerPoint on an iPad</a><div class="item-meta">Hacker News · ▲ 250 pts · 💬 127 · <a href="https://news.ycombinator.com/item?id=50487522" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.science.org/doi/10.1126/science.132.3436.1291" target="_blank" rel="noopener">Doomsday: Friday, 13 November, A.D. 2026 (1960)</a><div class="item-meta">Hacker News · ▲ 432 pts · 💬 301 · <a href="https://news.ycombinator.com/item?id=50482379" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://blog.jsweeting.me/big-tech-is-here-to-let-us-down" target="_blank" rel="noopener">Big tech is here to let us down</a><div class="item-meta">Hacker News · ▲ 196 pts · 💬 171 · <a href="https://news.ycombinator.com/item?id=50489083" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">When I woke up this morning I thought about writing about the ongoing drama surrounding Nvidia and its morally and ethically corrupt leader. But, then I...</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/news/video/2026/nov/13/why-the-nvidia-scandal-is-far-from-over-the-latest" target="_blank" rel="noopener">Why the Nvidia scandal is far from over - The Latest</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Jensen Huang’s resignation from the AI chipmaker Nvidia has sent shockwaves through the global economy. Huang resigned after reported affairs with an Nvidia…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/us-news/2026/nov/13/trump-nvidia-stock-jensen-huang-us-china" target="_blank" rel="noopener">Trump bought Nvidia stock as he helped chipmaker with change to export rule</a><div class="item-meta">The Guardian Business</div><p class="item-summary">President purchased up to $5m of stock before revoking Biden-era rule that limited Nvidia’s ability to sell to China Donald Trump bought Nvidia stock worth…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/12/world/asia/nvidia-ceo-huang-ai-memes.html" target="_blank" rel="noopener">Nvidia Scandal Unleashes a Flood of AI-Generated Memes</a><div class="item-meta">NYT World</div><p class="item-summary">The revelations surrounding Jensen Huang, who resigned from Nvidia over extramarital affairs, inspired social media posts using the very technology his…</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/smart-system-microsoft-faa-ground-stop-not-their-fault-2026-11" target="_blank" rel="noopener">FAA SMART AI system vendor and Microsoft both say ground stop isn&#x27;t their fault</a><div class="item-meta">Business Insider</div><p class="item-summary">Microsoft and Air Space Intelligence, the company behind the FAA&#x27;s new SMART system, said the nationwide ground stop wasn&#x27;t due to their products.</p></div><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nvidia scandal fallout widens as Trump&#x27;s treasury secretary blames cabinet colleague</a><div class="item-meta">BBC World</div><p class="item-summary">Scott Bessent suggests Howard Lutnick’s commerce department failed to ban exports of Nvidia&#x27;s chips to a firm thought to have links with China.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/microsoft-365-outage-outlook-teams-down-claude-what-we-know-2026-11" target="_blank" rel="noopener">Microsoft apologizes for massive outage that caused chaos for businesses</a><div class="item-meta">Business Insider</div><p class="item-summary">A global Microsoft 365 outage across two days disrupted email, Teams, OpenAI&#x27;s connector, and Claude for Outlook.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/nvidias-stock-is-on-a-losing-streak-not-seen-in-14-years-what-comes-next-a07e801e?mod=mw_rss_topstories" target="_blank" rel="noopener">Nvidia’s stock is on a losing streak not seen in 14 years. What comes next?</a><div class="item-meta">MarketWatch</div><p class="item-summary">Nvidia wiped out $573 billion in market capitalization this week — its sixth consecutive week of stock declines.</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/13/russia-ukraine-talks-kaja-kallas-eu-foreign-policy-dublin-summit" target="_blank" rel="noopener">Russia is ‘setting traps’ in Ukraine talks, EU foreign policy chief warns</a><div class="item-meta">The Guardian World</div><p class="item-summary">Kaja Kallas says Moscow is trying to divert attention from its aggression by raising issue of European security The EU’s foreign policy chief has warned…</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/2026/11/13/paraguays-ex-president-pena-faces-new-charge-over-ueno-bank-collapse?traffic_source=rss" target="_blank" rel="noopener">Paraguay’s ex-president Pena faces new charge over Ueno bank collapse</a><div class="item-meta">Al Jazeera</div><p class="item-summary">The criminal association charge over his alleged role in the collapse of the bank comes a week after his removal.</p></div><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/articles/cmlydy0xw45wo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Arrested generals and a threatened VP: President&#x27;s son fuels Ugandan succession fever</a><div class="item-meta">BBC World</div><p class="item-summary">The 52-year-old general’s provocative posts and military threats have fuelled rumours of a dynastic succession.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/global-oil-supplies-are-suddenly-flowing-why-a-crude-glut-wont-mean-cheaper-diesel-a5fa80c8?mod=mw_rss_topstories" target="_blank" rel="noopener">Global oil supplies are suddenly flowing. Why a crude glut won’t mean cheaper diesel.</a><div class="item-meta">MarketWatch</div><p class="item-summary">It’s official: the world is expected to soon have more oil than it needs for the first time since the Iran war began in February. But more oil doesn’t…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/13/hungary-seizes-195m-in-cash-found-buried-in-forests-amid-graft-inquiry" target="_blank" rel="noopener">Hungary seizes $19.5m in cash found buried in forests amid graft inquiry</a><div class="item-meta">The Guardian World</div><p class="item-summary">Anti-corruption agency carried out searches as part of investigation into Orbán-era minister accused of taking bribes Hungary’s anti-corruption agency said on…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/us-news/live/2026/nov/13/new-orleans-cruise-liner-tanker-crash-live-updates" target="_blank" rel="noopener">New Orleans boat crash live: all passengers and crew found alive in ‘miracle on the Mississippi’ – as it happened</a><div class="item-meta">The Guardian World</div><p class="item-summary">This live blog is now closed. You can read our full report here: ‘Miracle on the Mississippi’: all accounted for after tanker collides with cruise ship in New…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/13/faa-nationwide-ground-stop-flights" target="_blank" rel="noopener">Nationwide FAA ground stop: nearly 11,000 flights delayed or canceled at airports across the US</a><div class="item-meta">The Guardian World</div><p class="item-summary">Transportation secretary said stoppage is due to ‘communication issue’ and homeland security says there’s no indication of ‘nefarious attack’ Flights grounded…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/13/world/africa/miss-universe-us-visas.html" target="_blank" rel="noopener">African Miss Universe Contestants Struggle to Get U.S. Visas</a><div class="item-meta">NYT World</div><p class="item-summary">A crackdown on entry by some citizens of African countries by the U.S. immigration officials means that some contestants might not get visas in time to attend…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/law/2026/nov/13/staggered-age-of-consent-16-17-law" target="_blank" rel="noopener">Walliams allegations prompt calls for staggered age of consent at 16 and 17</a><div class="item-meta">The Guardian World</div><p class="item-summary">Barrister say law does not adequately recognise power imbalance between young people and much older adults Allegations against Russell Brand and, separately…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/uk-news/2026/nov/13/families-clear-homes-of-david-walliams-books-after-sexual-offence-allegations" target="_blank" rel="noopener">Families clear homes of David Walliams books after sexual offence allegations</a><div class="item-meta">The Guardian World</div><p class="item-summary">Parents take action while several independent bookshops say they had already stopped stocking his titles In Sarah’s house, David Walliams has been a bedtime…</p></div></section><section class="category-card" data-cat="economics"><h2>📈 Economics &amp; Markets</h2><div class="item"><a class="item-title" href="https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china" target="_blank" rel="noopener">Nvidia scandal: US treasury chief blames Lutnick’s commerce department over alleged lack of action</a><div class="item-meta">The Guardian World</div><p class="item-summary">US commerce secretary faces sack as questions emerge over senior Trump officials’ knowledge of alleged Chinese spy’s ties to Jensen Huang US politics – live…</p></div><div class="item"><a class="item-title" href="https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html" target="_blank" rel="noopener">AI risks are the biggest threat to the financial system, Fed survey finds</a><div class="item-meta">CNBC Economy</div><p class="item-summary">The report comes with Wall Street on edge over high-flying AI hyperscalers, while communities are on alert for the rapid spread of data centers.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/corporate-america-is-making-a-trillion-dollar-mistake-about-retirement-234c8996?mod=mw_rss_topstories" target="_blank" rel="noopener">The trillion-dollar mistake corporate America is making about retirement</a><div class="item-meta">MarketWatch</div><p class="item-summary">The market is dramatically underpricing the economic impact of Americans age 50 and older.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/anne-jakrajutatip-miss-universe-history-controversy-2026-11" target="_blank" rel="noopener">Who is Anne Jakrajutatip? Here&#x27;s what to know about the former Miss Universe CEO</a><div class="item-meta">Business Insider</div><p class="item-summary">Anne Jakrajutatip brought major changes to Miss Universe, but her tenure as CEO of the world&#x27;s biggest pageant was often overshadowed by controversy.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/faa-ground-stop-nationwide-airports-lines-flights-delayed-photos-2026-11" target="_blank" rel="noopener">Photos show trouble at airports nationwide as FAA grounds all flights</a><div class="item-meta">Business Insider</div><p class="item-summary">Passengers are being deplaned and flights are delayed after the FAA grounded all planes nationwide because of &quot;extraordinary circumstances.&quot;</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/faa-national-ground-stop-flights-2026-11" target="_blank" rel="noopener">FAA grounds air travel nationwide — more than 10,500 flights are delayed, and 2,700 are canceled, with no end in sight</a><div class="item-meta">Business Insider</div><p class="item-summary">The Federal Aviation Administration issued a nationwide ground stop. More than 10,500 flights have been delayed so far, and 2,700 canceled.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories" target="_blank" rel="noopener">FAA declares rare nationwide ground stop on flights, with more than 10,000 delayed so far</a><div class="item-meta">MarketWatch</div><p class="item-summary">Agency cites “extraordinary circumstances,” while Homeland Security Secretary Mullin says no indication of attack.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/new-orleans-cruise-ship-collision-tanker-search-rescue-photos-video-2026-11" target="_blank" rel="noopener">Photos and video show a cruise ship sinking after it was struck by a tanker in New Orleans</a><div class="item-meta">Business Insider</div><p class="item-summary">A cruise ship docked on the Mississippi River in New Orleans collided with a tanker on Friday.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/he-calls-my-plans-a-fantasy-my-husband-says-we-cant-afford-our-200-000-a-year-dream-retirement-i-think-hes-cheap-45bc5b4e?mod=mw_rss_topstories" target="_blank" rel="noopener">‘He calls my plans a fantasy’: My husband says we can’t afford a $200,000-a-year retirement. Is he being cheap?</a><div class="item-meta">MarketWatch</div><p class="item-summary">“We have $2 million saved in our retirement accounts and a house worth $1.3 million.”</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/she-has-a-history-of-financial-mismanagement-my-brother-cut-my-sister-out-of-his-will-im-getting-everything-do-i-tell-her-3e537851?mod=mw_rss_topstories" target="_blank" rel="noopener">‘She has a history of financial mismanagement’: My brother cut our sister out of his will. I’ll get everything. Do I tell her?</a><div class="item-meta">MarketWatch</div><p class="item-summary">“I’m torn between respecting my brother’s wishes and being fair to my sister.”</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a><div class="item-meta">GitHub Trending · ⭐ 67,554 (+111 today)</div><p class="item-summary">[Python] AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p></div><div class="item"><a class="item-title" href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">volcengine/OpenViking</a><div class="item-meta">GitHub Trending · ⭐ 42,203 (+113 today)</div><p class="item-summary">[Python] Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.</p></div><div class="item"><a class="item-title" href="https://github.com/ahujasid/mcp-for-blender" target="_blank" rel="noopener">ahujasid/mcp-for-blender</a><div class="item-meta">GitHub Trending · ⭐ 34,324 (+136 today)</div><p class="item-summary">[Python] Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.</p></div><div class="item"><a class="item-title" href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">NVIDIA/SkillSpector</a><div class="item-meta">GitHub Trending · ⭐ 25,892 (+190 today)</div><p class="item-summary">[Python] Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and…</p></div><div class="item"><a class="item-title" href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">langchain-ai/langgraph</a><div class="item-meta">GitHub Trending · ⭐ 44,921 (+49 today)</div><p class="item-summary">[Python] Build resilient agents.</p></div><div class="item"><a class="item-title" href="https://github.com/avenoxai/avenoxbeyin" target="_blank" rel="noopener">avenoxai/avenoxbeyin</a><div class="item-meta">GitHub Trending · ⭐ 456 (+51 today)</div><p class="item-summary">[Python] Your AI second brain in one command — open-source Obsidian + Claude Code system with persistent cross-session memory. avenox.lol/beyin.md</p></div><div class="item"><a class="item-title" href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noopener">abhigyanpatwari/GitNexus</a><div class="item-meta">GitHub Trending · ⭐ 48,519 (+48 today)</div><p class="item-summary">[TypeScript] GitNexus: The Zero-Server Code Intelligence Engine</p></div><div class="item"><a class="item-title" href="https://github.com/RouteInferno/shamus-osint-ai-agent" target="_blank" rel="noopener">RouteInferno/shamus-osint-ai-agent</a><div class="item-meta">GitHub Search · ⭐ 71</div><p class="item-summary">[JavaScript] Command-line AI agent for OSINT: one command, it picks the tools, runs them and writes the case file. (ai-agent, cli, investigation)</p></div><div class="item"><a class="item-title" href="https://github.com/berkantay/gpucanvas" target="_blank" rel="noopener">berkantay/gpucanvas</a><div class="item-meta">GitHub Search · ⭐ 151</div><p class="item-summary">[TypeScript] Put thousands of live DOM nodes on an infinite canvas: the GPU draws them, an editor selects, moves and resizes them, shaders and transitions run…</p></div><div class="item"><a class="item-title" href="https://hexalexagons.com/" target="_blank" rel="noopener">Show HN: Hexalexagons, a daily word game on a hexagonal grid</a><div class="item-meta">Hacker News · ▲ 13 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50484579" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hello HN! I made a daily word game where you find words on a hexagonal grid, without crossing walls. Feedback is very welcome!</p></div><div class="item"><a class="item-title" href="https://github.com/tiobeharxi1987/blender-ai-copilot-flow" target="_blank" rel="noopener">tiobeharxi1987/blender-ai-copilot-flow</a><div class="item-meta">GitHub Search · ⭐ 159</div><p class="item-summary">A controlled AI workflow for Blender: every copilot edit is a supervised tool call—proposed, approved, executed in sequence, cancellable after the current…</p></div><div class="item"><a class="item-title" href="https://github.com/precygtrucqui1981/blender-ai-copilot-lab" target="_blank" rel="noopener">precygtrucqui1981/blender-ai-copilot-lab</a><div class="item-meta">GitHub Search · ⭐ 158</div><p class="item-summary">An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board, review findings, one…</p></div><div class="item"><a class="item-title" href="https://github.com/fumbdendade19718/blender-ai-copilot-desk" target="_blank" rel="noopener">fumbdendade19718/blender-ai-copilot-desk</a><div class="item-meta">GitHub Search · ⭐ 157</div><p class="item-summary">A visual AI desk for Blender—chat, scene objects, viewport snapshots, approvals and a live task board in one companion window, backed by your choice of models…</p></div><div class="item"><a class="item-title" href="https://github.com/Doug-218/blender-ai-copilot-forge" target="_blank" rel="noopener">Doug-218/blender-ai-copilot-forge</a><div class="item-meta">GitHub Search · ⭐ 155</div><p class="item-summary">A scene-forging AI copilot for Blender—describe the layout and watch primitives, cameras, lights, materials and parenting assemble in ordered steps, with…</p></div><div class="item"><a class="item-title" href="https://github.com/benzgasfuncring197110/blender-ai-copilot-bridge" target="_blank" rel="noopener">benzgasfuncring197110/blender-ai-copilot-bridge</a><div class="item-meta">GitHub Search · ⭐ 154</div><p class="item-summary">An MCP bridge for Blender that exposes 27 supervised scene tools to OpenCode and any compatible client—authenticated Streamable HTTP on a local endpoint, with…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 AI Agents &amp; Agentic Workflows</h2><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvfg2n/computer_use_programspi_extensions/" target="_blank" rel="noopener">Computer use programs/Pi extensions</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">I&#x27;ve eard much stuff about Codex and CC computer use, is there any decent program/Pi Agent extension that I can install and use to let my local models control…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/" target="_blank" rel="noopener">AI agent startup LangChain hits $3B valuation</a><div class="item-meta">TechCrunch</div><p class="item-summary">LangChain now claims 7,000 customers of its model and platform agnostic agent management tool LangSmith.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14846" target="_blank" rel="noopener">Open Challenges and Opportunities in Human-Agent Systems</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14846v1 Announce Type: new Abstract: Agentic AI systems increasingly undertake extended tasks and act on people&#x27;s behalf, making human-agent…</p></div><div class="item"><a class="item-title" href="https://atg.science/careers" target="_blank" rel="noopener">Autonomous (YC F25) is hiring MTS to build AI agents that manage your wealth</a><div class="item-meta">Hacker News · ▲ 0 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50489589" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Advanced AI research lab developing autonomous systems for complex decision-making in uncertain environments.</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvhzq9/deepseek_v41_flash_vs_qwen_38_flash_next/" target="_blank" rel="noopener">DeepSeek v4.1 Flash vs Qwen 3.8 Flash Next Performance</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">While waiting for Qwen 4, I installed and benchmarked DeepSeek v4.1 Flash to see if I was missing out. Based on the type of work I do, DeepSeek is not better…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvh4ag/weight_space_programming_for_quantization_nace/" target="_blank" rel="noopener">Weight Space Programming for Quantization: Nace quants achieve up to 2x better KL divergence for Qwen 9B, 27B, 35B &amp; Flash Next [GGUF]</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">hey llamas, its Alish from nace.ai (open source ai lab behind #1 decision model on latest Artificial Analysis decision index v2.1) &amp; Kapitsa (optimized…</p></div><div class="item"><a class="item-title" href="https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/" target="_blank" rel="noopener">OpenAI disbands its robotics team as its general models start running robots</a><div class="item-meta">Hacker News · ▲ 136 pts · 💬 60 · <a href="https://news.ycombinator.com/item?id=50487184" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">OpenAI moved its robotics researchers onto other teams representing new thinking about the best way to build general-purpose robots.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank" rel="noopener">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a><div class="item-meta">The Verge</div><p class="item-summary">After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for…</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/anthropic-dario-amodei-types-workers-hiring-culture-retention-2026-11" target="_blank" rel="noopener">The 4 types of people Dario Amodei said he won’t hire — and what Anthropic looks for instead</a><div class="item-meta">Business Insider</div><p class="item-summary">Anthropic CEO Dario Amodei said he spends 40-50% of his time focusing on talent and culture.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/bitcoin-could-fall-even-further-if-investors-cash-out-to-buy-into-the-anthropic-ipo-5a14f46a?mod=mw_rss_topstories" target="_blank" rel="noopener">Bitcoin is now below $69,000 and could fall even further if investors cash out to buy into the Anthropic IPO</a><div class="item-meta">MarketWatch</div><p class="item-summary">Investors may have to sell some of their existing bets in crypto to make room in their portfolio for what could be one of the most sought-after stock…</p></div><div class="item"><a class="item-title" href="https://github.com/basetenlabs/deepseek-ultrafast" target="_blank" rel="noopener">DeepSeek Ultrafast</a><div class="item-meta">Hacker News · ▲ 17 pts · 💬 5 · <a href="https://news.ycombinator.com/item?id=50486914" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Contribute to basetenlabs/deepseek-ultrafast development by creating an account on GitHub.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.15729" target="_blank" rel="noopener">DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.15729v1 Announce Type: new Abstract: Enterprise agents accumulate memory across dozens of sessions in which facts contradict, get superseded, and…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14997" target="_blank" rel="noopener">Same Task, Different Statement: When and How Reformulation Helps LLM Problem Solving</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14997v1 Announce Type: new Abstract: When people face a hard problem, they often restate it in a clearer way before solving it. We study whether…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14681" target="_blank" rel="noopener">Together Compiler: Continual Compilation for AI Inference</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14681v1 Announce Type: new Abstract: Today&#x27;s AI workloads are rapidly changing: new models are released more often, model architectures are…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.15600" target="_blank" rel="noopener">MemCredit: From Relevance to Utility for Decision-Time Memory in Long-Horizon Web Agents</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.15600v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly operate over long Web interaction histories, making memory…</p></div><div class="item"><a class="item-title" href="https://huggingface.co/blog/dlouapre/yang-mills-openai" target="_blank" rel="noopener">Yang-Mills, OpenAI proof, and the mass gap problem</a><div class="item-meta">Hacker News · ▲ 11 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50486637" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A Blog post by David Louapre on Hugging Face</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvm8r3/why_are_llms_still_so_bad_at_jokes/" target="_blank" rel="noopener">Why are LLMs still so bad at jokes?</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">I remembered that this was one of my evaluation approaches from 2 years ago to test a model&#x27;s general capability. I remember wondering in the near future how…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xv7fku/perplexity_releases_decider_v13_26b_and_decider/" target="_blank" rel="noopener">Perplexity releases Decider v1.3 (26B) and Decider Flash v1.3 (5B): open-weight (Apache 2.0) classification/decision models</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Perplexity has released two new &quot;decision models.&quot; These are general-purpose classifiers built from generative LLM backbones. You give them an input (the…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14794" target="_blank" rel="noopener">When Is Proof-Step Verification Worth Its Cost? Operating Requirements of Certify-or-Decline Verification for Open-Weight Mathematical Reasoning</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14794v1 Announce Type: new Abstract: Proof-step verification rewrites a solver&#x27;s answer into typed steps and uses LLM judges to certify or decline…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
