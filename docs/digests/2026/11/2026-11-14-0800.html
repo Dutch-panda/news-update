@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Morning Update (08:00) · 2026-11-14 08:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button><button class="pill" data-cat="economics">📈 Economics &amp; Markets</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus" target="_blank" rel="noopener">Nvidia Allegedly Engineered Scarcity by Funding AI Startups to Buy Its GPUs</a><div class="item-meta">Hacker News · ▲ 51 pts · 💬 13 · <a href="https://news.ycombinator.com/item?id=50493251" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Following the departure of now-former NVIDIA CEO, Jensen Huang, a new report by The Wall Street Journal (via Wccftech) has emerged alleging that NVIDIA…</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50491617" target="_blank" rel="noopener">Tell HN: Google Search to start locking down search behind a login wall</a><div class="item-meta">Hacker News · ▲ 26 pts · 💬 8</div><p class="item-summary">Usually, when I used Google Search on some ISP CGNAT IP addresses (not even a VPN), I usually get countless CAPTCHAs evertime I initiate a new session to…</p></div><div class="item"><a class="item-title" href="https://finance.yahoo.com/markets/stocks/articles/nvidia-director-sold-nearly-1b-160000846.html" target="_blank" rel="noopener">Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal</a><div class="item-meta">Hacker News · ▲ 54 pts · 💬 19 · <a href="https://news.ycombinator.com/item?id=50492993" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://english.nv.ua/nation/thirteen-day-drone-blitz-paralyzes-36-of-moscow-s-oil-50658616.html" target="_blank" rel="noopener">Ukraine knocks out 36% of Russia&#x27;s oil refining capacity in under two weeks</a><div class="item-meta">Hacker News · ▲ 216 pts · 💬 106 · <a href="https://news.ycombinator.com/item?id=50492456" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Ukrainian drone strikes knocked out 36% of Russia’s total oil refining capacity in less than two weeks, hitting at least nine major refineries between Oct. 30…</p></div><div class="item"><a class="item-title" href="https://standwithjensen.com/" target="_blank" rel="noopener">An open letter to the Nvidia Board of Directors</a><div class="item-meta">Hacker News · ▲ 36 pts · 💬 23 · <a href="https://news.ycombinator.com/item?id=50491690" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">An independent campaign of current and former NVIDIA employees and shareholders expressing gratitude to Jensen Huang and asking the Board for a transparent…</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/video/newsfeed/2026/11/14/microsoft-services-begin-recovering-after-global-outage?traffic_source=rss" target="_blank" rel="noopener">Microsoft services begin recovering after global outage</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Microsoft services began recovering on Friday after a global outage disrupted Outlook and Teams.</p></div><div class="item"><a class="item-title" href="https://orcasairband.com/" target="_blank" rel="noopener">Live airband on all frequencies from KORS. Victoria, CA also ground stopped</a><div class="item-meta">Hacker News · ▲ 229 pts · 💬 54 · <a href="https://news.ycombinator.com/item?id=50490593" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Every aviation radio transmission heard from Orcas Island, WA: live, transcribed, and archived. Listen to all channels at once, pick your own, or rewind to…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths" target="_blank" rel="noopener">AI unlocks Gödel&#x27;s notebooks, said to contain hundreds of proved theorems</a><div class="item-meta">Hacker News · ▲ 349 pts · 💬 94 · <a href="https://news.ycombinator.com/item?id=50486748" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Kurt Gödel left 1,009 pages of densely written text – much of it in an obsolete shorthand – which is now said to contain hundreds of proved theorems</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/technology/2026/nov/13/how-microsoft-outage-has-affected-key-public-services-in-the-uk" target="_blank" rel="noopener">How Microsoft outage has affected key public services in the UK</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Hospitals, GPs, police forces and property agents have had to find a workaround for Microsoft packages Hospitals, GPs, police forces and property agents…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/" target="_blank" rel="noopener">Uber confirms hackers stole thousands of drivers’ license information in data breach</a><div class="item-meta">TechCrunch</div><p class="item-summary">The ridesharing giant said drivers&#x27; license information stored by AI cloud company Fireworks AI was stolen during a security incident.</p></div><div class="item"><a class="item-title" href="https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Why is Microsoft&#x27;s outage lasting so long and will emails be lost?</a><div class="item-meta">BBC World</div><p class="item-summary">Microsoft says it is continuing to restore services including Outlook and Teams following a global outage.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/" target="_blank" rel="noopener">Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!</a><div class="item-meta">TechCrunch</div><p class="item-summary">New research shows the most advanced AI models from China were trained on banned Nvidia chips.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/tech-policy/2026/11/microsoft-blames-failed-server-health-checks-not-hackers-for-global-outage/" target="_blank" rel="noopener">Microsoft’s global outage may be worse than Amazon&#x27;s or CrowdStrike&#x27;s, expert says</a><div class="item-meta">Ars Technica</div><p class="item-summary">Governments, hospitals, courts scrambled by global Microsoft outage.</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/australia-news/2026/nov/14/microsoft-deeply-sorry-for-global-disruption-that-could-have-billion-dollar-impact-on-australia" target="_blank" rel="noopener">Microsoft ‘deeply sorry’ for global disruption that could have billion-dollar impact on Australia</a><div class="item-meta">The Guardian World</div><p class="item-summary">Experts say outage exposes ‘Australia’s reliance on foreign technology’ as software giant says services being restored Get our breaking news email , free app…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/13/technology/microsoft-outage-what-to-know.html" target="_blank" rel="noopener">Microsoft’s Global Outage and Fixes: What We Know</a><div class="item-meta">NYT World</div><p class="item-summary">The company described “encouraging” progress on efforts to overcome a second day of disruptions to its email, messaging and other services.</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/liveblog/2026/11/14/iran-war-live-fighting-grips-yemen-as-qatar-turkiye-sign-defence-deal?traffic_source=rss" target="_blank" rel="noopener">Iran war live: Fighting grips Yemen as Qatar, Turkiye sign defence deal</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Doha, Ankara agreement pledges joint action against external attacks as fighting in Yemen displaces civilians.</p></div><div class="item"><a class="item-title" href="https://www.ft.com/content/7377e093-d58e-4303-853a-5aa82b6a747e" target="_blank" rel="noopener">Russia loses almost half a million lives in war on Ukraine</a><div class="item-meta">Hacker News · ▲ 10 pts · 💬 5 · <a href="https://news.ycombinator.com/item?id=50489373" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/13/datasette-leaflet/" target="_blank" rel="noopener">datasette-leaflet 0.3</a><div class="item-meta">Simon Willison</div><p class="item-summary">Release: datasette-leaflet 0.3 OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/live/2026/11/13/us/ground-stop-nationwide-flights-faa/nationwide-ground-stop-flights-faa" target="_blank" rel="noopener">Here’s the latest.</a><div class="item-meta">NYT World</div><p class="item-summary">Trump administration officials blamed a telecommunication outage and said they needed more funding from Congress to pay for system upgrades.</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/us-news/2026/nov/13/mississippi-river-crash-new-orleans" target="_blank" rel="noopener">All passengers and crew accounted for after New Orleans boat crash in ‘miracle on the Mississippi’</a><div class="item-meta">The Guardian World</div><p class="item-summary">No passengers or crew killed or critically hurt after tanker collides with river cruise ship on Mississippi, officials say In what the city’s mayor declared a…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/australia-news/2026/nov/14/one-nation-nsw-candidate-stuart-bonds-ntwnfb" target="_blank" rel="noopener">Stuart Bonds made ‘racist’ and ‘divisive’ comments. But One Nation is showing no sign of dumping the NSW candidate</a><div class="item-meta">The Guardian World</div><p class="item-summary">The former coalminer’s claim Australians are being ‘demographically replaced’ sparked wide criticism, but his party has shown no signs of dumping him Get our…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/uk-news/2026/nov/13/us-air-force-responds-to-suspected-drone-activity-at-raf-lakenheath" target="_blank" rel="noopener">US Air Force responds to suspected drone activity at RAF Lakenheath</a><div class="item-meta">The Guardian World</div><p class="item-summary">No personnel, aircraft or infrastructure at Suffolk site affected, says US military The US Air Force has said it responded to “suspected unauthorised drone…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/us-news/2026/nov/13/us-airports-flight-stoppage" target="_blank" rel="noopener">‘It’s frustrating’: chaos at US airports as stoppage grinds travel plans to a halt</a><div class="item-meta">The Guardian World</div><p class="item-summary">Travelers and crew feeling ‘pissed’ or ‘lucky’ depending on level of upset amid nationwide ground stop The US Federal Aviation Administration’s decision to…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/australia-news/2026/nov/14/us-bound-flights-out-of-australia-grounded-as-telecommunications-outage-affects-american-travel" target="_blank" rel="noopener">US-bound flights out of Australia delayed after telecommunications outage grounded American planes</a><div class="item-meta">The Guardian World</div><p class="item-summary">Sydney and Melbourne airports say flights were affected by now-lifted ban on departures in US US flight outage – live updates Get our breaking news email …</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/13/eisenkot-accuses-netanyahu-of-racist-campaign-against-israels-arab-minority" target="_blank" rel="noopener">Eisenkot accuses Netanyahu of ‘racist’ campaign against Israel’s Arab minority</a><div class="item-meta">The Guardian World</div><p class="item-summary">Statement is rare instance of a prominent Jewish political leader taking a strong stand in defence of Arab Israelis Israeli prime ministerial hopeful Gadi…</p></div></section><section class="category-card" data-cat="economics"><h2>📈 Economics &amp; Markets</h2><div class="item"><a class="item-title" href="https://www.theguardian.com/world/live/2026/nov/13/us-flight-outage-live-updates-faa-lifts-nationwide-ground-stop-as-airport-chaos-continues" target="_blank" rel="noopener">US flight outage live updates: FAA lifts nationwide ground stop as airport chaos continues in US and beyond</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Sean Duffy, Trump’s transportation secretary, acknowledges tech failure led federal aviation officials to shut down system and ground flights, though details…</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/14-dividend-stocks-selected-for-long-term-growth-0a095c0d?mod=mw_rss_topstories" target="_blank" rel="noopener">14 dividend stocks selected for long-term growth</a><div class="item-meta">MarketWatch</div><p class="item-summary">These stocks feature attractive dividend payouts and are trading low to the companies’ intrinsic value, according to John Buckingham of Value87 Investment…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/13/faa-ground-stop-flights-explained" target="_blank" rel="noopener">What to know about the rare nationwide ground stop issued by the FAA</a><div class="item-meta">The Guardian Business</div><p class="item-summary">The Federal Aviation Administration issued a ground stop for all planes due to take off in the US, delaying and canceling thousands of flights Flights…</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/flight-canceled-delayed-nationwide-ground-stop-faa-jfk-chaos-2026-11" target="_blank" rel="noopener">&#x27;I called my mom and cried&#x27;: Passengers describe chaos at JFK during nationwide ground stop</a><div class="item-meta">Business Insider</div><p class="item-summary">The FAA shut down all air traffic due to &quot;extraordinary circumstances&quot; on Friday. The ground stop has since been lifted, but travel chaos will ensue.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/college-football-games-canceled-postponed-faa-ground-stop-2026-11" target="_blank" rel="noopener">College football games could be derailed by the FAA ground stop</a><div class="item-meta">Business Insider</div><p class="item-summary">Some college football games are up in the air this weekend after the FAA&#x27;s nationwide ground stop prevented teams from flying.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/what-do-if-flight-delayed-or-canceled-airlines-atc-2026-11" target="_blank" rel="noopener">Nearly 5,000 flights were canceled across the US after an FAA ground stop. Here&#x27;s what to do if your trip was affected.</a><div class="item-meta">Business Insider</div><p class="item-summary">US airlines are canceling thousands of flights amid a rare air traffic control ground stop affecting the US.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/canadian-airports-ground-stop-toronto-montreal-2026-11" target="_blank" rel="noopener">Canadian airports have taken on extra planes and passengers as the outage chaos rippled north</a><div class="item-meta">Business Insider</div><p class="item-summary">With planes and crews displaced, it could be well into the weekend before things get back on track.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/dhs-demands-50-billion-to-prevent-another-huge-faa-fiasco-2026-11" target="_blank" rel="noopener">Trump&#x27;s transportation chief demands $50 billion to prevent another huge FAA fiasco</a><div class="item-meta">Business Insider</div><p class="item-summary">They said the US has &#x27;old switches, old routers&#x27; that became overloaded with data and failed.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories" target="_blank" rel="noopener">‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?</a><div class="item-meta">MarketWatch</div><p class="item-summary">There is already a demographic ‘run’ on Social Security.</p></div><div class="item"><a class="item-title" href="https://www.marketwatch.com/story/what-really-happens-during-medicare-counseling-6a4f618e?mod=mw_rss_topstories" target="_blank" rel="noopener">4 expert tips for signing up for Medicare</a><div class="item-meta">MarketWatch</div><p class="item-summary">A day in the life of a Medicare counselor</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/shanliuling/dsh-image-gen" target="_blank" rel="noopener">shanliuling/dsh-image-gen</a><div class="item-meta">GitHub Trending · ⭐ 1,479 (+95 today)</div><p class="item-summary">[TypeScript] 可在对话内生成、编辑、对比图像；内置 500 + 提示词、图库、多模型工作流，支持 ComfyUI。AI image studio for DeepSeek Harness — generate, edit &amp; compare images in chat, with 500+…</p></div><div class="item"><a class="item-title" href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code/stitch-skills</a><div class="item-meta">GitHub Trending · ⭐ 8,771 (+13 today)</div><p class="item-summary">[TypeScript] A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with…</p></div><div class="item"><a class="item-title" href="https://github.com/thesysdev/openui" target="_blank" rel="noopener">thesysdev/openui</a><div class="item-meta">GitHub Trending · ⭐ 15,198 (+35 today)</div><p class="item-summary">[TypeScript] The Open Standard for Generative UI</p></div><div class="item"><a class="item-title" href="https://grounds.top/" target="_blank" rel="noopener">Show HN: Live map of U.S. flights during tonight&#x27;s FAA nationwide ground stop</a><div class="item-meta">Hacker News · ▲ 64 pts · 💬 10 · <a href="https://news.ycombinator.com/item?id=50491545" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Watch U.S. skies empty after the Nov 13, 2026 ground stop. Flights airborne against a normal Friday, departures, and the backlog at major airports.</p></div><div class="item"><a class="item-title" href="https://www.joshka.net/cell-borders/" target="_blank" rel="noopener">Terminal borders that don&#x27;t cost a cell</a><div class="item-meta">Hacker News · ▲ 129 pts · 💬 61 · <a href="https://news.ycombinator.com/item?id=50491423" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A terminal protocol for thin lines on cell edges: borders, rounded corners and gridlines that don&#x27;t use up rows or columns. Working in Ghostty, with Ratatui…</p></div><div class="item"><a class="item-title" href="https://github.com/we-promise/sure" target="_blank" rel="noopener">we-promise/sure</a><div class="item-meta">GitHub Trending · ⭐ 14,823 (+925 today)</div><p class="item-summary">[Ruby] The personal finance app for everyone (by everyone)</p></div><div class="item"><a class="item-title" href="https://github.com/tailscale/tailcat" target="_blank" rel="noopener">tailscale/tailcat</a><div class="item-meta">GitHub Trending · ⭐ 9,514 (+256 today)</div><p class="item-summary">[Go] like netcat, but over Tailscale&#x27;s data plane, without Tailscale&#x27;s control plane</p></div><div class="item"><a class="item-title" href="https://github.com/Likely7/Veyra-NRVideo" target="_blank" rel="noopener">Likely7/Veyra-NRVideo</a><div class="item-meta">GitHub Trending · ⭐ 1,671 (+256 today)</div><p class="item-summary">[C++] Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and…</p></div><div class="item"><a class="item-title" href="https://github.com/Tencent-Hunyuan/Hy-MT2" target="_blank" rel="noopener">Tencent-Hunyuan/Hy-MT2</a><div class="item-meta">GitHub Trending · ⭐ 1,753 (+28 today)</div><p class="item-summary">[Python] Trending on GitHub</p></div><div class="item"><a class="item-title" href="https://github.com/Getterbetter/ember/releases/tag/v1.0.1" target="_blank" rel="noopener">Show HN: Light control for MacBook charger status light (open-source)</a><div class="item-meta">Hacker News · ▲ 14 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50492269" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">For anyone who wants to control their MacBook charger light. For me, my MacBook lives in my bedroom most nights on charge and the light is quite bright…</p></div><div class="item"><a class="item-title" href="https://github.com/zovulrira1974/blender-ai-copilot-assets" target="_blank" rel="noopener">zovulrira1974/blender-ai-copilot-assets</a><div class="item-meta">GitHub Search · ⭐ 181</div><p class="item-summary">An asset-savvy AI copilot for Blender—search Poly Haven, Sketchfab and Poly Pizza mid-conversation, check what fits, import after your confirmation, with 27…</p></div><div class="item"><a class="item-title" href="https://github.com/bitsinfra/gnomon" target="_blank" rel="noopener">Gnomon. Git for Postgres data, built for agents</a><div class="item-meta">Hacker News · ▲ 22 pts · 💬 11 · <a href="https://news.ycombinator.com/item?id=50486480" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Git for Postgres data, built for agents. Branch, diff, merge and undo inside PostgreSQL. - bitsinfra/gnomon</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.15225" target="_blank" rel="noopener">Can MLLMs Reason over Surround-View Driving Videos? A Multi-View Autonomous Driving QA Benchmark</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.15225v1 Announce Type: new Abstract: Surround-view video understanding in autonomous driving is a crucial capability for Multimodal Large Language…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14949" target="_blank" rel="noopener">RSI-PDEbench: A Benchmark for Self-Improving Agents in PDE Solving</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14949v1 Announce Type: new Abstract: Identifying and solving partial differential equations (PDEs) from sampled solution data often requires…</p></div><div class="item"><a class="item-title" href="https://github.com/PhantomAsteroid/FL-25.-All-respocket-Plugins-DAW" target="_blank" rel="noopener">PhantomAsteroid/FL-25.-All-respocket-Plugins-DAW</a><div class="item-meta">GitHub Search · ⭐ 50</div><p class="item-summary">[HTML] Unlock FL Studio 25.2.6 with all plugins, VST3 support, piano roll, Edison, and Maximus for Windows 10/11. (ableton, audio-engineering, centiseconds)</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://alphasignal.ai/news/anthropic-upgrades-claude-code-projects-to-run-parallel-ai-workers-hands-free" target="_blank" rel="noopener">Anthropic Upgrades Claude Code Projects to Run Parallel AI Workers Hands-Free</a><div class="item-meta">Hacker News · ▲ 62 pts · 💬 48 · <a href="https://news.ycombinator.com/item?id=50492141" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Claude Code Projects coordinator is now proactive, answering questions and pushing thread status updates in chat.</p></div><div class="item"><a class="item-title" href="https://openai.com/business/customer-stories/shield" target="_blank" rel="noopener">Shield helps technicians hand off legacy portal work with OpenAI</a><div class="item-meta">OpenAI News</div><p class="item-summary">Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their…</p></div><div class="item"><a class="item-title" href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813" target="_blank" rel="noopener">DeepSeek V4 Pro 0813</a><div class="item-meta">Hacker News · ▲ 15 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50492302" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Text Generation model with 1.7T parameters. Download, explore files and run it on Hugging Face.</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvpq43/keep_sell_or_return_pc_i5225f_5060_8gb_32gb_ram_1/" target="_blank" rel="noopener">Keep, Sell, or Return PC? i5-225F, 5060 8GB, 32GB ram, 1 TB SSD</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">I bought this PC from Costco on sale for $1000 even (no tax) planning to get a V100 or some combination of used GPUs for local LLM machine. Realized not going…</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/13/datasette-cluster-map/" target="_blank" rel="noopener">datasette-cluster-map 0.19</a><div class="item-meta">Simon Willison</div><p class="item-summary">Release: datasette-cluster-map 0.19 One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14765" target="_blank" rel="noopener">SynthCorp: A Platform for Creating Benchmarks for Data Agents</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14765v1 Announce Type: new Abstract: Current benchmarks for LLM-driven data agents saturate quickly and cannot target specific capabilities. We…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvbcfp/look_what_my_son_gave_me/" target="_blank" rel="noopener">Look what my son gave me!</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">I told my son I was playing around with local AI on a 3090. He told me he used to mine Ethereum and had a shed full of 3090&#x27;s. He asked me if I wanted a…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvdmzb/tontaube_v11_openweights_tts_with_voice_cloning/" target="_blank" rel="noopener">Tontaube V1.1: open-weights TTS with voice cloning for long-form generation. 4-bit version runs about real time on a desktop CPU</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">We just released Tontaube V1.1, a text-to-speech model built for long-form audio (audiobooks, articles, voice agents) with zero-shot voice cloning. Our…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvam8o/cxmt_almost_tripling_ram_production_from_2025_to/" target="_blank" rel="noopener">CXMT almost tripling RAM production from 2025 to 2028</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">According to post CXMT projected expansion plans grow from 405 kwpm in 2025 to 1,125 kwpm by 2028 in 8-inch equivalents…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xvbith/emeans_10x_faster_kmeans_at_equal_loss/" target="_blank" rel="noopener">e-means: 10x faster k-means at equal loss</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">submitted by /u/techmago [link] [comments]</p></div><div class="item"><a class="item-title" href="https://huggingface.co/blog/allenai/xybench" target="_blank" rel="noopener">XYBench: Helping with the problem behind the question</a><div class="item-meta">Hugging Face Blog</div><p class="item-summary">A Blog post by Ai2 on Hugging Face</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14766" target="_blank" rel="noopener">Rational Use of Time for Social Coordination in Humans and AI</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14766v1 Announce Type: new Abstract: All social interactions are situated in time. Previous studies have shown that humans are able to use implicit…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14544" target="_blank" rel="noopener">Zugwise: Domain-Aware Game Reconstruction for Digitizing Handwritten Chess Scoresheets</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14544v1 Announce Type: new Abstract: Digitizing handwritten chess scoresheets has been studied as a handwriting-recognition problem: read the move…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.15276" target="_blank" rel="noopener">Verify by Doing: Co-Evolving Agent Execution and Evaluation without External Feedback</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.15276v1 Announce Type: new Abstract: Agent self-improvement requires feedback about task success, yet external feedback may be unavailable at test…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.14781" target="_blank" rel="noopener">Robust Task-Aware State Estimation from Pre-trained Perception</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.14781v1 Announce Type: new Abstract: Agents that perform state estimation using pretrained perception models, e.g., Vision-Language Models (VLMs)…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
