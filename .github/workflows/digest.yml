@@ -1,11 +1,6 @@
 name: Scheduled News & Trends Digest
 
 on:
-  schedule:
-    # 08:00, 15:00, and 23:00 in UTC+04:00
-    - cron: "0 4 * * *"
-    - cron: "0 11 * * *"
-    - cron: "0 19 * * *"
   workflow_dispatch:
     inputs:
       edition:
@@ -24,6 +19,11 @@ on:
         description: "On-demand mode (skips archiving & dedup state write)"
         required: false
         default: "false"
+
+# Serialize archive-writing runs so concurrent triggers never race on git push
+concurrency:
+  group: digest-${{ github.event.inputs.on_demand == 'true' && github.run_id || 'scheduled' }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
