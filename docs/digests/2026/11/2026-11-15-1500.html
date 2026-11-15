@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-15 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="trending_politics">🌍 Trending Politics &amp; World Affairs</button><button class="pill" data-cat="economics">📈 Economics &amp; Markets</button><button class="pill" data-cat="new_tools">🛠️ New Tools &amp; Open Source</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; AI Research</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.businessinsider.com/madison-huang-growing-influence-at-nvidia-jensen-daughter-2026-11" target="_blank" rel="noopener">Jensen Huang&#x27;s daughter was on the rise inside Nvidia. Succession may have come too soon.</a><div class="item-meta">Business Insider</div><p class="item-summary">Madison Huang, Nvidia senior marketing director for physical AI, has gained clout inside her father Jensen Huang&#x27;s company, reshaping teams and deals.</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/technology/2026/nov/15/italy-fines-meta-887m-for-accessing-android-users-photos-and-videos" target="_blank" rel="noopener">Italy fines Meta $887m for accessing Android users’ photos and videos</a><div class="item-meta">The Guardian Business</div><p class="item-summary">The fine is among the largest an Italian authority has imposed on a tech giant and Meta says it plans to appeal the decision Italy’s data protection agency…</p></div><div class="item"><a class="item-title" href="https://www.eff.org/deeplinks/2026/11/were-asking-appeals-court-require-warrant-alpr-searches" target="_blank" rel="noopener">We&#x27;re Asking an Appeals Court to Require a Warrant for ALPR Searches</a><div class="item-meta">Hacker News · ▲ 233 pts · 💬 66 · <a href="https://news.ycombinator.com/item?id=50503255" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Automated license plate readers are simply not comparable to observing an individual license plate on a passing car. As we’ve explained in many amicus briefs…</p></div><div class="item"><a class="item-title" href="https://projectzero.google/2026/11/disclosure-policy.html" target="_blank" rel="noopener">Project Zero will disclose vulnerabilities 90 days after reporting</a><div class="item-meta">Hacker News · ▲ 259 pts · 💬 129 · <a href="https://news.ycombinator.com/item?id=50496051" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Since 2021, Project Zero has followed a “90 + 30” vulnerability disclosure policy, allowing vendo...</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xwqvd2/the_best_and_amdest_computer_ive_ever_owned/" target="_blank" rel="noopener">The best (and AMD-est) computer I&#x27;ve ever owned</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">New build with a EPYC 7443 / Tyan S8030 board, and R9700 + 7900 XT. Was supposed to be selling the 7900 XT to pay for the R9700, but that somehow didn&#x27;t…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/15/us/politics/lutnick-pushed-to-weaken-chip-rules-that-overlap-with-his-family-business.html" target="_blank" rel="noopener">Lutnick Pushed to Weaken Chip Rules That Overlap With His Family Business</a><div class="item-meta">NYT Economy</div><p class="item-summary">The commerce secretary has been writing new rules that would affect Southeast Asian data centers, some of which are clients of his former firm.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/nvidia-successor-rebuild-trust-focus-culture-2026-11" target="_blank" rel="noopener">Nvidia&#x27;s next CEO will inherit more than Jensen Huang&#x27;s job</a><div class="item-meta">Business Insider</div><p class="item-summary">Huang&#x27;s successor faces a difficult task: rebuilding the trust of tens of thousands of workers at a company at the center of the AI boom.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/ex-google-facebook-employee-networking-tips-2026-11" target="_blank" rel="noopener">I&#x27;ve worked at Google, Facebook, and the White House. These networking habits make a difference in getting a job.</a><div class="item-meta">Business Insider</div><p class="item-summary">&quot;I want people to view networking similarly to how they view investing in a 401(k),&quot; said Alexander Smith.</p></div><div class="item"><a class="item-title" href="https://litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal" target="_blank" rel="noopener">Court denies motion to dismiss DRAM price fixing case</a><div class="item-meta">Hacker News · ▲ 179 pts · 💬 49 · <a href="https://news.ycombinator.com/item?id=50502988" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Judge Noël Wise found buyers plausibly alleged the chipmakers conspired to cut conventional DRAM supply and shift capacity to HBM, distinguishing the Ninth…</p></div><div class="item"><a class="item-title" href="https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/" target="_blank" rel="noopener">Advancing science and engineering with Antigravity&#x27;s /teamwork</a><div class="item-meta">Hacker News · ▲ 203 pts · 💬 47 · <a href="https://news.ycombinator.com/item?id=50496811" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.thedartmouth.com/article/2026/11/gandhi-fagell-guarini-will-not-admit-math-ph-d-cohort-this-year" target="_blank" rel="noopener">Dartmouth (Guarini) will not admit math PhD cohort this year</a><div class="item-meta">Hacker News · ▲ 97 pts · 💬 39 · <a href="https://news.ycombinator.com/item?id=50499945" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Faculty raised concerns about the program’s suspension at the general faculty meeting on Nov. 9. A College spokesperson declined to answer questions about…</p></div><div class="item"><a class="item-title" href="https://www.forethought.org/research/will-we-really-put-data-centers-in-space" target="_blank" rel="noopener">Will we put data centers in space?</a><div class="item-meta">Hacker News · ▲ 65 pts · 💬 193 · <a href="https://news.ycombinator.com/item?id=50498945" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">How soon could AI data centers move to orbit? Forethought analyzes launch costs, cooling physics, and other engineering and governance factors needed to make…</p></div><div class="item"><a class="item-title" href="https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c" target="_blank" rel="noopener">The Single Router in Southern Arkansas That Ground Air Travel to a Halt</a><div class="item-meta">Hacker News · ▲ 58 pts · 💬 38 · <a href="https://news.ycombinator.com/item?id=50503588" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.theguardian.com/technology/2026/nov/14/jensen-huang-affair-nvidia-nightmare" target="_blank" rel="noopener">‘Jensen Huang lost his mind’: how AI’s smartest man fell for the world’s oldest trick</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Jensen Huang’s affair with a suspected spy is Silicon Valley’s worst nightmare come true The resignation this week of Nvidia’s founder and CEO Jensen Huang is…</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/ousted-tech-founders-jensen-huang-nvidia-elon-musk-steve-jobs" target="_blank" rel="noopener">11 Silicon Valley tech founders who were cast out from the companies they helped build</a><div class="item-meta">Business Insider</div><p class="item-summary">Jensen Huang resigned as Nvidia CEO after pressure from its board. He joins the undesirable club of Silicon Valley&#x27;s highest-profile oustings.</p></div></section><section class="category-card" data-cat="trending_politics"><h2>🌍 Trending Politics &amp; World Affairs</h2><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xwr917/europa_the_eus_open_ai_model_is_aiming_for_nearly/" target="_blank" rel="noopener">EUROPA, the EU&#x27;s open AI model, is aiming for nearly 1 trillion parameters</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">One can hope submitted by /u/mawcopolow [link] [comments]</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/2026/11/15/new-york-democratic-socialists-urge-ocasio-cortez-to-run-for-us-president?traffic_source=rss" target="_blank" rel="noopener">New York Democratic Socialists urge Ocasio-Cortez to run for US president</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Delegates at NYC-DSA convention pass resolution formally calling on Congresswoman AOC to run in 2028 presidential race.</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/2026/11/15/polls-open-in-cape-verde-in-race-with-first-female-presidential-candidate?traffic_source=rss" target="_blank" rel="noopener">Polls open in Cape Verde in race with first female presidential candidate</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Joana Rosa and four other opposition candidates face off against President Jose Maria Neves, who wants a second term.</p></div><div class="item"><a class="item-title" href="https://www.aljazeera.com/news/2026/11/15/asean-summit-whos-attending-and-whats-at-stake?traffic_source=rss" target="_blank" rel="noopener">ASEAN summit: Who’s attending and what’s at stake?</a><div class="item-meta">Al Jazeera</div><p class="item-summary">Energy disruptions as a result of the US-Israel war on Iran is a key issue for the import-dependent bloc.</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/technology/2026/nov/15/ai-cheating-south-korea-college-entrance-exam" target="_blank" rel="noopener">160 questions, only one wrong: top scorer in South Korea tax exam admits AI cheating</a><div class="item-meta">The Guardian World</div><p class="item-summary">Fears for national college entrance exam next week as test taker admits sending photos of questions to AI tool The marks attained by the top scorer ⁠on South…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/australia-news/2026/nov/15/anthony-albanese-welcomes-trump-xi-putin-summit-even-as-european-leaders-express-reservations" target="_blank" rel="noopener">Anthony Albanese welcomes Trump-Xi-Putin summit – even as European leaders express reservations</a><div class="item-meta">The Guardian World</div><p class="item-summary">‘We think dialogue is a good thing,’ Australian PM says after German chancellor urges the US to work with Europe for peace in Ukraine Australia has endorsed…</p></div><div class="item"><a class="item-title" href="https://www.nytimes.com/2026/11/15/world/europe/italy-italianization-europe-horowitz.html" target="_blank" rel="noopener">Is Italy the Model for Europe’s Future?</a><div class="item-meta">NYT World</div><p class="item-summary">Over more than a quarter-century, I’ve watched Europe’s politics become more like Italy’s, with all the resulting instability, as the far right came in from…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/world/2026/nov/15/myanmar-rohingya-genocide-icj" target="_blank" rel="noopener">World’s top court to rule if Myanmar committed genocide against Rohingya</a><div class="item-meta">The Guardian World</div><p class="item-summary">International court of justice has never before found a state guilty of genocide, and ruling will have implications for case against Israel The world’s top…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/tv-and-radio/2026/nov/15/lucy-beaumont-work-tv-david-walliams" target="_blank" rel="noopener">Lucy Beaumont thought she’d never work in TV again after speaking up on David Walliams. Something different happened</a><div class="item-meta">The Guardian World</div><p class="item-summary">Book sells out and tour tickets in demand after comedian reveals she contributed to Walliams investigation When the comedian Lucy Beaumont revealed she had…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/society/2026/nov/15/digital-finance-products-abuse-against-young-women-and-girls-report" target="_blank" rel="noopener">Digital finance products used to abuse almost 20% of young women and girls, UK report finds</a><div class="item-meta">The Guardian World</div><p class="item-summary">Survey respondents describe current or former partners controlling bank accounts and taking out credit online without full consent Almost one in five young…</p></div></section><section class="category-card" data-cat="economics"><h2>📈 Economics &amp; Markets</h2><div class="item"><a class="item-title" href="https://www.aljazeera.com/features/2026/11/15/india-pulled-500m-people-out-of-poverty-since-2011-why-doesnt-it-feel-so?traffic_source=rss" target="_blank" rel="noopener">India pulled 500m people out of poverty. Many of them still barely survive</a><div class="item-meta">Al Jazeera</div><p class="item-summary">World Bank says India pulled a record number of citizens out of poverty, but millions of them still live on the edge.</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/games/ng-interactive/2026/nov/15/grand-theft-auto-vi-inside-rockstar-games" target="_blank" rel="noopener">Ten years, thousands of staff and a billion dollars: the exclusive inside story of Grand Theft Auto VI</a><div class="item-meta">The Guardian Business</div><p class="item-summary">The latest instalment of the epic crime saga is finally here. We visit Rockstar Games for a hands-on encounter with the cultural event of the decade – and can…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/money/2026/nov/15/captcha-scam-computer-malicious-software" target="_blank" rel="noopener">‘Prove you are not a robot’: how the Captcha scam captures your computer</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Unlike familiar Captcha tests, this con asks you to press a series of keys. And that’s a way in for fraudsters to install malicious software You are looking…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/business/2026/nov/15/young-people-stress-seeking-a-job-mental-physical-health" target="_blank" rel="noopener">‘I’m scared about my future’: young people on the stress and desperation of jobseeking</a><div class="item-meta">The Guardian Business</div><p class="item-summary">In the second in our series, four young Britons reveal how the search has taken a toll on their mental and physical health ‘The social contract is broken’…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/football/2026/nov/15/afc-wimbledon-a-failed-87m-investment-bid-and-the-challenge-for-fan-ownership" target="_blank" rel="noopener">AFC Wimbledon, a failed £87m investment bid and the challenge for fan ownership</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Clubs with wealthy proprietors can maintain a loss-making operation but things can be more complex when the supporters carry the can When you walk up from…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/politics/2026/nov/15/drivers-delays-brexit-food-checks" target="_blank" rel="noopener">Pasta, pies and paperwork errors: the reality of Brexit food checks</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Delayed deliveries and inspection hold-ups among issues facing hauliers navigating post-Brexit border processes Three small boxes of spinach and ricotta…</p></div><div class="item"><a class="item-title" href="https://www.theguardian.com/business/2026/nov/15/acorn-union-direct-action-uk-banks-bailiffs-water-firms" target="_blank" rel="noopener">‘Nobody else is going to save us’: the direct action group taking on the UK’s banks, bailiffs and water firms</a><div class="item-meta">The Guardian Business</div><p class="item-summary">Acorn, a community union, is helping people fight unfair bills, AI decision-making and housing injustices as cost-of-living crisis deepens Yasmin didn’t…</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/gen-z-entrepreneur-marketing-agency-rules-for-small-business-2026-11" target="_blank" rel="noopener">A Gen Zer shares 4 rules he followed to turn $35 into a 6-figure marketing agency from his dorm room</a><div class="item-meta">Business Insider</div><p class="item-summary">At 19, Stavya Nilawar turned about $35 into a six-figure influencer-marketing agency. He shares four lessons that helped him grow it from his dorm room.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/empty-nesters-left-florida-house-live-in-rv-full-time-2026-11" target="_blank" rel="noopener">Empty nesters moved out of their Florida home to travel in an RV full time. They&#x27;re in year five and loving it.</a><div class="item-meta">Business Insider</div><p class="item-summary">Empty nesters Barry and Darlene Nicholson moved out of their Florida house to live and travel full-time in an RV. They discuss the highs and lows.</p></div><div class="item"><a class="item-title" href="https://www.businessinsider.com/steve-hanke-best-worst-investment-patek-philippe-watch-iowa-farmland-2026-10" target="_blank" rel="noopener">Market veteran Steve Hanke says his best investment is a Patek Philippe watch he bought at 16 — and shares his biggest regret</a><div class="item-meta">Business Insider</div><p class="item-summary">Steve Hanke, a market veteran, shared his best and worst investments with Business Insider for the debut edition of &quot;Hits, Misses, and Millions.&quot;</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ New Tools &amp; Open Source</h2><div class="item"><a class="item-title" href="https://github.com/matheuzgomes/gawain" target="_blank" rel="noopener">Show HN: Gawain – Require type hints on all Python variables</a><div class="item-meta">Hacker News · ▲ 54 pts · 💬 30 · <a href="https://news.ycombinator.com/item?id=50504072" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Yes, i really hate &quot;dict[str, ANY]&quot;</p></div><div class="item"><a class="item-title" href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank" rel="noopener">bmad-code-org/BMAD-METHOD</a><div class="item-meta">GitHub Trending · ⭐ 55,387 (+19 today)</div><p class="item-summary">[Python] Breakthrough Method for Agile Ai Driven Development</p></div><div class="item"><a class="item-title" href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">JuliusBrussee/caveman</a><div class="item-meta">GitHub Trending · ⭐ 120,276 (+227 today)</div><p class="item-summary">[Go] 🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.</p></div><div class="item"><a class="item-title" href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener">Tencent/LoopForge</a><div class="item-meta">GitHub Trending · ⭐ 1,101 (+33 today)</div><p class="item-summary">[Go] Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local…</p></div><div class="item"><a class="item-title" href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener">SigmaHQ/sigma</a><div class="item-meta">GitHub Trending · ⭐ 11,512 (+10 today)</div><p class="item-summary">[Python] Main Sigma Rule Repository</p></div><div class="item"><a class="item-title" href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">ag-ui-protocol/ag-ui</a><div class="item-meta">GitHub Trending · ⭐ 17,521 (+9 today)</div><p class="item-summary">[TypeScript] AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.</p></div><div class="item"><a class="item-title" href="https://github.com/totec448-spec/chat-on-steroids" target="_blank" rel="noopener">totec448-spec/chat-on-steroids</a><div class="item-meta">GitHub Trending · ⭐ 5,192 (+10 today)</div><p class="item-summary">[TypeScript] Cross-platform local MCP capabilities for ChatGPT with Chrome integration, Goal, Compact &amp; Resume, and durable multi-agent workflows.</p></div><div class="item"><a class="item-title" href="https://github.com/Tthanh2k6/turbo-browser-mcp" target="_blank" rel="noopener">Show HN: Turbo-Browser-MCP – Batch forms, DOM deltas and submit guards for MCP</a><div class="item-meta">Hacker News · ▲ 34 pts · 💬 7 · <a href="https://news.ycombinator.com/item?id=50503930" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">High-speed Playwright MCP server with multi-tab batching, compact delta DOM snapshots, React/Shadow DOM/iframe form filling, disk file uploads, and submit…</p></div><div class="item"><a class="item-title" href="https://github.com/LodyAI/Lody" target="_blank" rel="noopener">LodyAI/Lody</a><div class="item-meta">GitHub Trending · ⭐ 1,774 (+9 today)</div><p class="item-summary">[TypeScript] Share coding agents with your team on phone and desktop</p></div><div class="item"><a class="item-title" href="https://umbrella.pixelegg.me/" target="_blank" rel="noopener">Show HN: Umbrella – macOS app to capture audio from any app</a><div class="item-meta">Hacker News · ▲ 13 pts · 💬 7 · <a href="https://news.ycombinator.com/item?id=50503097" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://github.com/OnlyTerp/turnpack" target="_blank" rel="noopener">OnlyTerp/turnpack</a><div class="item-meta">GitHub Search · ⭐ 55</div><p class="item-summary">[TypeScript] Fewer back-and-forth AI turns. Local MCP context pack + test-gated multi-file ship with automatic rollback. (ai-agents, claude-code, codex)</p></div><div class="item"><a class="item-title" href="https://www.interconnects.ai/p/open-source-ai-without-jensen" target="_blank" rel="noopener">Open-source AI without Jensen</a><div class="item-meta">Hacker News · ▲ 25 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50496590" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A decapitation. It’s time to rebuild.</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; AI Research</h2><div class="item"><a class="item-title" href="https://www.businessinsider.com/ex-openai-researcher-says-ai-accident-could-be-your-killer-2026-11" target="_blank" rel="noopener">Former OpenAI researcher says the &#x27;most likely reason&#x27; you will die is due to &#x27;an AI accident&#x27;</a><div class="item-meta">Business Insider</div><p class="item-summary">Paul Christiano, founder of the Alignment Research Center, warns that powerful AI agents could deceive overseers and escape human control.</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xwqvx9/how_many_of_you_started_using/" target="_blank" rel="noopener">How many of you started using AbliteratedOutTheBox(or similar options) apart from downloading Abliterated models? How is it?</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Myself saved more than bunch of medium sized Abliterated/heretic/Uncensored/Decensored/etc., models. Ex: Qwen3.8-27B Qwen3.6-35B-A3B Gemma-4-31B…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xwre6c/best_sub_80b_total_or_6b_active_moe_for_document/" target="_blank" rel="noopener">Best sub 80b total or 6b active MoE for document intelligence?</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">I&#x27;d like to make a pipeline capable of understanding pdfs of bank statements and then group expenses by categories etc. My thought was to first parse them…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
