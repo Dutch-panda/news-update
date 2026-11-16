@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from calendar import timegm
 from datetime import datetime, timedelta, timezone
 from typing import Any
@@ -16,6 +17,7 @@ from src.models import NewsItem, RSSFeedConfig
 logger = logging.getLogger(__name__)
 
 DEFAULT_RSS_LOOKBACK_HOURS = 24
+REDDIT_SUB_RE = re.compile(r"reddit\.com/r/([^/]+)/", re.IGNORECASE)
 
 
 def _extract_entry_datetime(entry: Any) -> datetime | None:
@@ -84,18 +86,27 @@ def fetch_rss_feeds(
             entry_id = str(entry.get("id") or link)
             summary = _extract_entry_summary(entry, max_chars=max_summary_chars)
 
+            source_name = feed_cfg.name
+            default_cat = feed_cfg.default_category
+            reddit_match = REDDIT_SUB_RE.search(link)
+            if reddit_match:
+                subreddit = reddit_match.group(1)
+                source_name = f"Reddit r/{subreddit}"
+                if subreddit.lower() == "localllama":
+                    default_cat = "llm_models"
+
             items.append(
                 NewsItem(
-                    id=f"rss:{feed_cfg.name}:{entry_id}",
+                    id=f"rss:{source_name}:{entry_id}",
                     title=title,
                     url=link,
-                    source_name=feed_cfg.name,
+                    source_name=source_name,
                     source_type="rss",
                     summary=summary,
                     published_at=pub_dt,
                     raw_score=0,
                     secondary_metric=0,
-                    default_category=feed_cfg.default_category,
+                    default_category=default_cat,
                 )
             )
             feed_count += 1

@@ -7,7 +7,7 @@ schedule_slots:
 
 digest:
   items_per_category: 15
-  max_total_items: 80
+  max_total_items: 95
   max_per_source_in_category: 7
   dedup_retention_days: 14
   description_max_chars: 160
@@ -16,6 +16,7 @@ categories:
   - key: trending_tech
     title: "💻 Trending Tech News"
     max_items: 15
+    on_demand_only: false
     keywords:
       - apple
       - google
@@ -40,76 +41,58 @@ categories:
       - hardware
       - robotics
 
-  - key: trending_politics
-    title: "🌍 Trending Politics & World Affairs"
-    max_items: 10
+  - key: data_science
+    title: "📊 Data Science & Business Analytics"
+    max_items: 15
+    on_demand_only: false
     keywords:
-      - election
-      - parliament
-      - senate
-      - congress
-      - president
-      - prime minister
-      - ministry
-      - sanctions
-      - treaty
-      - ceasefire
-      - nato
-      - united nations
-      - eu
-      - european union
-      - supreme court
-      - legislation
-      - regulation
-      - antitrust
-      - geopolitics
-      - diplomacy
-      - war
-      - conflict
-      - policy
-
-  - key: economics
-    title: "📈 Economics & Markets"
-    max_items: 10
-    keywords:
-      - economy
-      - economic
-      - inflation
-      - gdp
-      - central bank
-      - federal reserve
-      - fed
-      - interest rate
-      - rate cut
-      - rate hike
-      - recession
-      - stock market
-      - s&p 500
-      - nasdaq
-      - bond
-      - treasury
-      - yield
-      - oil price
-      - opec
-      - imf
-      - world bank
-      - currency
-      - trade deficit
-      - tariff
-      - unemployment
-      - cpi
-      - jobs report
-      - earnings
-      - fiscal
-      - monetary policy
+      - data science
+      - business analytics
+      - analytics
+      - business intelligence
+      - bi
+      - sql
+      - duckdb
+      - polars
+      - pandas
+      - spark
+      - dbt
+      - snowflake
+      - databricks
+      - bigquery
+      - clickhouse
+      - data engineering
+      - data warehouse
+      - lakehouse
+      - etl
+      - forecasting
+      - time series
+      - causal inference
+      - a/b test
+      - ab testing
+      - experiment
+      - statistics
+      - regression
+      - visualization
+      - dashboard
+      - scikit-learn
+      - xgboost
+      - lightgbm
+      - machine learning
+      - kpi
+      - cohort
 
   - key: new_tools
-    title: "🛠️ New Tools & Open Source"
+    title: "🛠️ Open-Source Projects, Tools & Harnesses"
     max_items: 15
+    on_demand_only: false
     keywords:
       - show hn
       - open-source
       - open source
+      - harness
+      - eval
+      - evaluation
       - cli
       - sdk
       - framework
@@ -131,10 +114,12 @@ categories:
       - wasm
       - benchmark
       - api
+      - coordination
 
   - key: ai_agents
-    title: "🤖 AI Agents & Agentic Workflows"
+    title: "🤖 Agentic Workflows, MCPs & Skills"
     max_items: 15
+    on_demand_only: false
     keywords:
       - ai agent
       - ai agents
@@ -143,6 +128,10 @@ categories:
       - autonomous agent
       - mcp
       - model context protocol
+      - skill
+      - skills
+      - claude.md
+      - agents.md
       - tool calling
       - function calling
       - langgraph
@@ -154,16 +143,21 @@ categories:
       - windsurf
       - devin
       - openhands
+      - opencode
       - browser-use
       - computer use
       - agent workflow
       - agent framework
+      - agent harness
       - subagent
       - orchestrator
+      - orchestration
+      - coordination
 
   - key: llm_models
-    title: "🧠 LLM Models & AI Research"
+    title: "🧠 LLM Models & Capabilities"
     max_items: 15
+    on_demand_only: false
     keywords:
       - llm
       - large language model
@@ -195,8 +189,83 @@ categories:
       - huggingface
       - openai
       - anthropic
+      - capabilities
+      - tool use
+
+  - key: economics
+    title: "📈 Business, Economics & Case Studies"
+    max_items: 10
+    on_demand_only: true
+    keywords:
+      - case study
+      - case studies
+      - empirical study
+      - research paper
+      - economy
+      - economic
+      - inflation
+      - gdp
+      - central bank
+      - federal reserve
+      - fed
+      - interest rate
+      - rate cut
+      - rate hike
+      - recession
+      - stock market
+      - s&p 500
+      - nasdaq
+      - bond
+      - treasury
+      - yield
+      - oil price
+      - opec
+      - imf
+      - world bank
+      - currency
+      - trade deficit
+      - tariff
+      - unemployment
+      - cpi
+      - jobs report
+      - earnings
+      - fiscal
+      - monetary policy
+      - supply chain
+      - productivity
+
+  - key: trending_politics
+    title: "🌍 Trending Politics & World Affairs"
+    max_items: 10
+    on_demand_only: true
+    keywords:
+      - election
+      - parliament
+      - senate
+      - congress
+      - president
+      - prime minister
+      - ministry
+      - sanctions
+      - treaty
+      - ceasefire
+      - nato
+      - united nations
+      - eu
+      - european union
+      - supreme court
+      - legislation
+      - regulation
+      - antitrust
+      - geopolitics
+      - diplomacy
+      - war
+      - conflict
+      - policy
 
 sources:
+  scheduled_lookback_hours: 10
+  on_demand_lookback_hours: 24
   rss_lookback_hours: 24
 
   hackernews:
@@ -208,13 +277,13 @@ sources:
       - "ai agent"
       - "agentic"
       - "mcp"
-      - "Show HN"
+      - "claude code"
+      - "codex"
       - "llm"
-      - "claude"
-      - "gemini"
-      - "openai"
-      - "deepseek"
-      - "qwen"
+      - "data science"
+      - "duckdb"
+      - "polars"
+      - "Show HN"
 
   github:
     enabled: true
@@ -223,6 +292,9 @@ sources:
       - ""
       - "python"
       - "typescript"
+      - "jupyter-notebook"
+      - "rust"
+    search_enabled: false
     search_lookback_days: 3
     search_min_stars: 50
     search_queries:
@@ -233,48 +305,27 @@ sources:
       - "ai cli tool"
 
   rss_feeds:
-    - name: "BBC World"
-      url: "https://feeds.bbci.co.uk/news/world/rss.xml"
-      default_category: "trending_politics"
-    - name: "The Guardian World"
-      url: "https://www.theguardian.com/world/rss"
-      default_category: "trending_politics"
-    - name: "Al Jazeera"
-      url: "https://www.aljazeera.com/xml/rss/all.xml"
-      default_category: "trending_politics"
-    - name: "NYT World"
-      url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-      default_category: "trending_politics"
-    - name: "BBC Business"
-      url: "https://feeds.bbci.co.uk/news/business/rss.xml"
-      default_category: "economics"
-    - name: "The Guardian Business"
-      url: "https://www.theguardian.com/uk/business/rss"
-      default_category: "economics"
-    - name: "CNBC Economy"
-      url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"
-      default_category: "economics"
-    - name: "NYT Economy"
-      url: "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"
-      default_category: "economics"
-    - name: "Business Insider"
-      url: "https://feeds.businessinsider.com/custom/all"
-      default_category: "economics"
-    - name: "Markets Insider"
-      url: "https://markets.businessinsider.com/rss/news"
-      default_category: "economics"
-    - name: "MarketWatch"
-      url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"
-      default_category: "economics"
-    - name: "TechCrunch"
-      url: "https://techcrunch.com/feed/"
-      default_category: "trending_tech"
-    - name: "Ars Technica"
-      url: "https://feeds.arstechnica.com/arstechnica/index"
-      default_category: "trending_tech"
-    - name: "The Verge"
-      url: "https://www.theverge.com/rss/index.xml"
-      default_category: "trending_tech"
+    # Data Science & Business Analytics (scheduled)
+    - name: "KDnuggets"
+      url: "https://www.kdnuggets.com/feed"
+      default_category: "data_science"
+    - name: "Towards Data Science"
+      url: "https://towardsdatascience.com/feed"
+      default_category: "data_science"
+    - name: "DuckDB Blog"
+      url: "https://duckdb.org/feed.xml"
+      default_category: "data_science"
+    - name: "Reddit AI & Data Science"
+      url: "https://www.reddit.com/r/LocalLLaMA+datascience+BusinessIntelligence/.rss"
+      default_category: "data_science"
+    - name: "ArXiv cs.LG"
+      url: "https://rss.arxiv.org/rss/cs.LG"
+      default_category: "data_science"
+    - name: "ArXiv stat.ML"
+      url: "https://rss.arxiv.org/rss/stat.ML"
+      default_category: "data_science"
+
+    # AI, LLMs & Agentic Engineering (scheduled)
     - name: "Hugging Face Blog"
       url: "https://huggingface.co/blog/feed.xml"
       default_category: "llm_models"
@@ -287,9 +338,54 @@ sources:
     - name: "TechCrunch AI"
       url: "https://techcrunch.com/category/artificial-intelligence/feed/"
       default_category: "llm_models"
-    - name: "Reddit r/LocalLLaMA"
-      url: "https://www.reddit.com/r/LocalLLaMA/.rss"
-      default_category: "llm_models"
     - name: "ArXiv cs.AI"
       url: "https://rss.arxiv.org/rss/cs.AI"
       default_category: "llm_models"
+
+    # Tech (scheduled)
+    - name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
+      default_category: "trending_tech"
+    - name: "Ars Technica"
+      url: "https://feeds.arstechnica.com/arstechnica/index"
+      default_category: "trending_tech"
+    - name: "The Verge"
+      url: "https://www.theverge.com/rss/index.xml"
+      default_category: "trending_tech"
+
+    # Business, Economics & Case Studies (on-demand, non-paywalled)
+    - name: "MIT Sloan Management Review"
+      url: "https://sloanreview.mit.edu/feed/"
+      default_category: "economics"
+    - name: "BBC Business"
+      url: "https://feeds.bbci.co.uk/news/business/rss.xml"
+      default_category: "economics"
+    - name: "The Guardian Business"
+      url: "https://www.theguardian.com/uk/business/rss"
+      default_category: "economics"
+    - name: "CNBC Economy"
+      url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"
+      default_category: "economics"
+    - name: "Pew Research"
+      url: "https://www.pewresearch.org/feed/"
+      default_category: "economics"
+    - name: "Calculated Risk"
+      url: "https://www.calculatedriskblog.com/feeds/posts/default"
+      default_category: "economics"
+
+    # Politics & World Affairs (on-demand, non-paywalled)
+    - name: "BBC World"
+      url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+      default_category: "trending_politics"
+    - name: "The Guardian World"
+      url: "https://www.theguardian.com/world/rss"
+      default_category: "trending_politics"
+    - name: "Al Jazeera"
+      url: "https://www.aljazeera.com/xml/rss/all.xml"
+      default_category: "trending_politics"
+    - name: "NPR World"
+      url: "https://feeds.npr.org/1004/rss.xml"
+      default_category: "trending_politics"
+    - name: "DW News"
+      url: "https://rss.dw.com/xml/rss-en-all"
+      default_category: "trending_politics"

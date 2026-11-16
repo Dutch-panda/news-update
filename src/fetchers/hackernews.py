@@ -107,14 +107,16 @@ def _fetch_firebase_fallback(
 def fetch_hackernews(
     config: HackerNewsConfig,
     max_summary_chars: int = 160,
+    lookback_hours: int | None = None,
     now: datetime | None = None,
 ) -> list[NewsItem]:
-    """Fetch front-page, recent high-scoring, and targeted AI/Show HN stories."""
+    """Fetch front-page, most popular recent stories, and targeted queries in the lookback window."""
     if not config.enabled:
         return []
 
+    hours = lookback_hours if lookback_hours is not None else config.lookback_hours
     ref_now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
-    cutoff_dt = ref_now - timedelta(hours=config.lookback_hours)
+    cutoff_dt = ref_now - timedelta(hours=hours)
     cutoff_ts = int(cutoff_dt.timestamp())
 
     session = requests.Session()
@@ -134,10 +136,11 @@ def fetch_hackernews(
             results.append(item)
 
     algolia_ok = False
+    # Use Algolia /search (ranked by popularity/points) rather than /search_by_date for top stories
     requests_spec: list[tuple[str, dict[str, Any]]] = [
         (ALGOLIA_SEARCH_URL, {"tags": "front_page", "hitsPerPage": 50}),
         (
-            ALGOLIA_SEARCH_BY_DATE_URL,
+            ALGOLIA_SEARCH_URL,
             {
                 "tags": "story",
                 "numericFilters": f"created_at_i>{cutoff_ts},points>={config.min_points}",
@@ -148,7 +151,7 @@ def fetch_hackernews(
     for query in config.targeted_queries:
         requests_spec.append(
             (
-                ALGOLIA_SEARCH_BY_DATE_URL,
+                ALGOLIA_SEARCH_URL,
                 {
                     "query": query,
                     "tags": "story",

@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from src.config_loader import load_config
+from src.fetchers import clean_summary
 from src.formatters.markdown_fmt import save_markdown_and_index
 from src.formatters.site_builder import build_site
 from src.formatters.telegram_fmt import render_telegram_chunks
@@ -82,7 +83,7 @@ def test_markdown_and_site_builder(tmp_path: Path) -> None:
 
     md_text = md_path.read_text(encoding="utf-8")
     assert "Morning Update (08:00)" in md_text
-    assert "🤖 AI Agents & Agentic Workflows" in md_text
+    assert "🤖 Agentic Workflows, MCPs & Skills" in md_text
 
     site_index = build_site(index_path=index_path, docs_dir=docs_dir)
     assert site_index.exists()
@@ -97,3 +98,8 @@ def test_markdown_and_site_builder(tmp_path: Path) -> None:
 
     root_html = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert f'href="docs/{rel_html}"' in root_html
+
+
+def test_clean_summary_strips_double_escaped_html() -> None:
+    raw = '&lt;img src="https://example.com/a.jpg" /&gt;&lt;p class="lead"&gt;Actual summary text.&lt;/p&gt;'
+    assert clean_summary(raw) == "Actual summary text."

@@ -38,31 +38,44 @@ logger = logging.getLogger("news_update")
 TOPIC_ALIASES: dict[str, str] = {
     "tech": "trending_tech",
     "trending_tech": "trending_tech",
-    "politics": "trending_politics",
-    "world": "trending_politics",
-    "trending_politics": "trending_politics",
-    "economy": "economics",
-    "economics": "economics",
-    "markets": "economics",
-    "finance": "economics",
+    "data": "data_science",
+    "ds": "data_science",
+    "analytics": "data_science",
+    "bi": "data_science",
+    "data_science": "data_science",
     "tools": "new_tools",
     "new_tools": "new_tools",
+    "harnesses": "new_tools",
     "agents": "ai_agents",
     "ai_agents": "ai_agents",
     "agentic": "ai_agents",
+    "skills": "ai_agents",
+    "mcp": "ai_agents",
     "llm": "llm_models",
     "llms": "llm_models",
     "llm_models": "llm_models",
     "ai": "llm_models",
+    "economy": "economics",
+    "economics": "economics",
+    "business": "economics",
+    "markets": "economics",
+    "finance": "economics",
+    "case_studies": "economics",
+    "politics": "trending_politics",
+    "world": "trending_politics",
+    "trending_politics": "trending_politics",
 }
 
 
 def resolve_topic_keys(topics_arg: str, config: AppConfig) -> list[str]:
     """Parse a comma/space-separated topic list into valid ordered category keys."""
-    valid_keys = [cat.key for cat in config.categories]
+    all_keys = [cat.key for cat in config.categories]
+    scheduled_keys = [cat.key for cat in config.categories if not cat.on_demand_only]
     raw = (topics_arg or "").strip()
-    if not raw or raw.lower() == "all":
-        return valid_keys
+    if not raw or raw.lower() in {"scheduled", "default"}:
+        return scheduled_keys
+    if raw.lower() == "all":
+        return all_keys
 
     requested: set[str] = set()
     for token in raw.replace(",", " ").split():
@@ -70,20 +83,23 @@ def resolve_topic_keys(topics_arg: str, config: AppConfig) -> list[str]:
         if not cleaned:
             continue
         if cleaned == "all":
-            return valid_keys
+            return all_keys
+        if cleaned in {"scheduled", "default"}:
+            requested.update(scheduled_keys)
+            continue
         mapped = TOPIC_ALIASES.get(cleaned)
-        if mapped and mapped in valid_keys:
+        if mapped and mapped in all_keys:
             requested.add(mapped)
-        elif cleaned in valid_keys:
+        elif cleaned in all_keys:
             requested.add(cleaned)
         else:
             logger.warning("Ignoring unknown topic '%s'", token)
 
     if not requested:
         raise ValueError(
-            f"No valid topics matched '{topics_arg}'. Valid keys: {', '.join(valid_keys)}"
+            f"No valid topics matched '{topics_arg}'. Valid keys: {', '.join(all_keys)}"
         )
-    return [key for key in valid_keys if key in requested]
+    return [key for key in all_keys if key in requested]
 
 
 def resolve_edition_slot(
@@ -117,8 +133,18 @@ def run_digest(
 ) -> int:
     """Execute the fetch -> dedup -> classify -> save/site -> Telegram pipeline."""
     config: AppConfig = load_config(config_path)
-    selected_topic_keys = resolve_topic_keys(topics, config) if topics.strip() else []
-    is_on_demand = on_demand or bool(selected_topic_keys)
+    has_topics = bool(topics.strip())
+    is_on_demand = on_demand or has_topics
+    active_topic_keys = (
+        resolve_topic_keys(topics, config)
+        if has_topics
+        else [cat.key for cat in config.categories if not cat.on_demand_only]
+    )
+    lookback_hours = (
+        config.on_demand_lookback_hours
+        if is_on_demand
+        else config.scheduled_lookback_hours
+    )
 
     tz = timezone(timedelta(hours=config.timezone_offset_hours), name=f"UTC+{config.timezone_offset_hours:02d}:00")
     utc_now = datetime.now(timezone.utc)
@@ -135,11 +161,18 @@ def run_digest(
         )
     edition_id = local_now.strftime("%Y-%m-%d-%H%M")
 
+    # Skip fetching RSS feeds whose default category is excluded from this run
+    active_key_set = set(active_topic_keys)
+    active_feeds = [
+        feed for feed in config.rss_feeds if feed.default_category in active_key_set
+    ]
+
     fetched: list[NewsItem] = []
     fetched.extend(
         fetch_hackernews(
             config.hackernews,
             max_summary_chars=config.digest.description_max_chars,
+            lookback_hours=lookback_hours,
             now=utc_now,
         )
     )
@@ -152,9 +185,9 @@ def run_digest(
     )
     fetched.extend(
         fetch_rss_feeds(
-            config.rss_feeds,
+            active_feeds,
             max_summary_chars=config.digest.description_max_chars,
-            lookback_hours=config.rss_lookback_hours,
+            lookback_hours=lookback_hours,
             now=utc_now,
         )
     )
@@ -168,10 +201,8 @@ def run_digest(
     classifier = NewsClassifier(config.categories)
     items_by_category = classifier.classify_and_select(unseen, config=config, now=utc_now)
 
-    active_categories = config.categories
-    if selected_topic_keys:
-        active_categories = [c for c in config.categories if c.key in selected_topic_keys]
-        items_by_category = {k: items_by_category.get(k, []) for k in selected_topic_keys}
+    active_categories = [c for c in config.categories if c.key in active_key_set]
+    items_by_category = {k: items_by_category.get(k, []) for k in active_topic_keys}
 
     selected_items = [
         item
@@ -191,7 +222,7 @@ def run_digest(
         total_after_dedup=len(unseen),
     )
 
-    if not is_on_demand:
+    if not is_on_demand and not dry_run:
         md_path, _, _ = save_markdown_and_index(
             edition=edition,
             digests_dir=DIGESTS_DIR,

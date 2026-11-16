@@ -21,10 +21,11 @@ ENRICH_TIMEOUT_SEC = 4
 
 
 def clean_summary(raw_html: str | None, max_chars: int = 160, strip_urls: bool = False) -> str:
-    """Strip HTML tags, unescape entities, collapse whitespace, and truncate cleanly."""
+    """Strip HTML tags (including double-escaped tags), unescape entities, and truncate cleanly."""
     if not raw_html:
         return ""
-    text = BeautifulSoup(raw_html, "html.parser").get_text(" ", strip=True)
+    unescaped = html.unescape(raw_html)
+    text = BeautifulSoup(unescaped, "html.parser").get_text(" ", strip=True)
     text = html.unescape(text)
     if strip_urls:
         text = BARE_URL_RE.sub("", text)

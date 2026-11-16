@@ -63,6 +63,7 @@ class CategoryConfig:
     title: str
     keywords: list[str] = field(default_factory=list)
     max_items: int | None = None
+    on_demand_only: bool = False
 
 
 @dataclass
@@ -91,7 +92,10 @@ class GitHubConfig:
 
     enabled: bool = True
     trending_since: str = "daily"
-    trending_languages: list[str] = field(default_factory=lambda: ["", "python", "typescript"])
+    trending_languages: list[str] = field(
+        default_factory=lambda: ["", "python", "typescript", "jupyter-notebook", "rust"]
+    )
+    search_enabled: bool = False
     search_lookback_days: int = 3
     search_min_stars: int = 50
     search_queries: list[str] = field(default_factory=list)
@@ -120,6 +124,8 @@ class AppConfig:
     github: GitHubConfig
     rss_feeds: list[RSSFeedConfig]
     rss_lookback_hours: int = 24
+    scheduled_lookback_hours: int = 10
+    on_demand_lookback_hours: int = 24
 
 
 @dataclass

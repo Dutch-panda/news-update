@@ -44,6 +44,7 @@ def load_config(path: Path | str | None = None) -> AppConfig:
             title=str(cat["title"]),
             keywords=[str(kw) for kw in cat.get("keywords", [])],
             max_items=int(cat["max_items"]) if cat.get("max_items") is not None else None,
+            on_demand_only=bool(cat.get("on_demand_only", False)),
         )
         for cat in raw.get("categories", [])
     ]
@@ -64,7 +65,13 @@ def load_config(path: Path | str | None = None) -> AppConfig:
     gh_config = GitHubConfig(
         enabled=bool(gh_raw.get("enabled", True)),
         trending_since=str(gh_raw.get("trending_since", "daily")),
-        trending_languages=[str(lang) for lang in gh_raw.get("trending_languages", ["", "python", "typescript"])],
+        trending_languages=[
+            str(lang)
+            for lang in gh_raw.get(
+                "trending_languages", ["", "python", "typescript", "jupyter-notebook", "rust"]
+            )
+        ],
+        search_enabled=bool(gh_raw.get("search_enabled", False)),
         search_lookback_days=int(gh_raw.get("search_lookback_days", 3)),
         search_min_stars=int(gh_raw.get("search_min_stars", 50)),
         search_queries=[str(q) for q in gh_raw.get("search_queries", [])],
@@ -89,6 +96,8 @@ def load_config(path: Path | str | None = None) -> AppConfig:
     }
 
     rss_lookback_hours = int(sources_raw.get("rss_lookback_hours", 24))
+    scheduled_lookback_hours = int(sources_raw.get("scheduled_lookback_hours", 10))
+    on_demand_lookback_hours = int(sources_raw.get("on_demand_lookback_hours", 24))
 
     return AppConfig(
         timezone_offset_hours=tz_offset,
@@ -99,4 +108,6 @@ def load_config(path: Path | str | None = None) -> AppConfig:
         github=gh_config,
         rss_feeds=rss_feeds,
         rss_lookback_hours=rss_lookback_hours,
+        scheduled_lookback_hours=scheduled_lookback_hours,
+        on_demand_lookback_hours=on_demand_lookback_hours,
     )

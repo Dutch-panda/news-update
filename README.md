@@ -8,22 +8,26 @@ It fetches updates three times a day (**08:00, 15:00, and 23:00 UTC+04:00**), fi
 
 ## Covered Subjects & Sources
 
-**Subjects (6 Categories):**
+**Scheduled Categories (3x/day, 10h Window):**
 1. **💻 Trending Tech News** (`trending_tech`)
-2. **🌍 Trending Politics & World Affairs** (`trending_politics`)
-3. **📈 Economics & Markets** (`economics`)
-4. **🛠️ New Tools & Open Source** (`new_tools`)
-5. **🤖 AI Agents & Agentic Workflows** (`ai_agents`)
-6. **🧠 LLM Models & AI Research** (`llm_models`)
+2. **📊 Data Science & Business Analytics** (`data_science`)
+3. **🛠️ Open-Source Projects, Tools & Harnesses** (`new_tools`)
+4. **🤖 Agentic Workflows, MCPs & Skills** (`ai_agents`)
+5. **🧠 LLM Models & Capabilities** (`llm_models`)
 
-**Sources:**
-- **Hacker News**: Algolia HN API (front page, recent stories, and targeted AI agent / MCP / Show HN queries) with Firebase HN API fallback.
-- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) scraper + GitHub Search API for fast-rising new repositories from the last 24 hours.
+**On-Demand Only Categories (via Telegram Bot, 24h Window):**
+6. **📈 Business, Economics & Case Studies** (`economics`)
+7. **🌍 Trending Politics & World Affairs** (`trending_politics`)
+
+**Sources (All Free, Non-Paywalled):**
+- **Hacker News**: Algolia HN popularity-ranked `/search` API (top stories in window + targeted AI agent / MCP / Claude Code / Data Science / DuckDB / Show HN queries) with Firebase HN API fallback.
+- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) across All, Python, TypeScript, Jupyter Notebook, and Rust (filtered for relevance).
 - **Free RSS / Atom Feeds**:
-  - *World & Politics*: BBC World, The Guardian World, Al Jazeera, NYT World
-  - *Economics & Markets*: BBC Business, The Guardian Business, CNBC Economy, NYT Economy
-  - *Tech & Startups*: TechCrunch, Ars Technica, The Verge
-  - *AI & Engineering*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, TechCrunch AI
+  - *Data Science & Analytics*: KDnuggets, Towards Data Science, DuckDB Blog, Reddit `r/datascience` & `r/BusinessIntelligence`, ArXiv `cs.LG` & `stat.ML`
+  - *AI, LLMs & Agentic*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, TechCrunch AI, Reddit `r/LocalLLaMA`, ArXiv `cs.AI`
+  - *Tech*: TechCrunch, Ars Technica, The Verge
+  - *Business, Economics & Case Studies (on-demand)*: MIT Sloan Management Review, Pew Research, Calculated Risk, BBC Business, The Guardian Business, CNBC Economy
+  - *Politics & World Affairs (on-demand)*: BBC World, The Guardian World, Al Jazeera, NPR World, DW News
 
 All keywords, weights, limits, and feeds can be customized in [`config/config.yaml`](config/config.yaml).
 
@@ -130,7 +134,7 @@ To request topic-specific briefs on-demand in Telegram (`/economy`, `/politics`,
    ```bash
    curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setMyCommands" \
      -H "Content-Type: application/json" \
-     -d '{"commands":[{"command":"brief","description":"Latest brief (or: /brief politics economy)"},{"command":"tech","description":"Trending Tech News"},{"command":"politics","description":"Trending Politics & World Affairs"},{"command":"economy","description":"Economics & Markets"},{"command":"tools","description":"New Tools & Open Source"},{"command":"agents","description":"AI Agents & Agentic Workflows"},{"command":"llm","description":"LLM Models & AI Research"},{"command":"topics","description":"List available commands"}]}'
+     -d '{"commands":[{"command":"brief","description":"Core Tech/Data/AI brief (or: /brief economy politics)"},{"command":"tech","description":"Trending Tech News"},{"command":"data","description":"Data Science & Business Analytics"},{"command":"tools","description":"Open-Source Projects, Tools & Harnesses"},{"command":"agents","description":"Agentic Workflows, MCPs & Skills"},{"command":"llm","description":"LLM Models & Capabilities"},{"command":"economy","description":"Business, Economics & Case Studies"},{"command":"politics","description":"Trending Politics & World Affairs"},{"command":"all","description":"All 7 topics (24h window)"},{"command":"topics","description":"List available commands"}]}'
    ```
 
 ---

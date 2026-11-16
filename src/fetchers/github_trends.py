@@ -196,12 +196,13 @@ def fetch_github(
             if item.id not in by_id:
                 by_id[item.id] = item
 
-    for item in _fetch_search_repos(session, config, max_summary_chars, ref_now):
-        if item.id not in by_id:
-            by_id[item.id] = item
-        elif len(item.summary) > len(by_id[item.id].summary):
-            # Enrich trending summary if Search API has richer topic/description
-            by_id[item.id].summary = item.summary
+    if config.search_enabled:
+        for item in _fetch_search_repos(session, config, max_summary_chars, ref_now):
+            if item.id not in by_id:
+                by_id[item.id] = item
+            elif len(item.summary) > len(by_id[item.id].summary):
+                # Enrich trending summary if Search API has richer topic/description
+                by_id[item.id].summary = item.summary
 
     results = list(by_id.values())
     logger.info("Fetched %d unique repositories from GitHub", len(results))

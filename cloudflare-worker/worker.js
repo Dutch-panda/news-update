@@ -13,29 +13,35 @@
 
 const TOPIC_SHORTCUTS = {
   "/tech": "trending_tech",
-  "/politics": "trending_politics",
-  "/world": "trending_politics",
-  "/economy": "economics",
-  "/economics": "economics",
-  "/markets": "economics",
+  "/data": "data_science",
+  "/analytics": "data_science",
   "/tools": "new_tools",
   "/agents": "ai_agents",
   "/llm": "llm_models",
   "/ai": "llm_models",
+  "/economy": "economics",
+  "/economics": "economics",
+  "/business": "economics",
+  "/markets": "economics",
+  "/politics": "trending_politics",
+  "/world": "trending_politics",
+  "/all": "all",
 };
 
 const HELP_TEXT = [
   "<b>📡 News &amp; Trends On-Demand Bot</b>",
   "",
-  "<b>Topic Commands:</b>",
-  "• /brief — Latest brief across all topics",
-  "• /brief politics economy — Combine any topics",
+  "<b>Topic Commands (24h Window):</b>",
+  "• /brief — Core Tech, Data Science, Tools &amp; AI topics",
+  "• /brief economy politics — Combine any topics",
+  "• /all — All 7 topics (including Business &amp; Politics)",
   "• /tech — 💻 Trending Tech News",
+  "• /data — 📊 Data Science &amp; Business Analytics",
+  "• /tools — 🛠️ Open-Source Projects, Tools &amp; Harnesses",
+  "• /agents — 🤖 Agentic Workflows, MCPs &amp; Skills",
+  "• /llm — 🧠 LLM Models &amp; Capabilities",
+  "• /economy — 📈 Business, Economics &amp; Case Studies",
   "• /politics — 🌍 Trending Politics &amp; World Affairs",
-  "• /economy — 📈 Economics &amp; Markets",
-  "• /tools — 🛠️ New Tools &amp; Open Source",
-  "• /agents — 🤖 AI Agents &amp; Agentic Workflows",
-  "• /llm — 🧠 LLM Models &amp; AI Research",
   "• /topics — Show this command list",
 ].join("\n");
 
@@ -124,7 +130,7 @@ export default {
 
     let requestedTopics = "";
     if (cmd === "/brief") {
-      requestedTopics = parts.slice(1).join(",") || "all";
+      requestedTopics = parts.slice(1).join(",") || "scheduled";
     } else if (TOPIC_SHORTCUTS[cmd]) {
       requestedTopics = TOPIC_SHORTCUTS[cmd];
     } else {

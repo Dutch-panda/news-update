@@ -15,11 +15,13 @@ MAX_RELEVANCE_SCORE = 6.0
 GITHUB_TOOLS_PRIOR = 2.0
 SHOW_HN_TOOLS_PRIOR = 2.0
 CROSS_SOURCE_BONUS = 1.5
+MAX_ARXIV_PER_CATEGORY = 3
 
 # Tie-break priority independent of display order: specialized categories win ties over broad news
 SPECIFICITY_ORDER = (
     "ai_agents",
     "llm_models",
+    "data_science",
     "new_tools",
     "economics",
     "trending_politics",
@@ -75,6 +77,15 @@ class NewsClassifier:
                 scores_by_cat[cat.key] = cat_score
                 matched_by_cat[cat.key] = cat_matches
 
+        has_keyword_match = bool(scores_by_cat)
+        if item.source_type == "github" and not has_keyword_match and item.secondary_metric < 100:
+            item.assigned_category = ""
+            item.relevance_score = 0.0
+            item.popularity_score = 0.0
+            item.final_score = 0.0
+            item.matched_keywords = []
+            return item
+
         # Structural priors for developer tools / repos when they don't strongly match AI/LLM
         if "new_tools" in self._valid_keys:
             if item.source_type == "github":
@@ -126,8 +137,8 @@ class NewsClassifier:
             stars_part = min(4.0, math.log1p(max(0, item.raw_score)) * 0.45)
             score = today_part + stars_part
         else:
-            # RSS articles lack point counts; base score on freshness
-            score = 4.0
+            # Give academic preprints a modest base score so blogs/news rank higher
+            score = 2.5 if item.source_name.startswith("ArXiv") else 4.0
 
         if item.published_at is not None:
             pub = item.published_at
@@ -170,6 +181,7 @@ class NewsClassifier:
             )
             chosen: list[NewsItem] = []
             source_counts: dict[str, int] = defaultdict(int)
+            arxiv_count = 0
 
             for cand in candidates:
                 if len(chosen) >= per_cat_limit:
@@ -178,8 +190,13 @@ class NewsClassifier:
                     break
                 if source_counts[cand.source_name] >= max_per_source:
                     continue
+                is_arxiv = cand.source_name.startswith("ArXiv")
+                if is_arxiv and arxiv_count >= MAX_ARXIV_PER_CATEGORY:
+                    continue
                 chosen.append(cand)
                 source_counts[cand.source_name] += 1
+                if is_arxiv:
+                    arxiv_count += 1
                 total_selected += 1
 
             selected_by_cat[cat.key] = chosen
