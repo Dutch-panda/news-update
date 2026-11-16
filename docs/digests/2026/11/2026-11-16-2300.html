@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Night Update (23:00) · 2026-11-16 23:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.wired.com/story/nvidia-was-already-in-trouble-before-the-jensen-huang-mess/" target="_blank" rel="noopener">Nvidia was in trouble before the Jensen Huang mess</a><div class="item-meta">Hacker News · ▲ 153 pts · 💬 142 · <a href="https://news.ycombinator.com/item?id=50518567" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">AI competitors are catching up to Nvidia—and poised to take advantage of the chaos.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1034590/apple-iphone-duo-face-unlock-ios-27-3-beta" target="_blank" rel="noopener">Apple is adding face unlock to the iPhone Duo — without new hardware</a><div class="item-meta">The Verge</div><p class="item-summary">Apple is working on a face unlock feature for the iPhone Duo that uses the front-facing camera for authentication, and it&#x27;s already testing it with the new…</p></div><div class="item"><a class="item-title" href="https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026" target="_blank" rel="noopener">Microsoft blames monster email outage on software defect introduced in July fix</a><div class="item-meta">Hacker News · ▲ 68 pts · 💬 63 · <a href="https://news.ycombinator.com/item?id=50517321" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Summer code change caused a Fall fail – frantic engineers had to patch the patch instead of rolling back</p></div><div class="item"><a class="item-title" href="http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/" target="_blank" rel="noopener">Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings</a><div class="item-meta">Hacker News · ▲ 597 pts · 💬 367 · <a href="https://news.ycombinator.com/item?id=50517488" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://jack.cab/blog/siterate" target="_blank" rel="noopener">What is w2rt6byl5nf1opmc-a.com?</a><div class="item-meta">Hacker News · ▲ 288 pts · 💬 132 · <a href="https://news.ycombinator.com/item?id=50517602" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Don&#x27;t test in production.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1034355/trump-jensen-huang-nvidia-return" target="_blank" rel="noopener">Trump says it ‘certainly isn’t a bad idea’ for Jensen Huang to return to Nvidia</a><div class="item-meta">The Verge</div><p class="item-summary">Following Jensen Huang&#x27;s resignation as Nvidia&#x27;s CEO last week, Trump told reporters on Monday that he&#x27;s open to seeing Huang return and that he&#x27;s not certain…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/entertainment/1034168/apple-tv-video-podcasts" target="_blank" rel="noopener">Apple TV is getting video podcasts you can watch for free</a><div class="item-meta">The Verge</div><p class="item-summary">Apple&#x27;s streaming service will soon have a video podcasts section, the New York Times reports. It will start testing the feature in a developer release today…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1034501/nvidia-board-jensen-huang-not-bringing-back" target="_blank" rel="noopener">Nvidia’s board is reportedly ‘not considering’ hiring Jensen Huang back</a><div class="item-meta">The Verge</div><p class="item-summary">Nvidia&#x27;s board of directors &quot;isn&#x27;t considering&quot; having Jensen Huang return as CEO, according to a report from CNBC. A source tells the outlet the board &quot;is…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1034538/microsoft-365-outlook-outage-hotel-chlorine-poisoning" target="_blank" rel="noopener">15 hotel guests were injured by chlorine poisoning due to Microsoft’s global email outage</a><div class="item-meta">The Verge</div><p class="item-summary">Microsoft&#x27;s worldwide 365 and Outlook outage had real-world consequences after it cut off email alerts for a German hotel&#x27;s pool safety system. The German…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/sam-altman-on-nvidia-without-jensen-huang-the-industry-will-be-fine/" target="_blank" rel="noopener">Sam Altman on Nvidia without Jensen Huang: the industry will be ‘fine’</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">OpenAI CEO Sam Altman acknowledged the special role Nvidia CEO Jensen Huang has played in the AI boom, but ultimately thinks the industry will be “fine”…</p></div><div class="item"><a class="item-title" href="https://www.cnn.com/2026/11/15/politics/army-soldier-whistleblower-complaint" target="_blank" rel="noopener">Whistleblower accuses Pentagon over Iran strike on US base that killed 6</a><div class="item-meta">Hacker News · ▲ 198 pts · 💬 68 · <a href="https://news.ycombinator.com/item?id=50517838" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://masnick.com/posts/the-secret-thinkpad-powerbutton-code-to-bring-dead-laptops-back-to-life/" target="_blank" rel="noopener">The Secret ThinkPad Powerbutton Code to Bring Dead Laptops Back to Life (2007)</a><div class="item-meta">Hacker News · ▲ 246 pts · 💬 96 · <a href="https://news.ycombinator.com/item?id=50516473" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Two months ago, I got a new laptop. It’s a Lenovo Thinkpad z61t. I actually ordered a t61, but I accidentally got the z61 instead — and, I actually really…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/after-dodging-death-battery-startup-our-next-energy-is-now-going-public/" target="_blank" rel="noopener">After dodging death, battery startup Our Next Energy is now going public</a><div class="item-meta">TechCrunch</div><p class="item-summary">Our Next Energy is the latest battery startup to go public via SPAC. Does it now have what it needs to survive in the cutthroat battery industry?</p></div><div class="item"><a class="item-title" href="https://www.monirbounadi.com/Bounadi_JMP.pdf" target="_blank" rel="noopener">Coffeehouses and the Rise of Science [pdf]</a><div class="item-meta">Hacker News · ▲ 156 pts · 💬 95 · <a href="https://news.ycombinator.com/item?id=50516245" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/google-maps-can-now-build-trip-itineraries-with-real-time-details-about-each-stop/" target="_blank" rel="noopener">Google Maps can now build trip itineraries with real-time details about each stop</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">You could use Ask Maps to plan a holiday shopping day trip or something more complex, like a three-day road trip featuring coastal hikes and oceanfront dining.</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://towardsdatascience.com/how-to-avoid-ai-replacement-as-an-analytics-professional-in-2027/" target="_blank" rel="noopener">How to Avoid AI Replacement as an Analytics Professional in 2027</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Lessons from manufacturing and logistics projects: follow data from input to output, then turn vague requests into deterministic tools teams trust. The post…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/why-human-in-the-loop-ai-oversight-fails-and-how-to-fix-it/" target="_blank" rel="noopener">Why Human in the Loop AI Oversight Fails and How to Fix It</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Kahneman&#x27;s System 1 and System 2, plus the ODPS, ODCS, and Ossie standards, show how to wake reviewers up only when a check fails. The post Why Human in the…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/after-10-heads-in-a-row-small-llms-bet-up-to-82-on-an-11th/" target="_blank" rel="noopener">After 10 Heads in a Row, Small LLMs Bet Up to 82% on an 11th</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Telling eight base and instruction-tuned open models that the coin is fair and the flips are independent trims their streak bias by only a few points. The…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/datascience/comments/1xxujqq/why_survivor_comparisons_can_be_biased_in_a/" target="_blank" rel="noopener">Why survivor comparisons can be biased in a randomized trial even when survival rates match</a><div class="item-meta">Reddit r/datascience</div><p class="item-summary">submitted by /u/rhiever to r/datascience [link] [comments]</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/datascience/comments/1xxkr72/my_80_intervals_for_a_24h_price_range_only_cover/" target="_blank" rel="noopener">My 80% intervals for a 24h price range only cover 65%, even though pinball loss looks fine. What am I missing?</a><div class="item-meta">Reddit r/datascience</div><p class="item-summary">Working on a small project predicting a 24h price range for BTC. LightGBM with a quantile objective, one model for the 10th and one for the 90th percentile…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/local-llms-handle-textbook-rag-but-fail-on-new-research-papers/" target="_blank" rel="noopener">Local LLMs Handle Textbook RAG but Fail on New Research Papers</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Five setups, one blind grading pack: textbook scores ran 12 to 20 of 20, but a paper published this year dropped them to 0 to 9 of 15. The post Local LLMs…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/rust-lang/rust" target="_blank" rel="noopener">rust-lang/rust</a><div class="item-meta">GitHub Trending · ⭐ 122,033 (+160 today)</div><p class="item-summary">[Rust] Empowering everyone to build reliable and efficient software.</p></div><div class="item"><a class="item-title" href="https://burntsushi.net/jiff/" target="_blank" rel="noopener">Jiff 1.0: A datetime library for Rust</a><div class="item-meta">Hacker News · ▲ 128 pts · 💬 34 · <a href="https://news.ycombinator.com/item?id=50519744" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://github.com/elie222/rakazo" target="_blank" rel="noopener">elie222/rakazo</a><div class="item-meta">GitHub Trending · ⭐ 8,820 (+271 today)</div><p class="item-summary">[TypeScript] Open-source Grok Bot alternative. Choose your own model and sandbox.</p></div><div class="item"><a class="item-title" href="https://github.com/google-research/paper-orchestra" target="_blank" rel="noopener">google-research/paper-orchestra</a><div class="item-meta">GitHub Trending · ⭐ 1,313 (+306 today)</div><p class="item-summary">[Python] PaperOrchestra is a multi-agent framework for automated AI research paper writing.</p></div><div class="item"><a class="item-title" href="https://github.com/nestjs/nest" target="_blank" rel="noopener">nestjs/nest</a><div class="item-meta">GitHub Trending · ⭐ 77,079 (+29 today)</div><p class="item-summary">[TypeScript] A progressive TypeScript framework for Node.js backends: from a small API in one file to efficient, scalable, enterprise-grade systems 🚀</p></div><div class="item"><a class="item-title" href="https://github.com/huggingface/transformers" target="_blank" rel="noopener">huggingface/transformers</a><div class="item-meta">GitHub Trending · ⭐ 169,039 (+68 today)</div><p class="item-summary">[Python] 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both…</p></div><div class="item"><a class="item-title" href="https://github.com/astral-sh/uv" target="_blank" rel="noopener">astral-sh/uv</a><div class="item-meta">GitHub Trending · ⭐ 92,008 (+68 today)</div><p class="item-summary">[Rust] An extremely fast Python package and project manager, written in Rust.</p></div><div class="item"><a class="item-title" href="https://github.com/vstorm-co/agenticos" target="_blank" rel="noopener">vstorm-co/agenticos</a><div class="item-meta">GitHub Trending · ⭐ 354 (+56 today)</div><p class="item-summary">[Python] Open-source, self-hosted AI agent platform for your company&#x27;s AI teammates. Build, run and govern agents on your own servers and models: shared chat…</p></div><div class="item"><a class="item-title" href="https://github.com/withcoral/coral" target="_blank" rel="noopener">Show HN: Coral – Open-source gateway where agents write their own tools</a><div class="item-meta">Hacker News · ▲ 50 pts · 💬 23 · <a href="https://news.ycombinator.com/item?id=50517803" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hi HN, I&#x27;m James, one of the co-founders of Coral. Coral is an open-source, self-hosted gateway that sits between your agents and the systems they work on…</p></div><div class="item"><a class="item-title" href="https://github.com/OpenTodoApp/OpenTodo" target="_blank" rel="noopener">Show HN: OpenTodo – a self-hosted, local-first task manager in one Go binary</a><div class="item-meta">Hacker News · ▲ 20 pts · 💬 20 · <a href="https://news.ycombinator.com/item?id=50517352" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Your tasks, your server. An open-source, local-first task manager you can host yourself. Everything you expect from a commercial task app, without the…</p></div><div class="item"><a class="item-title" href="https://petervandijck.com/post/pbrgs-ev0bc" target="_blank" rel="noopener">Doing Show HN generates a ton of automated email pitches</a><div class="item-meta">Hacker News · ▲ 56 pts · 💬 51 · <a href="https://news.ycombinator.com/item?id=50516232" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">I posted Airdash on Show HN last week. Over the next four days, 17 services wrote to the Airdash inbox to sell me something, and nearly all of them were…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/" target="_blank" rel="noopener">FBI says Artex AI open-source hacking tool used to breach networks in ‘under three hours’</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.</p></div><div class="item"><a class="item-title" href="https://www.harmonic.fun/news/aristotle-rust-verification/" target="_blank" rel="noopener">Aristotle Expands into Rust</a><div class="item-meta">Hacker News · ▲ 30 pts · 💬 9 · <a href="https://news.ycombinator.com/item?id=50520270" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We’re excited to announce Aristotle’s expansion into Rust, one of the fastest-growing programming languages for high-stakes software.</p></div><div class="item"><a class="item-title" href="https://fakemetrics.com/" target="_blank" rel="noopener">Show HN: Fakemetrics.com – &quot;build in public&quot; like a superstar</a><div class="item-meta">Hacker News · ▲ 8 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50520741" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hi HN, I am Tigran (github.com/tigranbs) I made Fakemetrics.com as a fun experiment while testing how well Claude Opus can build pixel-identical UIs. It…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxtn9g/i_made_a_cc_inspired_web_rts_for_us_to_benchmark/" target="_blank" rel="noopener">I made a C&amp;C inspired web RTS for us to benchmark our local models with</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">HOwdy LocalLLamans! Inspired by StarSkirmish, I wanted to build a complex RTS that required you to bring your OWN local agents and either play with them as…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://www.theregister.com/research/2026/11/16/google-ai-agent-turned-a-security-patch-into-a-working-exploit-with-no-human-help/5309926" target="_blank" rel="noopener">Google: AI agent turned a security patch into a exploit with no human help</a><div class="item-meta">Hacker News · ▲ 10 pts · 💬 2 · <a href="https://news.ycombinator.com/item?id=50517797" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Look ma, no human in the loop!</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxmj9o/paper_models_gamer_a_generalist/" target="_blank" rel="noopener">[Paper &amp; Models] Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://github.com/YellowLaborerMarket/Gemini-Config-Checker-" target="_blank" rel="noopener">YellowLaborerMarket/Gemini-Config-Checker-</a><div class="item-meta">GitHub Search · ⭐ 474</div><p class="item-summary">[Go] Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxuzgg/amd_loom_fun_added_radeon_9700_support_over_the/" target="_blank" rel="noopener">AMD Loom Fun: Added Radeon 9700 support over the weekend. Benchmarked 48 models with an average 42% speedup over llama.cpp.</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">On Friday I posted about AMD Loom , a new experimental inference stack that includes a runtime, kernel compiler, and inference server. People can use the…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/openai-will-embed-apollo-researchers-to-investigate-ai-subversion/" target="_blank" rel="noopener">OpenAI will embed safety researchers to investigate AI subversion</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">OpenAI will embed six Apollo Research evaluators to investigate whether its AI models engage in subversive behavior, but restrictions on access and disclosure…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxxs0a/small_gemma_4_tokenizers_were_recently_updated_by/" target="_blank" rel="noopener">Small Gemma 4 tokenizers were recently updated by Google - fix for an issue that caused nonsense output when encountering certain tokens</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Gemma 4 E4B as an example, but the same fix was applied to E2B and 12B too. Not sure if this will trickle down to GGUFs submitted by /u/TuskNaPrezydenta2020…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxqfqr/stop_worrying_about_qwen_4s_aa_index/" target="_blank" rel="noopener">Stop worrying about Qwen 4&#x27;s AA index</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Seriously, we have all been extremely happy and confident with Qwen, even since Qwen 3.6 came out. We might not be frontier level, but even though whatever…</p></div><div class="item"><a class="item-title" href="https://openai.com/index/strengthening-online-child-safety/" target="_blank" rel="noopener">OpenAI: Strengthening the fight against online child sexual abuse</a><div class="item-meta">Hacker News · ▲ 24 pts · 💬 27 · <a href="https://news.ycombinator.com/item?id=50520804" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxsc7u/censorship_is_turning_me_into_a_true_local_llm/" target="_blank" rel="noopener">Censorship is turning me into a true Local LLM believer</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">451: {&quot;message&quot;:&quot;Provider returned error&quot;,&quot;code&quot;:451,&quot;metadata&quot;:{&quot;raw&quot;:&quot;{\&quot;error\&quot;:{\&quot;message\&quot;:\&quot;The content you provided or machine outputted is…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/" target="_blank" rel="noopener">OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxpxvi/best_audio_models_nov_2026/" target="_blank" rel="noopener">Best Audio Models - Nov 2026</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Its time for another Best Audio Models megathread - its already been 9 months since the last one! Share what your favorite ASR, TTS, STT, Text to Music models…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxvr5z/under_9gb_model_comparison/" target="_blank" rel="noopener">Under 9gb model comparison</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Scores are lab-reported so take them with a grain of salt. Specs Model Org Params (total/active) Context Modality License K2-Horizon-7B IFM 7B dense 512K text…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xxw9ik/new_release_supra2565m_base_and_instruct_our_next/" target="_blank" rel="noopener">[NEW RELEASE] - Supra2.5-65M Base and Instruct - our next generation state-of-the art small model family - first model!</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">https://preview.redd.it/s6afqz7og02i1.png?width=2607&amp;format=png&amp;auto=webp&amp;s=8ad68f90e67c06f989e152ac5cffefc93eed60e1 hey guys! It&#x27;s Supra-time! 🤗 🔥 🎉 It has…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/audible-turns-to-ai-to-help-users-discover-audiobooks/" target="_blank" rel="noopener">Audible turns to AI to help users discover audiobooks</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Audible&#x27;s new AI-generated audio previews summarize a book&#x27;s themes and what readers liked about it, in addition to playing the narrated sample.</p></div><div class="item"><a class="item-title" href="https://openai.com/index/expanding-chatgpt-for-academic-researchers" target="_blank" rel="noopener">Broadening access to AI for scientists</a><div class="item-meta">OpenAI News</div><p class="item-summary">We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/16/freshworks-alums-raise-53m-to-take-on-salesforce-hubspot-with-ai-native-crm/" target="_blank" rel="noopener">Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Dreamteam has signed up more than 100 customers across 13 countries, with some businesses switching from established CRMs.</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
