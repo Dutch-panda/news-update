@@ -132,9 +132,9 @@ class NewsClassifier:
             comments_part = min(2.0, math.log1p(max(0, item.secondary_metric)) * 0.4)
             score = pts_part + comments_part
         elif item.source_type == "github":
-            # Stars today (secondary_metric) is strongest signal for daily trending
-            today_part = min(6.0, math.log1p(max(0, item.secondary_metric)) * 1.0)
-            stars_part = min(4.0, math.log1p(max(0, item.raw_score)) * 0.45)
+            # Weight daily star velocity much higher than all-time total stars
+            today_part = min(7.5, math.log1p(max(0, item.secondary_metric)) * 1.25)
+            stars_part = min(2.5, math.log1p(max(0, item.raw_score)) * 0.25)
             score = today_part + stars_part
         else:
             # Give academic preprints a modest base score so blogs/news rank higher

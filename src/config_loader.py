@@ -68,12 +68,12 @@ def load_config(path: Path | str | None = None) -> AppConfig:
         trending_languages=[
             str(lang)
             for lang in gh_raw.get(
-                "trending_languages", ["", "python", "typescript", "jupyter-notebook", "rust"]
+                "trending_languages", ["", "python", "typescript", "rust"]
             )
         ],
-        search_enabled=bool(gh_raw.get("search_enabled", False)),
-        search_lookback_days=int(gh_raw.get("search_lookback_days", 3)),
-        search_min_stars=int(gh_raw.get("search_min_stars", 50)),
+        search_enabled=bool(gh_raw.get("search_enabled", True)),
+        search_lookback_days=int(gh_raw.get("search_lookback_days", 5)),
+        search_min_stars=int(gh_raw.get("search_min_stars", 150)),
         search_queries=[str(q) for q in gh_raw.get("search_queries", [])],
     )
 

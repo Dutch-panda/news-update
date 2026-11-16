@@ -21,7 +21,7 @@ It fetches updates three times a day (**08:00, 15:00, and 23:00 UTC+04:00**), fi
 
 **Sources (All Free, Non-Paywalled):**
 - **Hacker News**: Algolia HN popularity-ranked `/search` API (top stories in window + targeted AI agent / MCP / Claude Code / Data Science / DuckDB / Show HN queries) with Firebase HN API fallback.
-- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) across All, Python, TypeScript, Jupyter Notebook, and Rust (filtered for relevance).
+- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) across All, Python, TypeScript, and Rust + GitHub Search API for breakout new repos (`>= 150` stars in last 5 days, spam-filtered).
 - **Free RSS / Atom Feeds**:
   - *Data Science & Analytics*: KDnuggets, Towards Data Science, DuckDB Blog, Reddit `r/datascience` & `r/BusinessIntelligence`, ArXiv `cs.LG` & `stat.ML`
   - *AI, LLMs & Agentic*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, TechCrunch AI, Reddit `r/LocalLLaMA`, ArXiv `cs.AI`

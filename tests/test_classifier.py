@@ -31,7 +31,9 @@ def test_category_display_order_limits_and_lookbacks() -> None:
     ]
     assert config.scheduled_lookback_hours == 10
     assert config.on_demand_lookback_hours == 24
-    assert config.github.search_enabled is False
+    assert config.github.search_enabled is True
+    assert config.github.search_min_stars == 150
+    assert "jupyter-notebook" not in config.github.trending_languages
 
 
 def test_data_science_economics_and_topic_aliases() -> None:

@@ -292,17 +292,17 @@ sources:
       - ""
       - "python"
       - "typescript"
-      - "jupyter-notebook"
       - "rust"
-    search_enabled: false
-    search_lookback_days: 3
-    search_min_stars: 50
+    search_enabled: true
+    search_lookback_days: 5
+    search_min_stars: 150
     search_queries:
       - "topic:ai-agents"
-      - "topic:agentic-ai"
       - "topic:mcp"
-      - "llm agent"
-      - "ai cli tool"
+      - "claude code"
+      - "llm"
+      - "duckdb OR polars"
+      - "data-science"
 
   rss_feeds:
     # Data Science & Business Analytics (scheduled)

@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 GITHUB_TRENDING_URL = "https://github.com/trending"
 GITHUB_SEARCH_API_URL = "https://api.github.com/search/repositories"
 NUMBER_RE = re.compile(r"[\d,]+")
+SPAM_OWNER_RE = re.compile(r"^[^/]+[0-9]{4,}$")
 
 
 def _parse_int(text: str) -> int:
@@ -131,6 +132,9 @@ def _fetch_search_repos(
             html_url = (repo.get("html_url") or "").strip()
             if not full_name or not html_url:
                 continue
+            owner = full_name.split("/", 1)[0]
+            if SPAM_OWNER_RE.match(owner):
+                continue
 
             created_str = repo.get("created_at")
             published_at = None
@@ -145,6 +149,8 @@ def _fetch_search_repos(
 
             language = (repo.get("language") or "").strip()
             desc = (repo.get("description") or "").strip()
+            if not desc:
+                continue
             topics = repo.get("topics") or []
             topic_suffix = f" ({', '.join(topics[:3])})" if topics else ""
             raw_summary = f"[{language}] {desc}{topic_suffix}" if language else f"{desc}{topic_suffix}"

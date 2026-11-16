@@ -93,11 +93,11 @@ class GitHubConfig:
     enabled: bool = True
     trending_since: str = "daily"
     trending_languages: list[str] = field(
-        default_factory=lambda: ["", "python", "typescript", "jupyter-notebook", "rust"]
+        default_factory=lambda: ["", "python", "typescript", "rust"]
     )
-    search_enabled: bool = False
-    search_lookback_days: int = 3
-    search_min_stars: int = 50
+    search_enabled: bool = True
+    search_lookback_days: int = 5
+    search_min_stars: int = 150
     search_queries: list[str] = field(default_factory=list)
 
 
