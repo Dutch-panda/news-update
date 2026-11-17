@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-17 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xygbgl/amd_9070_gpu_under_volting_gains_for_models_moss/" target="_blank" rel="noopener">AMD 9070 GPU under volting gains for models ( moss image) and ( minimax h3 int8 )</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">https://preview.redd.it/uzcsd9lq852i1.png?width=974&amp;format=png&amp;auto=webp&amp;s=f8eec8eaec7203406ba99983f1034119150b2f6b hi, i am total GPU noob here this is the…</p></div><div class="item"><a class="item-title" href="https://support.apple.com/en-us/149699" target="_blank" rel="noopener">If an App Asks for Full Disk Access or System and App Protection Override</a><div class="item-meta">Hacker News · ▲ 133 pts · 💬 77 · <a href="https://news.ycombinator.com/item?id=50526560" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Starting in macOS 27.3, when some apps ask for Full Disk Access or System &amp; App Protection Override, you have the option to choose only specific protected…</p></div><div class="item"><a class="item-title" href="https://blog.antonio.cx/running-agents-with-lend" target="_blank" rel="noopener">Running coding agents without handing them my credentials</a><div class="item-meta">Hacker News · ▲ 116 pts · 💬 89 · <a href="https://news.ycombinator.com/item?id=50526152" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://get.mem.ai/blog/mem-is-shutting-down" target="_blank" rel="noopener">Mem Is Shutting Down</a><div class="item-meta">Hacker News · ▲ 60 pts · 💬 97 · <a href="https://news.ycombinator.com/item?id=50526537" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Mem closes on January 15, 2027. Read the announcement, key dates, what happens to your subscription, and how to move your notes.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18963" target="_blank" rel="noopener">SpecRelay: Amortize or Avoid the Round Trip in Edge-Cloud Speculative Decoding</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.18963v1 Announce Type: new Abstract: Edge-cloud speculative decoding moves autoregressive drafting to an edge device while a larger cloud model…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories" target="_blank" rel="noopener">Tech leaders are convinced that Jensen Huang&#x27;s exit was a plot against him</a><div class="item-meta">Hacker News · ▲ 28 pts · 💬 19 · <a href="https://news.ycombinator.com/item?id=50527905" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Conspiracies are swirling about Huang’s resignation.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18769" target="_blank" rel="noopener">Gradient-Guided Hardware-Native MIXFP4</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.18769v1 Announce Type: new Abstract: Blackwell tensor cores support native inference with 4-bit weights and activations (W4A4), but NVFP4 leaves a…</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50527395" target="_blank" rel="noopener">AI is killing cheap VPS servers/manageable pricing</a><div class="item-meta">Hacker News · ▲ 10 pts · 💬 9</div><p class="item-summary">So much for buying another OVH based VPS in Singapore/Asia for some of my friends to use when they are 100% out of stock and/or other good hosting providers…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19165" target="_blank" rel="noopener">From Sensors to Silicon: Causal Cross-Layer Self-Healing Edge AI for Secure and Energy-Adaptive IoT Systems</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19165v1 Announce Type: new Abstract: The migration of artificial intelligence from centralized cloud infrastructure to resource-constrained…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19116" target="_blank" rel="noopener">A Hybrid State Space-Attention Architecture for Forecasting the Trajectories of Battery Degradation</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19116v1 Announce Type: new Abstract: Early-life battery degradation trajectory forecasting aims to predict a battery cell&#x27;s full state-of-health…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18654" target="_blank" rel="noopener">Earth World Model: Physics-constrained latent dynamics for forecasting and environmental scenario analysis</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.18654v1 Announce Type: new Abstract: World models have been widely applied to multi-agent planning and forecasting, but exogenous environmental…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18802" target="_blank" rel="noopener">Actuarial-Informed Neural Networks: Constrained Deep Learning for Sex-Specific Multi-Population Longevity Forecasting</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.18802v1 Announce Type: new Abstract: We introduce Actuarial-Informed Neural Networks (AINN), a constrained deep learning framework for sex-specific…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a><div class="item-meta">GitHub Trending · ⭐ 155,113 (+312 today)</div><p class="item-summary">[Rust] A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io</p></div><div class="item"><a class="item-title" href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix/strix</a><div class="item-meta">GitHub Trending · ⭐ 76,184 (+325 today)</div><p class="item-summary">[Python] Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.</p></div><div class="item"><a class="item-title" href="https://github.com/t8y2/dbx" target="_blank" rel="noopener">t8y2/dbx</a><div class="item-meta">GitHub Trending · ⭐ 30,593 (+101 today)</div><p class="item-summary">[Rust] 25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng…</p></div><div class="item"><a class="item-title" href="https://github.com/milind-soni/OpenMausBot" target="_blank" rel="noopener">milind-soni/OpenMausBot</a><div class="item-meta">GitHub Trending · ⭐ 24,498 (+662 today)</div><p class="item-summary">[TypeScript] Open-source Grok Bot alternative with a virtual machine that bots can use</p></div><div class="item"><a class="item-title" href="https://github.com/leepokai/Codync" target="_blank" rel="noopener">leepokai/Codync</a><div class="item-meta">GitHub Trending · ⭐ 2,201 (+47 today)</div><p class="item-summary">[Rust] Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as…</p></div><div class="item"><a class="item-title" href="https://github.com/rustfs/rustfs" target="_blank" rel="noopener">rustfs/rustfs</a><div class="item-meta">GitHub Trending · ⭐ 36,197 (+55 today)</div><p class="item-summary">[Rust] RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms…</p></div><div class="item"><a class="item-title" href="https://github.com/BurntSushi/jiff" target="_blank" rel="noopener">BurntSushi/jiff</a><div class="item-meta">GitHub Trending · ⭐ 3,117 (+61 today)</div><p class="item-summary">[Rust] A datetime library for Rust that encourages you to jump into the pit of success.</p></div><div class="item"><a class="item-title" href="https://github.com/yocontra/pulsar" target="_blank" rel="noopener">Show HN: Pulsar – cross-harness agent to agent communication and messaging</a><div class="item-meta">Hacker News · ▲ 17 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50526967" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">MCP server that lets AI coding agents in any harness find and message each other: one list, tags, multicast, * bus. - yocontra/pulsar</p></div><div class="item"><a class="item-title" href="https://github.com/ysunyang4/Nexus" target="_blank" rel="noopener">ysunyang4/Nexus</a><div class="item-meta">GitHub Search · ⭐ 356</div><p class="item-summary">[TypeScript] 此链接是博客教程，感兴趣的朋友可以按照教程配置，欢迎star~ (ai-agent, browser-extension, chrome-extension)</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18868" target="_blank" rel="noopener">SLICES: A Benchmark and Evaluation Framework for Self-Supervised Learning on Sparse ICU Time Series</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.18868v1 Announce Type: new Abstract: Self-supervised learning (SSL) results for intensive care unit (ICU) time series are hard to compare when data…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19311" target="_blank" rel="noopener">Macro Control and Capability Evaluation of Black-Box World Models: A Two-Regime Framework for LLM-Agent Markets</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19311v1 Announce Type: new Abstract: Large language model (LLM) agents can be organized into multi-agent markets that act as world models, mapping…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.21266" target="_blank" rel="noopener">Variance-adaptive confidence regions for fixed-benchmark binomial mixtures, with application to LLM evaluation</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.21266v1 Announce Type: cross Abstract: We construct confidence intervals for linear functionals $\theta(F_m)=\int h\,dF_m$ of the empirical law…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a><div class="item-meta">GitHub Trending · ⭐ 38,208 (+161 today)</div><p class="item-summary">[Python] Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.</p></div><div class="item"><a class="item-title" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a><div class="item-meta">GitHub Trending · ⭐ 304,933 (+718 today)</div><p class="item-summary">[JavaScript] The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex…</p></div><div class="item"><a class="item-title" href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify-Labs/graphify</a><div class="item-meta">GitHub Trending · ⭐ 149,281 (+615 today)</div><p class="item-summary">[Python] Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex…</p></div><div class="item"><a class="item-title" href="https://github.com/boringmarketer/boring-marketing-skills" target="_blank" rel="noopener">boringmarketer/boring-marketing-skills</a><div class="item-meta">GitHub Search · ⭐ 335</div><p class="item-summary">[Python] 31 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business…</p></div><div class="item"><a class="item-title" href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a><div class="item-meta">GitHub Trending · ⭐ 79,689 (+88 today)</div><p class="item-summary">[Python] A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows</p></div><div class="item"><a class="item-title" href="https://github.com/cursor/plugins" target="_blank" rel="noopener">cursor/plugins</a><div class="item-meta">GitHub Trending · ⭐ 16,725 (+196 today)</div><p class="item-summary">[TypeScript] Cursor plugin specification and official plugins</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19275" target="_blank" rel="noopener">Beyond Clumsy Agentic Tool Calling: How Cueing and Spotting Make the Difference</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19275v1 Announce Type: new Abstract: LLM-based task-oriented agents depend on tools to interact with their environments, but may overlook execution…</p></div><div class="item"><a class="item-title" href="https://github.com/localixai/tokendoctor" target="_blank" rel="noopener">Tokendoctor – See what your Claude Code use overpays</a><div class="item-meta">Hacker News · ▲ 26 pts · 💬 13 · <a href="https://news.ycombinator.com/item?id=50526584" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">tokendoctor: the same Claude Code for up to 38% less. Replays your own past sessions to show what each change would have saved, then changes only what you…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19385" target="_blank" rel="noopener">Does a completed simulation run mean a usable urban wind result for AI agents?</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19385v1 Announce Type: new Abstract: AI agents based on large language models (LLMs) can now configure and run computational fluid dynamics (CFD)…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19078" target="_blank" rel="noopener">Assume/Guarantee Contracts for the Compositional Multi-Agent Reinforcement Learning of Heterogeneous Teams</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.19078v1 Announce Type: new Abstract: Multi-agent reinforcement learning (MARL) problems for heterogeneous teams require agents to collaborate to…</p></div><div class="item"><a class="item-title" href="https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/" target="_blank" rel="noopener">How the Claude Code team thinks about verification</a><div class="item-meta">Hacker News · ▲ 5 pts · 💬 2 · <a href="https://news.ycombinator.com/item?id=50529612" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">How end-to-end, property and differential tests let coding agents verify their work with evidence, and what the Claude Code team does to keep its verifiers…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://github.com/sybil-solutions/inference-optimisation-skill" target="_blank" rel="noopener">sybil-solutions/inference-optimisation-skill</a><div class="item-meta">GitHub Search · ⭐ 513</div><p class="item-summary">[Python] Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xygpmv/strix_halo_int4_cores_gemma_4_31b_at_243x/" target="_blank" rel="noopener">Strix Halo int4 cores: Gemma 4 31B at 2.43x llama.cpp, same quality</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">The 8060S has an int4 x int4 WMMA instruction at 2x the FP16 rate (we measured 104 TOPS). Nothing in ROCm or llama.cpp uses it. We wrote a GEMM for it and run…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18638" target="_blank" rel="noopener">GRAFT: Cross-Backbone LoRA Reuse for Continual Language and Multimodal Learning</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.18638v1 Announce Type: new Abstract: In continual learning, parameter-efficient fine-tuning enables large language models to acquire new…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.18908" target="_blank" rel="noopener">MemeEconomy: Do LLM Agents Trade Ethics for Survival?</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.18908v1 Announce Type: new Abstract: Alignment-trained large language model (LLM) agents are increasingly deployed in autonomous, multi-round…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xyb7jw/clover_2_dense_278b_base_7_lora_experts_routed/" target="_blank" rel="noopener">Clover 2: dense 27.8B base + 7 LoRA experts routed per token, not a static merge, weights public</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Disclosure: I’m with the team that built this. Wanted to share something a little different from the usual finetune drop. Clover 2 keeps a base model and 7…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.19783" target="_blank" rel="noopener">Conditional Asset Pricing Transformer</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.19783v1 Announce Type: new Abstract: In this paper, we propose a conditional asset pricing transformer (CAP-T) that captures nonlinear interactions…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xygtj4/ovh_announces_olala_mini_7a1b/" target="_blank" rel="noopener">OVH announces Olala mini 7A1B</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Olala mini is based on a 7-billion-parameter architecture (7B), with one billion active parameters spread across 256 experts per layer, and hybrid attention…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xycsm1/dspine_updates_on_pr_ggufs/" target="_blank" rel="noopener">DSpine - Updates on PR &amp; GGUFs</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Previous thread on DSpine : [Paper] DSpine - Draft in Parallel, Condition Through Depth: Adjacent Causal Injection for Speculative Decoding - tencent GGUFs …</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xyf7ys/curated_list_of_resources_theory_and_code_for/" target="_blank" rel="noopener">Curated list of resources: Theory and Code for learning Distributed Training of LLMs for beginners</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">[Must Read: Beginners] What I did read, in order, for learning the basics of Distributed Training for LLMs From Scratch: Building a distributed training…</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/17/go-proverbs/" target="_blank" rel="noopener">Quoting Go Proverbs</a><div class="item-meta">Simon Willison</div><p class="item-summary">A little copying is better than a little dependency. — Go Proverbs , via Tags: go , programming</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xyawzz/thinking_machines_4bit_replication_i_trained_a/" target="_blank" rel="noopener">Thinking Machines 4-bit replication: I trained a GPT end to end with a 4-bit forward pass on one B200</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Thinking Machines wrote last week that Inkling 2 Small was trained with a native 4-bit forward pass. I wanted to check this for myself. What I ran: 1x B200 on…</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/LocalLLaMA/comments/1xyamk6/maxwellmodelmaxwellv1flash_hugging_face/" target="_blank" rel="noopener">maxwell-model/Maxwell-V1-Flash · Hugging Face</a><div class="item-meta">Reddit r/LocalLLaMA</div><p class="item-summary">Model Introduction Maxwell-V1.0-Flash is a next-generation, high-performance Mixture-of-Experts (MoE) language model developed by the Maxwell Team, with 35B…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
