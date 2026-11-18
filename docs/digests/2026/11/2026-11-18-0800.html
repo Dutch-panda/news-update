@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Morning Update (08:00) · 2026-11-18 08:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://revscope.co/blog/search-seo-geo-2026/" target="_blank" rel="noopener">Google&#x27;s AI answers reducing search traffic by 40%</a><div class="item-meta">Hacker News · ▲ 166 pts · 💬 112 · <a href="https://news.ycombinator.com/item?id=50540178" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Google&#x27;s AI answers are taking clicks from websites in the search results. In a randomized experiment, researchers hid AI Overviews from some US desktop…</p></div><div class="item"><a class="item-title" href="https://github.com/microsoft/onnxruntime" target="_blank" rel="noopener">Microsoft&#x27;s ONNX Runtime has disappeared from GitHub</a><div class="item-meta">Hacker News · ▲ 171 pts · 💬 40 · <a href="https://news.ycombinator.com/item?id=50539610" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/" target="_blank" rel="noopener">Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The value of Nvidia’s private investments has nearly tripled over the past nine months, fueled by Jensen Huang’s aggressive dealmaking and rising valuations…</p></div><div class="item"><a class="item-title" href="https://wiki.archiveteam.org/index.php/Apple_Discussions" target="_blank" rel="noopener">Archive Team is archiving the Apple Support Community (closes November 20, 2026)</a><div class="item-meta">Hacker News · ▲ 113 pts · 💬 44 · <a href="https://news.ycombinator.com/item?id=50539747" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://browser.engineering/" target="_blank" rel="noopener">Web Browser Engineering (2021)</a><div class="item-meta">Hacker News · ▲ 134 pts · 💬 20 · <a href="https://news.ycombinator.com/item?id=50537290" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://calif.io/java4shell/" target="_blank" rel="noopener">Java4Shell: RCE in OpenJDK when processing Base64</a><div class="item-meta">Hacker News · ▲ 622 pts · 💬 164 · <a href="https://news.ycombinator.com/item?id=50538240" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A memory-corruption vulnerability in OpenJDK&#x27;s Base64 decoder. Discovered and reported by Calif.</p></div><div class="item"><a class="item-title" href="https://blog.cloudflare.com/quad9-withdrawal-from-france/" target="_blank" rel="noopener">Quad9&#x27;s withdrawal from France: A canary in the coal mine</a><div class="item-meta">Hacker News · ▲ 355 pts · 💬 113 · <a href="https://news.ycombinator.com/item?id=50538994" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Quad9&#x27;s forced withdrawal from France highlights the dangers of mandating DNS-level blocking.</p></div><div class="item"><a class="item-title" href="https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html" target="_blank" rel="noopener">Nvidia Chair Harvey Jones says board doesn&#x27;t intend to reinstate Huang as CEO</a><div class="item-meta">Hacker News · ▲ 40 pts · 💬 29 · <a href="https://news.ycombinator.com/item?id=50538942" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Nvidia released fiscal third-quarter 2027 results on Tuesday, followed by its first earnings call since Huang&#x27;s departure.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang" target="_blank" rel="noopener">Read everything that Nvidia’s board chair had to say about Jensen Huang</a><div class="item-meta">The Verge</div><p class="item-summary">Nvidia&#x27;s quarterly earnings call on Tuesday was its first with CFO and interim CEO Colette Kress at the helm alongside the company&#x27;s first board chair, Harvey…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/" target="_blank" rel="noopener">Nvidia promises that revenue will keep soaring — for now</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Despite the turmoil Nvidia is in after the departure of its disgraced founder and CEO Jensen Huang, the company projected that its streak of record-breaking…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1036045/ifixit-teardown-apple-homeview-smart-home-hub" target="_blank" rel="noopener">iFixit’s Apple HomeView teardown reveals a device that will be difficult to repair</a><div class="item-meta">The Verge</div><p class="item-summary">After finding recent versions of Apple&#x27;s iPads and HomePods much easier to disassemble for battery replacements or other repairs, iFixit assumed it would be…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/" target="_blank" rel="noopener">Nvidia is abandoning China after Jensen Huang’s ouster</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Nvidia&#x27;s interim CEO says the company is done selling chips to China. How much will that cost?</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/" target="_blank" rel="noopener">SEC reportedly investigating Nvidia amid Huang exit</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The SEC is opening a probe into Nvidia following the departure of CEO Jensen Huang, who admitted to an affair with an alleged Chinese spy, reports The Wall…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/" target="_blank" rel="noopener">Google joins the tech outage trend by announcing it’s not having one</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">With tech outages seemingly everywhere, Google took the unusual step of announcing that Gmail is working just fine, actually.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/" target="_blank" rel="noopener">Apple services, including iCloud, App Store, Apple Music, and more, hit by outage</a><div class="item-meta">TechCrunch</div><p class="item-summary">Apple&#x27;s status page confirms its services are facing outages, but has not confirmed the cause.</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/dograh-hq/dograh" target="_blank" rel="noopener">dograh-hq/dograh</a><div class="item-meta">GitHub Trending · ⭐ 6,191 (+17 today)</div><p class="item-summary">[Python] Open source voice AI platform. Self-hosted alternative to Vapi and Retell. On Prem, BYOK across Speech to Speech or LLM/STT/TTS, with a visual…</p></div><div class="item"><a class="item-title" href="https://github.com/jlcodes99/cockpit-tools" target="_blank" rel="noopener">jlcodes99/cockpit-tools</a><div class="item-meta">GitHub Trending · ⭐ 20,089 (+33 today)</div><p class="item-summary">[Rust] 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro / Cursor / Gemini-cli / CodeBuddy，多账号切换、配额监控、自动唤醒与多开实例管理。 🚀 Universal AI…</p></div><div class="item"><a class="item-title" href="https://github.com/anomalyco/hex" target="_blank" rel="noopener">anomalyco/hex</a><div class="item-meta">GitHub Trending · ⭐ 7,298 (+174 today)</div><p class="item-summary">[Rust] Local voice dictation for mac, windows and linux</p></div><div class="item"><a class="item-title" href="https://github.com/a-ghorbani/pocketpal-ai" target="_blank" rel="noopener">a-ghorbani/pocketpal-ai</a><div class="item-meta">GitHub Trending · ⭐ 9,547 (+94 today)</div><p class="item-summary">[TypeScript] An app that brings language models directly to your phone.</p></div><div class="item"><a class="item-title" href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank" rel="noopener">NVIDIA-NeMo/Switchyard</a><div class="item-meta">GitHub Trending · ⭐ 3,638 (+38 today)</div><p class="item-summary">[Rust] Switchyard lets LLM applications route traffic across models and providers while preserving native OpenAI and Anthropic API compatibility - enabling…</p></div><div class="item"><a class="item-title" href="https://github.com/3441293738/creatorhub" target="_blank" rel="noopener">3441293738/creatorhub</a><div class="item-meta">GitHub Trending · ⭐ 3,642 (+100 today)</div><p class="item-summary">[Python] 多平台内容监控·采集·搬运 一个 Web 面板管起抖音 / 小红书 / 快手 / 视频号 / TikTok</p></div><div class="item"><a class="item-title" href="https://github.com/mastra-ai/mastra" target="_blank" rel="noopener">mastra-ai/mastra</a><div class="item-meta">GitHub Trending · ⭐ 29,584 (+22 today)</div><p class="item-summary">[TypeScript] Mastra is the modern TypeScript framework for AI-powered applications and agents.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/" target="_blank" rel="noopener">Nvidia says its open source AI strategy remains intact after Jensen Huang’s exit</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Nvidia&#x27;s interim CEO reaffirmed its open source AI strategy and plans to acquire Hugging Face, despite Jensen Huang&#x27;s sudden departure.</p></div><div class="item"><a class="item-title" href="https://github.com/mankidev/antialgorithm" target="_blank" rel="noopener">mankidev/antialgorithm</a><div class="item-meta">GitHub Search · ⭐ 247</div><p class="item-summary">[Python] Claude Code skill that steers the model away from its first, most average pick in creative work: names, ideas, posters, UI.</p></div><div class="item"><a class="item-title" href="https://www.dialup.net/farcall/" target="_blank" rel="noopener">Show HN: SSH into DOS: I wrote an x86 (IBM PC) emulator</a><div class="item-meta">Hacker News · ▲ 15 pts · 💬 3 · <a href="https://news.ycombinator.com/item?id=50536648" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.ycombinator.com/companies/gogograndparent/jobs/05woouL-front-end-javascript-typescript-engineer" target="_blank" rel="noopener">GoGoGrandparent (YC S16) Is a Front End JavaScript / TypeScript Engineer</a><div class="item-meta">Hacker News · ▲ 0 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50541538" target="_blank" rel="noopener">HN Discussion</a></div></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://starsling.dev" target="_blank" rel="noopener">Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos</a><div class="item-meta">Hacker News · ▲ 62 pts · 💬 35 · <a href="https://news.ycombinator.com/item?id=50536468" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We’re Yonas and Daniel and we’re building StarSling ( ), fast GitHub Actions runners with AI agents that ship PRs to continuously improve your tests and…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://newsletter.posthog.com/p/decision-models" target="_blank" rel="noopener">Not Everything Needs an LLM</a><div class="item-meta">Hacker News · ▲ 113 pts · 💬 45 · <a href="https://news.ycombinator.com/item?id=50535740" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">How we use decision models</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/" target="_blank" rel="noopener">Amazon and Google will together own nearly 30% of Anthropic after its IPO</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Amazon will own just under 15% of Anthropic after the IPO, with the option to go much higher. Google is a close second with holdings of nearly 14%.</p></div><div class="item"><a class="item-title" href="https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference" target="_blank" rel="noopener">Cerebras Disaggregated Inference</a><div class="item-meta">Hacker News · ▲ 40 pts · 💬 13 · <a href="https://news.ycombinator.com/item?id=50540472" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Cerebras pairs AMD GPUs for prefill with wafer-scale decode to deliver 5× more tokens per megawatt without reducing token generation speed.</p></div><div class="item"><a class="item-title" href="https://www.zerohedge.com/political/anthropic-paid-rubios-ex-chief-staffs-firm-740000-after-jensen-memo-it-lobbied-his-nsc" target="_blank" rel="noopener">Anthropic Paid Rubio&#x27;s Ex-Chief of Staff&#x27;s Firm $740k.it Lobbied His NSC</a><div class="item-meta">Hacker News · ▲ 76 pts · 💬 12 · <a href="https://news.ycombinator.com/item?id=50536565" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/" target="_blank" rel="noopener">Google expands access to Gemini Tasks, which can help with calls, purchases</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Gemini&#x27;s Task mode can help users coordinate calls, log into websites, and even make purchases on the user&#x27;s behalf.</p></div><div class="item"><a class="item-title" href="https://twitter.com/arcprize/status/2122751233442156678" target="_blank" rel="noopener">GPT-6.2 Astra scores 100% on ARC-AGI-3</a><div class="item-meta">Hacker News · ▲ 35 pts · 💬 13 · <a href="https://news.ycombinator.com/item?id=50536438" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">GPT-6.2 Astra from @OpenAI on ARC-AGI (Verified): - ARC-AGI-3: 100.0% (SOTA), $4.1K (provider adapter), 70.3%, $24.2K (standard) - ARC-AGI-2: 95.8% (SOTA)…</p></div><div class="item"><a class="item-title" href="https://twitter.com/theo/status/2122760447103484410" target="_blank" rel="noopener">I hate GPT-6.2 Astra</a><div class="item-meta">Hacker News · ▲ 25 pts · 💬 7 · <a href="https://news.ycombinator.com/item?id=50536410" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Why I hate GPT-6.2 Astra</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/" target="_blank" rel="noopener">GPT‑6.2 Astra and GPT‑6.2 Sol</a><div class="item-meta">Simon Willison</div><p class="item-summary">GPT‑6.2 Astra and GPT‑6.2 Sol OpenAI: We’re introducing GPT‑6.2 Astra, our new frontier model for your hardest projects, and GPT‑6.2 Sol, our efficient…</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/" target="_blank" rel="noopener">External sandboxes for coding agents</a><div class="item-meta">Simon Willison</div><p class="item-summary">External sandboxes for coding agents I&#x27;ve been exploring new ways to sandbox code that is executed by agents, with a focus on making it safer to try out local…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>

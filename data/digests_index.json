@@ -1,6 +1,799 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-18-0800",
+      "edition_key": "morning",
+      "edition_label": "Morning Update (08:00)",
+      "generated_at": "2026-11-18T08:00:34.054333+04:00",
+      "markdown_path": "digests/2026/11/2026-11-18-0800.md",
+      "html_path": "digests/2026/11/2026-11-18-0800.html",
+      "total_fetched": 177,
+      "total_after_dedup": 90,
+      "total_selected": 36,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50540178",
+              "title": "Google's AI answers reducing search traffic by 40%",
+              "url": "https://revscope.co/blog/search-seo-geo-2026/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Google's AI answers are taking clicks from websites in the search results. In a randomized experiment, researchers hid AI Overviews from some US desktop…",
+              "published_at": "2026-11-18T00:17:58+00:00",
+              "raw_score": 166,
+              "secondary_metric": 112,
+              "comments_url": "https://news.ycombinator.com/item?id=50540178",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 9.521,
+              "final_score": 12.521,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "hn:50539610",
+              "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+              "url": "https://github.com/microsoft/onnxruntime",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-17T23:18:49+00:00",
+              "raw_score": 171,
+              "secondary_metric": 40,
+              "comments_url": "https://news.ycombinator.com/item?id=50539610",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 9.148,
+              "final_score": 12.148,
+              "matched_keywords": [
+                "microsoft"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189878",
+              "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
+              "url": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "The value of Nvidia’s private investments has nearly tripled over the past nine months, fueled by Jensen Huang’s aggressive dealmaking and rising valuations…",
+              "published_at": "2026-11-18T01:44:21+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 6.0,
+              "popularity_score": 6.0,
+              "final_score": 12.0,
+              "matched_keywords": [
+                "nvidia",
+                "startup"
+              ]
+            },
+            {
+              "id": "hn:50539747",
+              "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+              "url": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-17T23:32:58+00:00",
+              "raw_score": 113,
+              "secondary_metric": 44,
+              "comments_url": "https://news.ycombinator.com/item?id=50539747",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 8.732,
+              "final_score": 11.732,
+              "matched_keywords": [
+                "apple"
+              ]
+            },
+            {
+              "id": "hn:50537290",
+              "title": "Web Browser Engineering (2021)",
+              "url": "https://browser.engineering/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-17T20:01:35+00:00",
+              "raw_score": 134,
+              "secondary_metric": 20,
+              "comments_url": "https://news.ycombinator.com/item?id=50537290",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 7.814,
+              "final_score": 10.814,
+              "matched_keywords": [
+                "browser"
+              ]
+            },
+            {
+              "id": "hn:50538240",
+              "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+              "url": "https://calif.io/java4shell/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "A memory-corruption vulnerability in OpenJDK's Base64 decoder. Discovered and reported by Calif.",
+              "published_at": "2026-11-17T21:11:28+00:00",
+              "raw_score": 622,
+              "secondary_metric": 164,
+              "comments_url": "https://news.ycombinator.com/item?id=50538240",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 10.0,
+              "final_score": 10.5,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50538994",
+              "title": "Quad9's withdrawal from France: A canary in the coal mine",
+              "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Quad9's forced withdrawal from France highlights the dangers of mandating DNS-level blocking.",
+              "published_at": "2026-11-17T22:13:34+00:00",
+              "raw_score": 355,
+              "secondary_metric": 113,
+              "comments_url": "https://news.ycombinator.com/item?id=50538994",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 10.0,
+              "final_score": 10.5,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50538942",
+              "title": "Nvidia Chair Harvey Jones says board doesn't intend to reinstate Huang as CEO",
+              "url": "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Nvidia released fiscal third-quarter 2027 results on Tuesday, followed by its first earnings call since Huang's departure.",
+              "published_at": "2026-11-17T22:08:34+00:00",
+              "raw_score": 40,
+              "secondary_metric": 29,
+              "comments_url": "https://news.ycombinator.com/item?id=50538942",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 7.445,
+              "final_score": 10.445,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1036160",
+              "title": "Read everything that Nvidia’s board chair had to say about Jensen Huang",
+              "url": "https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "Nvidia's quarterly earnings call on Tuesday was its first with CFO and interim CEO Colette Kress at the helm alongside the company's first board chair, Harvey…",
+              "published_at": "2026-11-17T22:32:50+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189812",
+              "title": "Nvidia promises that revenue will keep soaring — for now",
+              "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Despite the turmoil Nvidia is in after the departure of its disgraced founder and CEO Jensen Huang, the company projected that its streak of record-breaking…",
+              "published_at": "2026-11-18T00:16:50+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1036045",
+              "title": "iFixit’s Apple HomeView teardown reveals a device that will be difficult to repair",
+              "url": "https://www.theverge.com/tech/1036045/ifixit-teardown-apple-homeview-smart-home-hub",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "After finding recent versions of Apple's iPads and HomePods much easier to disassemble for battery replacements or other repairs, iFixit assumed it would be…",
+              "published_at": "2026-11-17T22:25:41+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "apple"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189789",
+              "title": "Nvidia is abandoning China after Jensen Huang’s ouster",
+              "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Nvidia's interim CEO says the company is done selling chips to China. How much will that cost?",
+              "published_at": "2026-11-17T23:37:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189752",
+              "title": "SEC reportedly investigating Nvidia amid Huang exit",
+              "url": "https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "The SEC is opening a probe into Nvidia following the departure of CEO Jensen Huang, who admitted to an affair with an alleged Chinese spy, reports The Wall…",
+              "published_at": "2026-11-17T21:48:07+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189743",
+              "title": "Google joins the tech outage trend by announcing it’s not having one",
+              "url": "https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "With tech outages seemingly everywhere, Google took the unusual step of announcing that Gmail is working just fine, actually.",
+              "published_at": "2026-11-17T21:34:50+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch:https://techcrunch.com/?p=3189647",
+              "title": "Apple services, including iCloud, App Store, Apple Music, and more, hit by outage",
+              "url": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/",
+              "source_name": "TechCrunch",
+              "source_type": "rss",
+              "summary": "Apple's status page confirms its services are facing outages, but has not confirmed the cause.",
+              "published_at": "2026-11-17T18:55:40+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "apple"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "gh:dograh-hq/dograh",
+              "title": "dograh-hq/dograh",
+              "url": "https://github.com/dograh-hq/dograh",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] Open source voice AI platform. Self-hosted alternative to Vapi and Retell. On Prem, BYOK across Speech to Speech or LLM/STT/TTS, with a visual…",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 6191,
+              "secondary_metric": 17,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 7.796,
+              "final_score": 13.396,
+              "matched_keywords": [
+                "open source",
+                "self-hosted",
+                "python"
+              ]
+            },
+            {
+              "id": "gh:jlcodes99/cockpit-tools",
+              "title": "jlcodes99/cockpit-tools",
+              "url": "https://github.com/jlcodes99/cockpit-tools",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Rust] 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro / Cursor / Gemini-cli / CodeBuddy，多账号切换、配额监控、自动唤醒与多开实例管理。 🚀 Universal AI…",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 20089,
+              "secondary_metric": 33,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Rust",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.4,
+              "popularity_score": 8.885,
+              "final_score": 13.285,
+              "matched_keywords": [
+                "cli",
+                "rust"
+              ]
+            },
+            {
+              "id": "gh:anomalyco/hex",
+              "title": "anomalyco/hex",
+              "url": "https://github.com/anomalyco/hex",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Rust] Local voice dictation for mac, windows and linux",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 7298,
+              "secondary_metric": 174,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Rust",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 10.0,
+              "final_score": 13.2,
+              "matched_keywords": [
+                "rust"
+              ]
+            },
+            {
+              "id": "gh:a-ghorbani/pocketpal-ai",
+              "title": "a-ghorbani/pocketpal-ai",
+              "url": "https://github.com/a-ghorbani/pocketpal-ai",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] An app that brings language models directly to your phone.",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 9547,
+              "secondary_metric": 94,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 9.983,
+              "final_score": 13.183,
+              "matched_keywords": [
+                "typescript"
+              ]
+            },
+            {
+              "id": "gh:NVIDIA-NeMo/Switchyard",
+              "title": "NVIDIA-NeMo/Switchyard",
+              "url": "https://github.com/NVIDIA-NeMo/Switchyard",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Rust] Switchyard lets LLM applications route traffic across models and providers while preserving native OpenAI and Anthropic API compatibility - enabling…",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 3638,
+              "secondary_metric": 38,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Rust",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.4,
+              "popularity_score": 8.629,
+              "final_score": 13.029,
+              "matched_keywords": [
+                "rust",
+                "api"
+              ]
+            },
+            {
+              "id": "gh:3441293738/creatorhub",
+              "title": "3441293738/creatorhub",
+              "url": "https://github.com/3441293738/creatorhub",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] 多平台内容监控·采集·搬运 一个 Web 面板管起抖音 / 小红书 / 快手 / 视频号 / TikTok",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 3642,
+              "secondary_metric": 100,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 9.819,
+              "final_score": 13.019,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "gh:mastra-ai/mastra",
+              "title": "mastra-ai/mastra",
+              "url": "https://github.com/mastra-ai/mastra",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[TypeScript] Mastra is the modern TypeScript framework for AI-powered applications and agents.",
+              "published_at": "2026-11-18T04:00:34.054333+00:00",
+              "raw_score": 29584,
+              "secondary_metric": 22,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "TypeScript",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.4,
+              "popularity_score": 8.419,
+              "final_score": 12.819,
+              "matched_keywords": [
+                "framework",
+                "typescript"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189779",
+              "title": "Nvidia says its open source AI strategy remains intact after Jensen Huang’s exit",
+              "url": "https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Nvidia's interim CEO reaffirmed its open source AI strategy and plans to acquire Hugging Face, despite Jensen Huang's sudden departure.",
+              "published_at": "2026-11-17T23:04:35+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "open source"
+              ]
+            },
+            {
+              "id": "gh:mankidev/antialgorithm",
+              "title": "mankidev/antialgorithm",
+              "url": "https://github.com/mankidev/antialgorithm",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Python] Claude Code skill that steers the model away from its first, most average pick in creative work: names, ideas, posters, UI.",
+              "published_at": "2026-11-14T09:48:23+00:00",
+              "raw_score": 247,
+              "secondary_metric": 66,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 6.634,
+              "final_score": 9.834,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "hn:50536648",
+              "title": "Show HN: SSH into DOS: I wrote an x86 (IBM PC) emulator",
+              "url": "https://www.dialup.net/farcall/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-17T19:14:13+00:00",
+              "raw_score": 15,
+              "secondary_metric": 3,
+              "comments_url": "https://news.ycombinator.com/item?id=50536648",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 4.804,
+              "final_score": 9.804,
+              "matched_keywords": [
+                "show hn"
+              ]
+            },
+            {
+              "id": "hn:50541538",
+              "title": "GoGoGrandparent (YC S16) Is a Front End JavaScript / TypeScript Engineer",
+              "url": "https://www.ycombinator.com/companies/gogograndparent/jobs/05woouL-front-end-javascript-typescript-engineer",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-18T03:35:47+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50541538",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 2.0,
+              "final_score": 5.0,
+              "matched_keywords": [
+                "typescript"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "hn:50536468",
+              "title": "Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos",
+              "url": "https://starsling.dev",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "We’re Yonas and Daniel and we’re building StarSling ( ), fast GitHub Actions runners with AI agents that ship PRs to continuously improve your tests and…",
+              "published_at": "2026-11-17T19:01:43+00:00",
+              "raw_score": 62,
+              "secondary_metric": 35,
+              "comments_url": "https://news.ycombinator.com/item?id=50536468",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 1.2,
+              "popularity_score": 7.191,
+              "final_score": 8.391,
+              "matched_keywords": [
+                "ai agents"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & Capabilities",
+          "items": [
+            {
+              "id": "hn:50535740",
+              "title": "Not Everything Needs an LLM",
+              "url": "https://newsletter.posthog.com/p/decision-models",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "How we use decision models",
+              "published_at": "2026-11-17T18:16:18+00:00",
+              "raw_score": 113,
+              "secondary_metric": 45,
+              "comments_url": "https://news.ycombinator.com/item?id=50535740",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 7.941,
+              "final_score": 10.941,
+              "matched_keywords": [
+                "llm"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189746",
+              "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
+              "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Amazon will own just under 15% of Anthropic after the IPO, with the option to go much higher. Google is a close second with holdings of nearly 14%.",
+              "published_at": "2026-11-17T22:29:05+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "hn:50540472",
+              "title": "Cerebras Disaggregated Inference",
+              "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Cerebras pairs AMD GPUs for prefill with wafer-scale decode to deliver 5× more tokens per megawatt without reducing token generation speed.",
+              "published_at": "2026-11-18T00:56:23+00:00",
+              "raw_score": 40,
+              "secondary_metric": 13,
+              "comments_url": "https://news.ycombinator.com/item?id=50540472",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 7.141,
+              "final_score": 10.141,
+              "matched_keywords": [
+                "inference"
+              ]
+            },
+            {
+              "id": "hn:50536565",
+              "title": "Anthropic Paid Rubio's Ex-Chief of Staff's Firm $740k.it Lobbied His NSC",
+              "url": "https://www.zerohedge.com/political/anthropic-paid-rubios-ex-chief-staffs-firm-740000-after-jensen-memo-it-lobbied-his-nsc",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero",
+              "published_at": "2026-11-17T19:08:45+00:00",
+              "raw_score": 76,
+              "secondary_metric": 12,
+              "comments_url": "https://news.ycombinator.com/item?id=50536565",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 7.004,
+              "final_score": 10.004,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3189640",
+              "title": "Google expands access to Gemini Tasks, which can help with calls, purchases",
+              "url": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Gemini's Task mode can help users coordinate calls, log into websites, and even make purchases on the user's behalf.",
+              "published_at": "2026-11-17T19:02:20+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "gemini"
+              ]
+            },
+            {
+              "id": "hn:50536438",
+              "title": "GPT-6.2 Astra scores 100% on ARC-AGI-3",
+              "url": "https://twitter.com/arcprize/status/2122751233442156678",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "GPT-6.2 Astra from @OpenAI on ARC-AGI (Verified): - ARC-AGI-3: 100.0% (SOTA), $4.1K (provider adapter), 70.3%, $24.2K (standard) - ARC-AGI-2: 95.8% (SOTA)…",
+              "published_at": "2026-11-17T18:59:43+00:00",
+              "raw_score": 35,
+              "secondary_metric": 13,
+              "comments_url": "https://news.ycombinator.com/item?id=50536438",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 6.197,
+              "final_score": 9.197,
+              "matched_keywords": [
+                "gpt-"
+              ]
+            },
+            {
+              "id": "hn:50536410",
+              "title": "I hate GPT-6.2 Astra",
+              "url": "https://twitter.com/theo/status/2122760447103484410",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Why I hate GPT-6.2 Astra",
+              "published_at": "2026-11-17T18:57:57+00:00",
+              "raw_score": 25,
+              "secondary_metric": 7,
+              "comments_url": "https://news.ycombinator.com/item?id=50536410",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 5.616,
+              "final_score": 8.616,
+              "matched_keywords": [
+                "gpt-"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+              "title": "GPT‑6.2 Astra and GPT‑6.2 Sol",
+              "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "GPT‑6.2 Astra and GPT‑6.2 Sol OpenAI: We’re introducing GPT‑6.2 Astra, our new frontier model for your hardest projects, and GPT‑6.2 Sol, our efficient…",
+              "published_at": "2026-11-17T22:38:52+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 1.2,
+              "popularity_score": 6.0,
+              "final_score": 7.2,
+              "matched_keywords": [
+                "openai"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+              "title": "External sandboxes for coding agents",
+              "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "External sandboxes for coding agents I've been exploring new ways to sandbox code that is executed by agents, with a focus on making it safer to try out local…",
+              "published_at": "2026-11-17T22:52:29+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 0.5,
+              "popularity_score": 6.0,
+              "final_score": 6.5,
+              "matched_keywords": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-17-2300",
       "edition_key": "night",
       "edition_label": "Night Update (23:00)",
