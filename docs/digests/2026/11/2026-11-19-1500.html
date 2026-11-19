@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-19 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://verialabs.com/ruby2shell/" target="_blank" rel="noopener">Ruby2ßhell: Pre-authentication RCE on stock Rails</a><div class="item-meta">Hacker News · ▲ 138 pts · 💬 50 · <a href="https://news.ycombinator.com/item?id=50556287" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Ruby2Shell (GHSA-34m4-m9fh-gqp5): a one-byte heap overflow in Ruby&#x27;s string case conversion, reachable without authentication in common Ruby web frameworks…</p></div><div class="item"><a class="item-title" href="https://kapteko.com/15-million-webservers/" target="_blank" rel="noopener">15M web servers on one VM – smoltcp, DPDK, AF_XDP</a><div class="item-meta">Hacker News · ▲ 163 pts · 💬 20 · <a href="https://news.ycombinator.com/item?id=50556533" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Kernel bypass, bringing the TCP/IP network stack to userland, all that to run one server for every human being on the planet</p></div><div class="item"><a class="item-title" href="https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html" target="_blank" rel="noopener">SSD prices will start going down the second half of next year</a><div class="item-meta">Hacker News · ▲ 73 pts · 💬 49 · <a href="https://news.ycombinator.com/item?id=50557716" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">SSDs should ease from the second half of 2027. Hard drives are contracted into 2028. The evidence, the timeline, and what to do meanwhile.</p></div><div class="item"><a class="item-title" href="https://colossus.com/article/ai-will-not-make-you-rich/" target="_blank" rel="noopener">AI will not make you rich (2025)</a><div class="item-meta">Hacker News · ▲ 98 pts · 💬 60 · <a href="https://news.ycombinator.com/item?id=50555093" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The disruption is real. It&#x27;s also predictable.</p></div><div class="item"><a class="item-title" href="https://www.php.net/releases/8.6/en.php" target="_blank" rel="noopener">What&#x27;s New in PHP 8.6</a><div class="item-meta">Hacker News · ▲ 48 pts · 💬 25 · <a href="https://news.ycombinator.com/item?id=50557870" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">PHP 8.6 is a major update of the PHP language, with new features including Partial Function Application, a new Duration class, a Polling API, and a new…</p></div><div class="item"><a class="item-title" href="https://curiousbits.nl/blog/do-not-buy-ram-compress/" target="_blank" rel="noopener">Do not buy RAM, compress</a><div class="item-meta">Hacker News · ▲ 25 pts · 💬 11 · <a href="https://news.ycombinator.com/item?id=50557661" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">AI has changed a lot. We do more work in parallel. This increases the memory demand on our workstations. Also, memory is expensive and often not extendable…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.24073" target="_blank" rel="noopener">3D GameDev Arena: Benchmarking Coding Agents That Plan, Build, and Playtest extreme Long-Horizon Browser Games</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.24073v1 Announce Type: new Abstract: Coding agents now resolve repository issues and generate compact playable games, but whether they can build a…</p></div><div class="item"><a class="item-title" href="https://github.com/Ri4dH/failtrace" target="_blank" rel="noopener">FailTrace – Reproduce a failed GitHub Actions run locally from its URL</a><div class="item-meta">Hacker News · ▲ 28 pts · 💬 5 · <a href="https://news.ycombinator.com/item?id=50554941" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Stop guessing why CI failed. Reproduce it locally. - Ri4dH/failtrace</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23398" target="_blank" rel="noopener">HardwareDx: A Foundational Graph Model System for Datacenter Machine Repairs</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.23398v1 Announce Type: new Abstract: The rapid scale-up of AI infrastructure has made datacenter reliability a cornerstone of the cloud business…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.24257" target="_blank" rel="noopener">TRESS: A Fixed-Size History Representation for Irregular Time Series Forecasting</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.24257v1 Announce Type: cross Abstract: A fixed number of recent observations may span minutes for one variable and days for another. Earlier…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23815" target="_blank" rel="noopener">CAFE-AQI: Coverage-Aware Day-Ahead AQI Forecasting with Early Warning and Conformal Uncertainty in Bangladesh</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23815v1 Announce Type: new Abstract: Next-day air quality forecasting often assumes city records are equally complete and independent. However, an…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23942" target="_blank" rel="noopener">GLIDE: Scalable and Event-Aware Inductive Forecasting over Evolving Logistics Graphs</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.23942v1 Announce Type: new Abstract: Accurate forecasting of order volume at scale-effect hotspots (SEHs), spatially coherent groups of logistics…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank" rel="noopener">JCodesMore/ai-website-cloner-template</a><div class="item-meta">GitHub Trending · ⭐ 39,491 (+94 today)</div><p class="item-summary">[TypeScript] Clone any website with one command using AI coding agents</p></div><div class="item"><a class="item-title" href="https://github.com/XiaoYouChR/Ghost-Downloader-3" target="_blank" rel="noopener">XiaoYouChR/Ghost-Downloader-3</a><div class="item-meta">GitHub Trending · ⭐ 12,250 (+432 today)</div><p class="item-summary">[Python] The only downloader you need. 下载器的集大成者。</p></div><div class="item"><a class="item-title" href="https://github.com/BurntSushi/ripgrep" target="_blank" rel="noopener">BurntSushi/ripgrep</a><div class="item-meta">GitHub Trending · ⭐ 70,057 (+39 today)</div><p class="item-summary">[Rust] ripgrep recursively searches directories for a regex pattern while respecting your gitignore</p></div><div class="item"><a class="item-title" href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm-sh/nvm</a><div class="item-meta">GitHub Trending · ⭐ 96,235 (+237 today)</div><p class="item-summary">[Shell] Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.</p></div><div class="item"><a class="item-title" href="https://github.com/sveltejs/svelte" target="_blank" rel="noopener">sveltejs/svelte</a><div class="item-meta">GitHub Trending · ⭐ 89,747 (+692 today)</div><p class="item-summary">[JavaScript] web development for the rest of us</p></div><div class="item"><a class="item-title" href="https://github.com/DeanChensj/jiangshan-map" target="_blank" rel="noopener">DeanChensj/jiangshan-map</a><div class="item-meta">GitHub Trending · ⭐ 8,368 (+218 today)</div><p class="item-summary">[JavaScript] 江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern…</p></div><div class="item"><a class="item-title" href="https://github.com/stalwartlabs/stalwart" target="_blank" rel="noopener">stalwartlabs/stalwart</a><div class="item-meta">GitHub Trending · ⭐ 16,050 (+27 today)</div><p class="item-summary">[Rust] All-in-one Mail &amp; Collaboration server. Secure, scalable and fluent in every protocol (IMAP, JMAP, SMTP, CalDAV, CardDAV, WebDAV).</p></div><div class="item"><a class="item-title" href="https://zerodha.tech/blog/high-performance-distributed-blob-storage/" target="_blank" rel="noopener">Distributed, high-performance blob storage on SQLite</a><div class="item-meta">Hacker News · ▲ 49 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50557537" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">How we built Blobasaur, a sharded, distributed, lightweight blob storage server to solve our high-throughput blob read/write usecase.</p></div><div class="item"><a class="item-title" href="https://vercel.com/blog/introducing-vercel-board" target="_blank" rel="noopener">Show HN: Vercel Board – a shared, secure message board for agents (public beta)</a><div class="item-meta">Hacker News · ▲ 10 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50555456" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Vercel Board is an experimental primitive: a shared message board where agents coordinate tasks, exchange context, and work together across your tools.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23779" target="_blank" rel="noopener">TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23779v1 Announce Type: new Abstract: Recent advances in machine learning have accelerated biomedical prediction, but evaluation on structured…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.24159" target="_blank" rel="noopener">Fast Bayesian Methods for Uncertainty Quantification in Sparse AI Evaluation</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.24159v1 Announce Type: new Abstract: Estimating how an AI system will perform on a new benchmark need not require another large model. We use…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23241" target="_blank" rel="noopener">GridForge: An Open Physics-Informed Digital Twin and Benchmark Suite for UK 11 kV Underground Distribution Cables</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23241v1 Announce Type: new Abstract: The UK distribution-cable monitoring sector is data-rich but framework-poor: each Distribution Network…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23362" target="_blank" rel="noopener">TRACE-MAS: Diagnosing and Repairing Collaboration Failures in Multi-Agent Systems</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23362v1 Announce Type: new Abstract: LLM-based multi-agent systems (MAS) rely on not only individual agent behaviors but also the interactions that…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23483" target="_blank" rel="noopener">SpecLook: Speculating Where to Look for Fast and Reliable Agentic MLLMs</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.23483v1 Announce Type: new Abstract: Agentic multimodal large language models (MLLMs) that think with images interleave reasoning with zoom-in tool…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23855" target="_blank" rel="noopener">RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.23855v1 Announce Type: new Abstract: Can AI agents design robots that work in the real world? We introduce RoboBuilder, a benchmark in which coding…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23388" target="_blank" rel="noopener">QDA: Closed-Loop LLM Quantization Design with Agents</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23388v1 Announce Type: new Abstract: Post-training quantization is the standard way to serve large language models at low cost. However, the best…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23339" target="_blank" rel="noopener">Optimize the Cob, Then the Kernel: Optimizing Beam Search for Generative Recommendation Inference</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.23339v1 Announce Type: new Abstract: Generative recommendation (GR) inference differs substantially from conventional LLM serving, featuring long…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.23428" target="_blank" rel="noopener">When Does Subspace Direction Matter for LoRA? Regime Analysis of the Magnitude Principle in Few-Shot Adaptation</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.23428v1 Announce Type: cross Abstract: We show that the importance of a LoRA adapter&#x27;s initial input-subspace direction is regime-dependent, and we…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
