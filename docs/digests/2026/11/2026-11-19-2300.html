@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Night Update (23:00) · 2026-11-19 23:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/" target="_blank" rel="noopener">UK government forced to admit it issued Apple a secret encryption order</a><div class="item-meta">Hacker News · ▲ 191 pts · 💬 90 · <a href="https://news.ycombinator.com/item?id=50562113" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The Investigatory Powers Tribunal has rejected the UK government’s attempt to keep its order secret, marking a significant victory for transparency.</p></div><div class="item"><a class="item-title" href="https://thedataexchange.media/pete-warden-moonshine/" target="_blank" rel="noopener">Pete warden on local AI, open models, voice interfaces, the future of hardware</a><div class="item-meta">Hacker News · ▲ 149 pts · 💬 133 · <a href="https://news.ycombinator.com/item?id=50561508" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Pete Warden on Local AI, Open Models, Voice Interfaces, and the Future of Hardware. Subscribe: Apple • Spotify • Overcast … More</p></div><div class="item"><a class="item-title" href="https://krthr.co/paper-folds-and-whats-new-in-fanzines-app/" target="_blank" rel="noopener">Making 8-page foldable zines from a single A4 sheet in the browser</a><div class="item-meta">Hacker News · ▲ 147 pts · 💬 39 · <a href="https://news.ycombinator.com/item?id=50559719" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A small update on fanzines.app: designing in real spreads, batch photo drops, printer-safe margins, and support for English and Spanish.</p></div><div class="item"><a class="item-title" href="https://blog.plover.com/tech/bug-reports.html" target="_blank" rel="noopener">Google Chrome dev team declares bug report bankruptcy (2012)</a><div class="item-meta">Hacker News · ▲ 79 pts · 💬 34 · <a href="https://news.ycombinator.com/item?id=50562101" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">From the highly eclectic blog of Mark Dominus</p></div><div class="item"><a class="item-title" href="https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/" target="_blank" rel="noopener">How the European Commission rolled out Matrix to more than 40k staff</a><div class="item-meta">Hacker News · ▲ 577 pts · 💬 275 · <a href="https://news.ycombinator.com/item?id=50558533" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Watch presentations from Element&#x27;s Public Sector track at The Matrix Conference 2026, featuring talks on secure, Matrix-based communications.</p></div><div class="item"><a class="item-title" href="https://lastbook.org/" target="_blank" rel="noopener">Everything you need to survive and rebuild society</a><div class="item-meta">Hacker News · ▲ 243 pts · 💬 136 · <a href="https://news.ycombinator.com/item?id=50560822" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Free, open-source survival library with local AI, maps and how-to videos. Works offline after setup on Mac, Windows and Linux.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1037558/microsoft-to-do-shutdown-planner" target="_blank" rel="noopener">Microsoft is killing its great tasks app in favor of its worse tasks app</a><div class="item-meta">The Verge</div><p class="item-summary">In 2015 Microsoft acquired a to-do list app called Wunderlist, for a price rumored to be as high as $200 million. Wunderlist fans were worried that Microsoft…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1037846/apple-jon-mccormack-retired-iphone-camera" target="_blank" rel="noopener">Apple’s iPhone camera leader has reportedly left the company</a><div class="item-meta">The Verge</div><p class="item-summary">Jon McCormack, Apple&#x27;s vice president of camera software engineering, left the company last month, Bloomberg reports. Its sources say McCormack retired &quot;at…</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/gadgets/2026/11/google-will-launch-android-app-verification-requirement-globally-in-january-2027/" target="_blank" rel="noopener">Google will launch Android app verification requirement globally in January 2027</a><div class="item-meta">Ars Technica</div><p class="item-summary">Google says almost all developers have already gotten on board with verification.</p></div><div class="item"><a class="item-title" href="https://ounapuu.ee/posts/2026/11/19/unsafeguards/" target="_blank" rel="noopener">Fuck Your AI Safeguards</a><div class="item-meta">Hacker News · ▲ 158 pts · 💬 57 · <a href="https://news.ycombinator.com/item?id=50562262" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">You can&#x27;t tell me that you found a security issue in my product and then refuse to fix it.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order/" target="_blank" rel="noopener">UK government forced to disclose secret Apple backdoor order</a><div class="item-meta">TechCrunch</div><p class="item-summary">The U.K. tribunal&#x27;s ruling rejected London&#x27;s claim that disclosing the order would be damaging to national security.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/nimble-enters-the-item-tracking-market-with-eco-friendly-luggage-tags-and-keychains/" target="_blank" rel="noopener">Nimble enters the item-tracking market with eco-friendly luggage tags and keychains</a><div class="item-meta">TechCrunch</div><p class="item-summary">As Google takes on Apple in the item-tracking market, Nimble is hoping its trackable wallets, keychains, luggage tags, and passport covers stand out.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1037813/amazon-is-pushing-alerts-to-shoppers-opposing-nycs-delivery-protection-act" target="_blank" rel="noopener">Amazon is pushing alerts opposing NYC’s Delivery Protection Act</a><div class="item-meta">The Verge</div><p class="item-summary">Amazon is serving up push notifications and banners on its home page to some users, warning that a new bill could add up to $5 per order in New York City. The…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1037848/motorola-razr-flex-wide-foldable-folding-smartphone-android-leak" target="_blank" rel="noopener">Leaked images reveal Motorola’s wide foldable</a><div class="item-meta">The Verge</div><p class="item-summary">New leaked images of Motorola&#x27;s next folding smartphone shared by SammyGuru add more credence to the theory that widescreen could be the default design for…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1036229/paramount-plus-black-friday-deal-2026-sale" target="_blank" rel="noopener">You can grab two months of Paramount Plus for just $2.99 for Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">Ahead of Black Friday, you can subscribe to Paramount Plus for just $2.99 per month for the first two months. After the introductory period, you can cancel…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://www.kdnuggets.com/one-table-many-engines-running-bigquery-spark-and-trino-on-a-single-iceberg-copy" target="_blank" rel="noopener">One Table, Many Engines: Running BigQuery, Spark, and Trino on a Single Iceberg Copy</a><div class="item-meta">KDnuggets</div><p class="item-summary">Run BigQuery, Apache Spark, and Trino on one Apache Iceberg table in Google Cloud&#x27;s Lakehouse runtime catalog, with no copies or sync jobs, and see how…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/analytics-engineerings-missing-layer-is-business-communication/" target="_blank" rel="noopener">Analytics Engineering&#x27;s Missing Layer Is Business Communication</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Why grains, joins, filters, and tests need business translations, and how a four-step framework keeps stakeholders from misreading metric changes. The post…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/earendil-works/pi" target="_blank" rel="noopener">earendil-works/pi</a><div class="item-meta">GitHub Trending · ⭐ 122,905 (+191 today)</div><p class="item-summary">[TypeScript] AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI</p></div><div class="item"><a class="item-title" href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">anomalyco/opencode</a><div class="item-meta">GitHub Trending · ⭐ 228,005 (+260 today)</div><p class="item-summary">[TypeScript] The open source coding agent.</p></div><div class="item"><a class="item-title" href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a><div class="item-meta">GitHub Trending · ⭐ 203,948 (+795 today)</div><p class="item-summary">[TypeScript] Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.</p></div><div class="item"><a class="item-title" href="https://github.com/rustdesk/rustdesk" target="_blank" rel="noopener">rustdesk/rustdesk</a><div class="item-meta">GitHub Trending · ⭐ 130,268 (+237 today)</div><p class="item-summary">[Rust] An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.</p></div><div class="item"><a class="item-title" href="https://github.com/rtk-ai/rtk" target="_blank" rel="noopener">rtk-ai/rtk</a><div class="item-meta">GitHub Trending · ⭐ 87,176 (+155 today)</div><p class="item-summary">[Rust] CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies</p></div><div class="item"><a class="item-title" href="https://github.com/zhouxiaoka/autoclip" target="_blank" rel="noopener">zhouxiaoka/autoclip</a><div class="item-meta">GitHub Trending · ⭐ 11,118 (+110 today)</div><p class="item-summary">[Python] AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping &amp; content…</p></div><div class="item"><a class="item-title" href="https://github.com/phone-harness/phone-harness" target="_blank" rel="noopener">phone-harness/phone-harness</a><div class="item-meta">GitHub Trending · ⭐ 5,115 (+19 today)</div><p class="item-summary">[Python] let your agent control your phone</p></div><div class="item"><a class="item-title" href="https://foolscap.works/" target="_blank" rel="noopener">Show HN: Foolscap – a writing app that reads your book and never writes for you</a><div class="item-meta">Hacker News · ▲ 94 pts · 💬 77 · <a href="https://news.ycombinator.com/item?id=50559749" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">People are scared of their ability to write and think atrophying, so I wondered: what if I built something that enhanced human creativity instead of…</p></div><div class="item"><a class="item-title" href="https://cornholenews.news" target="_blank" rel="noopener">Show HN: Cornhole News – A Hacker News inspired site for news across the Midwest</a><div class="item-meta">Hacker News · ▲ 94 pts · 💬 43 · <a href="https://news.ycombinator.com/item?id=50561515" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Top stories and links, ranked by votes from the community.</p></div><div class="item"><a class="item-title" href="https://github.com/onlook-dev/onlook/" target="_blank" rel="noopener">Launch HN: Onlook (YC W25) – An open-source developer tool for designers</a><div class="item-meta">Hacker News · ▲ 38 pts · 💬 31 · <a href="https://news.ycombinator.com/item?id=50562320" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hey HN, I&#x27;m Daniel, founder of Onlook ( and onlook.com). Onlook is a desktop app that puts a canvas on top of your real codebase, letting you design directly…</p></div><div class="item"><a class="item-title" href="https://github.com/Bodila51/gtavi-claudecode" target="_blank" rel="noopener">Bodila51/gtavi-claudecode</a><div class="item-meta">GitHub Search · ⭐ 659</div><p class="item-summary">[Python] Claude Code plugin that turns GTA 6 streams into paid vertical clips: live campaigns, trending videos, best moments, 9:16 cuts with hooks, captions…</p></div><div class="item"><a class="item-title" href="https://tabbyml.github.io/weight-space-playground/" target="_blank" rel="noopener">Show HN: Watch weight-space programming in action with WebGPU</a><div class="item-meta">Hacker News · ▲ 22 pts · 💬 3 · <a href="https://news.ycombinator.com/item?id=50561436" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">I wanted to build a full weight-space programming loop entirely in the browser with WebGPU: let an LLM inspect Qwen3.5-0.8B, edit its weights, evaluate, and…</p></div><div class="item"><a class="item-title" href="https://getagentmall.com" target="_blank" rel="noopener">Show HN: AgentMall – Let your AI agent buy groceries</a><div class="item-meta">Hacker News · ▲ 16 pts · 💬 3 · <a href="https://news.ycombinator.com/item?id=50562508" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hey HN, we’re Nel and Kosi. We noticed personal agents like Instinct, Muse were terrible at buying stuff. Most of the time the checkout would fail. So we…</p></div><div class="item"><a class="item-title" href="https://volcano.dev/blog/introducing-volcano-agent-cloud" target="_blank" rel="noopener">Show HN: Volcano, a self-healing agent cloud</a><div class="item-meta">Hacker News · ▲ 15 pts · 💬 1 · <a href="https://news.ycombinator.com/item?id=50560789" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">One place to build, host, and run agents and applications, with a platform that finds and fixes bugs on its own.</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/the-095-expectile-is-not-the-95th-percentile/" target="_blank" rel="noopener">The 0.95 Expectile Is Not the 95th Percentile</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Exact uniform math and 100 synthetic Python runs show when to target 95% coverage and when asymmetric squared-error costs call for the expectile. The post The…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://github.com/Imbad0202/academic-research-skills" target="_blank" rel="noopener">Imbad0202/academic-research-skills</a><div class="item-meta">GitHub Trending · ⭐ 57,747 (+271 today)</div><p class="item-summary">[Python] Academic Research Skills for Claude Code: research → write → review → revise → finalize</p></div><div class="item"><a class="item-title" href="https://github.com/wshobson/agents" target="_blank" rel="noopener">wshobson/agents</a><div class="item-meta">GitHub Trending · ⭐ 42,703 (+42 today)</div><p class="item-summary">[Python] Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in Markdown…</p></div><div class="item"><a class="item-title" href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery/diagram-design</a><div class="item-meta">GitHub Trending · ⭐ 68,518 (+332 today)</div><p class="item-summary">[HTML] Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No…</p></div><div class="item"><a class="item-title" href="https://github.com/awslabs/cli-agent-orchestrator" target="_blank" rel="noopener">awslabs/cli-agent-orchestrator</a><div class="item-meta">GitHub Trending · ⭐ 1,597 (+9 today)</div><p class="item-summary">[Python] Multi-agent orchestration for AI coding CLIs — Claude Code, Kiro, Codex, and more, coordinated in isolated tmux sessions</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247/" target="_blank" rel="noopener">How to Run Claude Code and Other Coding Agents in the Cloud 24/7</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Two setups: flip Claude Code&#x27;s cloud environment on for the quick path, or rent a server for full control. The post How to Run Claude Code and Other Coding…</p></div><div class="item"><a class="item-title" href="https://www.kdnuggets.com/what-i-learned-from-kaggle-googles-free-agentic-ai-course" target="_blank" rel="noopener">What I Learned From Kaggle + Google’s Free Agentic AI Course</a><div class="item-meta">KDnuggets</div><p class="item-summary">Learn to build AI agents with Gemini and Google’s ADK through this free course, covering tools, memory, evaluation, and deployment.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/" target="_blank" rel="noopener">Meta’s AI agent Muse is mixing up conversations and exposing private data, report says</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/how-to-oversee-ai-agents-at-scale-with-a-three-tier-architecture/" target="_blank" rel="noopener">How to Oversee AI Agents at Scale With a Three-Tier Architecture</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Separate runtime oversight from human review: an autonomous supervisor handles reversible fixes, while humans approve high-impact changes. The post How to…</p></div><div class="item"><a class="item-title" href="https://hubspot.engineering/blog/aviator-hubspots-agent-harness/" target="_blank" rel="noopener">Aviator: HubSpot&#x27;s Agent Harness</a><div class="item-meta">Hacker News · ▲ 21 pts · 💬 3 · <a href="https://news.ycombinator.com/item?id=50562442" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Aviator is the Java agent harness behind Breeze Assistant and agents across HubSpot. It runs the agent loop, works with any model, scales to thousands of…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/" target="_blank" rel="noopener">Anthropic hits $2T in Nasdaq debut</a><div class="item-meta">Hacker News · ▲ 288 pts · 💬 390 · <a href="https://news.ycombinator.com/item?id=50562754" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Anthropic&#x27;s IPO price was set at $83, representing more than $80 billion in new capital raised.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use" target="_blank" rel="noopener">Gemini on Mac can now use your computer</a><div class="item-meta">The Verge</div><p class="item-summary">Google&#x27;s Gemini app for macOS now has computer use, meaning it can help you &quot;get multi-step tasks done across your local files, desktop apps, and the web,&quot;…</p></div><div class="item"><a class="item-title" href="https://www.anthropic.com/research/claude-black-hole-physics" target="_blank" rel="noopener">Claude solves two open problems in the physics of black holes</a><div class="item-meta">Hacker News · ▲ 121 pts · 💬 29 · <a href="https://news.ycombinator.com/item?id=50563148" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Claude Fable 5.2 has solved two open problems in theoretical physics. Both concern black holes and the search for a theory of quantum gravity.</p></div><div class="item"><a class="item-title" href="https://news.ycombinator.com/item?id=50562528" target="_blank" rel="noopener">Anthropic (ANT) stock lists at nearly $2T valuation</a><div class="item-meta">Hacker News · ▲ 38 pts · 💬 10</div><p class="item-summary">Anthropic (ANT) stock listed at nearly $2 Trillion valuation. It is the biggest IPO ever!</p></div><div class="item"><a class="item-title" href="https://moq.dev/blog/webrtc-is-still-the-problem/" target="_blank" rel="noopener">OpenAI still has a WebRTC Problem</a><div class="item-meta">Hacker News · ▲ 79 pts · 💬 25 · <a href="https://news.ycombinator.com/item?id=50560461" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Media over QUIC: Your voice AI keeps asking &quot;can you repeat that?&quot; because WebRTC throws away your words. MoQ dun do that.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/" target="_blank" rel="noopener">Anthropic’s IPO puts AI’s circular financing boom to the test</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Anthropic faces enormous compute commitments as it goes public, but its biggest infrastructure partners, including Amazon and Google, could continue profiting…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq" target="_blank" rel="noopener">Anthropic starts trading on Wall Street</a><div class="item-meta">The Verge</div><p class="item-summary">Anthropic has officially gone public. It began trading on the Nasdaq under the ticker symbol &quot;ANT&quot; at $111.50 per share, up from its initial $83 per share…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/" target="_blank" rel="noopener">At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">In his Nasdaq opening bell speech, Dario Amodei reiterated Anthropic&#x27;s commitment to pacing AI development, regardless of business or political pressure.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/" target="_blank" rel="noopener">Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Everful has raised $48.5 million to expand its factory-direct sourcing platform, helping retailers source products from overseas manufacturers.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/" target="_blank" rel="noopener">Superhuman pushes its Go assistant everywhere</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Superhuman is making Go its central agent and making it available in Docs and Mail.</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
