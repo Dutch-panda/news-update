@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-20 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://grapheneos.social/@GrapheneOS/117645038299496084" target="_blank" rel="noopener">Google is pushing OEMs against GrapheneOS and bootloader unlocking</a><div class="item-meta">Hacker News · ▲ 379 pts · 💬 131 · <a href="https://news.ycombinator.com/item?id=50570479" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Google is sabotaging their OEM partners by making a growing number of features and updates exclusive to Pixels. At the same time, Google is trying to convince…</p></div><div class="item"><a class="item-title" href="https://em-online.bearblog.dev/i-can-tell-you-wrote-this-yourself/" target="_blank" rel="noopener">&quot;I can tell you wrote this yourself&quot;</a><div class="item-meta">Hacker News · ▲ 190 pts · 💬 183 · <a href="https://news.ycombinator.com/item?id=50571189" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Those were some of the first words my honours project supervisor said to me last week when we met to discuss a progress report I had written to mark the midw...</p></div><div class="item"><a class="item-title" href="https://ethanlowman.com/posts/jj-primer/" target="_blank" rel="noopener">Jujutsu Primer</a><div class="item-meta">Hacker News · ▲ 125 pts · 💬 84 · <a href="https://news.ycombinator.com/item?id=50570628" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A short tour through the basics of the Jujutsu version control system.</p></div><div class="item"><a class="item-title" href="https://www.gimp.org/news/2026/11/16/gimp-ui-tests/" target="_blank" rel="noopener">GIMP now has UI tests</a><div class="item-meta">Hacker News · ▲ 125 pts · 💬 116 · <a href="https://news.ycombinator.com/item?id=50569985" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">GIMP now has automatic tests that use the user interface in the same way as a person.</p></div><div class="item"><a class="item-title" href="https://www.postgresql.org/docs/release/19.0/" target="_blank" rel="noopener">PostgreSQL 19</a><div class="item-meta">Hacker News · ▲ 214 pts · 💬 10 · <a href="https://news.ycombinator.com/item?id=50569890" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://ffmpeg.org/download.html#release_9.1" target="_blank" rel="noopener">FFmpeg 9.1 &#x27;Gauss&#x27;</a><div class="item-meta">Hacker News · ▲ 149 pts · 💬 24 · <a href="https://news.ycombinator.com/item?id=50569998" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://seremot.com/p/vint-cerf-on-why-tcpip-was-never" target="_blank" rel="noopener">Vint Cerf on why TCP/IP was never patented</a><div class="item-meta">Hacker News · ▲ 112 pts · 💬 53 · <a href="https://news.ycombinator.com/item?id=50568861" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Future Stories, my new podcast about technology, science and the way we live, starts today. The first guest is one of the people who built the Internet.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25282" target="_blank" rel="noopener">MS-Point: Multi-Modal Hierarchical Spectral Learning for Point Cloud Understanding</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25282v1 Announce Type: new Abstract: Point-image alignment learns useful object representations, but different local feature patterns can produce…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25274" target="_blank" rel="noopener">DS3M: Deep structured state space models for nonlinear system identification on modern hardware</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.25274v1 Announce Type: new Abstract: Neural state-space identification learns dynamical models from measured inputs and outputs. SUBNET combines…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/20/the-u-s-national-cyber-director-is-stepping-down/" target="_blank" rel="noopener">The U.S. national cyber director is stepping down</a><div class="item-meta">TechCrunch</div><p class="item-summary">The news comes as businesses across the country report a flurry of technical outages, the causes of which are still unknown.</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.24986" target="_blank" rel="noopener">Risk-optimal active learning with informative abstention</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.24986v1 Announce Type: new Abstract: We study label acquisition when an oracle may abstain and its response probability shares parameters with the…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25388" target="_blank" rel="noopener">Falsifiable Compositional Reasoning in Time Series Forecasting</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25388v1 Announce Type: new Abstract: Time series foundation models as well as the language-guided analytical agents achieve strong accuracy on…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.26232" target="_blank" rel="noopener">Time Series Structure Learning with Local Causal Parent Discovery</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.26232v1 Announce Type: cross Abstract: Learning and inference on time series can pose significant statistical challenges, including autocorrelated…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2605.08963" target="_blank" rel="noopener">Survey-aware Machine Learning: A Guideline for Valid Population Health Inference based on Scoping Review</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2605.08963v2 Announce Type: replace Abstract: Machine Learning (ML) models trained on complex health surveys such as the National Health and Nutrition…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/iamajmeena/neonclipping" target="_blank" rel="noopener">iamajmeena/neonclipping</a><div class="item-meta">GitHub Search · ⭐ 858</div><p class="item-summary">[Python] Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM). (clipping…</p></div><div class="item"><a class="item-title" href="https://github.com/toeverything/AFFiNE" target="_blank" rel="noopener">toeverything/AFFiNE</a><div class="item-meta">GitHub Trending · ⭐ 75,430 (+182 today)</div><p class="item-summary">[TypeScript] There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all…</p></div><div class="item"><a class="item-title" href="https://github.com/lbjlaq/Antigravity-Manager" target="_blank" rel="noopener">lbjlaq/Antigravity-Manager</a><div class="item-meta">GitHub Trending · ⭐ 33,446 (+91 today)</div><p class="item-summary">[Rust] Professional Antigravity Account Manager &amp; Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的…</p></div><div class="item"><a class="item-title" href="https://github.com/bendlang/bend" target="_blank" rel="noopener">bendlang/bend</a><div class="item-meta">GitHub Trending · ⭐ 25,636 (+98 today)</div><p class="item-summary">[TypeScript] Bend 2: a fast language that blocks AI mistakes via proof. Install: curl -fsSL https://bend-lang.com/install.sh | sh</p></div><div class="item"><a class="item-title" href="https://github.com/openvinotoolkit/openvino" target="_blank" rel="noopener">openvinotoolkit/openvino</a><div class="item-meta">GitHub Trending · ⭐ 11,654 (+246 today)</div><p class="item-summary">[C++] OpenVINO™ is an open source toolkit for optimizing and deploying AI inference</p></div><div class="item"><a class="item-title" href="https://github.com/FlashML-org/FreeVideo" target="_blank" rel="noopener">FlashML-org/FreeVideo</a><div class="item-meta">GitHub Trending · ⭐ 3,584 (+118 today)</div><p class="item-summary">[Python] Make videos on the computer you already own. FreeVideo runs MiniMax H3 in as little as 8 GB of VRAM and 16 GB of RAM, and adapts its acceleration…</p></div><div class="item"><a class="item-title" href="https://github.com/nginx/nginx" target="_blank" rel="noopener">nginx/nginx</a><div class="item-meta">GitHub Trending · ⭐ 32,450 (+73 today)</div><p class="item-summary">[C] The official NGINX Open Source repository.</p></div><div class="item"><a class="item-title" href="https://github.com/SWE-agent/mini-swe-agent" target="_blank" rel="noopener">SWE-agent/mini-swe-agent</a><div class="item-meta">GitHub Trending · ⭐ 9,884 (+84 today)</div><p class="item-summary">[Python] The 100 line AI agent that solves GitHub issues or helps you in your command line. Radically simple, no huge configs, no giant monorepo—but scores…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2503.22054" target="_blank" rel="noopener">tempdisagg: A Python Framework for Temporal Disaggregation of Time Series Data</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2503.22054v2 Announce Type: replace-cross Abstract: tempdisagg is an open-source Python package that estimates a high-frequency time series from…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25070" target="_blank" rel="noopener">An LLM-Agentic Framework for Intelligent Work Order Management in Industrial Maintenance</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25070v1 Announce Type: new Abstract: This paper presents an AI-driven framework, CodeReAct agent, designed to enhance industrial equipment…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25721" target="_blank" rel="noopener">MemMend: A Selective Revision Framework for Memory Question Answering</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25721v1 Announce Type: new Abstract: Revising every answer from a long-term memory can consume substantial inference budget and damage facts that…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25404" target="_blank" rel="noopener">Toward a Science of AI Agent Societies</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25404v1 Announce Type: new Abstract: AI agents are rapidly evolving from isolated personal assistants into networked actors that interact with one…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25534" target="_blank" rel="noopener">How Feedback-Free Self-Evolution Reshapes Agent Skills: A Systematic Study</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25534v1 Announce Type: new Abstract: Agent skills are documents in which experts write down procedural knowledge, and models increasingly maintain…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25360" target="_blank" rel="noopener">AppSci-Bench: Can LLMs Build AI Agents and Make Them Better?</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25360v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly used not only to power AI agents but also to build them. While…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25763" target="_blank" rel="noopener">Closing Performance Gap for Diffusion Language Models under Low Inference Budgets</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.25763v1 Announce Type: cross Abstract: Diffusion language models offer an architectural route to low-budget generation by updating multiple tokens…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25669" target="_blank" rel="noopener">Ask in the Crowd: Differentially Private LLM Inference via Dummy-Augmented Shuffling</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25669v1 Announce Type: new Abstract: Large language models are increasingly deployed as LLM-as-a-Service (LLMaaS), where user queries are sent to…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.25583" target="_blank" rel="noopener">DriftGuard: Online Memory-Drift Detection via Causal Attribution for LLM Agents</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.25583v1 Announce Type: new Abstract: Large language model (LLM) agents rely on persistent memory to plan tool calls and complete multi-step tasks…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
