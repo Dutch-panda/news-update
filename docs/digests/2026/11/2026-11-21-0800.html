@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Morning Update (08:00) · 2026-11-21 08:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.marketscreener.com/news/us-sec-s-nvidia-probe-is-examining-potential-accounting-issues-sources-say-ce785ed3dd8ff627" target="_blank" rel="noopener">US SEC&#x27;s Nvidia probe is examining potential accounting issues – sources</a><div class="item-meta">Hacker News · ▲ 255 pts · 💬 133 · <a href="https://news.ycombinator.com/item?id=50581438" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/20/startup-sues-apple-in-india-over-tap-to-share-contacts-feature/" target="_blank" rel="noopener">Startup sues Apple in India over tap-to-share contacts feature</a><div class="item-meta">TechCrunch</div><p class="item-summary">A U.S. startup is seeking $162 million in damages and an injunction to impact iPhone and Apple Watch imports to India.</p></div><div class="item"><a class="item-title" href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" target="_blank" rel="noopener">Hurried Announcement: Alessandro Masullo GRH</a><div class="item-meta">Hacker News · ▲ 1,710 pts · 💬 764 · <a href="https://news.ycombinator.com/item?id=50579568" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Related: Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf] -</p></div><div class="item"><a class="item-title" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener">Inkling 2 Mini</a><div class="item-meta">Hacker News · ▲ 781 pts · 💬 133 · <a href="https://news.ycombinator.com/item?id=50581260" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Inkling 2 Mini is an open-weights model small enough to run on your laptop. It loops its middle layers to reason more per token and reach answers in fewer…</p></div><div class="item"><a class="item-title" href="https://borretti.me/article/re-riemann" target="_blank" rel="noopener">Re: Riemann</a><div class="item-meta">Hacker News · ▲ 168 pts · 💬 158 · <a href="https://news.ycombinator.com/item?id=50583982" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://manidoraisamy.com/developer-to-architect.html" target="_blank" rel="noopener">We promoted developers into architects without informing them</a><div class="item-meta">Hacker News · ▲ 337 pts · 💬 202 · <a href="https://news.ycombinator.com/item?id=50579331" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">If you hate vibe coding, it’s because you’re still trying to do the old job. AI does what you ask and won’t push back on requirements that slows your app or…</p></div><div class="item"><a class="item-title" href="https://github.com/google-deepmind/math-horizon" target="_blank" rel="noopener">A few hours ago Google DeepMind created a math horizon repo</a><div class="item-meta">Hacker News · ▲ 44 pts · 💬 30 · <a href="https://news.ycombinator.com/item?id=50582629" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://scottaaronson.blog/?p=10344" target="_blank" rel="noopener">The stochastic parrots have apparently proved the Riemann Hypothesis</a><div class="item-meta">Hacker News · ▲ 238 pts · 💬 214 · <a href="https://news.ycombinator.com/item?id=50581084" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">“… it is very probable that all roots are real. Of course one would wish for a rigorous proof here; I have for the time being, after some fleeting vain…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/" target="_blank" rel="noopener">Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Spotify founder Daniel Ek is backing Europa Fusion, a fusion power startup founded by an AI researcher. Here&#x27;s what the startup is building.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank" rel="noopener">Google rolls out new search homepage with AI chat history and no search button</a><div class="item-meta">Ars Technica</div><p class="item-summary">Google search is making it even easier to access AI tools on the search page.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/" target="_blank" rel="noopener">Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers</a><div class="item-meta">Ars Technica</div><p class="item-summary">Meta is “re-evaluating” 2030 sustainability goals. Will others follow?</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att/" target="_blank" rel="noopener">Trump FCC declares California isn&#x27;t allowed to enforce phone service rules</a><div class="item-meta">Ars Technica</div><p class="item-summary">FCC preempts state rules that require AT&amp;T to keep offering home phone service.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/space/2026/11/incoming-house-chair-threatens-spacex-funding-over-ukraine-controversy/" target="_blank" rel="noopener">SpaceX&#x27;s Starshield troubles in Ukraine could threaten its broader military business</a><div class="item-meta">Ars Technica</div><p class="item-summary">&quot;Explain the changes that were made to the Starshield service in October 2026.&quot;</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/20/experts-warn-nearly-everyone-in-ai-is-susceptible-to-a-honey-trap-scheme-right-now/" target="_blank" rel="noopener">Experts warn: Nearly everyone in AI is susceptible to a honey-trap scheme right now</a><div class="item-meta">TechCrunch</div><p class="item-summary">Techies are building technology that can advance all aspects of the world — but can they protect their hearts? That&#x27;s the vulnerability that honey pots exploit.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1037933/eufy-omni-c28-robot-vacuum-deal-sale" target="_blank" rel="noopener">Eufy’s Omni C28 is 53 percent off ahead of Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">Hosting Thanksgiving can be fun, but cleaning up afterwards? Not so much. Eufy’s Omni C28 robot vacuum / mop hybrid can help, and thanks to an early Black…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/marketzy/codex-cli-repo-workbench" target="_blank" rel="noopener">marketzy/codex-cli-repo-workbench</a><div class="item-meta">GitHub Search · ⭐ 150</div><p class="item-summary">[HTML] Codex Cli Repo Workbench provides a local workspace for managing and inspecting Codex CLI repository (agentic-ai, automation, code-generation)</p></div><div class="item"><a class="item-title" href="https://github.com/diggerhq/opencomputer" target="_blank" rel="noopener">Show HN: OpenComputer – an open source alternative to Devin</a><div class="item-meta">Hacker News · ▲ 74 pts · 💬 22 · <a href="https://news.ycombinator.com/item?id=50581403" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Hi HN! Utpal here, I&#x27;m one of the founders of OpenComputer. OpenComputer is an open source cloud coding agent for teams that can run in your own cloud account…</p></div><div class="item"><a class="item-title" href="https://github.com/han938/open-webui-private-ai-desk" target="_blank" rel="noopener">han938/open-webui-private-ai-desk</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[TypeScript] Chat with private AI models locally, powered by Open Webui Private Ai Desk. (chat-interface, chatbot, knowledge-base)</p></div><div class="item"><a class="item-title" href="https://github.com/visgl/deck.gl" target="_blank" rel="noopener">visgl/deck.gl</a><div class="item-meta">GitHub Trending · ⭐ 14,786 (+11 today)</div><p class="item-summary">[TypeScript] WebGL2 powered visualization framework</p></div><div class="item"><a class="item-title" href="https://github.com/INK-Q/agy-fast" target="_blank" rel="noopener">INK-Q/agy-fast</a><div class="item-meta">GitHub Search · ⭐ 192</div><p class="item-summary">[TypeScript] Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic…</p></div><div class="item"><a class="item-title" href="https://github.com/tianma-if/edgeever" target="_blank" rel="noopener">tianma-if/edgeever</a><div class="item-meta">GitHub Trending · ⭐ 3,461 (+28 today)</div><p class="item-summary">[TypeScript] AI-native note-taking app &amp; Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web…</p></div><div class="item"><a class="item-title" href="https://github.com/pola-rs/polars" target="_blank" rel="noopener">pola-rs/polars</a><div class="item-meta">GitHub Trending · ⭐ 40,409 (+17 today)</div><p class="item-summary">[Rust] Extremely fast Query Engine for DataFrames, written in Rust</p></div><div class="item"><a class="item-title" href="https://github.com/0xPlaygrounds/rig" target="_blank" rel="noopener">0xPlaygrounds/rig</a><div class="item-meta">GitHub Trending · ⭐ 9,206 (+15 today)</div><p class="item-summary">[Rust] ⚙️🦀 Build modular and scalable LLM Applications in Rust</p></div><div class="item"><a class="item-title" href="https://www.masteringemacs.org/article/announcing-dreamcoder" target="_blank" rel="noopener">DreamCoder: Coding harness and IDE from the author of Mastering Emacs</a><div class="item-meta">Hacker News · ▲ 139 pts · 💬 25 · <a href="https://news.ycombinator.com/item?id=50581110" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">I talk about DreamCoder, a frontier coding harness and IDE I have been working on for quite a long time. I also talk about the history of AI, LISP and Emacs…</p></div><div class="item"><a class="item-title" href="https://winedroid.soham.sh/demo/" target="_blank" rel="noopener">Winedroid – run Android apps without Android (WASM demo)</a><div class="item-meta">Hacker News · ▲ 113 pts · 💬 36 · <a href="https://news.ycombinator.com/item?id=50580536" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Run an Android APK in your browser with winedroid.</p></div><div class="item"><a class="item-title" href="https://github.com/prajwaljeevan50-web/openclaw-personal-workspace" target="_blank" rel="noopener">prajwaljeevan50-web/openclaw-personal-workspace</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[JavaScript] A friendly, feature-rich workspace built with and for its community. (ai-agents, automation, integrations)</p></div><div class="item"><a class="item-title" href="https://github.com/ruffle-rs/ruffle" target="_blank" rel="noopener">ruffle-rs/ruffle</a><div class="item-meta">GitHub Trending · ⭐ 18,900 (+9 today)</div><p class="item-summary">[Rust] A Flash Player emulator written in Rust</p></div><div class="item"><a class="item-title" href="https://github.com/aurahamzzz-cyber/microsoft-excel-alvaora" target="_blank" rel="noopener">aurahamzzz-cyber/microsoft-excel-alvaora</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[Python] Automates structured data workflows and spreadsheet task orchestration in Excel. (analytics, chart, charts)</p></div><div class="item"><a class="item-title" href="https://github.com/hasan6969macho-bit/vectorbt-avoria-analysis" target="_blank" rel="noopener">hasan6969macho-bit/vectorbt-avoria-analysis</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[TypeScript] Vectorbt research code for Avoria analysis, built for reproducible strategy experiments. (backtesting, crypto, cryptocurrency)</p></div><div class="item"><a class="item-title" href="https://github.com/kenzz-devv/open-webui-talora-ai-workspace" target="_blank" rel="noopener">kenzz-devv/open-webui-talora-ai-workspace</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[TypeScript] Streamlined workspace for organizing and running AI workflows in one place. (chat, chatbot, generative-ai)</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://github.com/wozniakalan323-bit/opencode-project-workbench" target="_blank" rel="noopener">wozniakalan323-bit/opencode-project-workbench</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[HTML] Opencode Project Workbench structures opencode project tasks, files, and workflow state. (agentic-ai, automation, code-generation)</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://github.com/zavi2997-droid/claude-code-agent-workspace" target="_blank" rel="noopener">zavi2997-droid/claude-code-agent-workspace</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[HTML] Orchestrates composable Claude Code agent workflows across isolated workspace contexts. (agentic-ai, anthropic, claude-code)</p></div><div class="item"><a class="item-title" href="https://github.com/thejarasal780-ship-it/ollama-local-ai-offline" target="_blank" rel="noopener">thejarasal780-ship-it/ollama-local-ai-offline</a><div class="item-meta">GitHub Search · ⭐ 152</div><p class="item-summary">[Python] Ollama Local AI Offline: Run Local LLMs Fully Offline on Desktop (llm-inference, local-ai, local-llm)</p></div><div class="item"><a class="item-title" href="https://github.com/zadazddq/lm-studio-private-ai" target="_blank" rel="noopener">zadazddq/lm-studio-private-ai</a><div class="item-meta">GitHub Search · ⭐ 151</div><p class="item-summary">[Rust] LM Studio: Local LLM Desktop Runtime with Offline Inference and Model Management (desktop-ai, gguf, lm-studio)</p></div><div class="item"><a class="item-title" href="https://www.wsj.com/finance/stocks/anthropics-ipo-bust-punctuates-4-trillion-ai-wipeout-on-wall-street-f1f1ec90" target="_blank" rel="noopener">Anthropic&#x27;s IPO Bust Deepens $4T AI Wipeout on Wall Street</a><div class="item-meta">Hacker News · ▲ 44 pts · 💬 5 · <a href="https://news.ycombinator.com/item?id=50582280" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/20/ravi-vakil/" target="_blank" rel="noopener">Quoting Ravi Vakil</a><div class="item-meta">Simon Willison</div><p class="item-summary">Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/" target="_blank" rel="noopener">AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Mathematicians are having their minds blown by the latest AI-driven result — and there&#x27;s a competing human solution, too.</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
