@@ -1,6 +1,438 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-21-1500",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-21T15:00:37.614345+04:00",
+      "markdown_path": "digests/2026/11/2026-11-21-1500.md",
+      "html_path": "digests/2026/11/2026-11-21-1500.html",
+      "total_fetched": 136,
+      "total_after_dedup": 60,
+      "total_selected": 19,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50586292",
+              "title": "ClawDOS – An AI coding agent for DOS",
+              "url": "http://ricapar.net/ClawDOS/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "An AI chat and coding harness for DOS, on a real IBM PC 5160 (8088 at 4.77 MHz)",
+              "published_at": "2026-11-21T05:38:01+00:00",
+              "raw_score": 71,
+              "secondary_metric": 21,
+              "comments_url": "https://news.ycombinator.com/item?id=50586292",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.941,
+              "final_score": 8.441,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50585376",
+              "title": "Clojure will affect the way you think about programming (2017)",
+              "url": "https://eli.thegreenplace.net/2017/clojure-the-perfect-language-to-expand-your-brain/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-21T02:40:39+00:00",
+              "raw_score": 104,
+              "secondary_metric": 32,
+              "comments_url": "https://news.ycombinator.com/item?id=50585376",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.718,
+              "final_score": 8.218,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50586648",
+              "title": "Surprisingly Adorable Insect Portraits",
+              "url": "https://amateurphotographer.com/latest/these-astonishing-insect-portraits-reveal-a-hidden-world-you-never-knew-existed/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-21T06:44:14+00:00",
+              "raw_score": 49,
+              "secondary_metric": 11,
+              "comments_url": "https://news.ycombinator.com/item?id=50586648",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.297,
+              "final_score": 7.797,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50587208",
+              "title": "RCE in Gnupg",
+              "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-21T08:32:58+00:00",
+              "raw_score": 15,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50587208",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 5.327,
+              "final_score": 5.827,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50585962",
+              "title": "Tell HN: OpenRouter prompts to Minimax may have been read",
+              "url": "https://news.ycombinator.com/item?id=50585962",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "I received the following email from OpenRouter and it appears authentic. There is no public page or blog post. -- Title: Requests you sent to MiniMax models…",
+              "published_at": "2026-11-21T04:31:38+00:00",
+              "raw_score": 21,
+              "secondary_metric": 2,
+              "comments_url": "https://news.ycombinator.com/item?id=50585962",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 5.04,
+              "final_score": 5.54,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50587859",
+              "title": "FBI reportedly investigating apparent hack of its criminal database",
+              "url": "https://www.bbc.com/news/articles/cvze7de86pk3o",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The National Crime Information Center database is used by federal and local law enforcement to share information.",
+              "published_at": "2026-11-21T10:33:57+00:00",
+              "raw_score": 13,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50587859",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 4.903,
+              "final_score": 5.403,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50587205",
+              "title": "Exascale fusion simulation team named finalist for 2026 Gordon Bell Prize",
+              "url": "https://www.alcf.anl.gov/news/exascale-fusion-simulation-team-named-finalist-2026-gordon-bell-prize",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-21T08:32:34+00:00",
+              "raw_score": 4,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50587205",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 3.77,
+              "final_score": 4.27,
+              "matched_keywords": []
+            }
+          ]
+        },
+        {
+          "key": "data_science",
+          "title": "📊 Data Science & Business Analytics",
+          "items": [
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25570v1",
+              "title": "Reinforcement-Aligned Probabilistic Weather Forecasting with Discrete Tokens",
+              "url": "https://arxiv.org/abs/2611.25570",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25570v1 Announce Type: new Abstract: Global medium-range weather forecasting must not only generate ensembles efficiently to characterize…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "forecasting"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25004v1",
+              "title": "On the Impact of Feature Reduction Techniques on Adversarial Attacks",
+              "url": "https://arxiv.org/abs/2611.25004",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25004v1 Announce Type: new Abstract: Adversarial attacks have posed significant threats to machine learning models by exploiting their inherent…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 1.2,
+              "popularity_score": 3.7,
+              "final_score": 4.9,
+              "matched_keywords": [
+                "machine learning"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25538v1",
+              "title": "Towards Autoregressive Neural Network Parameter Generation",
+              "url": "https://arxiv.org/abs/2611.25538",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25538v1 Announce Type: new Abstract: Large Language Models (LLMs) have recently established a new paradigm in machine learning, demonstrating…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 1.2,
+              "popularity_score": 3.7,
+              "final_score": 4.9,
+              "matched_keywords": [
+                "machine learning"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "gh:pytorch/torchtitan",
+              "title": "pytorch/torchtitan",
+              "url": "https://github.com/pytorch/torchtitan",
+              "source_name": "GitHub Trending",
+              "source_type": "github",
+              "summary": "[Python] A PyTorch native platform for training generative AI models",
+              "published_at": "2026-11-21T11:00:37.614345+00:00",
+              "raw_score": 5936,
+              "secondary_metric": 4,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 6.184,
+              "final_score": 9.384,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25114v1",
+              "title": "Fast and Memory-Light Evaluation of Density-Based Clusterings with the DISCO Index in R",
+              "url": "https://arxiv.org/abs/2611.25114",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25114v1 Announce Type: new Abstract: DISCO is a recent internal cluster validity index for density-based clustering that, unlike earlier indices…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "evaluation"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25577v1",
+              "title": "Design and Evaluation of Epira: An Automated Interview System for Case Investigation and Contact Tracing",
+              "url": "https://arxiv.org/abs/2611.25577",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25577v1 Announce Type: new Abstract: Objective: Case investigation and contact tracing are labor-intensive. Web forms struggle when respondents…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "evaluation"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25108v1",
+              "title": "Long-Range Video Presentation Attack Detection: A Three-Class Benchmark Across 1-100 m and Two Sensor Types",
+              "url": "https://arxiv.org/abs/2611.25108",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25108v1 Announce Type: new Abstract: Face presentation attack detection (PAD) systems deployed in border control and airport surveillance are…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "benchmark"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "gh:danielwh2/sprite-stacking",
+              "title": "danielwh2/sprite-stacking",
+              "url": "https://github.com/danielwh2/sprite-stacking",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[HTML] Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi…",
+              "published_at": "2026-11-20T14:32:43+00:00",
+              "raw_score": 249,
+              "secondary_metric": 249,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "HTML",
+              "assigned_category": "ai_agents",
+              "relevance_score": 6.0,
+              "popularity_score": 8.882,
+              "final_score": 14.882,
+              "matched_keywords": [
+                "skill",
+                "claude code",
+                "codex",
+                "cursor",
+                "opencode"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25385v1",
+              "title": "Drifting, Discriminating, and Directioning for Action Coordination in Higher-dimensional Action Space",
+              "url": "https://arxiv.org/abs/2611.25385",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25385v1 Announce Type: new Abstract: This paper proposes a lightweight policy model to mitigate the difficulty of handling higher-dimensional…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "coordination"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & Capabilities",
+          "items": [
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25408v1",
+              "title": "FG-GraphBench: Benchmarking and Enhancing Fine-Grained Visual Understanding with Multimodal Scene Graphs",
+              "url": "https://arxiv.org/abs/2611.25408",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25408v1 Announce Type: new Abstract: Fine-grained visual understanding requires multimodal large language models (MLLMs) to recognize small visual…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "multimodal"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25476v1",
+              "title": "WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming",
+              "url": "https://arxiv.org/abs/2611.25476",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25476v1 Announce Type: new Abstract: Neural networks encode learned capabilities in their weights, yet extending those capabilities with explicit…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "capabilities"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.25403v1",
+              "title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
+              "url": "https://arxiv.org/abs/2611.25403",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.25403v1 Announce Type: new Abstract: We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence…",
+              "published_at": "2026-11-21T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "transformer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-21-0800",
       "edition_key": "morning",
       "edition_label": "Morning Update (08:00)",
