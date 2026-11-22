@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-22 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/" target="_blank" rel="noopener">Toyota, Nissan, and Honda to standardize parts to lower costs</a><div class="item-meta">Hacker News · ▲ 526 pts · 💬 310 · <a href="https://news.ycombinator.com/item?id=50596133" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Japan’s automakers will work together to lower production costs as they band together to compete against China’s growing automotive sector.</p></div><div class="item"><a class="item-title" href="https://www.manager.dev/newsletter/the-engineering-manager-s-role-is-under-attack-again" target="_blank" rel="noopener">The Engineering Manager&#x27;s role is under attack (again)</a><div class="item-meta">Hacker News · ▲ 41 pts · 💬 61 · <a href="https://news.ycombinator.com/item?id=50597014" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The erosion of the EM role</p></div><div class="item"><a class="item-title" href="https://eli.thegreenplace.net/2026/notes-on-the-discrete-fourier-transform-dft/" target="_blank" rel="noopener">Notes on the discrete Fourier transform (DFT)</a><div class="item-meta">Hacker News · ▲ 31 pts · 💬 4 · <a href="https://news.ycombinator.com/item?id=50596960" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.youtube.com/watch?v=zqzk43bSdDI" target="_blank" rel="noopener">Since last year, we asked: &quot;What if AI solved the Riemann Hypothesis?&quot;</a><div class="item-meta">Hacker News · ▲ 37 pts · 💬 12 · <a href="https://news.ycombinator.com/item?id=50595812" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank" rel="noopener">Together.ai: Prompt Leakage for Requests</a><div class="item-meta">Hacker News · ▲ 31 pts · 💬 8 · <a href="https://news.ycombinator.com/item?id=50595816" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We are notifying customers about a security incident involving a subset of prompts submitted to Together AI’s serverless inference service in June and July…</p></div><div class="item"><a class="item-title" href="https://www.bridgewater.com/research-and-insights/current-efforts-arent-enough-to-slow-the-ai-cyber-virus" target="_blank" rel="noopener">Current Efforts Aren&#x27;t Enough to Slow the AI Cyber Virus</a><div class="item-meta">Hacker News · ▲ 11 pts · 💬 4 · <a href="https://news.ycombinator.com/item?id=50595940" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Despite unprecedented efforts to patch vulnerabilities, AI is helping attackers exploit bugs faster than defenders can fix them. With policy responses…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/tamnd/riemann-handbook" target="_blank" rel="noopener">Show HN: The Riemann Proof Handbook</a><div class="item-meta">Hacker News · ▲ 51 pts · 💬 19 · <a href="https://news.ycombinator.com/item?id=50596664" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The Riemann Handbook: the proof of the Riemann Hypothesis in tamnd/riemann-lean, written as mathematics, as PDF and EPUB - tamnd/riemann-handbook</p></div><div class="item"><a class="item-title" href="https://github.com/Morriswawan05/elevenlabs-pro-win" target="_blank" rel="noopener">Morriswawan05/elevenlabs-pro-win</a><div class="item-meta">GitHub Search · ⭐ 225</div><p class="item-summary">ElevenLabs - AI voice synthesis platform for text-to-speech generation, voice cloning and multilingual dubbing on Windows 10/11 (ai, ai-art, ai-tools)</p></div><div class="item"><a class="item-title" href="https://github.com/Cloudcode04/runway-ml-pro-win" target="_blank" rel="noopener">Cloudcode04/runway-ml-pro-win</a><div class="item-meta">GitHub Search · ⭐ 225</div><p class="item-summary">Runway - AI video generation platform for text-to-video synthesis, image animation and motion brush editing on Windows 10/11 (ai, ai-art, ai-tools)</p></div><div class="item"><a class="item-title" href="https://github.com/debugdigital677/descript-pro-win" target="_blank" rel="noopener">debugdigital677/descript-pro-win</a><div class="item-meta">GitHub Search · ⭐ 223</div><p class="item-summary">Descript - AI-powered video and podcast editor for text-based editing, transcription and screen recording on Windows 10/11 (ai, ai-art, ai-tools)</p></div><div class="item"><a class="item-title" href="https://github.com/GuzmanJacqueline93/copy-ai-pro-win" target="_blank" rel="noopener">GuzmanJacqueline93/copy-ai-pro-win</a><div class="item-meta">GitHub Search · ⭐ 214</div><p class="item-summary">Copy Ai Pro - AI copywriting assistant for content generation, tone rewriting and SEO text optimization on Windows 10/11 (ai, ai-art, ai-tools)</p></div><div class="item"><a class="item-title" href="https://github.com/suryacode04/jasper-ai-win" target="_blank" rel="noopener">suryacode04/jasper-ai-win</a><div class="item-meta">GitHub Search · ⭐ 211</div><p class="item-summary">Jasper AI - AI content generation platform for marketing copy creation, brand voice customization and long-form article drafting on Windows 10/11 (ai, ai-art…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://github.com/CliBranchLong/claude-code-win" target="_blank" rel="noopener">CliBranchLong/claude-code-win</a><div class="item-meta">GitHub Search · ⭐ 164</div><p class="item-summary">Anthropic Claude Code - AI coding assistant for natural-language code generation, terminal-based workflows and multi-file editing on Windows 10/11</p></div><div class="item"><a class="item-title" href="https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/" target="_blank" rel="noopener">87% of the Anthropic power will come from gas and 11% from coal in 2028</a><div class="item-meta">Hacker News · ▲ 139 pts · 💬 153 · <a href="https://news.ycombinator.com/item?id=50597612" target="_blank" rel="noopener">HN Discussion</a></div></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-22-1500.html">2026-11-22 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-0800.html">2026-11-22 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-2300.html">2026-11-21 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-1500.html">2026-11-21 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
