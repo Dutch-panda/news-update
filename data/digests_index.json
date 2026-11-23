@@ -1,6 +1,592 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-23-1500",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-23T15:00:46.626231+04:00",
+      "markdown_path": "digests/2026/11/2026-11-23-1500.md",
+      "html_path": "digests/2026/11/2026-11-23-1500.html",
+      "total_fetched": 247,
+      "total_after_dedup": 161,
+      "total_selected": 26,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50607261",
+              "title": "XNU Linux: Full OS X GUI Userspace on Linux",
+              "url": "https://github.com/AFK-surf/xnulinux",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux) - AFK-surf/xnulinux",
+              "published_at": "2026-11-23T03:49:24+00:00",
+              "raw_score": 349,
+              "secondary_metric": 163,
+              "comments_url": "https://news.ycombinator.com/item?id=50607261",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 9.644,
+              "final_score": 12.644,
+              "matched_keywords": [
+                "linux"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1039874",
+              "title": "Meta Muse can now do your Black Friday shopping at Walmart",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "Walmart will now let Meta's Muse shop on its website on your behalf, allowing the AI agent to find and purchase Black Friday deals. The retail giant is…",
+              "published_at": "2026-11-23T11:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "meta"
+              ]
+            },
+            {
+              "id": "hn:50607668",
+              "title": "Yes, 17M lines of Lean is a lot",
+              "url": "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The recent proof of the Riemann hypothesis came with a statistic attached: the proof is 17 million lines of Lean. Beyond the philosophical questions of what…",
+              "published_at": "2026-11-23T05:00:49+00:00",
+              "raw_score": 89,
+              "secondary_metric": 104,
+              "comments_url": "https://news.ycombinator.com/item?id=50607668",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.811,
+              "final_score": 9.311,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50609079",
+              "title": "GTA 6 building personal behavioral profile for every player",
+              "url": "https://huijzer.xyz/posts/174/gta-6-building-personal-behavioral-profile-for-eve",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "According to \"make claude\" (@make_claude) on X, GTA 6 is collecting player behavior data which is fine grained enough to estimate the following metrics…",
+              "published_at": "2026-11-23T08:51:50+00:00",
+              "raw_score": 98,
+              "secondary_metric": 65,
+              "comments_url": "https://news.ycombinator.com/item?id=50609079",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.73,
+              "final_score": 9.23,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50607498",
+              "title": "DeFlock Amerca Facebook Group Suspended as a Dangerous Organization",
+              "url": "https://www.facebook.com/shugvermonte/posts/the-deflock-america-group-with-over-840k-members-has-been-suspended-by-meta-what/10165140280736049/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The DeFlock America group with over 840k members has been suspended by Meta. What they can't block or suspend are the grassroots movements forming across…",
+              "published_at": "2026-11-23T04:31:32+00:00",
+              "raw_score": 140,
+              "secondary_metric": 49,
+              "comments_url": "https://news.ycombinator.com/item?id=50607498",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.208,
+              "final_score": 8.708,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50606499",
+              "title": "Treemap of the Riemann Hypothesis Lean Proof",
+              "url": "https://pengowray.github.io/riemann-zeta-proof-visualizer/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "An explorable map of the 175,187 Lean modules in Levent Alpöge's formalization of the Riemann Hypothesis and GRH for Dirichlet L-functions.",
+              "published_at": "2026-11-23T01:50:23+00:00",
+              "raw_score": 90,
+              "secondary_metric": 35,
+              "comments_url": "https://news.ycombinator.com/item?id=50606499",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.595,
+              "final_score": 8.095,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50607627",
+              "title": "A Partial Evaluator for C",
+              "url": "https://phoenix.labri.fr/software/tempo/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-23T04:51:48+00:00",
+              "raw_score": 67,
+              "secondary_metric": 15,
+              "comments_url": "https://news.ycombinator.com/item?id=50607627",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 6.95,
+              "final_score": 7.45,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50607775",
+              "title": "GLM-5.4 is now available to all GLM Coding Plan users",
+              "url": "https://twitter.com/ZixuanLi_/status/2124719275864670681",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "GLM-5.4 is now available to all GLM Coding Plan users. New vision capabilities and stronger all-round coding performance. For users with weekly quotas…",
+              "published_at": "2026-11-23T05:21:54+00:00",
+              "raw_score": 32,
+              "secondary_metric": 11,
+              "comments_url": "https://news.ycombinator.com/item?id=50607775",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 6.84,
+              "final_score": 7.34,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.27155v1",
+              "title": "The Vulnerability Window: Decision Instability in Quantized Reward Models",
+              "url": "https://arxiv.org/abs/2611.27155",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27155v1 Announce Type: new Abstract: Reward models and LLM judges are routinely quantized to 4 bits so that scoring many candidates stays…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "vulnerability"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "data_science",
+          "title": "📊 Data Science & Business Analytics",
+          "items": [
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2605.10330v4",
+              "title": "Fast Training of Mixture-of-Experts for Time Series Forecasting via Expert Loss Integration",
+              "url": "https://arxiv.org/abs/2605.10330",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2605.10330v4 Announce Type: replace Abstract: We propose a novel Mixture-of-Experts framework, referred to as Expert Loss Integration MoE (EliMoE), for…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "forecasting",
+                "time series"
+              ]
+            },
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2606.02795v2",
+              "title": "Recovering Direct Price Effects of Environmental Amenities in Housing Markets: Regression and Causal Machine Learning Model Assessment with Empirical Monte Carlo Simulation",
+              "url": "https://arxiv.org/abs/2606.02795",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2606.02795v2 Announce Type: replace-cross Abstract: Hedonic price models are widely used to value environmental amenities, yet practical guidance for…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "regression",
+                "machine learning"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.27191v1",
+              "title": "Lift Out, Kick In: Decoupling Event Effects for Time Series Forecasting",
+              "url": "https://arxiv.org/abs/2611.27191",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27191v1 Announce Type: new Abstract: Real-world time series are often shaped by exogenous events whose effects are superimposed on the system's…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "forecasting",
+                "time series"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "gh:erkamyaman/safe-anything",
+              "title": "erkamyaman/safe-anything",
+              "url": "https://github.com/erkamyaman/safe-anything",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Rust] Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent…",
+              "published_at": "2026-11-22T16:44:10+00:00",
+              "raw_score": 265,
+              "secondary_metric": 265,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Rust",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 8.975,
+              "final_score": 12.175,
+              "matched_keywords": [
+                "rust"
+              ]
+            },
+            {
+              "id": "hn:50607194",
+              "title": "The New Docker: Built to Run on Trust",
+              "url": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-23T03:34:29+00:00",
+              "raw_score": 44,
+              "secondary_metric": 91,
+              "comments_url": "https://news.ycombinator.com/item?id=50607194",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 7.196,
+              "final_score": 10.196,
+              "matched_keywords": [
+                "docker"
+              ]
+            },
+            {
+              "id": "gh:lukendeasy/open-diagram",
+              "title": "lukendeasy/open-diagram",
+              "url": "https://github.com/lukendeasy/open-diagram",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Python] Python building blocks for dense architecture diagrams that check their own layout (ai-agents, architecture-diagrams, claude)",
+              "published_at": "2026-11-18T17:34:59+00:00",
+              "raw_score": 210,
+              "secondary_metric": 44,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 6.096,
+              "final_score": 9.296,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.27294v1",
+              "title": "HookEvo: A Framework for Coordinated Plugin Evolution on Hook-Enabled Agent Runtimes",
+              "url": "https://arxiv.org/abs/2611.27294",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27294v1 Announce Type: new Abstract: Repairing failures in tool-using agents can require coordinated changes to how the harness interprets tool…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "harness",
+                "framework"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.27032v1",
+              "title": "Disentangling Verbalized Evaluation Awareness and Refusal through Neuron-Level Intervention",
+              "url": "https://arxiv.org/abs/2611.27032",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27032v1 Announce Type: new Abstract: As large reasoning models (LRMs) become more capable, reliable evaluation becomes essential. LRMs can…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "evaluation"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.27218v1",
+              "title": "A Stationarity-Based Regret Framework for Time-Varying Nonconvex Composite Optimization",
+              "url": "https://arxiv.org/abs/2611.27218",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27218v1 Announce Type: new Abstract: This paper studies time-varying nonconvex composite optimization, where decisions are made sequentially and…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "framework"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "gh:nestjs/agent-skills",
+              "title": "nestjs/agent-skills",
+              "url": "https://github.com/nestjs/agent-skills",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[JavaScript] Agent skills for Nest framework (node.js) 🕵️‍♂️ (agent-skills, ai-agents, claude-code)",
+              "published_at": "2026-11-20T07:44:21+00:00",
+              "raw_score": 150,
+              "secondary_metric": 48,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "JavaScript",
+              "assigned_category": "ai_agents",
+              "relevance_score": 4.2,
+              "popularity_score": 6.119,
+              "final_score": 10.319,
+              "matched_keywords": [
+                "skills"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.26966v1",
+              "title": "Keep the Process, Change the Supplier: Runtime Governance for Tool-Using AI Agents",
+              "url": "https://arxiv.org/abs/2611.26966",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.26966v1 Announce Type: new Abstract: Tool-using AI agents propose actions whose authorization and external effects cannot be inferred from…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "ai agents"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.26782v1",
+              "title": "ChatAtom: A Multi-Agent LLM System for Molecular Dynamics Simulation and Visualization",
+              "url": "https://arxiv.org/abs/2611.26782",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.26782v1 Announce Type: new Abstract: Molecular dynamics (MD) simulation resolves atomic-scale motion and predicts the structural, mechanical, and…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "multi-agent"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.27286v1",
+              "title": "Belief-State Management Meets Rubric Rewards for Agentic Forecasting",
+              "url": "https://arxiv.org/abs/2611.27286",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27286v1 Announce Type: new Abstract: Current large language model (LLM) agents still struggle to forecast real-world events. This stems from two…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "agentic"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & Capabilities",
+          "items": [
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.26906v1",
+              "title": "Budget-Aware Predict-and-Verify Theorem Proving with Heterogeneous LLM Solvers",
+              "url": "https://arxiv.org/abs/2611.26906",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.26906v1 Announce Type: new Abstract: Large language model (LLM) theorem solvers differ in both proving capability and inference cost. Applying an…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "llm",
+                "large language model",
+                "inference"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.27092v1",
+              "title": "PLoQ: A Prompt-Specific Low-Rank Basis for 4-bit Quantization of LLM Activations",
+              "url": "https://arxiv.org/abs/2611.27092",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27092v1 Announce Type: new Abstract: Low-bit activation quantization of large language models remains challenging, as a small number of dominant…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "llm",
+                "quantization"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.27243v1",
+              "title": "More Bits Won't Fix It: Diagnosing and Treating an Ill-Conditioned Backward Pass (A Case Study on Gemma-4)",
+              "url": "https://arxiv.org/abs/2611.27243",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.27243v1 Announce Type: new Abstract: During LoRA fine-tuning of Gemma-4 (12B and 31B) on long prompts, whether they contain CT images, natural…",
+              "published_at": "2026-11-23T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "gemma",
+                "fine-tuning",
+                "lora"
+              ]
+            },
+            {
+              "id": "hn:50609685",
+              "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+              "url": "https://z.ai/blog/glm-5.4",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-23T10:06:43+00:00",
+              "raw_score": 12,
+              "secondary_metric": 1,
+              "comments_url": "https://news.ycombinator.com/item?id=50609685",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 5.099,
+              "final_score": 8.099,
+              "matched_keywords": [
+                "transformer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-23-0800",
       "edition_key": "morning",
       "edition_label": "Morning Update (08:00)",
