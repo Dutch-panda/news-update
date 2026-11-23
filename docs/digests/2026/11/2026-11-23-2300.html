@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Night Update (23:00) · 2026-11-23 23:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" target="_blank" rel="noopener">Jensen Huang Reinstated as Nvidia CEO</a><div class="item-meta">Hacker News · ▲ 1,687 pts · 💬 4 · <a href="https://news.ycombinator.com/item?id=50611588" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The public hearing follows bipartisan calls for Huang to testify about the affair with the suspected Chinese spy.</p></div><div class="item"><a class="item-title" href="https://github.com/mikuta0407/win4wine" target="_blank" rel="noopener">Win4wine – Run Windows Shell as the Linux Desktop on Wine</a><div class="item-meta">Hacker News · ▲ 156 pts · 💬 87 · <a href="https://news.ycombinator.com/item?id=50610743" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Windows XP の Explorer を Wine 上で Linux のデスクトップシェルとして動かす / Run Windows XP&#x27;s shell as the Linux desktop on Wine - mikuta0407/win4wine</p></div><div class="item"><a class="item-title" href="https://ladybird.org/posts/alpha/" target="_blank" rel="noopener">Ladybird is now in alpha</a><div class="item-meta">Hacker News · ▲ 685 pts · 💬 189 · <a href="https://news.ycombinator.com/item?id=50614249" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Alpha builds of Ladybird are available today for macOS and Linux. They&#x27;re for early adopters who don&#x27;t mind bugs and want to help by reporting them.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1039978/airpods-pro-3-apple-earbuds-black-friday-2026-deal-sale" target="_blank" rel="noopener">Apple’s AirPods Pro 3 are a whopping $100 off ahead of Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">The AirPods Pro 3 are cheaper than ever. Apple’s latest flagship wireless earbuds dropped this morning to just $149 at Amazon, Best Buy and Walmart…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/" target="_blank" rel="noopener">Trump endorses Jensen Huang’s return to Nvidia, says US has no evidence of wrongdoing</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The president cited the U.S. attorney general in defending Huang&#x27;s return, while urging Nvidia to continue its export-control investigation.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/meta-throws-out-its-net-zero-goal-its-competitors-should-be-furious/" target="_blank" rel="noopener">Meta throws out its net-zero goal. Its competitors should be furious</a><div class="item-meta">TechCrunch</div><p class="item-summary">Meta walked back its 2030 net zero goal in its 2026 sustainability report, a decision that could send ripples throughout the tech industry.</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/GamingLeaksAndRumours/comments/1y3jzqe/cyberleek_posted_the_gta_6_xbox_build_executable/" target="_blank" rel="noopener">Cyberleek posted the GTA 6 Xbox build executable</a><div class="item-meta">Hacker News · ▲ 130 pts · 💬 107 · <a href="https://news.ycombinator.com/item?id=50612686" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://blog.kagi.com/kagi-mail-public-beta" target="_blank" rel="noopener">Kagi Mail (public beta)</a><div class="item-meta">Hacker News · ▲ 118 pts · 💬 83 · <a href="https://news.ycombinator.com/item?id=50615481" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A private email and calendar with a @kagimail.com address, or with your own domains.</p></div><div class="item"><a class="item-title" href="https://github.com/os6/nospeaker" target="_blank" rel="noopener">Nospeaker ─ Make your MacBook&#x27;s trackpad talk using its haptic motor</a><div class="item-meta">Hacker News · ▲ 190 pts · 💬 99 · <a href="https://news.ycombinator.com/item?id=50610318" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">make your macbook&#x27;s trackpad talk using its haptic motor - os6/nospeaker</p></div><div class="item"><a class="item-title" href="https://blogs.gentoo.org/mgorny/2026/10/27/the-next-circle-of-security-hell/" target="_blank" rel="noopener">The next circle of security hell</a><div class="item-meta">Hacker News · ▲ 179 pts · 💬 90 · <a href="https://news.ycombinator.com/item?id=50610334" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A few years back I wrote “The modern packager’s security nightmare”. Have things improved since? On the contrary, I feel like we’re slipping down a well-oiled…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/" target="_blank" rel="noopener">Trump reportedly called into Nvidia board meeting to advocate for Huang’s return</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">&quot;I spoke to them, let me put it that way... And I convinced them,&quot; the president told CNBC.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/crowdstrike-to-acquire-zscaler-for-44-billion/" target="_blank" rel="noopener">CrowdStrike to acquire Zscaler for $44 billion</a><div class="item-meta">TechCrunch</div><p class="item-summary">The cybersecurity giant said that the deal to buy Zscaler, which provides zero-trust products to large enterprises, will better equip their customers to use…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/" target="_blank" rel="noopener">Jensen Huang isn’t out of the woods yet</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">It’s safe to say no one expected this. Monday morning, Jensen Huang returned as CEO of Nvidia, after resigning the position following news of multiple…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1039999/alienware-aw2726dm-qdoled-gaming-monitor-black-friday-2026-deal-sale" target="_blank" rel="noopener">My trusty 27-inch Alienware QD-OLED gaming monitor is just $280</a><div class="item-meta">The Verge</div><p class="item-summary">Alienware’s AW2726DM QD-OLED gaming monitor was a great deal even at its original $349.99 price. The low price and impressive specs were enough to convince me…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1023471/best-gifts-under-50-2026" target="_blank" rel="noopener">The Verge’s favorite holiday gifts that cost $50 or less</a><div class="item-meta">The Verge</div><p class="item-summary">You&#x27;ve got $50 to spend on a friend or loved one this shopping season, and you&#x27;re not sure what to spend it on. First off, that&#x27;s actually really generous of…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://www.kdnuggets.com/how-to-use-ai-tools-to-learn-data-science-faster-in-2026" target="_blank" rel="noopener">How to Use AI Tools to Learn Data Science Faster in 2026</a><div class="item-meta">KDnuggets</div><p class="item-summary">Discover how to combine AI assistants, coding tools, and adaptive platforms to cut your learning curve and build practical skills more efficiently.</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/what-a-90-prompt-cache-hit-rate-hides-about-attention-work/" target="_blank" rel="noopener">What a 90% Prompt Cache Hit Rate Hides About Attention Work</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Request hit rate, token reuse, and latency tell different stories; a 2026 preprint found lower 99th-percentile but higher median time to first token. The post…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/ruairidhflint/news-blocklist" target="_blank" rel="noopener">Show HN: News Blocklist – a DNS blocklist of 14k news and current-affairs sites</a><div class="item-meta">Hacker News · ▲ 20 pts · 💬 10 · <a href="https://news.ycombinator.com/item?id=50611026" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A little while ago I built (vibed) a tiny Mac app to block websites via the hosts file. By default it imported some fairly popular adult filtering lists as…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/the-birthday-paradox-shows-small-llms-pick-from-about-6-of-40-words/" target="_blank" rel="noopener">The Birthday Paradox Shows Small LLMs Pick From About 6 of 40 Words</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Ask the same question 300 times, count the repeats, and solve for N: a few lines of Python that work on any chatbot you can type into. The post The Birthday…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://www.kdnuggets.com/5-lightweight-alternatives-to-mcp-for-giving-ai-agents-tools" target="_blank" rel="noopener">5 Lightweight Alternatives to MCP for Giving AI Agents Tools</a><div class="item-meta">KDnuggets</div><p class="item-summary">Compare five lightweight ways to give AI agents tools without an MCP server, from a Python dispatcher to framework tools, REST adapters, subprocesses, and…</p></div><div class="item"><a class="item-title" href="https://github.com/tarqmamdouh/agent-theater" target="_blank" rel="noopener">tarqmamdouh/agent-theater</a><div class="item-meta">GitHub Search · ⭐ 171</div><p class="item-summary">[JavaScript] Your AI agents, live on a pixel-art stage. Works with Claude Code.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/reviews/2026/11/review-the-asus-proart-p16-offers-a-glimpse-of-a-future-powered-by-local-ai/" target="_blank" rel="noopener">Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI</a><div class="item-meta">Ars Technica</div><p class="item-summary">The new Asus ProArt laptop costs up to $7,000, but it can run a gaggle of local AI agents.</p></div><div class="item"><a class="item-title" href="https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF" target="_blank" rel="noopener">NariQ: BF16-level Qwen3.8-27B in a 10 GB file</a><div class="item-meta">Hacker News · ▲ 11 pts · 💬 0 · <a href="https://news.ycombinator.com/item?id=50611402" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We built NariQ: 3-bit-or-lower quantizations of Qwen3.8-27B that retain near-BF16 quality across agentic tasks, math, multilingual reasoning, and image…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://www.greptile.com/blog/trex-computer-use" target="_blank" rel="noopener">How should an LLM see a computer?</a><div class="item-meta">Hacker News · ▲ 9 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50615520" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">We benchmarked screenshots, accessibility trees, and click-by-ID on seven OpenAI models across 172 OSWorld tasks. The tree and ID clicks more than doubled…</p></div><div class="item"><a class="item-title" href="https://towardsdatascience.com/ai-math-proofs-arent-knowledge-until-someone-explains-them/" target="_blank" rel="noopener">AI Math Proofs Aren&#x27;t Knowledge Until Someone Explains Them</a><div class="item-meta">Towards Data Science</div><p class="item-summary">From the Four Color Theorem to OpenAI&#x27;s October 2026 claims, why computer-checked proofs still need people to explain, test, and extend them. The post AI Math…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/" target="_blank" rel="noopener">Sierra doubles valuation to $30B within six months as demand for AI in CX takes off</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Enterprise customer experience company Sierra, co-founded by former Salesforce co-CEO Bret Taylor, said on Monday that it has raised $1.75 billion in a Series…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/" target="_blank" rel="noopener">Amazon snaps up Decart’s AI optimization tech for $7.5B as it prepares to sell Trainium chips</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Amazon is acquiring Decart’s AI optimization technology and research team in a reported $7.5 billion deal.</p></div><div class="item"><a class="item-title" href="https://huggingface.co/blog/allenai/robotrack" target="_blank" rel="noopener">RoboTrack: Point tracking for real-world robotic manipulation</a><div class="item-meta">Hugging Face Blog</div><p class="item-summary">A Blog post by Ai2 on Hugging Face</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-23-2300.html">2026-11-23 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-1500.html">2026-11-23 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-0800.html">2026-11-23 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-2300.html">2026-11-22 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-1500.html">2026-11-22 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-0800.html">2026-11-22 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-2300.html">2026-11-21 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-1500.html">2026-11-21 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1415.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1356.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1352.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1339.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
