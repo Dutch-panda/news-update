@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Night Update (23:00) · 2026-11-25 23:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers" target="_blank" rel="noopener">Google releases Cogentic papers on integer factorization, discrete logs and more</a><div class="item-meta">Hacker News · ▲ 335 pts · 💬 257 · <a href="https://news.ycombinator.com/item?id=50642086" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Google Research. Contribute to google-research/google-research development by creating an account on GitHub.</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/gadgets/2026/11/ladybirds-new-alpha-shows-theres-life-beyond-chromium/" target="_blank" rel="noopener">Ladybird browser&#x27;s first downloadable alpha is surprisingly capable</a><div class="item-meta">Ars Technica</div><p class="item-summary">An independent browser engine arrives on Linux and macOS, and we&#x27;ve tried it.</p></div><div class="item"><a class="item-title" href="https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts" target="_blank" rel="noopener">A few questions for the guy who went snorkeling in a Home Depot retention pond</a><div class="item-meta">Hacker News · ▲ 316 pts · 💬 81 · <a href="https://news.ycombinator.com/item?id=50643129" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">He found it teeming with life and beauty.</p></div><div class="item"><a class="item-title" href="https://1password.com/blog/update-on-nov-2026-security-incident" target="_blank" rel="noopener">1Password Security Incident</a><div class="item-meta">Hacker News · ▲ 304 pts · 💬 134 · <a href="https://news.ycombinator.com/item?id=50644817" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">1Password identified a security incident involving some of our backend systems. Customer vaults were not accessed and remain secure.</p></div><div class="item"><a class="item-title" href="https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/" target="_blank" rel="noopener">Rumors swirling that labs might have cracked Factoring in P</a><div class="item-meta">Hacker News · ▲ 276 pts · 💬 195 · <a href="https://news.ycombinator.com/item?id=50643065" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank" rel="noopener">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">Amazon and Meta are discussing a potential deal that would end a two-month-long blockade of Muse.</p></div><div class="item"><a class="item-title" href="https://github.com/xoxorwr/pw-loudness-eq" target="_blank" rel="noopener">Windows Loudness Equalization, reverse-engineered and ported to PipeWire</a><div class="item-meta">Hacker News · ▲ 260 pts · 💬 150 · <a href="https://news.ycombinator.com/item?id=50641171" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Windows Loudness Equalization, reverse-engineered and ported to PipeWire - xoxorwr/pw-loudness-eq</p></div><div class="item"><a class="item-title" href="https://www.githubstatus.com/incidents/qn8mfv6q5hlx" target="_blank" rel="noopener">Investigating degraded experiences across GitHub products</a><div class="item-meta">Hacker News · ▲ 157 pts · 💬 78 · <a href="https://news.ycombinator.com/item?id=50643720" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">GitHub&#x27;s Status Page - Investigating degraded experiences across GitHub products.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank" rel="noopener">The questions Jensen Huang and Nvidia will still have to answer about Megaspeed</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The central question for investigators is what Nvidia knew about where those chips ended up and whether Huang&#x27;s affair with a Megaspeed executive gave the…</p></div><div class="item"><a class="item-title" href="https://dbushell.com/2026/11/25/web-industry/" target="_blank" rel="noopener">The year the web industry gave up</a><div class="item-meta">Hacker News · ▲ 80 pts · 💬 69 · <a href="https://news.ycombinator.com/item?id=50642832" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">The one where I lament what the web industry once was.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/25/todoist-confirms-6-of-customers-details-were-stolen-in-data-breach/" target="_blank" rel="noopener">Todoist confirms 6% of customers’ details were stolen in data breach</a><div class="item-meta">TechCrunch</div><p class="item-summary">Todoist said a hacker gained access to its production systems and stole customer data, including email IDs, password hashes, and account creation dates.</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/podcast/ai-data-centers-are-becoming-harder-to-build-and-neoclouds-are-feeling-it/" target="_blank" rel="noopener">AI data centers are becoming harder to build, and neoclouds are feeling it</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">⁠Nvidia has made clear⁠ it won’t backstop an AI data center until it’s nearly ready to run, and that’s landing just as neoclouds report construction delays…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers" target="_blank" rel="noopener">FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space</a><div class="item-meta">The Verge</div><p class="item-summary">In an announcement on Wednesday, the FCC says it authorized SpaceX to deploy up to 1 million AI chip-equipped satellites as part of the Elon Musk-owned…</p></div><div class="item"><a class="item-title" href="https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/" target="_blank" rel="noopener">Ars Live recap: Don’t expect military attacks on data centers to stop</a><div class="item-meta">Ars Technica</div><p class="item-summary">Militaries have many reasons to target data centers and the cloud in wartime.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/entertainment/1041596/blade-runner-2099-interview-showrunner-silka-luisa" target="_blank" rel="noopener">‘It’s not for the timid’: Blade Runner 2099’s showrunner on adapting the series for TV</a><div class="item-meta">The Verge</div><p class="item-summary">As a longtime fan of the films, Blade Runner 2099 showrunner Silka Luisa says she was more excited than scared when it came to adapting the series for TV. The…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://towardsdatascience.com/duckdb-20-vs-polars-20-in-five-real-world-tests-and-one-14x-gap/" target="_blank" rel="noopener">DuckDB 2.0 vs Polars 2.0 in Five Real-World Tests and One 14x Gap</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Three years after a tie between Polars 0.18 and DuckDB 0.9, both 2.0 releases go head to head on datasets of up to 335 million records. The post DuckDB 2.0 vs…</p></div><div class="item"><a class="item-title" href="https://www.kdnuggets.com/2026/11/vibe-coding-for-business-analytics-custom-crm-dashboards-reporting-apps-and-ai-agents" target="_blank" rel="noopener">Vibe Coding for Business Analytics: Custom CRM Dashboards, Reporting Apps, and AI Agents</a><div class="item-meta">KDnuggets</div><p class="item-summary">Discover how Alaio Vibecode, an AI app builder for Bitrix24, helps teams create custom CRM analytics dashboards, reporting tools, lead scoring apps, and AI…</p></div><div class="item"><a class="item-title" href="https://www.kdnuggets.com/why-data-job-candidates-freeze-on-questions-they-already-know" target="_blank" rel="noopener">Why Data Job Candidates Freeze on Questions They Already Know</a><div class="item-meta">KDnuggets</div><p class="item-summary">Pressure disrupts recall in interviews. Timed mock interviews let you rehearse it.</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/matheusmongarde/garimpo" target="_blank" rel="noopener">matheusmongarde/garimpo</a><div class="item-meta">GitHub Search · ⭐ 164</div><p class="item-summary">[TypeScript] Prospecção open source do Google Maps ao Pix: acha negócios no Maps, gera um site-prévia com o nome de cada um, conversa no WhatsApp e cobra por…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents" target="_blank" rel="noopener">Where scientists draw the line on AI agents</a><div class="item-meta">Hugging Face Blog</div><p class="item-summary">A Blog post by Ai2 on Hugging Face</p></div><div class="item"><a class="item-title" href="https://zapier.com/mcp" target="_blank" rel="noopener">Zapier offers free MCP tool calls until Jan. 5</a><div class="item-meta">Hacker News · ▲ 26 pts · 💬 1 · <a href="https://news.ycombinator.com/item?id=50643836" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Connect Claude, ChatGPT, Cursor, or any AI client to 9,000+ apps. Your agent finds the right action and runs it, with auth and permissions managed by Zapier.</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" target="_blank" rel="noopener">Amazon is reportedly in talks to end Muse AI shopping block</a><div class="item-meta">The Verge</div><p class="item-summary">Amazon has held talks about letting Meta&#x27;s Muse AI agent shop on its online marketplace, according to a report from Fortune. The discussions, which could end…</p></div><div class="item"><a class="item-title" href="https://www.kdnuggets.com/the-roadmap-to-becoming-an-ai-security-engineer-in-2026" target="_blank" rel="noopener">The Roadmap to Becoming an AI Security Engineer in 2027</a><div class="item-meta">KDnuggets</div><p class="item-summary">From cybersecurity foundations to defending machine learning systems, agentic pipelines, and large language model applications.</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://towardsdatascience.com/a-second-llm-judge-hit-875-precision-but-left-21-of-33-for-humans/" target="_blank" rel="noopener">A Second LLM Judge Hit 87.5% Precision but Left 21 of 33 for Humans</a><div class="item-meta">Towards Data Science</div><p class="item-summary">Using Han and Kim&#x27;s Chatbot Arena data, GPT-6 Luna and Claude Haiku 4.5 were tested as a panel, and Haiku alone matched users on 22 of 23 clear matchups. The…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/" target="_blank" rel="noopener">State AGs fight Character AI’s plan to auction off users’ private chats</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">The proposed Character.ai bankruptcy sale includes sensitive personal data from more than 21 million U.S. accounts, including 2.1 million registered to…</p></div><div class="item"><a class="item-title" href="https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/" target="_blank" rel="noopener">Want to buy your kid an AI toy this Christmas? Not in New York</a><div class="item-meta">TechCrunch AI</div><p class="item-summary">New York has banned AI chatbot toys for five years as new research from Common Sense Media reveals troubling safety failures, including exposure to…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-25-2300.html">2026-11-25 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-1500.html">2026-11-25 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-0800.html">2026-11-25 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-2300.html">2026-11-24 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-1500.html">2026-11-24 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-0800.html">2026-11-24 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-2300.html">2026-11-23 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-1500.html">2026-11-23 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-0800.html">2026-11-23 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-2300.html">2026-11-22 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-1500.html">2026-11-22 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-0800.html">2026-11-22 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-2300.html">2026-11-21 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-1500.html">2026-11-21 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
