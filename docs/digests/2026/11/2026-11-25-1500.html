@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Afternoon Update (15:00) · 2026-11-25 15:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="data_science">📊 Data Science &amp; Business Analytics</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://gpu-demo-gallery.pages.dev/" target="_blank" rel="noopener">Show HN: Old Nvidia and ATI tech demos, running again in the browser</a><div class="item-meta">Hacker News · ▲ 140 pts · 💬 35 · <a href="https://news.ycombinator.com/item?id=50638503" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Twenty-three graphics card demos by 3dfx, NVIDIA and ATI from 1998 to 2006, running in the browser.</p></div><div class="item"><a class="item-title" href="https://buttons.joshwcomeau.com/" target="_blank" rel="noopener">Button Sounds – collection of professionally-recorded button clicks and presses</a><div class="item-meta">Hacker News · ▲ 402 pts · 💬 55 · <a href="https://news.ycombinator.com/item?id=50638032" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A free collection of 50+ professionally-recorded multi-sampled clicks and toggles. Distributed via NPM.</p></div><div class="item"><a class="item-title" href="https://scottaaronson.blog/?p=10362" target="_blank" rel="noopener">I&#x27;ve been drinking wine in my kitchen</a><div class="item-meta">Hacker News · ▲ 210 pts · 💬 183 · <a href="https://news.ycombinator.com/item?id=50637874" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">See I don’t even like alcohol much. Like, I’ll have a half-glass of wine at a fancy dinner if everyone else is having some, or one beer at a reception, but…</p></div><div class="item"><a class="item-title" href="https://rida.dev/blog/bypassing-ios-safari-60-fps-limit" target="_blank" rel="noopener">Bypassing iOS Safari&#x27;s 60 FPS Limit to Build Web Applications That Feel Native</a><div class="item-meta">Hacker News · ▲ 215 pts · 💬 76 · <a href="https://news.ycombinator.com/item?id=50637890" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Getting iOS Safari web apps to a full 120 Hz, input and rendering, using native scroll containers and OffscreenCanvas.</p></div><div class="item"><a class="item-title" href="https://basilhalperin.com/essays/macrohistory.html" target="_blank" rel="noopener">Macrohistory in Six Facts</a><div class="item-meta">Hacker News · ▲ 81 pts · 💬 38 · <a href="https://news.ycombinator.com/item?id=50637891" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Macrohistory in six (plus or minus) graphs</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31286" target="_blank" rel="noopener">Why Automated Proof-Solving Is the Same Old Dead End</a><div class="item-meta">Hacker News · ▲ 30 pts · 💬 53 · <a href="https://news.ycombinator.com/item?id=50639929" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Nearly fifty years ago, DeMillo, Lipton, and Perlis argued that mathematical proofs are not static, isolated structures of formal logic, but the products of a…</p></div><div class="item"><a class="item-title" href="https://citrons.xyz/journal/2025-07-23" target="_blank" rel="noopener">Lua for data representation (2025)</a><div class="item-meta">Hacker News · ▲ 62 pts · 💬 20 · <a href="https://news.ycombinator.com/item?id=50637888" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31914" target="_blank" rel="noopener">Meta-Amortized Cognitive Modeling</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.31914v1 Announce Type: cross Abstract: Cognitive modeling is highly iterative. Researchers repeatedly revise model structures, parameterizations…</p></div></section><section class="category-card" data-cat="data_science"><h2>📊 Data Science &amp; Business Analytics</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31905" target="_blank" rel="noopener">OrangeTree: A Linear and Tree-based Time Series Forecasting Model Supporting Multiple Input and Output Lengths</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.31905v1 Announce Type: new Abstract: Time series forecasting (TSF) models suffer from a critical rigidity: the inability to handle Multiple Input…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2609.13345" target="_blank" rel="noopener">Beyond Point Forecasts: A Survey on Probabilistic Forecasting for Time Series and Spatiotemporal Data</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2609.13345v2 Announce Type: replace Abstract: Probabilistic forecasting is central to decision-making under uncertainty, yet its methodological…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31730" target="_blank" rel="noopener">Tokenization and Architecture Jointly Allocate Component Roles in Time Series Transformers</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.31730v1 Announce Type: new Abstract: Time series transformers have achieved strong forecasting performance, yet it remains unclear which of their…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://vcarl.com/sashay/" target="_blank" rel="noopener">Show HN: Sliding-panes React UI library (inspired by WebOS Enyo)</a><div class="item-meta">Hacker News · ▲ 28 pts · 💬 6 · <a href="https://news.ycombinator.com/item?id=50637936" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">A sliding-panes layout for the web. Snaps, flings, bottom bars, deep stacks, and a layout that fits in a URL.</p></div><div class="item"><a class="item-title" href="https://github.com/chanke17/KuroCat" target="_blank" rel="noopener">chanke17/KuroCat</a><div class="item-meta">GitHub Search · ⭐ 478</div><p class="item-summary">[C++] KuroCat — Free open-source native desktop cat pet &amp; OBS overlay (Bongo Cat alternative, Swift/C++, 802 KB)｜开源免费原生桌面萌猫（全平台 macOS·Win·Linux·UOS / 2.5D转头捕猎…</p></div><div class="item"><a class="item-title" href="https://www.interstateweather.com/" target="_blank" rel="noopener">Show HN: U.S. Interstate Weather</a><div class="item-meta">Hacker News · ▲ 23 pts · 💬 5 · <a href="https://news.ycombinator.com/item?id=50638523" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">In case you&#x27;re going on a road trip this week in the lower 48 (Thanksgiving is a big U.S holiday on Thursday).</p></div><div class="item"><a class="item-title" href="https://carry.md/" target="_blank" rel="noopener">Show HN: Carry – Save every AI conversations as Markdown, in a folder you Own</a><div class="item-meta">Hacker News · ▲ 19 pts · 💬 7 · <a href="https://news.ycombinator.com/item?id=50637995" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Carry let&#x27;s you automatically save your chats from Gemini, ChatGPT, Claude and Grok as Markdown in a local folder on you computer. You can easily search…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31498" target="_blank" rel="noopener">XRL4T1D: A Post-hoc Explainability Framework for Reinforcement Learning in Type 1 Diabetes Management</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.31498v1 Announce Type: new Abstract: Type 1 diabetes (T1D) requires lifelong insulin therapy, and reinforcement learning (RL) has shown promise for…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31249" target="_blank" rel="noopener">Actionwave: A Systematic Benchmark for Waveform-Centric Clinical Prediction Across Care Scenarios</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.31249v1 Announce Type: new Abstract: Continuous bedside waveforms record rapid physiological changes that can inform clinical decisions. Existing…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31898" target="_blank" rel="noopener">A General Framework for E-process Stopping Rules in Best-Arm Identification</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.31898v1 Announce Type: new Abstract: We propose an e-process stopping rule in the best-arm identification problem. The e-process stopping rule is…</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31794" target="_blank" rel="noopener">AGL-SKILL: Coding Harnesses as Agentic Optimizers</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.31794v1 Announce Type: new Abstract: Frontier models are increasingly used through harnesses as agents, with growing autonomy to do useful work…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31582" target="_blank" rel="noopener">LatentLens: Rethinking Latent Interface in Multi-Agent Systems</a><div class="item-meta">ArXiv cs.LG</div><p class="item-summary">arXiv:2611.31582v1 Announce Type: new Abstract: Latent interfaces let agents in a multi-agent system communicate through continuous representations rather…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31284" target="_blank" rel="noopener">Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.31284v1 Announce Type: new Abstract: Autonomous agent governance is commonly framed as a problem of enforcing correct execution. However, in…</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://www.comentr.com/technology/01M88DWQ0R4NCMYR17AFEWRG1F" target="_blank" rel="noopener">Gemini refused to give me the lyrics to Twinkle Twinkle Little Star</a><div class="item-meta">Hacker News · ▲ 182 pts · 💬 122 · <a href="https://news.ycombinator.com/item?id=50638320" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Both times it started outputting the lyrics, then stopped, retracted it and spat out the message you see here.</p></div><div class="item"><a class="item-title" href="https://noahbuilt.it/writing/qwen-on-5600-lambdas" target="_blank" rel="noopener">Serving Qwen via AWS Lambdas for fun and 80x negative profit</a><div class="item-meta">Hacker News · ▲ 77 pts · 💬 11 · <a href="https://news.ycombinator.com/item?id=50638070" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">I was curious if it was possible to run inference on self-hosted models using Lambdas. In this case I was very wrong, but it was a good lesson!</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31677" target="_blank" rel="noopener">Look Before You Commit: Visual-Evidence-Guided Decoding for Multimodal Diffusion Language Models</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.31677v1 Announce Type: new Abstract: Diffusion multimodal large language models rely on confidence to decide when to commit candidate tokens during…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.31737" target="_blank" rel="noopener">GreenDynaMix: Thermal-Aware Dynamic Mixed-Precision MoE LLM Inference Systems</a><div class="item-meta">ArXiv cs.AI</div><p class="item-summary">arXiv:2611.31737v1 Announce Type: new Abstract: Sustained Large Language Model (LLM) inference generates significant heat that exacerbates silicon aging and…</p></div><div class="item"><a class="item-title" href="https://arxiv.org/abs/2611.33064" target="_blank" rel="noopener">U-Statistics-Powered LLM Reasoning</a><div class="item-meta">ArXiv stat.ML</div><p class="item-summary">arXiv:2611.33064v1 Announce Type: cross Abstract: Since its introduction by DeepSeek, group relative policy optimization (GRPO) has been widely adopted for…</p></div><div class="item"><a class="item-title" href="https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga" target="_blank" rel="noopener">An Indic Voice Agent with CUGA</a><div class="item-meta">Hugging Face Blog</div><p class="item-summary">A Blog post by IBM Research on Hugging Face</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-25-1500.html">2026-11-25 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-0800.html">2026-11-25 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-2300.html">2026-11-24 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-1500.html">2026-11-24 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-0800.html">2026-11-24 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-2300.html">2026-11-23 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-1500.html">2026-11-23 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-0800.html">2026-11-23 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-2300.html">2026-11-22 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-1500.html">2026-11-22 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-0800.html">2026-11-22 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-2300.html">2026-11-21 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-1500.html">2026-11-21 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-2300.html">2026-11-14 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-1459.html">2026-11-14 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0800.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-14-0404.html">2026-11-14 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2300.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-2222.html">2026-11-13 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1452.html">2026-11-13 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-13-1425.html">2026-11-13 · Afternoon Update (15:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>

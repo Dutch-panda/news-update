@@ -1,6 +1,613 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-25-1500",
+      "edition_key": "afternoon",
+      "edition_label": "Afternoon Update (15:00)",
+      "generated_at": "2026-11-25T15:00:44.146170+04:00",
+      "markdown_path": "digests/2026/11/2026-11-25-1500.md",
+      "html_path": "digests/2026/11/2026-11-25-1500.html",
+      "total_fetched": 238,
+      "total_after_dedup": 158,
+      "total_selected": 27,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50638503",
+              "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
+              "url": "https://gpu-demo-gallery.pages.dev/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Twenty-three graphics card demos by 3dfx, NVIDIA and ATI from 1998 to 2006, running in the browser.",
+              "published_at": "2026-11-25T04:31:48+00:00",
+              "raw_score": 140,
+              "secondary_metric": 35,
+              "comments_url": "https://news.ycombinator.com/item?id=50638503",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 6.0,
+              "popularity_score": 8.077,
+              "final_score": 14.077,
+              "matched_keywords": [
+                "nvidia",
+                "browser"
+              ]
+            },
+            {
+              "id": "hn:50638032",
+              "title": "Button Sounds – collection of professionally-recorded button clicks and presses",
+              "url": "https://buttons.joshwcomeau.com/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "A free collection of 50+ professionally-recorded multi-sampled clicks and toggles. Distributed via NPM.",
+              "published_at": "2026-11-25T03:23:07+00:00",
+              "raw_score": 402,
+              "secondary_metric": 55,
+              "comments_url": "https://news.ycombinator.com/item?id=50638032",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.409,
+              "final_score": 9.909,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50637874",
+              "title": "I've been drinking wine in my kitchen",
+              "url": "https://scottaaronson.blog/?p=10362",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "See I don’t even like alcohol much. Like, I’ll have a half-glass of wine at a fancy dinner if everyone else is having some, or one beer at a reception, but…",
+              "published_at": "2026-11-25T03:02:10+00:00",
+              "raw_score": 210,
+              "secondary_metric": 183,
+              "comments_url": "https://news.ycombinator.com/item?id=50637874",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.087,
+              "final_score": 9.587,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50637890",
+              "title": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
+              "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Getting iOS Safari web apps to a full 120 Hz, input and rendering, using native scroll containers and OffscreenCanvas.",
+              "published_at": "2026-11-25T03:04:37+00:00",
+              "raw_score": 215,
+              "secondary_metric": 76,
+              "comments_url": "https://news.ycombinator.com/item?id=50637890",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.85,
+              "final_score": 9.35,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50637891",
+              "title": "Macrohistory in Six Facts",
+              "url": "https://basilhalperin.com/essays/macrohistory.html",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Macrohistory in six (plus or minus) graphs",
+              "published_at": "2026-11-25T03:04:46+00:00",
+              "raw_score": 81,
+              "secondary_metric": 38,
+              "comments_url": "https://news.ycombinator.com/item?id=50637891",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.513,
+              "final_score": 8.013,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50639929",
+              "title": "Why Automated Proof-Solving Is the Same Old Dead End",
+              "url": "https://arxiv.org/abs/2611.31286",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Nearly fifty years ago, DeMillo, Lipton, and Perlis argued that mathematical proofs are not static, isolated structures of formal logic, but the products of a…",
+              "published_at": "2026-11-25T08:23:34+00:00",
+              "raw_score": 30,
+              "secondary_metric": 53,
+              "comments_url": "https://news.ycombinator.com/item?id=50639929",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 7.373,
+              "final_score": 7.873,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50637888",
+              "title": "Lua for data representation (2025)",
+              "url": "https://citrons.xyz/journal/2025-07-23",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-25T03:04:12+00:00",
+              "raw_score": 62,
+              "secondary_metric": 20,
+              "comments_url": "https://news.ycombinator.com/item?id=50637888",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 6.975,
+              "final_score": 7.475,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2611.31914v1",
+              "title": "Meta-Amortized Cognitive Modeling",
+              "url": "https://arxiv.org/abs/2611.31914",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31914v1 Announce Type: cross Abstract: Cognitive modeling is highly iterative. Researchers repeatedly revise model structures, parameterizations…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "meta"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "data_science",
+          "title": "📊 Data Science & Business Analytics",
+          "items": [
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.31905v1",
+              "title": "OrangeTree: A Linear and Tree-based Time Series Forecasting Model Supporting Multiple Input and Output Lengths",
+              "url": "https://arxiv.org/abs/2611.31905",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31905v1 Announce Type: new Abstract: Time series forecasting (TSF) models suffer from a critical rigidity: the inability to handle Multiple Input…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "forecasting",
+                "time series"
+              ]
+            },
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2609.13345v2",
+              "title": "Beyond Point Forecasts: A Survey on Probabilistic Forecasting for Time Series and Spatiotemporal Data",
+              "url": "https://arxiv.org/abs/2609.13345",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2609.13345v2 Announce Type: replace Abstract: Probabilistic forecasting is central to decision-making under uncertainty, yet its methodological…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "forecasting",
+                "time series"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.31730v1",
+              "title": "Tokenization and Architecture Jointly Allocate Component Roles in Time Series Transformers",
+              "url": "https://arxiv.org/abs/2611.31730",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31730v1 Announce Type: new Abstract: Time series transformers have achieved strong forecasting performance, yet it remains unclear which of their…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 5.4,
+              "popularity_score": 3.7,
+              "final_score": 9.1,
+              "matched_keywords": [
+                "forecasting",
+                "time series"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "hn:50637936",
+              "title": "Show HN: Sliding-panes React UI library (inspired by WebOS Enyo)",
+              "url": "https://vcarl.com/sashay/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "A sliding-panes layout for the web. Snaps, flings, bottom bars, deep stacks, and a layout that fits in a URL.",
+              "published_at": "2026-11-25T03:10:18+00:00",
+              "raw_score": 28,
+              "secondary_metric": 6,
+              "comments_url": "https://news.ycombinator.com/item?id=50637936",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 6.0,
+              "popularity_score": 5.682,
+              "final_score": 11.682,
+              "matched_keywords": [
+                "show hn",
+                "library"
+              ]
+            },
+            {
+              "id": "gh:chanke17/KuroCat",
+              "title": "chanke17/KuroCat",
+              "url": "https://github.com/chanke17/KuroCat",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[C++] KuroCat — Free open-source native desktop cat pet & OBS overlay (Bongo Cat alternative, Swift/C++, 802 KB)｜开源免费原生桌面萌猫（全平台 macOS·Win·Linux·UOS / 2.5D转头捕猎…",
+              "published_at": "2026-11-23T01:06:18+00:00",
+              "raw_score": 478,
+              "secondary_metric": 198,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "C++",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 8.16,
+              "final_score": 11.36,
+              "matched_keywords": [
+                "open-source"
+              ]
+            },
+            {
+              "id": "hn:50638523",
+              "title": "Show HN: U.S. Interstate Weather",
+              "url": "https://www.interstateweather.com/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "In case you're going on a road trip this week in the lower 48 (Thanksgiving is a big U.S holiday on Thursday).",
+              "published_at": "2026-11-25T04:35:32+00:00",
+              "raw_score": 23,
+              "secondary_metric": 5,
+              "comments_url": "https://news.ycombinator.com/item?id=50638523",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 5.413,
+              "final_score": 10.413,
+              "matched_keywords": [
+                "show hn"
+              ]
+            },
+            {
+              "id": "hn:50637995",
+              "title": "Show HN: Carry – Save every AI conversations as Markdown, in a folder you Own",
+              "url": "https://carry.md/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Carry let's you automatically save your chats from Gemini, ChatGPT, Claude and Grok as Markdown in a local folder on you computer. You can easily search…",
+              "published_at": "2026-11-25T03:19:02+00:00",
+              "raw_score": 19,
+              "secondary_metric": 7,
+              "comments_url": "https://news.ycombinator.com/item?id=50637995",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 5.327,
+              "final_score": 10.327,
+              "matched_keywords": [
+                "show hn"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.31498v1",
+              "title": "XRL4T1D: A Post-hoc Explainability Framework for Reinforcement Learning in Type 1 Diabetes Management",
+              "url": "https://arxiv.org/abs/2611.31498",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31498v1 Announce Type: new Abstract: Type 1 diabetes (T1D) requires lifelong insulin therapy, and reinforcement learning (RL) has shown promise for…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "framework"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.31249v1",
+              "title": "Actionwave: A Systematic Benchmark for Waveform-Centric Clinical Prediction Across Care Scenarios",
+              "url": "https://arxiv.org/abs/2611.31249",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31249v1 Announce Type: new Abstract: Continuous bedside waveforms record rapid physiological changes that can inform clinical decisions. Existing…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "benchmark"
+              ]
+            },
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2611.31898v1",
+              "title": "A General Framework for E-process Stopping Rules in Best-Arm Identification",
+              "url": "https://arxiv.org/abs/2611.31898",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31898v1 Announce Type: new Abstract: We propose an e-process stopping rule in the best-arm identification problem. The e-process stopping rule is…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 3.7,
+              "final_score": 6.7,
+              "matched_keywords": [
+                "framework"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.31794v1",
+              "title": "AGL-SKILL: Coding Harnesses as Agentic Optimizers",
+              "url": "https://arxiv.org/abs/2611.31794",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31794v1 Announce Type: new Abstract: Frontier models are increasingly used through harnesses as agents, with growing autonomy to do useful work…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "agentic",
+                "skill"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.LG:oai:arXiv.org:2611.31582v1",
+              "title": "LatentLens: Rethinking Latent Interface in Multi-Agent Systems",
+              "url": "https://arxiv.org/abs/2611.31582",
+              "source_name": "ArXiv cs.LG",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31582v1 Announce Type: new Abstract: Latent interfaces let agents in a multi-agent system communicate through continuous representations rather…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "multi-agent"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.31284v1",
+              "title": "Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition",
+              "url": "https://arxiv.org/abs/2611.31284",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31284v1 Announce Type: new Abstract: Autonomous agent governance is commonly framed as a problem of enforcing correct execution. However, in…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 4.2,
+              "popularity_score": 3.7,
+              "final_score": 7.9,
+              "matched_keywords": [
+                "autonomous agent"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & Capabilities",
+          "items": [
+            {
+              "id": "hn:50638320",
+              "title": "Gemini refused to give me the lyrics to Twinkle Twinkle Little Star",
+              "url": "https://www.comentr.com/technology/01M88DWQ0R4NCMYR17AFEWRG1F",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Both times it started outputting the lyrics, then stopped, retracted it and spat out the message you see here.",
+              "published_at": "2026-11-25T04:03:33+00:00",
+              "raw_score": 182,
+              "secondary_metric": 122,
+              "comments_url": "https://news.ycombinator.com/item?id=50638320",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 8.855,
+              "final_score": 11.855,
+              "matched_keywords": [
+                "gemini"
+              ]
+            },
+            {
+              "id": "hn:50638070",
+              "title": "Serving Qwen via AWS Lambdas for fun and 80x negative profit",
+              "url": "https://noahbuilt.it/writing/qwen-on-5600-lambdas",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "I was curious if it was possible to run inference on self-hosted models using Lambdas. In this case I was very wrong, but it was a good lesson!",
+              "published_at": "2026-11-25T03:28:06+00:00",
+              "raw_score": 77,
+              "secondary_metric": 11,
+              "comments_url": "https://news.ycombinator.com/item?id=50638070",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 6.986,
+              "final_score": 9.986,
+              "matched_keywords": [
+                "qwen"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.31677v1",
+              "title": "Look Before You Commit: Visual-Evidence-Guided Decoding for Multimodal Diffusion Language Models",
+              "url": "https://arxiv.org/abs/2611.31677",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31677v1 Announce Type: new Abstract: Diffusion multimodal large language models rely on confidence to decide when to commit candidate tokens during…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "multimodal",
+                "diffusion"
+              ]
+            },
+            {
+              "id": "rss:ArXiv cs.AI:oai:arXiv.org:2611.31737v1",
+              "title": "GreenDynaMix: Thermal-Aware Dynamic Mixed-Precision MoE LLM Inference Systems",
+              "url": "https://arxiv.org/abs/2611.31737",
+              "source_name": "ArXiv cs.AI",
+              "source_type": "rss",
+              "summary": "arXiv:2611.31737v1 Announce Type: new Abstract: Sustained Large Language Model (LLM) inference generates significant heat that exacerbates silicon aging and…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 3.7,
+              "final_score": 9.7,
+              "matched_keywords": [
+                "llm",
+                "large language model",
+                "inference"
+              ]
+            },
+            {
+              "id": "rss:ArXiv stat.ML:oai:arXiv.org:2611.33064v1",
+              "title": "U-Statistics-Powered LLM Reasoning",
+              "url": "https://arxiv.org/abs/2611.33064",
+              "source_name": "ArXiv stat.ML",
+              "source_type": "rss",
+              "summary": "arXiv:2611.33064v1 Announce Type: cross Abstract: Since its introduction by DeepSeek, group relative policy optimization (GRPO) has been widely adopted for…",
+              "published_at": "2026-11-25T05:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "data_science",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 5.4,
+              "popularity_score": 3.7,
+              "final_score": 9.1,
+              "matched_keywords": [
+                "llm",
+                "deepseek",
+                "grpo"
+              ]
+            },
+            {
+              "id": "rss:Hugging Face Blog:https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+              "title": "An Indic Voice Agent with CUGA",
+              "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+              "source_name": "Hugging Face Blog",
+              "source_type": "rss",
+              "summary": "A Blog post by IBM Research on Hugging Face",
+              "published_at": "2026-11-25T10:22:09+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 0.5,
+              "popularity_score": 6.0,
+              "final_score": 6.5,
+              "matched_keywords": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-25-0800",
       "edition_key": "morning",
       "edition_label": "Morning Update (08:00)",
