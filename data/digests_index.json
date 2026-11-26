@@ -1,6 +1,631 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-26-0800",
+      "edition_key": "morning",
+      "edition_label": "Morning Update (08:00)",
+      "generated_at": "2026-11-26T08:00:40.816580+04:00",
+      "markdown_path": "digests/2026/11/2026-11-26-0800.md",
+      "html_path": "digests/2026/11/2026-11-26-0800.html",
+      "total_fetched": 122,
+      "total_after_dedup": 45,
+      "total_selected": 28,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "hn:50647161",
+              "title": "Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server",
+              "url": "https://opensec.in/blog/nfs2root-cve-2026-99362",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "A 12-year-old heap overflow in Linux's NFSv4.1 server lets an unauthenticated client on tcp/2049 corrupt kernel memory. Patch, exposure checks and detection.",
+              "published_at": "2026-11-25T20:35:50+00:00",
+              "raw_score": 102,
+              "secondary_metric": 35,
+              "comments_url": "https://news.ycombinator.com/item?id=50647161",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 7.732,
+              "final_score": 10.732,
+              "matched_keywords": [
+                "linux"
+              ]
+            },
+            {
+              "id": "hn:50646108",
+              "title": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
+              "url": "https://scottaaronson.blog/?p=10379",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "See also The matrix multiplication exponent is nine fourths [pdf] -",
+              "published_at": "2026-11-25T19:11:27+00:00",
+              "raw_score": 1048,
+              "secondary_metric": 888,
+              "comments_url": "https://news.ycombinator.com/item?id=50646108",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 10.0,
+              "final_score": 10.5,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50648823",
+              "title": "Jev is probably Qwen3.5-35B-A3B",
+              "url": "https://modaic.dev/blog/latency-doesnt-lie",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "TypeSafe doesn't disclose Jev's backbone. Self-identification, tokenizer, and throughput tests all point to Qwen3.5-35B-A3B.",
+              "published_at": "2026-11-25T22:57:04+00:00",
+              "raw_score": 257,
+              "secondary_metric": 74,
+              "comments_url": "https://news.ycombinator.com/item?id=50648823",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.835,
+              "final_score": 10.335,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1042938",
+              "title": "Now Google’s Familiar Faces AI feature works on Walmart’s $35 smart home camera too",
+              "url": "https://www.theverge.com/tech/1042938/google-home-familiar-faces-onn-cameras",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "A couple of Walmart's budget-friendly smart home cameras will be able to recognize people around your house now using Google's familiar face detection…",
+              "published_at": "2026-11-26T00:04:34+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3192614",
+              "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
+              "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "The credit rating agency may lower Nvidia's credit rating to AA-, the fourth-highest rating.",
+              "published_at": "2026-11-25T22:44:32+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 6.0,
+              "final_score": 10.2,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "hn:50647673",
+              "title": "The New York Times warns photographers not to update Photoshop over AI features",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The NYT doesn’t want AI metadata inadvertently added to its photos.",
+              "published_at": "2026-11-25T21:18:02+00:00",
+              "raw_score": 250,
+              "secondary_metric": 201,
+              "comments_url": "https://news.ycombinator.com/item?id=50647673",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.278,
+              "final_score": 9.778,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50649864",
+              "title": "Tell HN: Lots of Ask HNs again",
+              "url": "https://news.ycombinator.com/item?id=50649864",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "There have been questions about why the /ask page ( ) was running dry of Ask HNs - e.g.: Ask HN: Why is Ask HN only showing me 14 posts? - - Oct 2026 (47…",
+              "published_at": "2026-11-26T00:43:34+00:00",
+              "raw_score": 135,
+              "secondary_metric": 61,
+              "comments_url": "https://news.ycombinator.com/item?id=50649864",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.055,
+              "final_score": 9.555,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50647158",
+              "title": "72-hour fasting can reset your immune system, USC study shows",
+              "url": "https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The USC-led research behind this headline investigated how prolonged fasting and refeeding affected blood-forming stem cells, mainly in mice. Published in",
+              "published_at": "2026-11-25T20:35:39+00:00",
+              "raw_score": 194,
+              "secondary_metric": 150,
+              "comments_url": "https://news.ycombinator.com/item?id=50647158",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.0,
+              "final_score": 9.5,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1042409",
+              "title": "1Password breach leaked customer names and emails, but not passwords",
+              "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "1Password says a hacker stole customer names and email addresses after gaining access to its backend systems. The breach didn't expose passwords or other…",
+              "published_at": "2026-11-25T19:10:15+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "breach"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1042221",
+              "title": "Google’s patent for custom AI video feeds paints a bleak picture of entertainment’s future",
+              "url": "https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "Last year, Google filed a patent for a system called My Channel that's designed to create feeds filled with personalized, AI-generated videos and…",
+              "published_at": "2026-11-25T21:51:26+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3192475",
+              "title": "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
+              "url": "https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Most codes of conduct serve as a reflection of corporate culture. In Nvidia's case, that could have consequences.",
+              "published_at": "2026-11-25T19:54:57+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "hn:50648903",
+              "title": "S&P warns Nvidia's board may be compromised",
+              "url": "https://www.reuters.com/technology/us-finds-no-evidence-china-directed-executive-spy-nvidia-ceo-wsj-reports-2026-11-25/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-25T23:03:16+00:00",
+              "raw_score": 26,
+              "secondary_metric": 5,
+              "comments_url": "https://news.ycombinator.com/item?id=50648903",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 6.342,
+              "final_score": 9.342,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:Ars Technica:https://arstechnica.com/gadgets/2026/11/google-search-alternative-kagi-launches-gmail-rival/",
+              "title": "Google search alternative Kagi launches Gmail rival",
+              "url": "https://arstechnica.com/gadgets/2026/11/google-search-alternative-kagi-launches-gmail-rival/",
+              "source_name": "Ars Technica",
+              "source_type": "rss",
+              "summary": "The pitch is an unusual combination of privacy promises and AI features.",
+              "published_at": "2026-11-25T20:57:09+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 5.2,
+              "final_score": 8.2,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1042870",
+              "title": "Amazon loses its latest attempt to get out of handling more recall notices",
+              "url": "https://www.theverge.com/tech/1042870/amazon-recall-order-cpsc",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "Amazon is on the hook to recall more than 400,000 hazardous products after losing its legal battle against the US Consumer Product Safety Commission (CPSC)…",
+              "published_at": "2026-11-25T23:56:44+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 6.0,
+              "final_score": 6.5,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1042532",
+              "title": "WhatsApp’s new scheduled messages let you choose the right time to send",
+              "url": "https://www.theverge.com/tech/1042532/whatsapp-scheduled-messages",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "WhatsApp's 3 billion users are getting an option that Meta says is one of the most requested features, with the ability to schedule messages in advance for…",
+              "published_at": "2026-11-25T20:31:48+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 1.2,
+              "popularity_score": 5.2,
+              "final_score": 6.4,
+              "matched_keywords": [
+                "meta"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "data_science",
+          "title": "📊 Data Science & Business Analytics",
+          "items": [
+            {
+              "id": "rss:Ars Technica:https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/",
+              "title": "European spacecraft finds chaotic scene after asteroid deflection experiment",
+              "url": "https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/",
+              "source_name": "Ars Technica",
+              "source_type": "rss",
+              "summary": "\"DART made a really, really large mess. However, we didn’t really know what kind of mess.\"",
+              "published_at": "2026-11-25T22:36:45+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 3.0,
+              "popularity_score": 6.0,
+              "final_score": 9.0,
+              "matched_keywords": [
+                "experiment"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "hn:50647219",
+              "title": "Show HN: Openfal, local image and video generation with a fal-style API",
+              "url": "https://openfal.org",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Run Qwen-Image-2.1, Wan 2.2, and MiniMax H3 locally with a fal-compatible HTTP/queue API, Python SDK, built-in Studio UI, hardware detection, and one-CLI…",
+              "published_at": "2026-11-25T20:40:52+00:00",
+              "raw_score": 15,
+              "secondary_metric": 5,
+              "comments_url": "https://news.ycombinator.com/item?id=50647219",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 6.0,
+              "popularity_score": 4.967,
+              "final_score": 10.967,
+              "matched_keywords": [
+                "show hn",
+                "api"
+              ]
+            },
+            {
+              "id": "gh:lucia-zheng8/anaconda",
+              "title": "lucia-zheng8/anaconda",
+              "url": "https://github.com/lucia-zheng8/anaconda",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Anaconda for Windows 10/11. Launches Python coding environments and installs data science packages like NumPy, Pandas and Jupyter, so you can build and run…",
+              "published_at": "2026-11-24T11:17:46+00:00",
+              "raw_score": 194,
+              "secondary_metric": 114,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 7.249,
+              "final_score": 10.449,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "hn:50646482",
+              "title": "Show HN: Rust agent with an Inkling 2 Mini inference engine for Apple Silicon",
+              "url": "https://github.com/onatm/rustling",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "inference engine for inkling 2 mini. Contribute to onatm/rustling development by creating an account on GitHub.",
+              "published_at": "2026-11-25T19:42:36+00:00",
+              "raw_score": 11,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50646482",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 6.0,
+              "popularity_score": 3.933,
+              "final_score": 9.933,
+              "matched_keywords": [
+                "show hn",
+                "rust"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "gh:uxpilot-ai/frontend-design-skill",
+              "title": "uxpilot-ai/frontend-design-skill",
+              "url": "https://github.com/uxpilot-ai/frontend-design-skill",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Free frontend design skill for Claude Code, Codex and Cursor: designs your UI on a UX Pilot canvas, then builds it in your code (agent-skills, claude-code…",
+              "published_at": "2026-11-25T19:40:33+00:00",
+              "raw_score": 153,
+              "secondary_metric": 153,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 6.0,
+              "popularity_score": 8.755,
+              "final_score": 14.755,
+              "matched_keywords": [
+                "skill",
+                "skills",
+                "claude code",
+                "codex",
+                "cursor"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "llm_models",
+          "title": "🧠 LLM Models & Capabilities",
+          "items": [
+            {
+              "id": "gh:alesha-pro/llm.asm",
+              "title": "alesha-pro/llm.asm",
+              "url": "https://github.com/alesha-pro/llm.asm",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Assembly] Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64…",
+              "published_at": "2026-11-25T07:28:51+00:00",
+              "raw_score": 421,
+              "secondary_metric": 421,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Assembly",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 9.611,
+              "final_score": 13.811,
+              "matched_keywords": [
+                "llm",
+                "inference"
+              ]
+            },
+            {
+              "id": "hn:50648050",
+              "title": "Much shorter version of GRH Lean verification from Anthropic",
+              "url": "https://github.com/lsernau/grh-lean",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "A short Lean 4 proof of the Generalized Riemann Hypothesis - lsernau/grh-lean",
+              "published_at": "2026-11-25T21:48:10+00:00",
+              "raw_score": 328,
+              "secondary_metric": 162,
+              "comments_url": "https://news.ycombinator.com/item?id=50648050",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 9.576,
+              "final_score": 12.576,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "gh:bytebuildsmall/claude-desktop",
+              "title": "bytebuildsmall/claude-desktop",
+              "url": "https://github.com/bytebuildsmall/claude-desktop",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "Claude Desktop for Windows 10/11. Chats with Claude AI to draft documents, analyze files and code, and answer questions from a native desktop app with quick…",
+              "published_at": "2026-11-24T11:49:09+00:00",
+              "raw_score": 194,
+              "secondary_metric": 116,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 7.271,
+              "final_score": 11.471,
+              "matched_keywords": [
+                "claude"
+              ]
+            },
+            {
+              "id": "hn:50648365",
+              "title": "Bare Metal Qwen",
+              "url": "https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM…",
+              "published_at": "2026-11-25T22:15:34+00:00",
+              "raw_score": 86,
+              "secondary_metric": 16,
+              "comments_url": "https://news.ycombinator.com/item?id=50648365",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 3.0,
+              "popularity_score": 8.046,
+              "final_score": 11.046,
+              "matched_keywords": [
+                "qwen"
+              ]
+            },
+            {
+              "id": "hn:50647893",
+              "title": "Ask HN: Nobel Prizes for OpenAI and Anthropic: When?",
+              "url": "https://news.ycombinator.com/item?id=50647893",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "In 2024, multiple Nobel Prizes were awarded for AI related accomplishments: > 2024 Nobel Prize in Physics: Awarded to John J. Hopfield and Geoffrey Hinton for…",
+              "published_at": "2026-11-25T21:33:52+00:00",
+              "raw_score": 11,
+              "secondary_metric": 12,
+              "comments_url": "https://news.ycombinator.com/item?id=50647893",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 6.0,
+              "popularity_score": 4.959,
+              "final_score": 10.959,
+              "matched_keywords": [
+                "openai",
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3192506",
+              "title": "Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’",
+              "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Anthropic CEO Dario Amodei pushes back against rivals’ accusations that he favors surrendering human agency to AI, even as leading AI companies increasingly…",
+              "published_at": "2026-11-25T19:44:24+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "anthropic"
+              ]
+            },
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3192524",
+              "title": "OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work",
+              "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "OpenAI will introduce a single usage meter across ChatGPT as it combines the Chat and Work experiences.",
+              "published_at": "2026-11-25T20:03:27+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 4.2,
+              "popularity_score": 5.2,
+              "final_score": 9.4,
+              "matched_keywords": [
+                "openai"
+              ]
+            },
+            {
+              "id": "rss:Simon Willison:https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+              "title": "Quoting Scott Aaronson",
+              "url": "https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+              "source_name": "Simon Willison",
+              "source_type": "rss",
+              "summary": "It’s now obvious that we’ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that…",
+              "published_at": "2026-11-25T23:26:32+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "llm_models",
+              "relevance_score": 0.5,
+              "popularity_score": 6.0,
+              "final_score": 6.5,
+              "matched_keywords": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-25-2300",
       "edition_key": "night",
       "edition_label": "Night Update (23:00)",
