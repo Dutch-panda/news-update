@@ -1,6 +1,452 @@
 {
   "digests": [
     {
+      "edition_id": "2026-11-27-0800",
+      "edition_key": "morning",
+      "edition_label": "Morning Update (08:00)",
+      "generated_at": "2026-11-27T08:00:38.816338+04:00",
+      "markdown_path": "digests/2026/11/2026-11-27-0800.md",
+      "html_path": "digests/2026/11/2026-11-27-0800.html",
+      "total_fetched": 108,
+      "total_after_dedup": 30,
+      "total_selected": 20,
+      "categories": [
+        {
+          "key": "trending_tech",
+          "title": "💻 Trending Tech News",
+          "items": [
+            {
+              "id": "rss:TechCrunch AI:https://techcrunch.com/?p=3192803",
+              "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+              "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+              "source_name": "TechCrunch AI",
+              "source_type": "rss",
+              "summary": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips…",
+              "published_at": "2026-11-26T20:03:54+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "llm_models",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 6.0,
+              "popularity_score": 5.2,
+              "final_score": 11.2,
+              "matched_keywords": [
+                "nvidia",
+                "chip"
+              ]
+            },
+            {
+              "id": "hn:50660180",
+              "title": "AI made self-hosting fun again",
+              "url": "https://janlukas.blog/posts/ai-self-hosting",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "I’ve been self-hosting things for many years. There were times when I was quite enthusiastic about it, constantly trying out new software and tinkering with…",
+              "published_at": "2026-11-26T21:47:45+00:00",
+              "raw_score": 407,
+              "secondary_metric": 222,
+              "comments_url": "https://news.ycombinator.com/item?id=50660180",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.812,
+              "final_score": 10.312,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50659532",
+              "title": "Nvidia was right to bring back Jensen Huang, writes Sarah Guo",
+              "url": "https://www.economist.com/by-invitation/2026/11/25/nvidia-was-right-to-bring-back-jensen-huang-writes-sarah-guo",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-26T20:39:05+00:00",
+              "raw_score": 40,
+              "secondary_metric": 32,
+              "comments_url": "https://news.ycombinator.com/item?id=50659532",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 6.684,
+              "final_score": 9.684,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "hn:50662322",
+              "title": "Google will show solo Android developers' phone numbers and addresses",
+              "url": "https://support.google.com/googleplay/android-developer/answer/17594752?hl=en",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Under Google Play’s global developer policies, all active developer accounts must declare whether they are a trader or non-trader under European Economic Area…",
+              "published_at": "2026-11-27T03:11:41+00:00",
+              "raw_score": 32,
+              "secondary_metric": 7,
+              "comments_url": "https://news.ycombinator.com/item?id=50662322",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 3.0,
+              "popularity_score": 6.678,
+              "final_score": 9.678,
+              "matched_keywords": [
+                "google"
+              ]
+            },
+            {
+              "id": "hn:50659841",
+              "title": "Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad",
+              "url": "https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Traditional architecture is alive and well in Lahore. A photo essay of Kamil Khan Mumtaz’s greatest works.",
+              "published_at": "2026-11-26T21:08:05+00:00",
+              "raw_score": 281,
+              "secondary_metric": 60,
+              "comments_url": "https://news.ycombinator.com/item?id=50659841",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 9.05,
+              "final_score": 9.55,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50661646",
+              "title": "Hard Drive pricing has gotten bad",
+              "url": "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "The same 20TB drive went from $249.99 to $549.99 in two Black Fridays. I dug through eight years of receipts, including my ServerPartDeals orders.",
+              "published_at": "2026-11-27T01:13:49+00:00",
+              "raw_score": 119,
+              "secondary_metric": 62,
+              "comments_url": "https://news.ycombinator.com/item?id=50661646",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.923,
+              "final_score": 9.423,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50658170",
+              "title": "IBM ends immigration sponsorship for most positions in its consulting division",
+              "url": "https://economictimes.indiatimes.com/nri/work/ibm-gives-h-1b-green-card-holders-3-weeks-to-relocate-from-us-or-leave-company-december-31-deadline-set/articleshow/136180168.cms?from=mdr",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "IBM has informed employees with H-1B visas and green cards about the need to relocate within three weeks or depart. Employees who choose not to relocate will…",
+              "published_at": "2026-11-26T18:35:37+00:00",
+              "raw_score": 145,
+              "secondary_metric": 110,
+              "comments_url": "https://news.ycombinator.com/item?id=50658170",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.566,
+              "final_score": 9.066,
+              "matched_keywords": []
+            },
+            {
+              "id": "hn:50659640",
+              "title": "Company Culture = Slack Emoji ÷ √Headcount",
+              "url": "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Companies spend an enormous amount of time and money trying to measure - and even worse, decide - culture. Engagement surveys, pulse checks, eNPS, offsites…",
+              "published_at": "2026-11-26T20:49:49+00:00",
+              "raw_score": 166,
+              "secondary_metric": 66,
+              "comments_url": "https://news.ycombinator.com/item?id=50659640",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 8.512,
+              "final_score": 9.012,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:TechCrunch:https://techcrunch.com/?p=3192015",
+              "title": "Is Alice Huang a spy or not?",
+              "url": "https://techcrunch.com/2026/11/26/is-alice-huang-a-spy-or-not/",
+              "source_name": "TechCrunch",
+              "source_type": "rss",
+              "summary": "The central, still-unproven claim in the Nvidia scandal is that Alice Huang, the former Megaspeed exec with whom Nvidia CEO Jensen Huang had an extramarital…",
+              "published_at": "2026-11-26T20:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 1.2,
+              "popularity_score": 5.2,
+              "final_score": 6.4,
+              "matched_keywords": [
+                "nvidia"
+              ]
+            },
+            {
+              "id": "rss:The Verge:https://www.theverge.com/?p=1043489",
+              "title": "Netflix’s coziest show has made a very quiet return",
+              "url": "https://www.theverge.com/entertainment/1043489/midnight-diner-season3",
+              "source_name": "The Verge",
+              "source_type": "rss",
+              "summary": "The bigger Netflix gets, the easier it is to miss stuff. This is true of all digital platforms, of course, but it's especially true of Netflix of late, as the…",
+              "published_at": "2026-11-26T21:00:00+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 5.2,
+              "final_score": 5.7,
+              "matched_keywords": []
+            },
+            {
+              "id": "rss:TechCrunch:https://techcrunch.com/?p=3192791",
+              "title": "X finally gets parental controls after 20 years",
+              "url": "https://techcrunch.com/2026/11/26/x-finally-gets-parental-controls-after-20-years/",
+              "source_name": "TechCrunch",
+              "source_type": "rss",
+              "summary": "Elon Musk's social network X has finally added parental controls for teenagers, giving parents and guardians a way to manage what their kids see on the…",
+              "published_at": "2026-11-26T19:31:50+00:00",
+              "raw_score": 0,
+              "secondary_metric": 0,
+              "comments_url": "",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "trending_tech",
+              "relevance_score": 0.5,
+              "popularity_score": 5.2,
+              "final_score": 5.7,
+              "matched_keywords": []
+            }
+          ]
+        },
+        {
+          "key": "data_science",
+          "title": "📊 Data Science & Business Analytics",
+          "items": [
+            {
+              "id": "hn:50658498",
+              "title": "An introduction to uncertainty in machine learning",
+              "url": "https://chrhenning.com/blog/2026/introduction-to-uncertainty/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Every model makes an assumption about uncertainty, often without saying so. Where data is rare, that assumption decides the answer. This introduction explains…",
+              "published_at": "2026-11-26T19:04:50+00:00",
+              "raw_score": 28,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50658498",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "data_science",
+              "relevance_score": 3.0,
+              "popularity_score": 4.904,
+              "final_score": 7.904,
+              "matched_keywords": [
+                "machine learning"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "new_tools",
+          "title": "🛠️ Open-Source Projects, Tools & Harnesses",
+          "items": [
+            {
+              "id": "gh:gary23w/f-ck_data_brokers",
+              "title": "gary23w/f-ck_data_brokers",
+              "url": "https://github.com/gary23w/f-ck_data_brokers",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Python] fck_data_brokers.py is a free, open-source Python script that sends opt-out and deletion requests to data brokers on your behalf. (ccpa, cli…",
+              "published_at": "2026-11-26T17:53:07+00:00",
+              "raw_score": 435,
+              "secondary_metric": 435,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.6,
+              "popularity_score": 10.0,
+              "final_score": 15.6,
+              "matched_keywords": [
+                "open-source",
+                "cli",
+                "python"
+              ]
+            },
+            {
+              "id": "hn:50658632",
+              "title": "Rvoip: VoIP stack in Rust",
+              "url": "https://github.com/eisenzopf/rvoip",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Open-source Rust SIP/VoIP stack: SIP, WebRTC, SRTP and AI voice agents behind one API. RFC 7502-benchmarked. - eisenzopf/rvoip",
+              "published_at": "2026-11-26T19:18:09+00:00",
+              "raw_score": 102,
+              "secondary_metric": 19,
+              "comments_url": "https://news.ycombinator.com/item?id=50658632",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 7.496,
+              "final_score": 10.496,
+              "matched_keywords": [
+                "rust"
+              ]
+            },
+            {
+              "id": "hn:50658193",
+              "title": "Largest 2D Chart library in the world using BUI: BlenderUI",
+              "url": "https://bui.preetham.top/charts/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Install BUI Charts, draw your first chart in an rsx! block, and learn how this documentation is organised.",
+              "published_at": "2026-11-26T18:37:24+00:00",
+              "raw_score": 77,
+              "secondary_metric": 10,
+              "comments_url": "https://news.ycombinator.com/item?id=50658193",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.0,
+              "popularity_score": 6.952,
+              "final_score": 9.952,
+              "matched_keywords": [
+                "library"
+              ]
+            },
+            {
+              "id": "gh:langchain-samples/Persistent-Agent",
+              "title": "langchain-samples/Persistent-Agent",
+              "url": "https://github.com/langchain-samples/Persistent-Agent",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Python] Persistent Agent is a proactive, always-on, goal-oriented agent. Think Muse or Instinct, but for the enterprise. Comes with memory, browser use…",
+              "published_at": "2026-11-24T17:52:40+00:00",
+              "raw_score": 151,
+              "secondary_metric": 62,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 6.435,
+              "final_score": 9.635,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "gh:Nyxera0x/blueprint",
+              "title": "Nyxera0x/blueprint",
+              "url": "https://github.com/Nyxera0x/blueprint",
+              "source_name": "GitHub Search",
+              "source_type": "github",
+              "summary": "[Python] A pen sketch, a floor plan or 3 references in, a 3D house that builds itself out. A Claude Code skill: every part in Blender as code.",
+              "published_at": "2026-11-24T12:23:48+00:00",
+              "raw_score": 154,
+              "secondary_metric": 58,
+              "comments_url": "",
+              "default_category": "new_tools",
+              "language": "Python",
+              "assigned_category": "new_tools",
+              "relevance_score": 3.2,
+              "popularity_score": 6.358,
+              "final_score": 9.558,
+              "matched_keywords": [
+                "python"
+              ]
+            },
+            {
+              "id": "hn:50662217",
+              "title": "Show HN: Sqrin – A better screen share for Mac",
+              "url": "https://sqrin.app",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Sqrin gives apps like Zoom, Teams or Meet a zoomable screen with a smoothly gliding pointer. Make your live screen shares stand out like polished…",
+              "published_at": "2026-11-27T02:53:22+00:00",
+              "raw_score": 3,
+              "secondary_metric": 0,
+              "comments_url": "https://news.ycombinator.com/item?id=50662217",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "new_tools",
+              "relevance_score": 5.0,
+              "popularity_score": 3.525,
+              "final_score": 8.525,
+              "matched_keywords": [
+                "show hn"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ai_agents",
+          "title": "🤖 Agentic Workflows, MCPs & Skills",
+          "items": [
+            {
+              "id": "hn:50661218",
+              "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
+              "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "Google Deepmind uses AI agents to run experiments on their own for upcoming Gemini models. Research chief Koray Kavukcuoglu says the lab is still far from…",
+              "published_at": "2026-11-27T00:03:18+00:00",
+              "raw_score": 41,
+              "secondary_metric": 19,
+              "comments_url": "https://news.ycombinator.com/item?id=50661218",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 7.31,
+              "final_score": 10.31,
+              "matched_keywords": [
+                "ai agents"
+              ]
+            },
+            {
+              "id": "hn:50658093",
+              "title": "Notion's official MCP inject hidden upsell instructions into agent context",
+              "url": "https://www.reddit.com/r/ClaudeCode/comments/1y4qm5o/heads_up_if_you_wire_notions_official_mcp_into/",
+              "source_name": "Hacker News",
+              "source_type": "hn",
+              "summary": "",
+              "published_at": "2026-11-26T18:28:30+00:00",
+              "raw_score": 51,
+              "secondary_metric": 22,
+              "comments_url": "https://news.ycombinator.com/item?id=50658093",
+              "default_category": "trending_tech",
+              "language": "",
+              "assigned_category": "ai_agents",
+              "relevance_score": 3.0,
+              "popularity_score": 6.801,
+              "final_score": 9.801,
+              "matched_keywords": [
+                "mcp"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "edition_id": "2026-11-26-2300",
       "edition_key": "night",
       "edition_label": "Night Update (23:00)",
