@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Trends Digest</title>
+  <style>
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #263348;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --pill-bg: #0ea5e922;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --pill-bg: #e0f2fe;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header a { color: var(--accent); text-decoration: none; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pill.active {
+  background: var(--pill-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.category-card h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+}
+.item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.item:last-child { border-bottom: none; padding-bottom: 0; }
+.item-title {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-title:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.item-meta a { color: var(--accent); text-decoration: none; }
+.item-summary {
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
+}
+aside .archive-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+aside h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.55rem; font-size: 0.88rem; }
+aside a { color: var(--accent); text-decoration: none; }
+aside a.current { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1><a href="../../../index.html">📡 News &amp; Trends Digest</a></h1>
+        <div class="meta">Morning Update (08:00) · 2026-11-28 08:00</div>
+      </div>
+      <div class="meta">Hacker News · GitHub · Tech &amp; World RSS</div>
+    </header>
+    <div class="layout">
+      <main>
+        <div class="controls"><input id="search-input" type="search" placeholder="Filter stories, repos, or keywords…"><button class="pill active" data-cat="all">All</button><button class="pill" data-cat="trending_tech">💻 Trending Tech News</button><button class="pill" data-cat="new_tools">🛠️ Open-Source Projects, Tools &amp; Harnesses</button><button class="pill" data-cat="ai_agents">🤖 Agentic Workflows, MCPs &amp; Skills</button><button class="pill" data-cat="llm_models">🧠 LLM Models &amp; Capabilities</button></div>
+        <section class="category-card" data-cat="trending_tech"><h2>💻 Trending Tech News</h2><div class="item"><a class="item-title" href="https://research.google/blog/supercharging-transformer-residual-connections/" target="_blank" rel="noopener">Google&#x27;s DeepCrossAttention achieves comparable model quality up to 3x faster</a><div class="item-meta">Hacker News · ▲ 191 pts · 💬 64 · <a href="https://news.ycombinator.com/item?id=50672565" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://neuralnetworksanddeeplearning.com/" target="_blank" rel="noopener">Michael Nielsen took down his book on neural nets</a><div class="item-meta">Hacker News · ▲ 430 pts · 💬 269 · <a href="https://news.ycombinator.com/item?id=50670757" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1044771/m5-macbook-air-black-friday-2026-deal-sale" target="_blank" rel="noopener">The M5 MacBook Air just got its biggest discount since Apple raised the price</a><div class="item-meta">The Verge</div><p class="item-summary">If you’ve been holding off on buying a new MacBook Air since Apple raised prices by $200 in June, you’re in luck. The 13-inch M5 MacBook Air is on sale at…</p></div><div class="item"><a class="item-title" href="https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform" target="_blank" rel="noopener">States sue SpaceX to stop Grok from generating child sex images, revenge porn</a><div class="item-meta">Hacker News · ▲ 305 pts · 💬 165 · <a href="https://news.ycombinator.com/item?id=50670855" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">This lawsuit is about seeking justice for the millions of Virginians who maintain accounts on X and were misled by the company’s false reassurances that their…</p></div><div class="item"><a class="item-title" href="https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/" target="_blank" rel="noopener">Atari Homebrew Awards Cancelled</a><div class="item-meta">Hacker News · ▲ 106 pts · 💬 84 · <a href="https://news.ycombinator.com/item?id=50673688" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.theguardian.com/books/2026/nov/27/careless-people-author-sarah-wynn-williams-the-silence-is-mine-it-doesnt-have-to-be-yours" target="_blank" rel="noopener">I am scared: Careless People – Sarah Wynn-Williams on living under a gag order</a><div class="item-meta">Hacker News · ▲ 167 pts · 💬 96 · <a href="https://news.ycombinator.com/item?id=50671301" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Since writing her bestselling exposé, the former employee has been forbidden from speaking publicly about Meta. In an exclusive extract from her Orwell…</p></div><div class="item"><a class="item-title" href="https://slate.com/business/2026/11/dumb-cars-cheap-low-tech.html" target="_blank" rel="noopener">Why drivers want cheap, dumb cars again</a><div class="item-meta">Hacker News · ▲ 69 pts · 💬 119 · <a href="https://news.ycombinator.com/item?id=50672762" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Touch screens, subscriptions, and rising prices have made new cars frustrating. Can automakers win drivers over with cheaper, simpler vehicles?</p></div><div class="item"><a class="item-title" href="https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai" target="_blank" rel="noopener">Woman evicted after landlord&#x27;s AI assistant told her she could delay rent</a><div class="item-meta">Hacker News · ▲ 85 pts · 💬 63 · <a href="https://news.ycombinator.com/item?id=50673521" target="_blank" rel="noopener">HN Discussion</a></div></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1042705/ipad-mini-black-friday-deal-sale-2026" target="_blank" rel="noopener">The new iPad Mini is getting its first major discount for Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">We were big fans of Apple’s new iPad Mini when we reviewed it in early November, but its steep starting price of $699 was hard to swallow. Thankfully, the…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1043445/black-friday-best-cheap-tech-deals-under-100-2026" target="_blank" rel="noopener">We found 60-odd Black Friday deals we love for $100 or less</a><div class="item-meta">The Verge</div><p class="item-summary">Between holiday travel, gifts, and the rising cost of just about everything, expenses can quickly add up during this time of year. Thankfully, you don’t have…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1044487/best-black-friday-robot-vacuum-mop-deals-2026" target="_blank" rel="noopener">The best robot vacuums we’ve tested are up to 60 percent off for Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">Black Friday is here, and if you want a little help keeping your floors clean this holiday season, now is a great time to pick up a robot vacuum. Some of the…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1040471/4k-bluray-movie-film-black-friday-deal-sale" target="_blank" rel="noopener">Many of our favorite Blu-ray movies are over 50 percent off for Black Friday</a><div class="item-meta">The Verge</div><p class="item-summary">No shade to those who love their subscription services, but viewing physical movies is a time-honored tradition that shouldn’t go away. Watching them doesn’t…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/games/1044715/yooka-laylees-free-upgrade-is-skipping-xbox" target="_blank" rel="noopener">Yooka-Laylee’s free upgrade is skipping Xbox</a><div class="item-meta">The Verge</div><p class="item-summary">Playtronic Games is getting ready to launch Yooka-Laylee and the Impossible Lair: Definitive Edition as a free update on PlayStation 5, Switch 2, and PC on…</p></div><div class="item"><a class="item-title" href="https://www.theverge.com/gadgets/1043976/sony-wh1000xm4c-noise-canceling-headphones-black-friday-2026-deal-sale" target="_blank" rel="noopener">Sony’s 1000XM4C headphones are a Black Friday bargain at $198</a><div class="item-meta">The Verge</div><p class="item-summary">Instead of purely looking forward with its headphone designs, Sony went back to its popular WH-1000XM4 design and made some improvements to make it even…</p></div></section><section class="category-card" data-cat="new_tools"><h2>🛠️ Open-Source Projects, Tools &amp; Harnesses</h2><div class="item"><a class="item-title" href="https://github.com/volkanschulz24/claude-code-cli-windows-native-installer" target="_blank" rel="noopener">volkanschulz24/claude-code-cli-windows-native-installer</a><div class="item-meta">GitHub Search · ⭐ 265</div><p class="item-summary">[Go] Claude Code CLI Windows Native Installer — Claude Code CLI Windows Native Pro Trial Reset &amp; Machine ID (claude-code-cli-windows…</p></div><div class="item"><a class="item-title" href="https://github.com/NYLLON-SOFTWARE/SignuDoc" target="_blank" rel="noopener">NYLLON-SOFTWARE/SignuDoc</a><div class="item-meta">GitHub Trending · ⭐ 3,552 (+197 today)</div><p class="item-summary">[TypeScript] Open-source document signature platform. Not affiliated with DocuSign.</p></div><div class="item"><a class="item-title" href="https://runtimenotes.com/blog/getting-101-tok-s-from-inkling-2-mini-in-vllm-on-one-gb10/" target="_blank" rel="noopener">Show HN: Getting 101 tok/s from Inkling 2 Mini in vLLM on one GB10</a><div class="item-meta">Hacker News · ▲ 49 pts · 💬 11 · <a href="https://news.ycombinator.com/item?id=50670443" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">196 tok/s across four concurrent requests, a 9.7-second 32K prefill and room for a second model.</p></div><div class="item"><a class="item-title" href="https://github.com/chrisryugj/kordoc" target="_blank" rel="noopener">chrisryugj/kordoc</a><div class="item-meta">GitHub Trending · ⭐ 3,158 (+8 today)</div><p class="item-summary">[TypeScript] 📄 한국 공문서를 AI가 읽고 쓰게 합니다. HWP·HWPX·PDF·오피스·스캔 이미지를 Markdown으로, Markdown을 HWPX 공문서로 바꾸고 양식 채우기·신구대조·서식 보존 편집까지. 라이브러리·CLI·MCP 서버 | Korean documents…</p></div><div class="item"><a class="item-title" href="https://tabernet.es/" target="_blank" rel="noopener">Tabernetes: A Kubernetes cluster whose nodes are browser tabs</a><div class="item-meta">Hacker News · ▲ 49 pts · 💬 23 · <a href="https://news.ycombinator.com/item?id=50672521" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Open a page and your phone is a node. The scheduler sends it a pod, and the pod runs on a Linux kernel booted in the tab.</p></div><div class="item"><a class="item-title" href="https://github.com/ankurmans/caldrin-search-oss" target="_blank" rel="noopener">ankurmans/caldrin-search-oss</a><div class="item-meta">GitHub Search · ⭐ 151</div><p class="item-summary">[TypeScript] SEO and AI-visibility platform with an MCP server. Self-host on Cloudflare with your own provider keys. (aeo, ai-visibility, cloudflare-workers)</p></div><div class="item"><a class="item-title" href="https://github.com/skeeto/prospero" target="_blank" rel="noopener">Prospero: Bloat-free, native AI coding harness with ImGui</a><div class="item-meta">Hacker News · ▲ 42 pts · 💬 9 · <a href="https://news.ycombinator.com/item?id=50671275" target="_blank" rel="noopener">HN Discussion</a></div><p class="item-summary">Prospero coding harness. Contribute to skeeto/prospero development by creating an account on GitHub.</p></div></section><section class="category-card" data-cat="ai_agents"><h2>🤖 Agentic Workflows, MCPs &amp; Skills</h2><div class="item"><a class="item-title" href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code/stitch-skills</a><div class="item-meta">GitHub Trending · ⭐ 13,628 (+311 today)</div><p class="item-summary">[TypeScript] A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with…</p></div><div class="item"><a class="item-title" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a><div class="item-meta">GitHub Trending · ⭐ 76,427 (+675 today)</div><p class="item-summary">[Python] AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p></div></section><section class="category-card" data-cat="llm_models"><h2>🧠 LLM Models &amp; Capabilities</h2><div class="item"><a class="item-title" href="https://github.com/tariqm067/cherry-studio-llm" target="_blank" rel="noopener">tariqm067/cherry-studio-llm</a><div class="item-meta">GitHub Search · ⭐ 255</div><p class="item-summary">[Go] Cherry Studio LLM — Cherry Studio LLM Portable &amp; Windows Setup (cherry-studio-llm, cherry-studio-llm-portable, cherry-studio-llm-windows)</p></div><div class="item"><a class="item-title" href="https://simonwillison.net/2026/Nov/27/datasette-charts/" target="_blank" rel="noopener">datasette-charts 0.4a0</a><div class="item-meta">Simon Willison</div><p class="item-summary">Release: datasette-charts 0.4a0 The new datasette-charts plugin has its own plugin hook to allow other plugins to define new chart types, but I hadn&#x27;t…</p></div></section>
+      </main>
+      <aside>
+        <div class="archive-box">
+          <h3>Past Editions</h3>
+          <ul><li><a class="current" href="../../../digests/2026/11/2026-11-28-0800.html">2026-11-28 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-27-2300.html">2026-11-27 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-27-1500.html">2026-11-27 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-27-0800.html">2026-11-27 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-26-2300.html">2026-11-26 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-26-1500.html">2026-11-26 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-26-0800.html">2026-11-26 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-2300.html">2026-11-25 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-1500.html">2026-11-25 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-25-0800.html">2026-11-25 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-2300.html">2026-11-24 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-1500.html">2026-11-24 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-24-0800.html">2026-11-24 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-2300.html">2026-11-23 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-1500.html">2026-11-23 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-23-0800.html">2026-11-23 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-2300.html">2026-11-22 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-1500.html">2026-11-22 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-22-0800.html">2026-11-22 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-2300.html">2026-11-21 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-1500.html">2026-11-21 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-21-0800.html">2026-11-21 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-2300.html">2026-11-20 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-1500.html">2026-11-20 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-20-0800.html">2026-11-20 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-2300.html">2026-11-19 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-1500.html">2026-11-19 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-19-0800.html">2026-11-19 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-2300.html">2026-11-18 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-1500.html">2026-11-18 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-18-0800.html">2026-11-18 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-2300.html">2026-11-17 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-1500.html">2026-11-17 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-17-0800.html">2026-11-17 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-2300.html">2026-11-16 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-1500.html">2026-11-16 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-16-0800.html">2026-11-16 · Morning Update (08:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-2300.html">2026-11-15 · Night Update (23:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-1500.html">2026-11-15 · Afternoon Update (15:00)</a></li><li><a href="../../../digests/2026/11/2026-11-15-0800.html">2026-11-15 · Morning Update (08:00)</a></li></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  
+<script>
+(function() {
+  const searchInput = document.getElementById('search-input');
+  const pills = document.querySelectorAll('.pill[data-cat]');
+  let activeCat = 'all';
+
+  function applyFilter() {
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    document.querySelectorAll('.category-card').forEach(card => {
+      const cat = card.getAttribute('data-cat');
+      const catMatch = (activeCat === 'all' || cat === activeCat);
+      let visibleItems = 0;
+      card.querySelectorAll('.item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const show = catMatch && (!query || text.includes(query));
+        item.style.display = show ? '' : 'none';
+        if (show) visibleItems++;
+      });
+      card.style.display = visibleItems > 0 ? '' : 'none';
+    });
+  }
+
+  pills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+})();
+</script>
+
+</body>
+</html>
