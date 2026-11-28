@@ -46,33 +46,47 @@ class NewsClassifier:
 
     def __init__(self, categories: list[CategoryConfig]) -> None:
         self.categories = categories
+        self.topic_categories = [
+            cat for cat in categories if not cat.source_types and not cat.source_names
+        ]
         self._patterns: dict[str, list[tuple[str, re.Pattern[str]]]] = {
             cat.key: [(kw, _compile_keyword_pattern(kw)) for kw in cat.keywords]
             for cat in categories
         }
-        self._valid_keys = {cat.key for cat in categories}
+        self._topic_keys = {cat.key for cat in self.topic_categories}
         self._specificity_rank = {key: idx for idx, key in enumerate(SPECIFICITY_ORDER)}
 
-    def score_item(self, item: NewsItem, now: datetime | None = None) -> NewsItem:
-        """Assign category, relevance score, popularity score, and final score to an item."""
+    def _match_category_keywords(
+        self, item: NewsItem, cat: CategoryConfig
+    ) -> tuple[float, list[str]]:
         title = item.title or ""
         summary = item.summary or ""
+        cat_score = 0.0
+        cat_matches: list[str] = []
+        for kw, pattern in self._patterns.get(cat.key, []):
+            in_title = bool(pattern.search(title))
+            in_summary = bool(pattern.search(summary))
+            if in_title or in_summary:
+                cat_matches.append(kw)
+                if in_title:
+                    cat_score += TITLE_MATCH_WEIGHT
+                if in_summary:
+                    cat_score += SUMMARY_MATCH_WEIGHT
+        return cat_score, cat_matches
 
+    def score_item(self, item: NewsItem, now: datetime | None = None) -> NewsItem:
+        """Assign topic category, relevance score, popularity score, and final score to an item."""
+        if not self.topic_categories:
+            item.popularity_score = self._compute_popularity(item, now=now)
+            item.final_score = item.popularity_score
+            return item
+
+        title = item.title or ""
         scores_by_cat: dict[str, float] = {}
         matched_by_cat: dict[str, list[str]] = {}
 
-        for cat in self.categories:
-            cat_score = 0.0
-            cat_matches: list[str] = []
-            for kw, pattern in self._patterns[cat.key]:
-                in_title = bool(pattern.search(title))
-                in_summary = bool(pattern.search(summary))
-                if in_title or in_summary:
-                    cat_matches.append(kw)
-                    if in_title:
-                        cat_score += TITLE_MATCH_WEIGHT
-                    if in_summary:
-                        cat_score += SUMMARY_MATCH_WEIGHT
+        for cat in self.topic_categories:
+            cat_score, cat_matches = self._match_category_keywords(item, cat)
             if cat_score > 0:
                 scores_by_cat[cat.key] = cat_score
                 matched_by_cat[cat.key] = cat_matches
@@ -87,16 +101,15 @@ class NewsClassifier:
             return item
 
         # Structural priors for developer tools / repos when they don't strongly match AI/LLM
-        if "new_tools" in self._valid_keys:
+        if "new_tools" in self._topic_keys:
             if item.source_type == "github":
                 scores_by_cat["new_tools"] = scores_by_cat.get("new_tools", 0.0) + GITHUB_TOOLS_PRIOR
             elif title.lower().startswith("show hn:"):
                 scores_by_cat["new_tools"] = scores_by_cat.get("new_tools", 0.0) + SHOW_HN_TOOLS_PRIOR
 
         if scores_by_cat:
-            # Break ties by specificity rank rather than display order
             best_cat = max(
-                self.categories,
+                self.topic_categories,
                 key=lambda c: (
                     scores_by_cat.get(c.key, -1.0),
                     -self._specificity_rank.get(c.key, 999),
@@ -108,8 +121,8 @@ class NewsClassifier:
         else:
             chosen_key = (
                 item.default_category
-                if item.default_category in self._valid_keys
-                else self.categories[0].key
+                if item.default_category in self._topic_keys
+                else self.topic_categories[0].key
             )
             item.relevance_score = 0.5
             item.matched_keywords = []
@@ -127,17 +140,14 @@ class NewsClassifier:
         score = 0.0
 
         if item.source_type == "hn":
-            # HN points typically range 10..1500; log1p(500) ~ 6.2
             pts_part = min(7.0, math.log1p(max(0, item.raw_score)) * 1.1)
             comments_part = min(2.0, math.log1p(max(0, item.secondary_metric)) * 0.4)
             score = pts_part + comments_part
         elif item.source_type == "github":
-            # Weight daily star velocity much higher than all-time total stars
             today_part = min(7.5, math.log1p(max(0, item.secondary_metric)) * 1.25)
             stars_part = min(2.5, math.log1p(max(0, item.raw_score)) * 0.25)
             score = today_part + stars_part
         else:
-            # Give academic preprints a modest base score so blogs/news rank higher
             score = 2.5 if item.source_name.startswith("ArXiv") else 4.0
 
         if item.published_at is not None:
@@ -154,11 +164,81 @@ class NewsClassifier:
 
         return min(10.0, score)
 
+    def _select_source_pinned(
+        self,
+        items: list[NewsItem],
+        cat: CategoryConfig,
+        per_cat_limit: int,
+        remaining_total: int,
+        used_ids: set[str],
+        now: datetime | None = None,
+    ) -> list[NewsItem]:
+        """Select items directly by source_types/source_names and cat.sort_by."""
+        allowed_types = set(cat.source_types)
+        allowed_names = set(cat.source_names)
+
+        candidates: list[tuple[tuple[float, ...], NewsItem]] = []
+        for item in items:
+            if item.id in used_ids:
+                continue
+            if allowed_types and item.source_type not in allowed_types:
+                continue
+            if allowed_names and item.source_name not in allowed_names:
+                continue
+
+            kw_score, matches = self._match_category_keywords(item, cat)
+            rel_score = min(MAX_RELEVANCE_SCORE, kw_score) if kw_score > 0 else 0.5
+            pop_score = self._compute_popularity(item, now=now)
+
+            if cat.sort_by == "points":
+                sort_key: tuple[float, ...] = (
+                    float(item.raw_score),
+                    float(item.secondary_metric),
+                    pop_score,
+                )
+            elif cat.sort_by == "recent":
+                pub_ts = (
+                    item.published_at.timestamp()
+                    if item.published_at is not None
+                    else 0.0
+                )
+                sort_key = (pub_ts, rel_score, pop_score)
+            else:
+                sort_key = (rel_score + pop_score, float(item.raw_score))
+
+            item.relevance_score = rel_score
+            item.popularity_score = pop_score
+            item.final_score = rel_score + pop_score
+            if matches:
+                item.matched_keywords = matches
+            candidates.append((sort_key, item))
+
+        candidates.sort(key=lambda pair: pair[0], reverse=True)
+
+        # Cap at 2 per source when aggregating across multiple blogs (e.g., ds_edu),
+        # but allow all items from a single pinned source (e.g., Top 10 HN or Top 3 TechCrunch).
+        per_source_cap = 2 if len(cat.source_names) > 2 else per_cat_limit
+        chosen: list[NewsItem] = []
+        source_counts: dict[str, int] = defaultdict(int)
+
+        for _, cand in candidates:
+            if len(chosen) >= per_cat_limit or len(chosen) >= remaining_total:
+                break
+            if source_counts[cand.source_name] >= per_source_cap:
+                continue
+            cand.assigned_category = cat.key
+            chosen.append(cand)
+            source_counts[cand.source_name] += 1
+            used_ids.add(cand.id)
+
+        return chosen
+
     def classify_and_select(
         self,
         items: list[NewsItem],
         config: AppConfig,
         now: datetime | None = None,
+        active_keys: set[str] | None = None,
     ) -> dict[str, list[NewsItem]]:
         """Score all items, group by category, enforce diversity, and trim to digest limits."""
         scored = [self.score_item(item, now=now) for item in items]
@@ -171,15 +251,37 @@ class NewsClassifier:
         selected_by_cat: dict[str, list[NewsItem]] = {}
         max_per_source = config.digest.max_per_source_in_category
         total_selected = 0
+        used_ids: set[str] = set()
 
         for cat in config.categories:
+            if active_keys is not None and cat.key not in active_keys:
+                continue
+
             per_cat_limit = cat.max_items if cat.max_items is not None else config.digest.items_per_category
+            remaining_total = config.digest.max_total_items - total_selected
+            if remaining_total <= 0:
+                selected_by_cat[cat.key] = []
+                continue
+
+            if cat.source_types or cat.source_names:
+                chosen = self._select_source_pinned(
+                    items=items,
+                    cat=cat,
+                    per_cat_limit=per_cat_limit,
+                    remaining_total=remaining_total,
+                    used_ids=used_ids,
+                    now=now,
+                )
+                selected_by_cat[cat.key] = chosen
+                total_selected += len(chosen)
+                continue
+
             candidates = sorted(
                 grouped[cat.key],
                 key=lambda x: (x.final_score, x.raw_score),
                 reverse=True,
             )
-            chosen: list[NewsItem] = []
+            chosen = []
             source_counts: dict[str, int] = defaultdict(int)
             arxiv_count = 0
 
@@ -188,6 +290,8 @@ class NewsClassifier:
                     break
                 if total_selected >= config.digest.max_total_items:
                     break
+                if cand.id in used_ids:
+                    continue
                 if source_counts[cand.source_name] >= max_per_source:
                     continue
                 is_arxiv = cand.source_name.startswith("ArXiv")
@@ -195,6 +299,7 @@ class NewsClassifier:
                     continue
                 chosen.append(cand)
                 source_counts[cand.source_name] += 1
+                used_ids.add(cand.id)
                 if is_arxiv:
                     arxiv_count += 1
                 total_selected += 1

@@ -12,6 +12,11 @@
  */
 
 const TOPIC_SHORTCUTS = {
+  "/guides": "ds_edu",
+  "/stats": "ds_edu",
+  "/hn": "hackernews_top",
+  "/tc": "techcrunch_top",
+  "/techcrunch": "techcrunch_top",
   "/tech": "trending_tech",
   "/data": "data_science",
   "/analytics": "data_science",
@@ -31,10 +36,13 @@ const TOPIC_SHORTCUTS = {
 const HELP_TEXT = [
   "<b>📡 News &amp; Trends On-Demand Bot</b>",
   "",
-  "<b>Topic Commands (24h Window):</b>",
-  "• /brief — Core Tech, Data Science, Tools &amp; AI topics",
-  "• /brief economy politics — Combine any topics",
-  "• /all — All 7 topics (including Business &amp; Politics)",
+  "<b>Daily Morning Brief Sections:</b>",
+  "• /brief — Morning Brief (DS Guides + Top 10 HN + Top 3 TechCrunch)",
+  "• /guides — 📊 Data Science, Statistics &amp; Analytics (max 3)",
+  "• /hn — 🔥 Top 10 Hacker News",
+  "• /tc — ⚡ Top 3 TechCrunch",
+  "",
+  "<b>On-Demand Topics (24h Window):</b>",
   "• /tech — 💻 Trending Tech News",
   "• /data — 📊 Data Science &amp; Business Analytics",
   "• /tools — 🛠️ Open-Source Projects, Tools &amp; Harnesses",
@@ -42,6 +50,8 @@ const HELP_TEXT = [
   "• /llm — 🧠 LLM Models &amp; Capabilities",
   "• /economy — 📈 Business, Economics &amp; Case Studies",
   "• /politics — 🌍 Trending Politics &amp; World Affairs",
+  "• /brief agents llm — Combine any topics",
+  "• /all — All sections &amp; topics",
   "• /topics — Show this command list",
 ].join("\n");
 

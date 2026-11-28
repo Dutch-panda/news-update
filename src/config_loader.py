@@ -45,6 +45,9 @@ def load_config(path: Path | str | None = None) -> AppConfig:
             keywords=[str(kw) for kw in cat.get("keywords", [])],
             max_items=int(cat["max_items"]) if cat.get("max_items") is not None else None,
             on_demand_only=bool(cat.get("on_demand_only", False)),
+            source_types=[str(st) for st in cat.get("source_types", [])],
+            source_names=[str(sn) for sn in cat.get("source_names", [])],
+            sort_by=str(cat.get("sort_by", "score")),
         )
         for cat in raw.get("categories", [])
     ]
@@ -82,6 +85,9 @@ def load_config(path: Path | str | None = None) -> AppConfig:
             name=str(feed["name"]),
             url=str(feed["url"]),
             default_category=str(feed.get("default_category", "trending_tech")),
+            lookback_hours=int(feed["lookback_hours"])
+            if feed.get("lookback_hours") is not None
+            else None,
         )
         for feed in sources_raw.get("rss_feeds", [])
     ]
@@ -96,7 +102,7 @@ def load_config(path: Path | str | None = None) -> AppConfig:
     }
 
     rss_lookback_hours = int(sources_raw.get("rss_lookback_hours", 24))
-    scheduled_lookback_hours = int(sources_raw.get("scheduled_lookback_hours", 10))
+    scheduled_lookback_hours = int(sources_raw.get("scheduled_lookback_hours", 24))
     on_demand_lookback_hours = int(sources_raw.get("on_demand_lookback_hours", 24))
 
     return AppConfig(

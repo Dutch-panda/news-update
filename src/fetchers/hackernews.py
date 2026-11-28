@@ -108,6 +108,7 @@ def fetch_hackernews(
     config: HackerNewsConfig,
     max_summary_chars: int = 160,
     lookback_hours: int | None = None,
+    include_targeted: bool = True,
     now: datetime | None = None,
 ) -> list[NewsItem]:
     """Fetch front-page, most popular recent stories, and targeted queries in the lookback window."""
@@ -148,18 +149,19 @@ def fetch_hackernews(
             },
         ),
     ]
-    for query in config.targeted_queries:
-        requests_spec.append(
-            (
-                ALGOLIA_SEARCH_URL,
-                {
-                    "query": query,
-                    "tags": "story",
-                    "numericFilters": f"created_at_i>{cutoff_ts},points>={config.targeted_min_points}",
-                    "hitsPerPage": 25,
-                },
+    if include_targeted:
+        for query in config.targeted_queries:
+            requests_spec.append(
+                (
+                    ALGOLIA_SEARCH_URL,
+                    {
+                        "query": query,
+                        "tags": "story",
+                        "numericFilters": f"created_at_i>{cutoff_ts},points>={config.targeted_min_points}",
+                        "hitsPerPage": 25,
+                    },
+                )
             )
-        )
 
     for endpoint, params in requests_spec:
         try:

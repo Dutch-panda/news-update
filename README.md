@@ -2,30 +2,34 @@
 
 Automated personal news & trends aggregator powered by **Python + GitHub Actions + GitHub Pages + Telegram** — with **no LLM required**.
 
-It fetches updates three times a day (**08:00, 15:00, and 23:00 UTC+04:00**), filters and ranks them using keyword matching and popularity/velocity signals, deduplicates across runs, archives Markdown digests and a searchable static web archive in this GitHub repository, and delivers a balanced digest to your Telegram chat.
+It delivers a focused **Daily Morning Brief** (up to 16 items over a 24h window) while letting you request any of the broader topics **on-demand** via Telegram bot commands. It archives Markdown digests and a searchable static web archive in GitHub and delivers formatted messages to Telegram.
 
 ---
 
 ## Covered Subjects & Sources
 
-**Scheduled Categories (3x/day, 10h Window):**
-1. **💻 Trending Tech News** (`trending_tech`)
-2. **📊 Data Science & Business Analytics** (`data_science`)
-3. **🛠️ Open-Source Projects, Tools & Harnesses** (`new_tools`)
-4. **🤖 Agentic Workflows, MCPs & Skills** (`ai_agents`)
-5. **🧠 LLM Models & Capabilities** (`llm_models`)
+**Daily Morning Brief (`on_demand_only: false`, 24h Window, max 16 items):**
+1. **📊 Data Science, Statistics & Analytics (Guides & Case Studies)** (`ds_edu`, max 3)
+2. **🔥 Top 10 Hacker News** (`hackernews_top`, max 10)
+3. **⚡ Top 3 TechCrunch** (`techcrunch_top`, max 3)
 
-**On-Demand Only Categories (via Telegram Bot, 24h Window):**
-6. **📈 Business, Economics & Case Studies** (`economics`)
-7. **🌍 Trending Politics & World Affairs** (`trending_politics`)
+**On-Demand Only Topics (via Telegram Bot, 24h Window):**
+4. **💻 Trending Tech News** (`trending_tech`, max 15)
+5. **📊 Data Science & Business Analytics** (`data_science`, max 15)
+6. **🛠️ Open-Source Projects, Tools & Harnesses** (`new_tools`, max 15)
+7. **🤖 Agentic Workflows, MCPs & Skills** (`ai_agents`, max 15)
+8. **🧠 LLM Models & Capabilities** (`llm_models`, max 15)
+9. **📈 Business, Economics & Case Studies** (`economics`, max 10)
+10. **🌍 Trending Politics & World Affairs** (`trending_politics`, max 10)
 
 **Sources (All Free, Non-Paywalled):**
-- **Hacker News**: Algolia HN popularity-ranked `/search` API (top stories in window + targeted AI agent / MCP / Claude Code / Data Science / DuckDB / Show HN queries) with Firebase HN API fallback.
-- **GitHub**: Daily [GitHub Trending](https://github.com/trending?since=daily) across All, Python, TypeScript, and Rust + GitHub Search API for breakout new repos (`>= 150` stars in last 5 days, spam-filtered).
+- **Hacker News**: Algolia HN popularity-ranked `/search` API with Firebase HN API fallback.
+- **GitHub** *(on-demand tech/AI topics)*: Daily [GitHub Trending](https://github.com/trending?since=daily) across All, Python, TypeScript, and Rust + GitHub Search API for breakout new repos (`>= 150` stars in last 5 days, spam-filtered).
 - **Free RSS / Atom Feeds**:
-  - *Data Science & Analytics*: KDnuggets, Towards Data Science, DuckDB Blog, Reddit `r/datascience` & `r/BusinessIntelligence`, ArXiv `cs.LG` & `stat.ML`
-  - *AI, LLMs & Agentic*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, TechCrunch AI, Reddit `r/LocalLLaMA`, ArXiv `cs.AI`
-  - *Tech*: TechCrunch, Ars Technica, The Verge
+  - *DS, Stats & Analytics (Guides & Case Studies)*: Towards Data Science, KDnuggets, DuckDB Blog, FlowingData, Machine Learning Mastery, Analytics Vidhya *(plus Reddit `r/datascience` & `r/BusinessIntelligence` and ArXiv `cs.LG`/`stat.ML` for on-demand `/data`)*
+  - *TechCrunch*: TechCrunch, TechCrunch AI
+  - *AI, LLMs & Agentic (on-demand)*: Hugging Face Blog, Simon Willison's Weblog, OpenAI News, Reddit `r/LocalLLaMA`, ArXiv `cs.AI`
+  - *Other Tech (on-demand)*: Ars Technica, The Verge
   - *Business, Economics & Case Studies (on-demand)*: MIT Sloan Management Review, Pew Research, Calculated Risk, BBC Business, The Guardian Business, CNBC Economy
   - *Politics & World Affairs (on-demand)*: BBC World, The Guardian World, Al Jazeera, NPR World, DW News
 
@@ -134,7 +138,7 @@ To request topic-specific briefs on-demand in Telegram (`/economy`, `/politics`,
    ```bash
    curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setMyCommands" \
      -H "Content-Type: application/json" \
-     -d '{"commands":[{"command":"brief","description":"Core Tech/Data/AI brief (or: /brief economy politics)"},{"command":"tech","description":"Trending Tech News"},{"command":"data","description":"Data Science & Business Analytics"},{"command":"tools","description":"Open-Source Projects, Tools & Harnesses"},{"command":"agents","description":"Agentic Workflows, MCPs & Skills"},{"command":"llm","description":"LLM Models & Capabilities"},{"command":"economy","description":"Business, Economics & Case Studies"},{"command":"politics","description":"Trending Politics & World Affairs"},{"command":"all","description":"All 7 topics (24h window)"},{"command":"topics","description":"List available commands"}]}'
+     -d '{"commands":[{"command":"brief","description":"Morning Brief (Guides + Top 10 HN + Top 3 TC)"},{"command":"guides","description":"DS, Statistics & Analytics Guides (max 3)"},{"command":"hn","description":"Top 10 Hacker News"},{"command":"tc","description":"Top 3 TechCrunch"},{"command":"tech","description":"Trending Tech News"},{"command":"data","description":"Data Science & Business Analytics"},{"command":"tools","description":"Open-Source Projects, Tools & Harnesses"},{"command":"agents","description":"Agentic Workflows, MCPs & Skills"},{"command":"llm","description":"LLM Models & Capabilities"},{"command":"economy","description":"Business, Economics & Case Studies"},{"command":"politics","description":"Trending Politics & World Affairs"},{"command":"all","description":"All sections & topics (24h window)"},{"command":"topics","description":"List available commands"}]}'
    ```
 
 ---

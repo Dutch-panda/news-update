@@ -64,6 +64,9 @@ class CategoryConfig:
     keywords: list[str] = field(default_factory=list)
     max_items: int | None = None
     on_demand_only: bool = False
+    source_types: list[str] = field(default_factory=list)
+    source_names: list[str] = field(default_factory=list)
+    sort_by: str = "score"
 
 
 @dataclass
@@ -73,6 +76,7 @@ class RSSFeedConfig:
     name: str
     url: str
     default_category: str
+    lookback_hours: int | None = None
 
 
 @dataclass
@@ -124,7 +128,7 @@ class AppConfig:
     github: GitHubConfig
     rss_feeds: list[RSSFeedConfig]
     rss_lookback_hours: int = 24
-    scheduled_lookback_hours: int = 10
+    scheduled_lookback_hours: int = 24
     on_demand_lookback_hours: int = 24
 
 

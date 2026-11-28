@@ -36,6 +36,18 @@ logger = logging.getLogger("news_update")
 
 
 TOPIC_ALIASES: dict[str, str] = {
+    "ds_edu": "ds_edu",
+    "guides": "ds_edu",
+    "learn": "ds_edu",
+    "stats": "ds_edu",
+    "statistics": "ds_edu",
+    "case_study": "ds_edu",
+    "hn": "hackernews_top",
+    "hackernews": "hackernews_top",
+    "hackernews_top": "hackernews_top",
+    "tc": "techcrunch_top",
+    "techcrunch": "techcrunch_top",
+    "techcrunch_top": "techcrunch_top",
     "tech": "trending_tech",
     "trending_tech": "trending_tech",
     "data": "data_science",
@@ -66,14 +78,20 @@ TOPIC_ALIASES: dict[str, str] = {
     "trending_politics": "trending_politics",
 }
 
+GITHUB_TOPIC_KEYS = frozenset({"trending_tech", "data_science", "new_tools", "ai_agents", "llm_models"})
+HN_TOPIC_KEYS = GITHUB_TOPIC_KEYS | frozenset({"hackernews_top", "economics", "trending_politics"})
+
 
 def resolve_topic_keys(topics_arg: str, config: AppConfig) -> list[str]:
     """Parse a comma/space-separated topic list into valid ordered category keys."""
     all_keys = [cat.key for cat in config.categories]
     scheduled_keys = [cat.key for cat in config.categories if not cat.on_demand_only]
+    on_demand_keys = [cat.key for cat in config.categories if cat.on_demand_only]
     raw = (topics_arg or "").strip()
-    if not raw or raw.lower() in {"scheduled", "default"}:
+    if not raw or raw.lower() in {"scheduled", "default", "morning"}:
         return scheduled_keys
+    if raw.lower() == "topics":
+        return on_demand_keys
     if raw.lower() == "all":
         return all_keys
 
@@ -84,7 +102,10 @@ def resolve_topic_keys(topics_arg: str, config: AppConfig) -> list[str]:
             continue
         if cleaned == "all":
             return all_keys
-        if cleaned in {"scheduled", "default"}:
+        if cleaned == "topics":
+            requested.update(on_demand_keys)
+            continue
+        if cleaned in {"scheduled", "default", "morning"}:
             requested.update(scheduled_keys)
             continue
         mapped = TOPIC_ALIASES.get(cleaned)
@@ -161,36 +182,46 @@ def run_digest(
         )
     edition_id = local_now.strftime("%Y-%m-%d-%H%M")
 
-    # Skip fetching RSS feeds whose default category is excluded from this run
+    # Fetch only the sources required by active categories
     active_key_set = set(active_topic_keys)
+    active_categories = [c for c in config.categories if c.key in active_key_set]
+    pinned_source_names = {
+        name for cat in active_categories for name in cat.source_names
+    }
     active_feeds = [
-        feed for feed in config.rss_feeds if feed.default_category in active_key_set
+        feed
+        for feed in config.rss_feeds
+        if feed.default_category in active_key_set or feed.name in pinned_source_names
     ]
 
     fetched: list[NewsItem] = []
-    fetched.extend(
-        fetch_hackernews(
-            config.hackernews,
-            max_summary_chars=config.digest.description_max_chars,
-            lookback_hours=lookback_hours,
-            now=utc_now,
+    if active_key_set & HN_TOPIC_KEYS:
+        fetched.extend(
+            fetch_hackernews(
+                config.hackernews,
+                max_summary_chars=config.digest.description_max_chars,
+                lookback_hours=lookback_hours,
+                include_targeted=bool(active_key_set & GITHUB_TOPIC_KEYS),
+                now=utc_now,
+            )
         )
-    )
-    fetched.extend(
-        fetch_github(
-            config.github,
-            max_summary_chars=config.digest.description_max_chars,
-            now=utc_now,
+    if active_key_set & GITHUB_TOPIC_KEYS:
+        fetched.extend(
+            fetch_github(
+                config.github,
+                max_summary_chars=config.digest.description_max_chars,
+                now=utc_now,
+            )
         )
-    )
-    fetched.extend(
-        fetch_rss_feeds(
-            active_feeds,
-            max_summary_chars=config.digest.description_max_chars,
-            lookback_hours=lookback_hours,
-            now=utc_now,
+    if active_feeds:
+        fetched.extend(
+            fetch_rss_feeds(
+                active_feeds,
+                max_summary_chars=config.digest.description_max_chars,
+                lookback_hours=lookback_hours,
+                now=utc_now,
+            )
         )
-    )
 
     dedup_store = DedupStore(SEEN_PATH)
     dedup_store.prune(config.digest.dedup_retention_days, now=utc_now)
@@ -199,9 +230,10 @@ def run_digest(
     unseen = dedup_store.filter_unseen(fetched, ignore_history=(no_dedup or is_on_demand))
 
     classifier = NewsClassifier(config.categories)
-    items_by_category = classifier.classify_and_select(unseen, config=config, now=utc_now)
+    items_by_category = classifier.classify_and_select(
+        unseen, config=config, now=utc_now, active_keys=active_key_set
+    )
 
-    active_categories = [c for c in config.categories if c.key in active_key_set]
     items_by_category = {k: items_by_category.get(k, []) for k in active_topic_keys}
 
     selected_items = [

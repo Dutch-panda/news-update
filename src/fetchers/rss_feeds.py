@@ -50,7 +50,6 @@ def fetch_rss_feeds(
         return []
 
     ref_now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
-    cutoff = ref_now - timedelta(hours=lookback_hours)
 
     session = requests.Session()
     session.headers.update(
@@ -63,6 +62,12 @@ def fetch_rss_feeds(
     items: list[NewsItem] = []
 
     for feed_cfg in feeds:
+        feed_hours = (
+            max(lookback_hours, feed_cfg.lookback_hours)
+            if feed_cfg.lookback_hours is not None
+            else lookback_hours
+        )
+        feed_cutoff = ref_now - timedelta(hours=feed_hours)
         try:
             resp = session.get(feed_cfg.url, timeout=REQUEST_TIMEOUT_SEC)
             resp.raise_for_status()
@@ -80,7 +85,7 @@ def fetch_rss_feeds(
                 continue
 
             pub_dt = _extract_entry_datetime(entry)
-            if pub_dt is not None and pub_dt < cutoff:
+            if pub_dt is not None and pub_dt < feed_cutoff:
                 continue
 
             entry_id = str(entry.get("id") or link)

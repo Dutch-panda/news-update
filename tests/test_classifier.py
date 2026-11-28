@@ -1,4 +1,4 @@
-"""Unit tests for keyword classification, ordering, specificity, scoring, and diversity."""
+"""Unit tests for keyword classification, morning brief selection, specificity, and diversity."""
 
 from datetime import datetime, timedelta, timezone
 
@@ -11,6 +11,9 @@ from src.models import NewsItem
 def test_category_display_order_limits_and_lookbacks() -> None:
     config = load_config()
     assert [c.key for c in config.categories] == [
+        "ds_edu",
+        "hackernews_top",
+        "techcrunch_top",
         "trending_tech",
         "data_science",
         "new_tools",
@@ -19,21 +22,108 @@ def test_category_display_order_limits_and_lookbacks() -> None:
         "economics",
         "trending_politics",
     ]
-    assert [cat.max_items for cat in config.categories] == [15, 15, 15, 15, 15, 10, 10]
+    assert [cat.max_items for cat in config.categories] == [3, 10, 3, 15, 15, 15, 15, 15, 10, 10]
     assert [cat.on_demand_only for cat in config.categories] == [
         False,
         False,
         False,
-        False,
-        False,
+        True,
+        True,
+        True,
+        True,
+        True,
         True,
         True,
     ]
-    assert config.scheduled_lookback_hours == 10
+    assert config.scheduled_lookback_hours == 24
     assert config.on_demand_lookback_hours == 24
     assert config.github.search_enabled is True
     assert config.github.search_min_stars == 150
     assert "jupyter-notebook" not in config.github.trending_languages
+
+
+def test_morning_brief_selection_and_cross_section_dedup() -> None:
+    config = load_config()
+    classifier = NewsClassifier(config.categories)
+    now = datetime.now(timezone.utc)
+
+    items: list[NewsItem] = []
+    # 12 HN stories with ascending points -> should pick Top 10 in descending points order
+    for i in range(12):
+        items.append(
+            NewsItem(
+                id=f"hn:{i}",
+                title=f"HN Story {i}",
+                url=f"https://example.com/hn/{i}",
+                source_name="Hacker News",
+                source_type="hn",
+                raw_score=50 + i * 25,
+                secondary_metric=10 + i,
+                published_at=now - timedelta(hours=i),
+            )
+        )
+
+    # 5 TechCrunch stories (plus one duplicate ID already in HN) -> Top 3 freshest unique
+    for i in range(5):
+        items.append(
+            NewsItem(
+                id=f"rss:tc:{i}",
+                title=f"TechCrunch Story {i}",
+                url=f"https://techcrunch.com/2026/11/28/story-{i}/",
+                source_name="TechCrunch" if i % 2 == 0 else "TechCrunch AI",
+                source_type="rss",
+                published_at=now - timedelta(hours=i),
+                default_category="trending_tech",
+            )
+        )
+
+    # 5 Educational DS/Stats items + 3 ArXiv items -> ds_edu only takes <=3 from pinned educational feeds
+    edu_sources = [
+        "Towards Data Science",
+        "KDnuggets",
+        "DuckDB Blog",
+        "FlowingData",
+        "Machine Learning Mastery",
+    ]
+    for i, src in enumerate(edu_sources):
+        items.append(
+            NewsItem(
+                id=f"rss:edu:{i}",
+                title=f"Case study and Bayesian statistics tutorial {i}",
+                url=f"https://edu.example.com/{i}",
+                source_name=src,
+                source_type="rss",
+                published_at=now - timedelta(hours=i),
+                default_category="data_science",
+            )
+        )
+    for i in range(3):
+        items.append(
+            NewsItem(
+                id=f"rss:arxiv:{i}",
+                title=f"ArXiv statistics forecasting paper {i}",
+                url=f"https://arxiv.org/abs/2611.{2000 + i}",
+                source_name="ArXiv stat.ML",
+                source_type="rss",
+                published_at=now,
+                default_category="data_science",
+            )
+        )
+
+    active_keys = {"ds_edu", "hackernews_top", "techcrunch_top"}
+    selected = classifier.classify_and_select(
+        items, config=config, now=now, active_keys=active_keys
+    )
+
+    assert set(selected.keys()) == active_keys
+    assert len(selected["ds_edu"]) == 3
+    assert all(x.source_name in set(edu_sources) for x in selected["ds_edu"])
+    assert len(selected["hackernews_top"]) == 10
+    assert [x.raw_score for x in selected["hackernews_top"]] == sorted(
+        [x.raw_score for x in selected["hackernews_top"]], reverse=True
+    )
+    assert len(selected["techcrunch_top"]) == 3
+    assert all(x.source_name in {"TechCrunch", "TechCrunch AI"} for x in selected["techcrunch_top"])
 
 
 def test_data_science_economics_and_topic_aliases() -> None:
@@ -61,11 +151,14 @@ def test_data_science_economics_and_topic_aliases() -> None:
     assert classifier.score_item(econ_item).assigned_category == "economics"
 
     assert resolve_topic_keys("scheduled", config) == [
-        "trending_tech",
-        "data_science",
-        "new_tools",
-        "ai_agents",
-        "llm_models",
+        "ds_edu",
+        "hackernews_top",
+        "techcrunch_top",
+    ]
+    assert resolve_topic_keys("hn tc guides", config) == [
+        "ds_edu",
+        "hackernews_top",
+        "techcrunch_top",
     ]
     assert resolve_topic_keys("politics, economy", config) == [
         "economics",
@@ -83,7 +176,6 @@ def test_word_boundaries_prevent_false_positives() -> None:
     config = load_config()
     classifier = NewsClassifier(config.categories)
 
-    # "said" / "claim" / "detail" contain "ai" as a substring, should NOT match ai_agents/llm_models
     item = NewsItem(
         id="rss:bbc:1",
         title="Minister said new trade claim lacks detail",
@@ -102,7 +194,6 @@ def test_specificity_tie_break_independent_of_display_order() -> None:
     config = load_config()
     classifier = NewsClassifier(config.categories)
 
-    # Exact 1-keyword tie: "Google" (trending_tech) vs "Claude" (llm_models) -> llm_models wins tie
     item = NewsItem(
         id="hn:200",
         title="Google compares Claude in evaluation",
@@ -170,7 +261,6 @@ def test_trending_counts_and_source_diversity() -> None:
     now = datetime.now(timezone.utc)
 
     items: list[NewsItem] = []
-    # 9 from BBC + 9 from Guardian + 3 from NPR -> capped at 7 per source, 10 total in trending_politics
     for i in range(9):
         items.append(
             NewsItem(
@@ -195,7 +285,6 @@ def test_trending_counts_and_source_diversity() -> None:
                 default_category="trending_politics",
             )
         )
-    # 9 from HN + 9 from TechCrunch + 3 from Ars Technica -> capped at 7 per source, 15 total in trending_tech
     for i in range(9):
         items.append(
             NewsItem(
@@ -234,7 +323,10 @@ def test_trending_counts_and_source_diversity() -> None:
             )
         )
 
-    selected = classifier.classify_and_select(items, config=config, now=now)
+    on_demand_topics = {"trending_tech", "trending_politics"}
+    selected = classifier.classify_and_select(
+        items, config=config, now=now, active_keys=on_demand_topics
+    )
     assert len(selected["trending_tech"]) == 15
     assert len(selected["trending_politics"]) == 10
     bbc_count = sum(1 for x in selected["trending_politics"] if x.source_name == "BBC World")
@@ -271,7 +363,9 @@ def test_arxiv_combined_cap_per_category() -> None:
         )
     )
 
-    selected = classifier.classify_and_select(items, config=config, now=now)
+    selected = classifier.classify_and_select(
+        items, config=config, now=now, active_keys={"llm_models"}
+    )
     arxiv_items = [x for x in selected["llm_models"] if x.source_name.startswith("ArXiv")]
     assert len(arxiv_items) == 3
     assert any(x.source_name == "Simon Willison" for x in selected["llm_models"])

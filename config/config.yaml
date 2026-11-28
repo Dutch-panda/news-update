@@ -1,22 +1,86 @@
 timezone_offset_hours: 4
 
 schedule_slots:
-  morning: "Morning Update (08:00)"
+  morning: "Daily Morning Brief"
   afternoon: "Afternoon Update (15:00)"
   night: "Night Update (23:00)"
 
 digest:
   items_per_category: 15
-  max_total_items: 95
+  max_total_items: 110
   max_per_source_in_category: 7
   dedup_retention_days: 14
   description_max_chars: 160
 
 categories:
+  # ------------------------------------------------------------------
+  # Scheduled Morning Brief (3 concise sections, 16 items max total)
+  # ------------------------------------------------------------------
+  - key: ds_edu
+    title: "📊 Data Science, Statistics & Analytics (Guides & Case Studies)"
+    max_items: 3
+    on_demand_only: false
+    sort_by: "score"
+    source_names:
+      - "Towards Data Science"
+      - "KDnuggets"
+      - "DuckDB Blog"
+      - "FlowingData"
+      - "Machine Learning Mastery"
+      - "Analytics Vidhya"
+    keywords:
+      - case study
+      - case studies
+      - tutorial
+      - guide
+      - how to
+      - step-by-step
+      - statistics
+      - statistical
+      - probability
+      - bayesian
+      - causal inference
+      - a/b test
+      - ab testing
+      - hypothesis
+      - regression
+      - time series
+      - forecasting
+      - analytics
+      - business intelligence
+      - data science
+      - visualization
+      - duckdb
+      - polars
+      - sql
+      - experiment
+      - cohort
+      - metric
+
+  - key: hackernews_top
+    title: "🔥 Top 10 Hacker News"
+    max_items: 10
+    on_demand_only: false
+    sort_by: "points"
+    source_types:
+      - "hn"
+
+  - key: techcrunch_top
+    title: "⚡ Top 3 TechCrunch"
+    max_items: 3
+    on_demand_only: false
+    sort_by: "recent"
+    source_names:
+      - "TechCrunch"
+      - "TechCrunch AI"
+
+  # ------------------------------------------------------------------
+  # On-Demand Only Topics (requested via Telegram bot commands)
+  # ------------------------------------------------------------------
   - key: trending_tech
     title: "💻 Trending Tech News"
     max_items: 15
-    on_demand_only: false
+    on_demand_only: true
     keywords:
       - apple
       - google
@@ -44,7 +108,7 @@ categories:
   - key: data_science
     title: "📊 Data Science & Business Analytics"
     max_items: 15
-    on_demand_only: false
+    on_demand_only: true
     keywords:
       - data science
       - business analytics
@@ -85,7 +149,7 @@ categories:
   - key: new_tools
     title: "🛠️ Open-Source Projects, Tools & Harnesses"
     max_items: 15
-    on_demand_only: false
+    on_demand_only: true
     keywords:
       - show hn
       - open-source
@@ -119,7 +183,7 @@ categories:
   - key: ai_agents
     title: "🤖 Agentic Workflows, MCPs & Skills"
     max_items: 15
-    on_demand_only: false
+    on_demand_only: true
     keywords:
       - ai agent
       - ai agents
@@ -157,7 +221,7 @@ categories:
   - key: llm_models
     title: "🧠 LLM Models & Capabilities"
     max_items: 15
-    on_demand_only: false
+    on_demand_only: true
     keywords:
       - llm
       - large language model
@@ -264,7 +328,7 @@ categories:
       - policy
 
 sources:
-  scheduled_lookback_hours: 10
+  scheduled_lookback_hours: 24
   on_demand_lookback_hours: 24
   rss_lookback_hours: 24
 
@@ -305,15 +369,26 @@ sources:
       - "data-science"
 
   rss_feeds:
-    # Data Science & Business Analytics (scheduled)
-    - name: "KDnuggets"
-      url: "https://www.kdnuggets.com/feed"
-      default_category: "data_science"
+    # Data Science, Statistics & Analytics (educational & case studies -> scheduled + on-demand)
     - name: "Towards Data Science"
       url: "https://towardsdatascience.com/feed"
       default_category: "data_science"
+    - name: "KDnuggets"
+      url: "https://www.kdnuggets.com/feed"
+      default_category: "data_science"
     - name: "DuckDB Blog"
       url: "https://duckdb.org/feed.xml"
+      default_category: "data_science"
+      lookback_hours: 72
+    - name: "FlowingData"
+      url: "https://flowingdata.com/feed"
+      default_category: "data_science"
+      lookback_hours: 72
+    - name: "Machine Learning Mastery"
+      url: "https://machinelearningmastery.com/blog/feed/"
+      default_category: "data_science"
+    - name: "Analytics Vidhya"
+      url: "https://www.analyticsvidhya.com/feed/"
       default_category: "data_science"
     - name: "Reddit AI & Data Science"
       url: "https://www.reddit.com/r/LocalLLaMA+datascience+BusinessIntelligence/.rss"
@@ -325,7 +400,7 @@ sources:
       url: "https://rss.arxiv.org/rss/stat.ML"
       default_category: "data_science"
 
-    # AI, LLMs & Agentic Engineering (scheduled)
+    # AI, LLMs & Agentic Engineering (on-demand)
     - name: "Hugging Face Blog"
       url: "https://huggingface.co/blog/feed.xml"
       default_category: "llm_models"
@@ -335,17 +410,21 @@ sources:
     - name: "OpenAI News"
       url: "https://openai.com/news/rss.xml"
       default_category: "llm_models"
-    - name: "TechCrunch AI"
-      url: "https://techcrunch.com/category/artificial-intelligence/feed/"
-      default_category: "llm_models"
     - name: "ArXiv cs.AI"
       url: "https://rss.arxiv.org/rss/cs.AI"
       default_category: "llm_models"
 
-    # Tech (scheduled)
+    # TechCrunch (scheduled + on-demand)
     - name: "TechCrunch"
       url: "https://techcrunch.com/feed/"
       default_category: "trending_tech"
+      lookback_hours: 48
+    - name: "TechCrunch AI"
+      url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+      default_category: "llm_models"
+      lookback_hours: 48
+
+    # Other Tech (on-demand)
     - name: "Ars Technica"
       url: "https://feeds.arstechnica.com/arstechnica/index"
       default_category: "trending_tech"
